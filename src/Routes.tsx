@@ -1,18 +1,21 @@
 // AppRoutes.tsx
 import { Routes, Route } from 'react-router-dom';
-import About from './components/About';
-import Page1 from './pages/Page1';
-import Home from './components/Home';
-import Page2 from './pages/Page2';
+import Home from './cpuvsim/components/Home';
+import About from './cpuvsim/components/About';
+import Page1 from './cpuvsim/pages/Page1';
+import Page2 from './cpuvsim/pages/Page2';
 
 const AppRoutes = () => {
+    const root = "/cpuvsim";
+    const pages = `${root}/pages`;
+
     return (
         <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
+            <Route path={root} element={<Home />} />
+            <Route path={`${root}/components/about`} element={<About />} />
             {/* Pages */}
-            <Route path="/page1" element={<Page1 />} />
-            <Route path="/page2" element={<Page2 />} />
+            <Route path={`${pages}/page1`} element={<Page1 />} />
+            <Route path={`${pages}/page2`} element={<Page2 />} />
         </Routes>
     );
 }

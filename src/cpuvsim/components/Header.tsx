@@ -10,19 +10,19 @@ function Header() {
         </Link>
         <div className="md:flex space-x-4 items-center"> {/* Center items vertically */}
           <Link
-            to="/"
+            to="/cpuvsim/"
             className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
           >
             Home
           </Link>
           <Link
-            to="/page1"
+            to="/cpuvsim/pages/page1"
             className="text-blue-600 dark:text-blue-400 hover:text-blue-900 dark:hover:text-white"
           >
             Ebook
           </Link>
           <Link
-            to="/about"
+            to="/cpuvsim/components/about"
             className="text-green-600 dark:text-green-400 hover:text-green-900 dark:hover:text-white"
           >
             About

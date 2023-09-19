@@ -1,6 +1,6 @@
 import './App.css'
-import Footer from './components/Footer'
-import Header from './components/Header'
+import Footer from './cpuvsim/components/Footer'
+import Header from './cpuvsim/components/Header'
 import AppRoutes from './Routes'
 
 const App = () => {
