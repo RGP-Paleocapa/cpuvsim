@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import useDocumentMetadata from '../components/UseDocumentMetadata';
 
 type Container = {
   id: string;
@@ -41,6 +42,8 @@ const Page1: React.FC = () => {
     e.preventDefault();
   };
 
+  useDocumentMetadata('Page 1 - My App', 'This is the first page.');
+
   return (
     <div className="container mx-auto py-8 px-4 sm:px-6 lg:px-8">
       <h1 className="text-3xl md:text-4xl lg:text-5xl text-center mb-6 text-gray-800 dark:text-white">
@@ -62,13 +65,13 @@ const Page1: React.FC = () => {
       </div>
       <div className="mt-8 text-center">
         <Link
-          to="/"
+          to="/cpuvsim/"
           className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white inline-block mr-4"
         >
           Previous Page
         </Link>
         <Link
-          to="/page2"
+          to="/cpuvsim/page2"
           className="text-blue-600 dark:text-blue-400 hover:text-blue-900 dark:hover:text-white inline-block"
         >
           Next Page

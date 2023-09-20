@@ -1,4 +1,8 @@
+import useDocumentMetadata from "./UseDocumentMetadata";
+
 const About = () => {
+  useDocumentMetadata('About - My App', 'This is the information page.');
+
     return (
       <div className="container mx-auto py-8 px-4 sm:px-6 lg:px-8">
         <h1 className="text-3xl md:text-4xl lg:text-5xl text-center mb-6 text-gray-800 dark:text-white">

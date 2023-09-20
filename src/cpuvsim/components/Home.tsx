@@ -1,4 +1,5 @@
 import { FaArrowDown } from 'react-icons/fa';
+import useDocumentMetadata from './UseDocumentMetadata';
 
 const Home = () => {
     const handleScroll = () => {
@@ -11,6 +12,8 @@ const Home = () => {
             });
         }
     };
+
+    useDocumentMetadata('HomePage', 'This is the main page.');
 
     return (
         <>
@@ -26,7 +29,7 @@ const Home = () => {
                     className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg text-lg"
                     onClick={handleScroll}
                 >
-                    Scroll down <FaArrowDown className="inline-block ml-2" />
+                    Discover <FaArrowDown className="inline-block ml-2" />
                 </a>
             </div>
 
