@@ -41,7 +41,7 @@ const ThemeSwitcher = () => {
     return (
         <button
         className={`text-xl p-2 rounded-full ${
-            theme === 'dark' ? 'bg-gray-800 text-white' : 'bg-white text-gray-800'
+            theme === 'dark' ? 'bg-gray text-white' : 'bg-white text-gray-800'
         }`}
         onClick={handleThemeSwitch}
         >

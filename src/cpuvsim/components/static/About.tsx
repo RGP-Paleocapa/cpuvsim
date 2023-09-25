@@ -1,4 +1,4 @@
-import useDocumentMetadata from "./UseDocumentMetadata";
+import useDocumentMetadata from "../UseDocumentMetadata";
 
 const About = () => {
   useDocumentMetadata('About - My App', 'This is the information page.');

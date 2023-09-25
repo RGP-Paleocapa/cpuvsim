@@ -1,7 +1,7 @@
 // useDocumentMetadata.ts
 import { useEffect } from 'react';
 
-function useDocumentMetadata(title: string, description: string) {
+const useDocumentMetadata = (title: string, description: string) => {
   useEffect(() => {
     document.title = title;
     document.querySelector('meta[name="description"]')?.setAttribute('content', description);

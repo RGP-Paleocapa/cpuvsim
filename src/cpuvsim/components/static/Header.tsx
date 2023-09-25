@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import ThemeSwitcher from '../ThemeSwitcher';
+import LanguageSwitcher from '../LanguageSwitcher';
 
 function Header() {
   return (
@@ -10,7 +11,7 @@ function Header() {
             Your Logo
           </Link>
         </div>
-        <div className="md:flex space-x-4 items-center"> {/* Center items vertically */}
+        <div className="md:flex space-x-4 items-center">
           <Link
             to="/cpuvsim/"
             className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
@@ -30,7 +31,7 @@ function Header() {
             About
           </Link>
           <ThemeSwitcher />
-          {/* <MenuSvg /> */}
+          <LanguageSwitcher />
         </div>
       </div>
     </nav>

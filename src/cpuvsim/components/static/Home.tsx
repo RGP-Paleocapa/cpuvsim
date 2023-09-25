@@ -1,5 +1,6 @@
 import { FaArrowDown } from 'react-icons/fa';
-import useDocumentMetadata from './UseDocumentMetadata';
+import useDocumentMetadata from '../UseDocumentMetadata';
+import { useTranslation } from 'react-i18next';
 
 const Home = () => {
     const handleScroll = () => {
@@ -13,16 +14,17 @@ const Home = () => {
         }
     };
 
+    const { t } = useTranslation('home');
     useDocumentMetadata('HomePage', 'This is the main page.');
 
     return (
         <>
             <div className="flex flex-col items-center justify-center h-screen">
                 <h1 className="text-3xl md:text-4xl lg:text-5xl text-center mb-6 text-gray-800 dark:text-white">
-                    A gentle introduction to the Central Processing Unit and Assembly language
+                    {t('title')}
                 </h1>
                 <p className="text-lg text-gray-600 dark:text-gray-400 text-center mb-8">
-                    Based on (and in support of) the complementary Educational CPU Visual Simulator
+                    {t('description')}
                 </p>
                 <a
                     href="#discover-features"

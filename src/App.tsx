@@ -2,6 +2,7 @@ import './App.css'
 import Footer from './cpuvsim/components/static/Footer'
 import Header from './cpuvsim/components/static/Header'
 import AppRoutes from './Routes'
+import './i18n'
 
 const App = () => {
   return (
