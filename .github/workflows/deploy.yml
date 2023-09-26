@@ -23,11 +23,14 @@ jobs:
       - name: Build project
         run: npm run build
 
+      - name: Copy production-ready build files to artifact directory
+        run: cp -r ./dist/* $GITHUB_WORKSPACE/dist/
+
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v3
         with:
           name: production-files
-          path: ./dist
+          path: $GITHUB_WORKSPACE/dist
 
   deploy:
     name: Deploy
@@ -40,10 +43,13 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: production-files
-          path: ./dist
+          path: $GITHUB_WORKSPACE/dist
+
+      - name: Copy Locales to Deployment Directory
+        run: cp -r ./public/locales $GITHUB_WORKSPACE/dist/locales
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          publish_dir: $GITHUB_WORKSPACE/dist
