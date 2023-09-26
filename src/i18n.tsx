@@ -13,8 +13,7 @@ i18n
     debug: false,
     saveMissing: false,
     backend: {
-      loadPath: 'https://github.com/RGP-Paleocapa/cpuvsim/blob/main/public/locales/{{lng}}/{{ns}}.json',
-      // Use the correct GitHub URL for your JSON files
+      loadPath: '/locales/{{lng}}/{{ns}}.json',
     },
     ns: ['header', 'footer', 'page1', 'page2'], // Use an array for namespaces
     defaultNS: 'page2', // Set the default namespace
