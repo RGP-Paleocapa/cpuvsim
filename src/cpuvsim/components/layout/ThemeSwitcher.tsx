@@ -2,20 +2,23 @@ import { useEffect, useState } from "react";
 import { FaSun, FaMoon } from 'react-icons/fa';
 
 const ThemeSwitcher = () => {
-    const [theme, setTheme] = useState<'dark' | 'light' | null>(null);
+    const [theme, setTheme] = useState<'dark' | 'light'>(localStorage.getItem('theme') as 'dark' | 'light' || 'light');
 
     useEffect(() => {
-        // Check the initial system theme
-        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        // Check the initial theme, either from localStorage or system preference
+        const storedTheme = localStorage.getItem('theme') as 'dark' | 'light';
+        if (storedTheme) {
+            setTheme(storedTheme);
+        } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
             setTheme('dark');
-        } else {
-            setTheme('light');
         }
 
         // Listen for changes in the system theme
         const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
         const themeChangeListener = (e: MediaQueryListEvent) => {
-            setTheme(e.matches ? 'dark' : 'light');
+            const newTheme = e.matches ? 'dark' : 'light';
+            setTheme(newTheme);
+            localStorage.setItem('theme', newTheme);
         };
 
         mediaQuery.addEventListener('change', themeChangeListener);
@@ -32,10 +35,14 @@ const ThemeSwitcher = () => {
         } else {
             document.documentElement.classList.remove('dark');
         }
+        // Store the user's preference in localStorage
+        localStorage.setItem('theme', theme);
     }, [theme]);
 
     const handleThemeSwitch = () => {
-        setTheme(theme === 'dark' ? 'light' : 'dark');
+        const newTheme = theme === 'dark' ? 'light' : 'dark';
+        setTheme(newTheme);
+        localStorage.setItem('theme', newTheme);
     }
 
     return (

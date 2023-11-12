@@ -1,5 +1,5 @@
 import { FaArrowDown } from 'react-icons/fa';
-import useDocumentMetadata from '../UseDocumentMetadata';
+import useDocumentMetadata from '@common/UseDocumentMetadata';
 import { useTranslation } from 'react-i18next';
 
 const Home = () => {
@@ -44,16 +44,16 @@ const Home = () => {
                 <h2 className="text-3xl md:text-4xl lg:text-5xl text-gray-800 dark:text-white">
                     Discover Our Features
                 </h2>
-                <p className="text-lg text-gray-600 dark:text-gray-400 text-left mt-6">
+                <p className="home-discovery-text">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                     Nullam faucibus, risus non condimentum pretium, urna urna 
                     posuere mauris.
                 </p>
-                <p className="text-lg text-gray-600 dark:text-gray-400 text-left mt-6">
+                <p className="home-discovery-text">
                     Vestibulum fringilla nec leo et cursus. Integer auctor ante 
                     a orci eleifend, et blandit metus rhoncus.
                 </p>
-                <p className="text-lg text-gray-600 dark:text-gray-400 text-left mt-6">
+                <p className="home-discovery-text">
                     Aliquam a orci at nulla accumsan consectetur. Curabitur 
                     ullamcorper bibendum metus, id posuere nulla rhoncus sed.
                 </p>

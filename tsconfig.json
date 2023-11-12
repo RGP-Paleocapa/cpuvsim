@@ -18,7 +18,21 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+
+    /* Alias */
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@components/*": ["./src/cpuvsim/components/*"],
+      "@common/*": ["./src/cpuvsim/components/common/*"],
+      "@errors/*": ["./src/cpuvsim/components/errors/*"],
+      "@util/*": ["./src/cpuvsim/util/*"],
+      "@hooks/*": ["./src/cpuvsim/hooks/*"],
+      "@pages/*": ["./src/cpuvsim/pages/*"],
+      "@assets/*": ["./src/cpuvsim/assets/*"],
+      "@public/*": ["./public/*"],
+    },
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
