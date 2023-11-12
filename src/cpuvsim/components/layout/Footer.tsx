@@ -1,7 +1,4 @@
-import { useTranslation } from "react-i18next";
-
 const Footer = () => {
-  const { t } = useTranslation('footer');
   const currentYear = new Date().getFullYear();
   const startYear = 2023;
 
@@ -11,7 +8,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center sm:text-left">
           {/* About Section */}
           <div>
-            <h4 className="font-bold text-lg mb-2">{t('about')}</h4>
+            <h4 className="font-bold text-lg mb-2">About</h4>
             <p>Insights into assembler and programming concepts.</p>
           </div>
 
