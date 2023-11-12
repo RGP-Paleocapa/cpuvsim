@@ -1,4 +1,4 @@
-import React, { useRef, Children, cloneElement, useState } from 'react';
+import React, { useRef, cloneElement } from 'react';
 
 interface ImageSliderProps {
   children: React.ReactNode;
@@ -6,7 +6,6 @@ interface ImageSliderProps {
 
 const ImageSlider: React.FC<ImageSliderProps> = ({ children }) => {
   const sliderRef = useRef<HTMLDivElement | null>(null);
-  const [scrollPosition, setScrollPosition] = useState(0);
 
   const scroll = (direction: 'prev' | 'next') => {
     const container = sliderRef.current;
@@ -23,8 +22,6 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ children }) => {
         } else {
           container.scrollLeft -= slideWidth * numVisibleSlides;
         }
-
-        setScrollPosition(container.scrollLeft);
       }
     }
   };
