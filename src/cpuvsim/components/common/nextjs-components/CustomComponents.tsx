@@ -20,35 +20,29 @@ const SectionTitle = ({ children }: { children: ReactNode }) => (
 
 // Max Width Container Component
 const MaxWidthContainer = ({ children, bgColor = 'bg-white' }: { children: React.ReactNode; bgColor?: string }) => (
-  <div className={`max-w-4xl mx-auto px-4 rounded-lg ${bgColor}`}>
+  <div className={`max-w-4xl mx-auto p-4 rounded-lg ${bgColor}`}>
     {children}
   </div>
 );
 
 // Text Component
 const Text = ({ children, textSize }: { children: ReactNode; textSize?: string }) => (
-    <p className={`${textSize ? textSize : 'text-base'} responsive-text`}>{children}</p>
+    <p className={`${textSize ? textSize : 'text-base'} responsive-text dark:text-gray-700`}>{children}</p>
 );
   
 // Two Divs Inline Component
-// const InlineDivs = ({ children }: { children: React.ReactNode[] }) => (
-//   <div className="flex flex-col sm:flex-row justify-center items-stretch py-5 space-y-4 sm:space-y-0">
-//     {children.map((child, index) => (
-//       <div key={index} className="w-full sm:w-1/2 px-4 py-2 bg-gray-300 dark:bg-gray-700 flex flex-col justify-center">
-//         {child}
-//       </div>
-//     ))}
-//   </div>
-// );
-const InlineDivs = ({ children }: { children: React.ReactNode[] }) => (
+const InlineDivs = ({ children, centerStart = false }: { children: React.ReactNode[], centerStart?: boolean }) => (
   <div className="flex flex-col md:flex-row justify-center items-stretch">
     {children.map((child, index) => (
-      <div key={index} className="w-full md:w-1/2 flex flex-col justify-center py-4">
+      <div 
+        key={index} 
+        className={`w-full md:w-1/2 flex flex-col ${centerStart ? "justify-start" : "justify-center"} py-4 ${index % 2 === 0 ? 'bg-green-500' : 'bg-red-500'}`}>
         {child}
       </div>
     ))}
   </div>
 );
+
 
 // Description Component
 const Description = ({ children, alignCenter = false }: { children: React.ReactNode, alignCenter?: boolean }) => (
@@ -58,8 +52,13 @@ const Description = ({ children, alignCenter = false }: { children: React.ReactN
 );
 
 // H3 Component
+const H2 = ({ children }: { children: ReactNode }) => (
+    <h2 className="mb-4 mt-10 text-xl font-bold leading-7 text-gray-900 dark:text-gray-200">{children}</h2>
+);
+
+// H3 Component
 const H3 = ({ children }: { children: ReactNode }) => (
-    <h3 className="mb-4 mt-10 text-lg font-bold leading-7 text-gray-900 dark:text-gray-200">{children}</h3>
+    <h3 className="mb-4 text-lg font-bold leading-7 text-gray-900 dark:text-gray-200">{children}</h3>
 );
 
 // H4 Component
@@ -78,7 +77,7 @@ const Ol = ({ children, color }: { children: ReactNode; color?: string }) => (
 );
 
 const Figure = ({ children }: { children: ReactNode }) => (
-  <figure className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 pt-10 justify-items-center">{children}</figure>
+  <figure className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 pt-10 justify-items-center">{children}</figure>
 );
 
 
@@ -92,6 +91,7 @@ export {
     Description,
     Figure,
     // Image,
+    H2,
     H3,
     H4,
     Ul,

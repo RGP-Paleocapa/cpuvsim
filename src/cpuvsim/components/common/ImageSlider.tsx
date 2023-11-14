@@ -52,7 +52,7 @@ const CarouselSlider = ({ images }: { images: ImageObject[] }) => {
             <FaArrowRight />
           </button>
         </div>
-      <p className="ml-4">This carousel component is part of the Flowbite component library.</p>
+      {/* <p className="ml-4">This carousel component is part of the Flowbite component library.</p> */}
     </div>
   );
 };

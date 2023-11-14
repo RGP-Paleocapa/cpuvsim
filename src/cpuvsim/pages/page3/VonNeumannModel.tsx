@@ -1,5 +1,5 @@
 import images from "@/cpuvsim/assets/images/pages/page3";
-import { EBookPage, Section, SectionTitle, InlineDivs, Ul, H3, Text, MaxWidthContainer, Description } from "@common/nextjs-components/CustomComponents";
+import { EBookPage, Section, SectionTitle, InlineDivs, Ul, H3, Text, MaxWidthContainer, Description, H2 } from "@common/nextjs-components/CustomComponents";
 import References from "@common/nextjs-components/Refrences";
 import SwitchPage from "@common/nextjs-components/SwitchPage";
 
@@ -64,7 +64,7 @@ const Page3 = () => {
         </Section>
 
         <Section>
-          <H3>Central Processing Unit  (CPU)</H3>
+          <H2>Central Processing Unit  (CPU)</H2>
           <Text>
             The Central Processing Unit (or processor), illustrated in the picture on the right,  is the core element of this model.
             It is the hearth of a computer and is responsible for the execution of every computer instruction. It is constituted by
@@ -139,7 +139,7 @@ const Page3 = () => {
         </Section>
 
         <Section>
-          <H3>I/O devices</H3>
+          <H2>I/O devices</H2>
           <Text>
             The Input/Output devices, controlled and coordinated by the processor, enable the interaction between the computer
             and its external environment, including the users.
@@ -164,7 +164,7 @@ const Page3 = () => {
         </Section>
 
         <Section>
-          <H3>Bus</H3>
+          <H2>Bus</H2>
           <Text>
             The bus is a shared communication channel interconnecting the different components of the architecture,
             permitting the transfer of the necessary information, according to the operation to be performed.
@@ -203,9 +203,9 @@ const Page3 = () => {
         </Section>
 
         <Section>
-          <H3>
+          <H2>
             Memory
-          </H3>
+          </H2>
           <Text>
             Another fundamental component in the Von Neumann model is the memory, where both data and instructions are stored.
             This type of memory is called Primary or Main Memory.

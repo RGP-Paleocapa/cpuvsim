@@ -106,12 +106,12 @@ const Page7 = () => {
                     <hr />
                 </SectionTitle>
                 <InlineDivs>
-                    <div className='flex flex-col items-center justify-center space-y-4'>
+                    <div className='flex flex-col items-center justify-center space-t-4'>
                         <img src="https://via.placeholder.com/300" alt="default" className="img-center" />
                         <img src="https://via.placeholder.com/300" alt="default" className="img-center" />
                         <img src="https://via.placeholder.com/300" alt="default" className="img-center" />
                     </div>
-                    <div>
+                    <div className='flex flex-col items-center justify-center space-y-6 m-6 xl:m-28'>
                         <MaxWidthContainer>
                             <Text>
                                 W, X, AND Y are initialized (a  numerical value is assigned to them).
@@ -158,12 +158,12 @@ const Page7 = () => {
                     <hr />
                 </SectionTitle>
                 <InlineDivs>
-                    <div className='flex flex-col items-center justify-center space-y-4'>
+                    <div className='flex flex-col items-center justify-center space-t-4'>
                         <img src="https://via.placeholder.com/300" alt="default" className="img-center" />
                         <img src="https://via.placeholder.com/300" alt="default" className="img-center" />
                         <img src="https://via.placeholder.com/300" alt="default" className="img-center" />
                     </div>
-                    <div>
+                    <div className='flex flex-col items-center justify-center space-y-6 m-6 xl:m-28'>
                         <MaxWidthContainer>
                             <Text>
                                 Initially Y=10, W=2, and X=0; 
@@ -207,12 +207,12 @@ const Page7 = () => {
                     <hr />
                 </SectionTitle>
                 <InlineDivs>
-                    <div className='flex flex-col items-center justify-center space-y-4'>
+                    <div className='flex flex-col items-center justify-center space-t-4'>
                         <img src="https://via.placeholder.com/300" alt="default" className="img-center" />
                         <img src="https://via.placeholder.com/300" alt="default" className="img-center" />
                         <img src="https://via.placeholder.com/300" alt="default" className="img-center" />
                     </div>
-                    <div>
+                    <div className='flex flex-col items-center justify-center space-y-6 m-6 xl:m-28'>
                         <MaxWidthContainer>
                             <Text>
                                 Initially COUNT=0;
@@ -246,12 +246,12 @@ const Page7 = () => {
                     <hr />
                 </SectionTitle>
                 <InlineDivs>
-                    <div className='flex flex-col items-center justify-center space-y-4'>
+                    <div className='flex flex-col items-center justify-center space-t-4'>
                         <img src="https://via.placeholder.com/300" alt="default" className="img-center" />
                         <img src="https://via.placeholder.com/300" alt="default" className="img-center" />
                         <img src="https://via.placeholder.com/300" alt="default" className="img-center" />
                     </div>
-                    <div>
+                    <div className='flex flex-col items-center justify-center space-y-6 m-6 xl:m-28'>
                         <MaxWidthContainer>
                             <Text>
                                 Initially X=8, Y=0, and Z=1; 
@@ -304,12 +304,12 @@ const Page7 = () => {
                     <hr />
                 </SectionTitle>
                 <InlineDivs>
-                    <div className='flex flex-col items-center justify-center space-y-4'>
+                    <div className='flex flex-col items-center justify-center space-t-4'>
                         <img src="https://via.placeholder.com/300" alt="default" className="img-center" />
                         <img src="https://via.placeholder.com/300" alt="default" className="img-center" />
                         <img src="https://via.placeholder.com/300" alt="default" className="img-center" />
                     </div>
-                    <div>
+                    <div className='flex flex-col items-center justify-center space-y-6 m-6 xl:m-28'>
                         <MaxWidthContainer>
                             <Text>
                                 Initially MAX=5,  COUNT=0, SUM=0 
@@ -355,12 +355,12 @@ const Page7 = () => {
                     <hr />
                 </SectionTitle>
                 <InlineDivs>
-                    <div className='flex flex-col items-center justify-center space-y-4'>
+                    <div className='flex flex-col items-center justify-center space-t-4'>
                         <img src="https://via.placeholder.com/300" alt="default" className="img-center" />
                         <img src="https://via.placeholder.com/300" alt="default" className="img-center" />
                         <img src="https://via.placeholder.com/300" alt="default" className="img-center" />
                     </div>
-                    <div>
+                    <div className='flex flex-col items-center justify-center space-y-6 m-6 xl:m-28'>
                         <MaxWidthContainer>
                             <Text>
                                 Initially COUNT=0.

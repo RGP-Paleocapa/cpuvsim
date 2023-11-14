@@ -14,4 +14,27 @@
     .img-center {
         @apply block mx-auto my-4;
     }
+
+
+
+
+
+    .table {
+        @apply w-full text-sm text-left text-gray-500 dark:text-gray-400;
+    }
+
+    .thead {
+        @apply text-xs text-center text-gray-700 uppercase bg-gray-300 dark:bg-gray-700 dark:text-gray-400;
+    }
+
+    .tbody {
+        @apply bg-slate-500 text-gray-50;
+    }
 }   
+
+@layer base {
+    td {
+        /* padding: 1rem; */
+        border: 1px solid #ddd;
+    }
+}

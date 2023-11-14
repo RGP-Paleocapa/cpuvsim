@@ -93,9 +93,9 @@ const Page1 = () => {
           At the macroscopic level, this generic architecture can be schematized as in the following diagrams.
         </Text>
 
-        <div className="flex flex-wrap justify-center lg:justify-between items-center py-8 sm:gap-y-8">
-          <img src={images.architecture1.src} alt={images.architecture1.alt} className="w-auto h-64 object-cover mb-4 sm:mb-0" />
-          <img src={images.architecture2.src} alt={images.architecture2.alt} className="w-auto h-64 object-cover" />
+        <div className="flex flex-wrap justify-center lg:justify-evenly items-center py-8 sm:gap-y-8">
+          <img src={images.architecture1.src} alt={images.architecture1.alt} className="w-auto h-64 object-contain mb-4 sm:mb-0" />
+          <img src={images.architecture2.src} alt={images.architecture2.alt} className="w-auto h-64 object-contain" />
         </div>
 
         <div>
@@ -117,20 +117,20 @@ const Page1 = () => {
         </Text>
         <Figure>
           <div>
-            <img src={images.eniac.src} alt={images.eniac.alt} className="w-full h-64" />
+            <img src={images.eniac.src} alt={images.eniac.alt} className="w-full h-96" />
             <Description>
             The ENIAC was the first computing system, designed in the early 1940s, based on a primitive concept of a Stored Program Computer. Here the instructions, or programs, were stored as a combination of paper cards, plug-board wirings, and mechanical switches.
             </Description>
           </div>
           <div>
-            <img src={images.modernComputer.src} alt={images.modernComputer.alt} className="w-full h-64" />
+            <img src={images.modernComputer.src} alt={images.modernComputer.alt} className="w-full h-96" />
               <Description>
                 An example of a modern stored-program machine is the personal computer. In these devices, it is possible to easily install/uninstall and execute different applications, in order to support the most disparate functions.
               </Description>
             
           </div>
           <div>
-            <img src={images.specialPurposeComputer.src} alt={images.specialPurposeComputer.src} className="w-full h-64" />
+            <img src={images.specialPurposeComputer.src} alt={images.specialPurposeComputer.src} className="w-full h-96" />
             <Description>
                 “Special-purpose computers” are computers that have fixed, preinstalled programs, hence predefined supported functions (e.g., medical appliances, calculators, traffic lights...). Yet, they have the same standard architecture as the other type of computers.
             </Description>

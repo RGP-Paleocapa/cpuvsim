@@ -1,3 +1,4 @@
+import Table from "@/cpuvsim/components/common/Table";
 import { Description, EBookPage, Section, SectionTitle, Text, Ul } from "@common/nextjs-components/CustomComponents";
 import References from "@common/nextjs-components/Refrences";
 import SwitchPage from "@common/nextjs-components/SwitchPage";
@@ -27,6 +28,43 @@ const Page5 = () => {
     },
   ];
 
+  const bodyRows = [
+    ["00000001 | 00001000", "ADD 8", "Add content of memory cell number 8 into the Accumulator"],
+    ["00010001 | 00001000", "ADD #8", "Add number 8 into the Accumulator"],
+    ["00000001 | 00001000", "ADD Y", "Add content of memory cell tagged as Y into the Accumulator"],
+    ];
+
+  const dataFlowRows = [
+    ["LOD X", "00000101", "Load content of Memory Location X (or number #X) into the Accumulator."],
+    ["LOD #X", "00010101", "Load content of Memory Location X (or number #X) into the Accumulator."],
+    ["STO Y", "00000110", "Store the value of the Accumulator into Memory Location Y."],
+  ];
+  const controlFlowRows = [
+    ["JMP P", "00001101", "Unconditional jump to the instruction at location P."],
+    ["JZ P", "00001110", "Jump on Zero: if Flag Z is set, go to instruction number P, otherwise go to the next instruction."],
+    ["JNZ P", "00001100", "Jump on Not Zero: if Flag Z is cleared, go to instruction number P, otherwise, go to the next instruction."],
+    ["JN P", "00000111", "Jump on Negative: if Flag N is set, go to instruction number P, otherwise go to the next instruction."],
+    ["JNN P", "00001000", "Jump on Not Negative: if Flag N is cleared, go to instruction number P, otherwise go to the next instruction."],
+    ["NOP", "00000000", "No operation, go to next instruction."],
+    ["HLT", "00001111", "Halt execution."],
+  ];
+  const arithmeticLogicRows = [
+    ["ADD X", "00000001", "Add content of Memory Location X (or number #X) to the Accumulator. Flags are updated."],
+    ["ADD #X", "00010001", "Add content of Memory Location X (or number #X) to the Accumulator. Flags are updated."],
+    ["SUB X", "00000010", "Subtract content of Memory Location X (or number #X) from the Accumulator. Flags are updated."],
+    ["SUB #X", "00010010", "Subtract content of Memory Location X (or number #X) from the Accumulator. Flags are updated."],
+    ["MUL X", "00000011", "Multiply the Accumulator by the content of Memory Location X (or number #X). Flags are updated."],
+    ["MUL #X", "00010011", "Multiply the Accumulator by the content of Memory Location X (or number #X). Flags are updated."],
+    ["DIV X", "00000100", "Divide the Accumulator by the content of Memory Location X (or number #X). Flags are updated."],
+    ["DIV #X", "00010100", "Divide the Accumulator by the content of Memory Location X (or number #X). Flags are updated."],
+    ["AND X", "00001001", "Bitwise AND between the Accumulator and the content of Memory Location X (or number #X). Flags are updated."],
+    ["AND #X", "00011001", "Bitwise AND between the Accumulator and the content of Memory Location X (or number #X). Flags are updated."],
+    ["NOT X", "00001010", "Bitwise NOT of the content of Memory Location X (or number #X). The result is stored in the Accumulator."],
+    ["NOT #X", "00011010", "Bitwise NOT of the content of Memory Location X (or number #X). The result is stored in the Accumulator."],
+    ["CMP X", "00001011", "Subtract content of Memory Location X (or number #X) from the Accumulator. Flags are updated, but the content of the Accumulator is not modified."],
+    ["CMP #X", "00011011", "Subtract content of Memory Location X (or number #X) from the Accumulator. Flags are updated, but the content of the Accumulator is not modified."],
+  ];      
+
   return (
     <EBookPage>
         <Section>
@@ -38,7 +76,9 @@ const Page5 = () => {
             <br /><br />
             Here are some examples from the simulator: 
           </Text>
-          <img src="https://via.placeholder.com/300" alt="default" className="img-center" />
+          <div className="mt-6 xl:mx-40">
+            <Table headerTitles={["Binary code", "Mnemonic code", "Description"]} bodyRows={bodyRows} />
+          </div>
         </Section>
 
         <Section>
@@ -81,7 +121,11 @@ const Page5 = () => {
           <Text>
             The following table reports the full set of instructions supported by the simulator, organized according to the above mentioned categories. For each instruction are reported: the opcode binary code in machine language, its assembly (mnemonic) equivalent, and a short informal description.
           </Text>
-          <img src="https://via.placeholder.com/300" alt="default" className="img-center" />
+          <div className="mt-6 xl:mx-40">
+            <Table headerTitles={["Data Flow"]} bodyRows={dataFlowRows} />
+            <Table headerTitles={["Control Flow"]} bodyRows={controlFlowRows} />
+            <Table headerTitles={["Arithmetic-logic"]} bodyRows={arithmeticLogicRows} />
+          </div>
         </Section>
 
       <References references={references} />

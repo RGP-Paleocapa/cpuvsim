@@ -1,4 +1,5 @@
 import { images } from "@/cpuvsim/assets/images/pages/page2";
+import Table from "@/cpuvsim/components/common/Table";
 import { Description, EBookPage, H3, InlineDivs, MaxWidthContainer, Section, SectionTitle, Text, Ul } from "@common/nextjs-components/CustomComponents";
 import References from "@common/nextjs-components/Refrences";
 import SwitchPage from "@common/nextjs-components/SwitchPage";
@@ -15,6 +16,20 @@ const Page2 = () => {
           link: 'https://ie.nitk.ac.in/blog/2020/01/19/algorithms-for-adjusting-brightness-and-contrast-of-an-image/',
         },
     ];
+
+    const textTable = [
+        ["0100 0001", "A", "0110 0001", "a"],
+        ["0100 0010", "B", "0110 0010", "b"],
+        ["0100 0011", "C", "0110 0011", "c"],
+        ["0100 0100", "D", "0110 0100", "d"],
+      ];
+
+    const instructionTable = [
+    ["00000000 | 00001000", "Add content of memory cell number 8 into the Accumulator"],
+    ["00000101 | 00000100", "Store the value of the Accumulator into Memory Location X"],
+    ["00001100 | 00000111", "Unconditional jump to the instruction at location P"],
+    ];
+
 
   return (
     <EBookPage>
@@ -50,7 +65,7 @@ const Page2 = () => {
         </Section>
 
         <Section>
-            <InlineDivs>
+            <InlineDivs centerStart>
                 <MaxWidthContainer>
                     <H3>Text</H3>
                     <Text>
@@ -63,7 +78,7 @@ const Page2 = () => {
                     
                 </MaxWidthContainer>
                 <MaxWidthContainer>
-                    <img src="https://via.placeholder.com/300" alt="default" className="img-center" />
+                    <Table headerTitles={['Binary', 'Char', 'Binary', 'Char'] } bodyRows={textTable} />
                     <Description alignCenter>
                         A few examples of ASCII codes
                     </Description>
@@ -72,7 +87,7 @@ const Page2 = () => {
         </Section>
 
         <Section>
-            <InlineDivs>
+            <InlineDivs centerStart>
                 <MaxWidthContainer>
                     {/* First Image */}
                     <img src={images.image1.src} alt={images.image1.alt} className="img-center" />
@@ -100,7 +115,7 @@ const Page2 = () => {
         </Section>
 
         <Section>
-            <InlineDivs>
+            <InlineDivs centerStart>
                 <MaxWidthContainer>
                     <H3>Audio</H3>
                     <Text>
@@ -120,9 +135,9 @@ const Page2 = () => {
 
 
         <Section>
-            <InlineDivs>
+            <InlineDivs centerStart>
                 <MaxWidthContainer>
-                    <img src="https://via.placeholder.com/300" alt="default" className="img-center" />
+                    <Table headerTitles={['binary Code', 'description'] } bodyRows={instructionTable} />
                     <Description>
                         Three examples of operations common to many instruction sets
                     </Description>
