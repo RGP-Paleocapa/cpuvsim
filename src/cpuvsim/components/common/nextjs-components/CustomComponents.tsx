@@ -27,7 +27,7 @@ const MaxWidthContainer = ({ children, bgColor = 'bg-white' }: { children: React
 
 // Text Component
 const Text = ({ children, textSize }: { children: ReactNode; textSize?: string }) => (
-    <p className={`${textSize ? textSize : 'text-base'} responsive-text dark:text-gray-700`}>{children}</p>
+    <p className={`${textSize ? textSize : 'text-base'} responsive-text text-gray-700 dark:text-gray-400`}>{children}</p>
 );
   
 // Two Divs Inline Component
@@ -36,7 +36,7 @@ const InlineDivs = ({ children, centerStart = false }: { children: React.ReactNo
     {children.map((child, index) => (
       <div 
         key={index} 
-        className={`w-full md:w-1/2 flex flex-col ${centerStart ? "justify-start" : "justify-center"} py-4 ${index % 2 === 0 ? 'bg-green-500' : 'bg-red-500'}`}>
+        className={`w-full md:w-1/2 flex flex-col ${centerStart ? "justify-start" : "justify-center"} py-4 ${index % 2 === 0 ? 'bg-green-500 dark:bg-green-700' : 'bg-red-500 dark:bg-red-700'}`}>
         {child}
       </div>
     ))}
