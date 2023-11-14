@@ -1,5 +1,5 @@
 import images from "@/cpuvsim/assets/images/pages/page3";
-import { EBookPage, Section, SectionTitle, InlineDivs, Ul, H3, Text, MaxWidthContainer, Description, H2 } from "@common/nextjs-components/CustomComponents";
+import { EBookPage, Section, SectionTitle, InlineDivs, Ul, Text, MaxWidthContainer, Description, H2 } from "@common/nextjs-components/CustomComponents";
 import References from "@common/nextjs-components/Refrences";
 import SwitchPage from "@common/nextjs-components/SwitchPage";
 
