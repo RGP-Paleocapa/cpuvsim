@@ -1,6 +1,6 @@
 import images from '@assets/images/pages/page6';
-import { Description, EBookPage, Figure, H3, Section, SectionTitle, Text } from '@/cpuvsim/components/common/CustomComponents';
-import References from '@/cpuvsim/components/common/Refrences';
+import { Description, EBookPage, Figure, H3, Section, SectionTitle, Text } from '@common/CustomComponents';
+import References from '@common/Refrences';
 
 const Page6 = () => {
   const references = [

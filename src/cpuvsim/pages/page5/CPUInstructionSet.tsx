@@ -1,6 +1,6 @@
-import Table from "@/cpuvsim/components/common/Table";
-import { Description, EBookPage, Section, SectionTitle, Text, Ul } from "@/cpuvsim/components/common/CustomComponents";
-import References from "@/cpuvsim/components/common/Refrences";
+import Table from "@common/Table";
+import { Description, EBookPage, Section, SectionTitle, Text, Ul } from "@common/CustomComponents";
+import References from "@common/Refrences";
 
 const Page5 = () => {
   const references = [

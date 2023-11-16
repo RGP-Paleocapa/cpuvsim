@@ -1,7 +1,7 @@
-import { EBookPage, Text, SectionTitle, Section, Description, Figure } from "@/cpuvsim/components/common/CustomComponents";
-import Refrences from "@/cpuvsim/components/common/Refrences";
-import images from "@/cpuvsim/assets/images/pages/page1";
-import { ImageSlider } from "@/cpuvsim/components/common/images";
+import { EBookPage, Text, SectionTitle, Section, Description, Figure } from "@common/CustomComponents";
+import Refrences from "@common/Refrences";
+import images from "@assets/images/pages/page1";
+import { ImageSlider } from "@common/images";
 
 const Page1 = () => {
   const imageArray = Object.values(images).slice(0, 6);
@@ -78,6 +78,7 @@ const Page1 = () => {
         <SectionTitle>Examples of Computers</SectionTitle>
         <Text>Images slider...</Text>
         <ImageSlider images={imageArray} />
+        <Description alignCenter><b className="text-red-600">Click to zoom!</b></Description>
       </Section>
 
       <Section>

@@ -1,4 +1,4 @@
-import { EBookPage, Section, SectionTitle, H4, InlineDivs, H3, MaxWidthContainer, Text, Figure } from "@/cpuvsim/components/common/CustomComponents";
+import { EBookPage, Section, SectionTitle, H4, InlineDivs, H3, MaxWidthContainer, Text, Figure } from "@common/CustomComponents";
 
 const Page7 = () => {
 

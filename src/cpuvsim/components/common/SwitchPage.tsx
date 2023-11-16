@@ -24,15 +24,27 @@ const SwitchPage: React.FC<SwitchPageProps> = ({ currentPage }) => {
   const navigate = useNavigate();
 
   const handleNavigation = (link: string, position: 'top' | 'bottom') => {
-    navigate(link);
-    // We need to delay the scroll a bit to allow the page to render
-    setTimeout(() => {
-      if (position === 'top' || isFirstPage) {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      } else if (position === 'bottom') {
-        window.scrollTo(0, document.body.scrollHeight - 5);
-      }
-    }, 100);
+      navigate(link);
+      setTimeout(() => {
+        if (position === 'top' || isFirstPage) {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else if (position === 'bottom') {
+          // Determine offset based on screen width
+          let offsetFromBottom;
+          const screenWidth = window.innerWidth;
+
+          if (screenWidth > 1200) { // Large screens
+            offsetFromBottom = 300;
+          // } else if (screenWidth > 768) { // Medium screens
+          //   offsetFromBottom = 300;
+          } else { // Small screens
+            offsetFromBottom = 525;
+          }
+
+          const bottomPosition = document.documentElement.scrollHeight - window.innerHeight - offsetFromBottom;
+          window.scrollTo({ top: bottomPosition, behavior: 'smooth' });
+        }
+      }, 100);
   };
 
   return (

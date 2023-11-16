@@ -1,6 +1,6 @@
-import images from "@/cpuvsim/assets/images/pages/page4";
-import { EBookPage, InlineDivs, MaxWidthContainer, Ol, Section, SectionTitle, Text } from "@/cpuvsim/components/common/CustomComponents";
-import References from "@/cpuvsim/components/common/Refrences";
+import images from "@assets/images/pages/page4";
+import { EBookPage, InlineDivs, MaxWidthContainer, Ol, Section, SectionTitle, Text } from "@common/CustomComponents";
+import References from "@common/Refrences";
 
 const Page4 = () => {
     const references = [

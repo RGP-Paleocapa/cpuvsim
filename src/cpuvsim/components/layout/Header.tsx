@@ -38,7 +38,7 @@ const Header: React.FC = () => {
   }, [lastScrollY]);
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ease-in-out ${show ? 'top-0' : '-top-full'} bg-white dark:bg-slate-800 py-4 px-6 md:px-12 lg:px-16 xl:px-24 shadow-md dark:shadow-none`}>
+    <nav className={`fixed w-full z-50 transition-all duration-300 ease-in-out ${show ? 'top-0' : '-top-full'} bg-white dark:bg-slate-800 py-4 px-6 md:px-12 lg:px-16 xl:px-24 shadow-md`}>
       <div className="flex justify-between items-center">
         <div>
           <Link to={`${basePath}/`} className="text-2xl font-bold text-black dark:text-white" onClick={scrollToTop}>
