@@ -27,23 +27,28 @@ const SwitchPage: React.FC<SwitchPageProps> = ({ currentPage }) => {
     navigate(link);
     // We need to delay the scroll a bit to allow the page to render
     setTimeout(() => {
-      if (position === 'top') {
-        window.scrollTo(0, 0);
+      if (position === 'top' || isFirstPage) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       } else if (position === 'bottom') {
-        window.scrollTo(0, document.body.scrollHeight);
+        window.scrollTo(0, document.body.scrollHeight - 5);
       }
-    }, 0);
+    }, 100);
   };
 
   return (
     <div className="flex justify-between items-center mt-8">
-        <button
-          onClick={() => handleNavigation(`${basePath}${prevLink}`, 'bottom')}
-          className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white flex items-center"
-        >
-          <FontAwesomeIcon icon={faArrowLeft} />
-          <span className="ml-2">{prevText}</span>
-        </button>
+      <button
+        onClick={() => handleNavigation(`${basePath}${prevLink}`, 'bottom')}
+        className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white flex items-center"
+      >
+        <FontAwesomeIcon icon={faArrowLeft} />
+        <span className="ml-2">{prevText}</span>
+      </button>
+
+      {currentPage != lastPage && (
+        <p className='text-2xl text-gray-800 dark:text-gray-300'>Page {currentPage}</p>
+      )}
+
       {currentPage < lastPage && nextLink && (
         <button
           onClick={() => handleNavigation(`${basePath}${nextLink}`, 'top')}

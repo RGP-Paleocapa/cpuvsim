@@ -1,4 +1,4 @@
-import useDocumentMetadata from "../../common/UseDocumentMetadata";
+import useDocumentMetadata from "../../../hooks/useDocumentMetadata";
 
 const NotFound = () => {
     useDocumentMetadata('404 - Page not found', 'The page may not exist.');

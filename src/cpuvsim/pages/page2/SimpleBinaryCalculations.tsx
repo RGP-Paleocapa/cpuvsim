@@ -1,11 +1,9 @@
 import { images } from "@/cpuvsim/assets/images/pages/page2";
 import Table from "@/cpuvsim/components/common/Table";
-import { Description, EBookPage, H3, InlineDivs, MaxWidthContainer, Section, SectionTitle, Text, Ul } from "@common/nextjs-components/CustomComponents";
-import References from "@common/nextjs-components/Refrences";
-import SwitchPage from "@common/nextjs-components/SwitchPage";
+import { Description, EBookPage, H3, InlineDivs, MaxWidthContainer, Section, SectionTitle, Text, Ul } from "@/cpuvsim/components/common/CustomComponents";
+import References from "@/cpuvsim/components/common/Refrences";
 
 const Page2 = () => {
-    const currentPage = 2;
     const references = [
         {
           text: 'Binary arithmetic',
@@ -32,7 +30,7 @@ const Page2 = () => {
 
 
   return (
-    <EBookPage>
+    <EBookPage currentPage={2}>
         <Section>
             <SectionTitle>
                 Computers perform simple calculations on binary digis
@@ -198,9 +196,7 @@ const Page2 = () => {
                 </MaxWidthContainer>
             </InlineDivs>
         </Section>
-
         <References references={references} />
-        <SwitchPage currentPage={currentPage}/>
     </EBookPage>
   );
 }

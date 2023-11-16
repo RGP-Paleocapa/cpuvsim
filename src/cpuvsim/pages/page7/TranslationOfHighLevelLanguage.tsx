@@ -1,11 +1,9 @@
-import { EBookPage, Section, SectionTitle, H4, InlineDivs, H3, MaxWidthContainer, Text, Figure } from "@common/nextjs-components/CustomComponents";
-import SwitchPage from "@common/nextjs-components/SwitchPage";
+import { EBookPage, Section, SectionTitle, H4, InlineDivs, H3, MaxWidthContainer, Text, Figure } from "@/cpuvsim/components/common/CustomComponents";
 
 const Page7 = () => {
-    const currentPage = 7;
 
     return (
-        <EBookPage>
+        <EBookPage currentPage={7}>
             <Section>
                 <SectionTitle>
                     Translation of high-level language constructs to Assembly/Machine Language
@@ -144,7 +142,9 @@ const Page7 = () => {
                         </MaxWidthContainer>
                         <MaxWidthContainer>
                             <Text>
-                                Here the content of the RAM memory, as well as the memory addresses, are visualized in binary code. These are the values as they are physically stored and handled - but it is obviously more convenient, for a human, to use the equivalent mnemonics, working with the assembly language and a more familiar numbering base.
+                                Here the content of the RAM memory, as well as the memory addresses, are visualized in binary code.
+                                These are the values as they are physically stored and handled - but it is obviously more convenient,
+                                for a human, to use the equivalent mnemonics, working with the assembly language and a more familiar numbering base.
                             </Text>
                         </MaxWidthContainer>
                     </div>
@@ -168,7 +168,8 @@ const Page7 = () => {
                             <Text>
                                 Initially Y=10, W=2, and X=0; 
                                 <br /><br />
-                                3 is multiplied by the value of Y. The result is then assigned  to a temporary variable (TMP), and is subsequently added to the quotient of 2/W;
+                                3 is multiplied by the value of Y. The result is then assigned  to a temporary variable (TMP),
+                                and is subsequently added to the quotient of 2/W;
                                 <br />
                                 the result shall be: Y=10, W=2, TMP=30 and X=31.
                             </Text>
@@ -267,7 +268,8 @@ const Page7 = () => {
                                 <br />
                                 <strong>LOD X:</strong> the content of (memory cell of address) X is loaded into the accumulator.
                                 <br />
-                                <strong>CMP #3:</strong> X is compared to 3. That is, the operation 8-3 is performed, which sets the NZ Flag (without affecting the accumulator).
+                                <strong>CMP #3:</strong> X is compared to 3. That is, the operation 8-3 is performed,
+                                which sets the NZ Flag (without affecting the accumulator).
                                 <br />
                                 <strong>JNZ ELSE:</strong> as NZ is set, jumps to the (address corresponding to the) label “ELSE”.
                                 <br />
@@ -290,7 +292,8 @@ const Page7 = () => {
                         </MaxWidthContainer>
                         <MaxWidthContainer>
                             <Text>
-                                Here the content of the RAM memory, as well as the memory addresses, are visualized in binary code. These are the values as they are physically stored and handled - but it is obviously more convenient, for a human, to use the equivalent mnemonics, working with the assembly language and a more familiar numbering base.
+                                Here the content of the RAM memory, as well as the memory addresses, are visualized in binary code.
+                                These are the values as they are physically stored and handled - but it is obviously more convenient, for a human, to use the equivalent mnemonics, working with the assembly language and a more familiar numbering base.
                             </Text>
                         </MaxWidthContainer>
                     </div>
@@ -327,9 +330,12 @@ const Page7 = () => {
                                 <br />
                                 <strong>LOD COUNT:</strong> COUNT is loaded into the Accumulator.
                                 <br />
-                                <strong>CMP MAX:</strong> MAX is compared to the accumulator, setting the corresponding flags. The operation (0-5) is executed in the first cycle, the operation (5-5) in the last cycle.
+                                <strong>CMP MAX:</strong> MAX is compared to the accumulator, setting the corresponding flags.
+                                The operation (0-5) is executed in the first cycle, the operation (5-5) in the last cycle.
                                 <br />
-                                <strong>JZ ENDWHILE:</strong> flag Z is not set in the first cycle, hence the jump is not executed. The flag Z is only set in the last cycle, when the control jumps to the address corresponding to the label “END WHILE”, terminating the iterations.
+                                <strong>JZ ENDWHILE:</strong> flag Z is not set in the first cycle, hence the jump is not executed. 
+                                The flag Z is only set in the last cycle, when the control jumps to the address corresponding to the label “END WHILE”, 
+                                terminating the iterations.
                                 <br />
                                 <strong>ADD #1:</strong> 1 is added to the content of the accumulator.
                                 <br />
@@ -378,7 +384,8 @@ const Page7 = () => {
                                 <br />
                                 <strong>Lod I:</strong> the content of the memory cell of address I is loaded into the accumulator.
                                 <br />
-                                <strong>CMP #1:</strong> 1 is compared to the content of the accumulator. In case the accumulator contains 1, the operation (1-1) sets the Z flag.
+                                <strong>CMP #1:</strong> 1 is compared to the content of the accumulator. In case the accumulator contains 1, 
+                                the operation (1-1) sets the Z flag.
                                 <br />
                                 <strong>JZ ENDFOR:</strong> If the Z flag is set, jump to the address corresponding to the label “ENDFOR”.
                                 <br />
@@ -402,13 +409,9 @@ const Page7 = () => {
                     </div>
                 </InlineDivs>
             </Section>
-
             {/* <References references={references} /> */}
-
-            <SwitchPage currentPage={currentPage} />
         </EBookPage>
     );
-
 }
 
 export default Page7;

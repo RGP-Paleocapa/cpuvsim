@@ -1,11 +1,9 @@
 import images from "@/cpuvsim/assets/images/pages/page3";
-import { EBookPage, Section, SectionTitle, InlineDivs, Ul, Text, MaxWidthContainer, Description, H2 } from "@common/nextjs-components/CustomComponents";
-import References from "@common/nextjs-components/Refrences";
-import SwitchPage from "@common/nextjs-components/SwitchPage";
+import { EBookPage, Section, SectionTitle, InlineDivs, Ul, Text, MaxWidthContainer, Description, H2 } from "@/cpuvsim/components/common/CustomComponents";
+import InteractiveImage from "@/cpuvsim/components/common/images/InteractiveImage";
+import References from "@/cpuvsim/components/common/Refrences";
 
 const Page3 = () => {
-  const currentPage = 3;
-
   const references = [
       {
         text: 'Von Neumann architecture',
@@ -18,7 +16,7 @@ const Page3 = () => {
   ];
 
   return (
-      <EBookPage>
+      <EBookPage currentPage={3} >
         <Section>
             <SectionTitle>
               The Von Neumann architecture
@@ -196,8 +194,8 @@ const Page3 = () => {
               </Ul>
             </MaxWidthContainer>
             <MaxWidthContainer>
-              <img src={images.image4.src} alt={images.image4.alt} className="img-center min" />
-              <Description alignCenter><b className="text-red-600">Click to zoom!</b> // Da implementare</Description>
+              <InteractiveImage src={images.image4.src} alt={images.image4.alt} className="img-center min" />
+              <Description alignCenter><b className="text-red-600">Click to zoom!</b></Description>
             </MaxWidthContainer>
           </InlineDivs>
         </Section>
@@ -237,9 +235,7 @@ const Page3 = () => {
             and programs which are loaded in the main memory as needed.
           </Text>
         </Section>
-
         <References references={references} />
-        <SwitchPage currentPage={currentPage} />
     </EBookPage>
   );
 }

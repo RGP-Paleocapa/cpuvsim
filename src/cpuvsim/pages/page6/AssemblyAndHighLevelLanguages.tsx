@@ -1,10 +1,8 @@
 import images from '@assets/images/pages/page6';
-import { Description, EBookPage, Figure, H3, Section, SectionTitle, Text } from '@common/nextjs-components/CustomComponents';
-import References from '@common/nextjs-components/Refrences';
-import SwitchPage from '@common/nextjs-components/SwitchPage';
+import { Description, EBookPage, Figure, H3, Section, SectionTitle, Text } from '@/cpuvsim/components/common/CustomComponents';
+import References from '@/cpuvsim/components/common/Refrences';
 
 const Page6 = () => {
-  const currentPage = 6;
   const references = [
     {
       text: "Educational CPU Visual Simulator: Interpreting a Simplified but Representative Assembly Language",
@@ -29,7 +27,7 @@ const Page6 = () => {
   ];
 
     return (
-        <EBookPage>
+        <EBookPage currentPage={6}>
           <Section>
             <SectionTitle>
               Machine, assembly, and high-level languages
@@ -133,10 +131,8 @@ const Page6 = () => {
             and  how constructs such as <strong>For</strong>, <strong>While</strong>, and <strong>If</strong> are translated in assembler and binary code.
           </Text>
         </Section>
-
-            <References references={references} />
-            <SwitchPage currentPage={currentPage} />
-        </EBookPage>
+        <References references={references} />
+      </EBookPage>
     );
 }
 

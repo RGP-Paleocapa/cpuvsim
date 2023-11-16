@@ -1,10 +1,8 @@
 import Table from "@/cpuvsim/components/common/Table";
-import { Description, EBookPage, Section, SectionTitle, Text, Ul } from "@common/nextjs-components/CustomComponents";
-import References from "@common/nextjs-components/Refrences";
-import SwitchPage from "@common/nextjs-components/SwitchPage";
+import { Description, EBookPage, Section, SectionTitle, Text, Ul } from "@/cpuvsim/components/common/CustomComponents";
+import References from "@/cpuvsim/components/common/Refrences";
 
 const Page5 = () => {
-  const currentPage = 5;
   const references = [
     {
       text: 'Instruction set by Computer Hope (23/10/2021)',
@@ -27,13 +25,11 @@ const Page5 = () => {
       link: 'https://en.wikipedia.org/wiki/Arithmetic_logic_unit#Arithmetic_operations',
     },
   ];
-
   const bodyRows = [
     ["00000001 | 00001000", "ADD 8", "Add content of memory cell number 8 into the Accumulator"],
     ["00010001 | 00001000", "ADD #8", "Add number 8 into the Accumulator"],
     ["00000001 | 00001000", "ADD Y", "Add content of memory cell tagged as Y into the Accumulator"],
     ];
-
   const dataFlowRows = [
     ["LOD X", "00000101", "Load content of Memory Location X (or number #X) into the Accumulator."],
     ["LOD #X", "00010101", "Load content of Memory Location X (or number #X) into the Accumulator."],
@@ -66,7 +62,7 @@ const Page5 = () => {
   ];      
 
   return (
-    <EBookPage>
+    <EBookPage currentPage={5}>
         <Section>
           <SectionTitle>
             The CPU Instruction Set
@@ -127,9 +123,7 @@ const Page5 = () => {
             <Table headerTitles={["Arithmetic-logic"]} bodyRows={arithmeticLogicRows} />
           </div>
         </Section>
-
       <References references={references} />
-      <SwitchPage currentPage={currentPage} />
     </EBookPage>
   );
 }

@@ -2,6 +2,7 @@
 import Footer from '@components/layout/Footer'
 import Header from '@components/layout/Header'
 import AppRoutes from './Routes'
+import ScrollToTopButton from './cpuvsim/components/common/ScrollToTopButton'
 
 const App = () => {
   return (
@@ -11,6 +12,7 @@ const App = () => {
         <AppRoutes />
       </div>
       <Footer />
+      <ScrollToTopButton />
     </div>
   )
 }

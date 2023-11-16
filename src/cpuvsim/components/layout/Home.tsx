@@ -1,5 +1,5 @@
 import { FaArrowDown } from 'react-icons/fa';
-import useDocumentMetadata from '@common/UseDocumentMetadata';
+import useDocumentMetadata from '@/cpuvsim/hooks/useDocumentMetadata';
 
 const Home = () => {
     const handleScroll = () => {

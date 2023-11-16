@@ -1,10 +1,8 @@
 import images from "@/cpuvsim/assets/images/pages/page4";
-import { EBookPage, InlineDivs, MaxWidthContainer, Ol, Section, SectionTitle, Text } from "@common/nextjs-components/CustomComponents";
-import References from "@common/nextjs-components/Refrences";
-import SwitchPage from "@common/nextjs-components/SwitchPage";
+import { EBookPage, InlineDivs, MaxWidthContainer, Ol, Section, SectionTitle, Text } from "@/cpuvsim/components/common/CustomComponents";
+import References from "@/cpuvsim/components/common/Refrences";
 
 const Page4 = () => {
-    const currentPage = 4;
     const references = [
         {
           text: 'The fetch-decode-execute cycle',
@@ -13,7 +11,7 @@ const Page4 = () => {
     ];
 
     return (
-        <EBookPage>
+        <EBookPage currentPage={4}>
             <Section>
                 <SectionTitle>
                     The CPU Fetch/Decode/Execute cycle
@@ -74,7 +72,6 @@ const Page4 = () => {
             </Section>
 
             <References references={references} />
-            <SwitchPage currentPage={currentPage} />
         </EBookPage>
     );
 

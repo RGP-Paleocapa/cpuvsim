@@ -1,11 +1,9 @@
-import ImageSlider from "@common/ImageSlider";
-import { EBookPage, Text, SectionTitle, Section, Description, Figure } from "@common/nextjs-components/CustomComponents";
-import Refrences from "@common/nextjs-components/Refrences";
-import SwitchPage from "@common/nextjs-components/SwitchPage";
+import { EBookPage, Text, SectionTitle, Section, Description, Figure } from "@/cpuvsim/components/common/CustomComponents";
+import Refrences from "@/cpuvsim/components/common/Refrences";
 import images from "@/cpuvsim/assets/images/pages/page1";
+import { ImageSlider } from "@/cpuvsim/components/common/images";
 
 const Page1 = () => {
-  const currentPage = 1;
   const imageArray = Object.values(images).slice(0, 6);
   const gridData = [
     {
@@ -68,8 +66,7 @@ const Page1 = () => {
   ];      
 
   return (
-    <EBookPage>
-      <SwitchPage currentPage={currentPage}/>
+    <EBookPage currentPage={1} >
       <Section>
         <SectionTitle>Computers as General-Purpose Machines</SectionTitle>
         <Text>
@@ -158,10 +155,7 @@ const Page1 = () => {
           ))}
         </Figure>
       </Section>
-
       <Refrences references={references}/>
-
-      <SwitchPage currentPage={currentPage}/>
     </EBookPage>
   );
 }

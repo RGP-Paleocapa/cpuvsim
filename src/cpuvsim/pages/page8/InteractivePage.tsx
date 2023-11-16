@@ -1,18 +1,15 @@
-import { EBookPage, H4, InlineDivs, MaxWidthContainer, Ol, Section, SectionTitle, Text } from "@common/nextjs-components/CustomComponents";
-import SwitchPage from "@common/nextjs-components/SwitchPage";
+import { EBookPage, H4, InlineDivs, MaxWidthContainer, Ol, Section, SectionTitle, Text } from "@/cpuvsim/components/common/CustomComponents";
 
 const Page8 = () => {
-    const currentPage = 8;
-
-
     return (
-        <EBookPage>
+        <EBookPage currentPage={8}>
             <Section>
                 <SectionTitle>
                     Exercises
                 </SectionTitle>
                 <Text>
-                    The aim of the following two exercises is to code in assembler the pseudo-coded algorithms on the left. Organize the corresponding assembler instructions on the right in the correct order, by dragging them around.
+                    The aim of the following two exercises is to code in assembler the pseudo-coded algorithms on the left.
+                    Organize the corresponding assembler instructions on the right in the correct order, by dragging them around.
                 </Text>
             </Section>
 
@@ -36,14 +33,16 @@ const Page8 = () => {
 
             <Section>
                 <H4>
-                    Perform the following tasks (please remember that any label needs to be defined in the leftmost column of the RAM before it can be used in any instruction):
+                    Perform the following tasks (please remember that any label needs to be defined
+                    in the leftmost column of the RAM before it can be used in any instruction):
                 </H4>
                 <Ol>
                     <li>
                         Describe the difference between numeric and direct addressing.
                     </li>
                     <li>
-                        Describe the data transmitted on the data, address and control buses, respectively, during the execution of the instructions LOD #5, and LOD 5.
+                        Describe the data transmitted on the data, address and control buses, respectively, 
+                        during the execution of the instructions LOD #5, and LOD 5.
                     </li>
                     <li>
                         Identify the binary code of the assembler instruction MUL 5.
@@ -62,7 +61,8 @@ const Page8 = () => {
                     <div>
                         <Ol>
                             <li>
-                                Perform the addition, subtraction, multiplication and division of 2 numbers; if the operation is not commutative and the first number is smaller than the second one, reverse them.
+                                Perform the addition, subtraction, multiplication and division of 2 numbers;
+                                if the operation is not commutative and the first number is smaller than the second one, reverse them.
                             </li>
                             <li>
                                 Calculate the mean of 3 numbers.
@@ -152,7 +152,9 @@ const Page8 = () => {
                                 </code>
                             </li>
                             <li>
-                                Determine whether a given positive integer number satisfies the Collatz conjecture (see the definition at https://en.wikipedia.org/wiki/Collatz_conjecture), computing the number of iterations necessary to reach the number 1.
+                                Determine whether a given positive integer number satisfies the Collatz conjecture
+                                (see the definition at https://en.wikipedia.org/wiki/Collatz_conjecture),
+                                computing the number of iterations necessary to reach the number 1.
                             </li>
                         </Ol>
                     </div>
@@ -175,15 +177,9 @@ const Page8 = () => {
                     </div>
                 </InlineDivs>
             </Section>
-
-            <SwitchPage currentPage={currentPage} />
         </EBookPage>
     );
 
 }
-
-// Page8.getLayout = function getLayout(page: React.ReactNode) {
-//     return <RootLayout>{page}</RootLayout>;
-// };
 
 export default Page8;

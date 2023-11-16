@@ -1,10 +1,12 @@
 import { ReactNode } from 'react';
-// import Image from 'next/image';
-
+import SwitchPage from './SwitchPage';
+                                                                                                       
 // eBook Page Component
-const EBookPage = ({ children }: { children: ReactNode }) => (
+const EBookPage = ({ children, currentPage }: { children: ReactNode, currentPage: number }) => (
     <div className="w-full max-w-full mx-0 my-8 pb-4 px-4 rounded-lg bg-white dark:bg-gray-800 shadow-lg dark:shadow-slate-700">
+      <SwitchPage currentPage={currentPage} />
       {children}
+      <SwitchPage currentPage={currentPage} />
     </div>
 );
 
@@ -90,7 +92,6 @@ export {
     InlineDivs,
     Description,
     Figure,
-    // Image,
     H2,
     H3,
     H4,

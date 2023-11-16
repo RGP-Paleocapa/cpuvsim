@@ -4,10 +4,13 @@ import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 interface ImageObject {
   src: string;
   alt: string;
+  customTranslateX?: string; // Optional custom translate-x value
+  customTranslateY?: string; // Optional custom translate-y value
 }
 
 const CarouselSlider = ({ images }: { images: ImageObject[] }) => {
   const [current, setCurrent] = useState(0);
+  const [isFullscreen, setIsFullscreen] = useState(false);
 
   const nextSlide = () => {
     setCurrent(current => (current + 1) % images.length);
@@ -17,8 +20,15 @@ const CarouselSlider = ({ images }: { images: ImageObject[] }) => {
     setCurrent(current => (current === 0 ? images.length - 1 : current - 1));
   };
 
+  const toggleFullscreen = () => {
+    setIsFullscreen(!isFullscreen);
+  };
+
   return (
     <div className="max-w-2xl m-auto relative z-10">
+      {/* Fullscreen Overlay */}
+      {isFullscreen && <div className="fullscreen-overlay"></div>}
+
       <div className="relative mb-4 mt-4 ml-4" data-carousel="static">
         <div className="overflow-hidden relative h-56 rounded-lg sm:h-64 xl:h-80 2xl:h-96">
           {images.map((img, index) => (
@@ -30,7 +40,12 @@ const CarouselSlider = ({ images }: { images: ImageObject[] }) => {
               <img
                 src={img.src}
                 alt={img.alt}
-                className="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2"
+                className={`absolute top-1/2 left-1/2 ${
+                  img.customTranslateX || '-translate-x-1/2'
+                } ${img.customTranslateY || '-translate-y-1/2'} w-full ${
+                  index === current ? 'block' : 'hidden'
+                } ${isFullscreen ? 'fullscreen-image' : ''}`}
+                onClick={toggleFullscreen}
               />
             </div>
           ))}
@@ -41,18 +56,17 @@ const CarouselSlider = ({ images }: { images: ImageObject[] }) => {
           onClick={prevSlide} 
           className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-white p-2"
           aria-label="Previous slide"
-          >
-            <FaArrowLeft />
-          </button>
-          <button 
-            onClick={nextSlide} 
-            className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-white p-2"
-            aria-label="Next slide"
-          >
-            <FaArrowRight />
-          </button>
-        </div>
-      {/* <p className="ml-4">This carousel component is part of the Flowbite component library.</p> */}
+        >
+          <FaArrowLeft />
+        </button>
+        <button 
+          onClick={nextSlide} 
+          className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-white p-2"
+          aria-label="Next slide"
+        >
+          <FaArrowRight />
+        </button>
+      </div>
     </div>
   );
 };
