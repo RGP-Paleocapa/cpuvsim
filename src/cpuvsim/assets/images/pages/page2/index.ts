@@ -1,6 +1,6 @@
-import image1 from './immagine_2021-11-07_132524_edited.jpg';
-import image2 from './main-qimg-1c0dc8c8e5dd690f7607372305bcf5c2.jpg';
-import image3 from './immagine_2021-11-18_124833_edited.jpg';
+import image1 from './images/immagine_2021-11-07_132524_edited.jpg';
+import image2 from './images/main-qimg-1c0dc8c8e5dd690f7607372305bcf5c2.jpg';
+import image3 from './images/immagine_2021-11-18_124833_edited.jpg';
 
 interface ImageObject {
   src: string;

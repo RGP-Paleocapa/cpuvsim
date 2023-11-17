@@ -1,9 +1,9 @@
 // Importing images
-import image1 from './von.jpg';
-import image2 from './InputOutput.jpg';
-import image3 from './Screenshot 2023-11-11 163842.png';
-import image4 from './Screenshot 2023-11-11 163708.png';
-import image5 from './Screenshot 2023-11-11 163825.png';
+import image1 from './images/von.jpg';
+import image2 from './images/InputOutput.jpg';
+import image3 from './images/Screenshot 2023-11-11 163842.png';
+import image4 from './images/Screenshot 2023-11-11 163708.png';
+import image5 from './images/Screenshot 2023-11-11 163825.png';
 
 // ImageObject interface
 interface ImageObject {

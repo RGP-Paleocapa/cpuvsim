@@ -1,3 +1,4 @@
+import { YourImageComponent } from "@/cpuvsim/components/common/images";
 import images from "@assets/images/pages/page4";
 import { EBookPage, InlineDivs, MaxWidthContainer, Ol, Section, SectionTitle, Text } from "@common/CustomComponents";
 import References from "@common/Refrences";
@@ -36,7 +37,7 @@ const Page4 = () => {
                         </Ol>
                     </MaxWidthContainer>
                     <MaxWidthContainer>
-                        <img src={images.image1.src} alt={images.image1.alt} className="img-center" />
+                        <img src={images.fetchCodeExecute.src} alt={images.fetchCodeExecute.alt} className="img-center" />
                     </MaxWidthContainer>
                 </InlineDivs>
             </Section>
@@ -45,21 +46,21 @@ const Page4 = () => {
                 <Text>
                     During the <strong>fetch</strong> stage of the cycle, the content of the memory cell addressed by the program counter is retrieved and placed into the Instruction Register (IR).
                 </Text>
-                <img src="https://via.placeholder.com/300" alt="default" className="img-center" />
+                <YourImageComponent image={images.fetch} />
             </Section>
 
             <Section>
                 <Text>
                     During the <strong>execute</strong> stage of the cycle, the instruction is executed, using the ALU if necessary. Sometimes, this stage may involve the loading or saving of data from and to the main memory.
                 </Text>
-                <img src="https://via.placeholder.com/300" alt="default" className="img-center" />
+                <YourImageComponent image={images.execute} />
             </Section>
             
             <Section>
                 <Text>
                     In the <strong>decode</strong> part of the cycle, the Control Unit works out what needs to be done by the instruction, and sends control signals to coordinate the other components.
                 </Text>
-                <img src="https://via.placeholder.com/300" alt="default" className="img-center" />
+                <YourImageComponent image={images.decode} />
             </Section>
 
             <Section>
@@ -68,7 +69,7 @@ const Page4 = () => {
                     <br />
                     It is worthwhile noticing here that real CPUs, in order to improve their speed, perform the increment of the PC in parallel to previous operations, during the Execute cycle.
                 </Text>
-                <img src="https://via.placeholder.com/300" alt="default" className="img-center" />
+                <YourImageComponent image={images.altro} />
             </Section>
 
             <References references={references} />

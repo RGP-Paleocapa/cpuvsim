@@ -1,6 +1,9 @@
 import Table from "@common/Table";
 import { Description, EBookPage, Section, SectionTitle, Text, Ul } from "@common/CustomComponents";
 import References from "@common/Refrences";
+// import { image1 } from "@/cpuvsim/assets/images/pages/page5";
+import { YourImageComponent } from "@/cpuvsim/components/common/images";
+import images from "@/cpuvsim/assets/images/pages/page5";
 
 const Page5 = () => {
   const references = [
@@ -91,7 +94,7 @@ const Page5 = () => {
               <strong>Direct</strong> addressing, as in ADD 8: in this case the operand represents a memory address (add the number stored at the memory address 8). Rather than using directly numeric memory addresses, it is more convenient for humans to associate them with meaningful labels, such as Y or COUNTER. Hence a memory address can be more easily identified by a label, as in ADD Y. Important notice: the labels do not physically exist in the CPU or in memory, because they are  translated to the corresponding numerical addresses by the assembler, which can parse the whole assembly program offline. Yet, as the simulator translates the instructions one by one "on the fly", it is necessary first to <strong>define the labels</strong> by entering them in the grayed column, <strong>before</strong> they can be used in any instruction. 
             </li>
           </Ul>
-          <img src="https://via.placeholder.com/300" alt="default" className="img-center" />
+            <YourImageComponent image={images}/>
           <Description>
             Try it yourself: run the simulator and write some instructions. You can swap from Mnemonic (Assembly) to Binary code just by clicking the Symbolic/Binary button.
           </Description>

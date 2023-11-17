@@ -4,11 +4,11 @@ import image3 from './slider/controller.png';
 import image4 from './slider/drone.png';
 import image5 from './slider/laptop.png';
 import image6 from './slider/smartwatch.png';
-import architecture1 from './architecture_01.jpg';
-import architecture2 from './architecture_02.jpg';
-import specialPurposeComputer from './special_purpose_computer.png';
-import modernComputer from './modern_computer.png';
-import eniac from './796px-ENIAC_Penn1.jpg';
+import architecture1 from './images/architecture_01.jpg';
+import architecture2 from './images/architecture_02.jpg';
+import specialPurposeComputer from './images/special_purpose_computer.png';
+import modernComputer from './images/modern_computer.png';
+import eniac from './images/796px-ENIAC_Penn1.jpg';
 
 interface ImageObject {
     src: string;

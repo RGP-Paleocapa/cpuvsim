@@ -1,3 +1,4 @@
+import { YourImageComponent } from '@/cpuvsim/components/common/images';
 import images from '@assets/images/pages/page6';
 import { Description, EBookPage, Figure, H3, Section, SectionTitle, Text } from '@common/CustomComponents';
 import References from '@common/Refrences';
@@ -25,7 +26,7 @@ const Page6 = () => {
       link: "https://en.wikipedia.org/wiki/Low-level_programming_language",
     },
   ];
-
+  
     return (
         <EBookPage currentPage={6}>
           <Section>
@@ -42,7 +43,7 @@ const Page6 = () => {
               <br />
               Hence, computer languages can be broadly classified as follows:
             </Text>
-            <img src={images.image1.src} alt={images.image1.alt} className='img-center bg-white' />
+            <img src={images.languagesFlowchart.src} alt={images.languagesFlowchart.alt} className='img-center bg-white' />
         </Section>
 
         <Section>
@@ -108,19 +109,19 @@ const Page6 = () => {
 
           <Figure>
             <div>
-              <img src="https://via.placeholder.com/300" alt="default" className="img-center" />  
+              <img src={images.image2.src} alt="default" className="img-center w-96 h-28 rounded" />  
               <Description alignCenter>
                 <strong>High Level Language</strong>
               </Description>
             </div>
             <div>
-              <img src="https://via.placeholder.com/300" alt="default" className="img-center" />
+              <YourImageComponent image={images.image3} className='w-96 h-28' />
               <Description alignCenter>
                 <strong>Assembly Language</strong>
               </Description>
             </div>
             <div>
-              <img src="https://via.placeholder.com/300" alt="default" className="img-center" /> 
+              <YourImageComponent image={images.image4} className='w-96 h-28' />
               <Description alignCenter>
                 <strong>Machine Language</strong>
               </Description>

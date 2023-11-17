@@ -21,8 +21,10 @@ const SectionTitle = ({ children }: { children: ReactNode }) => (
 );
 
 // Max Width Container Component
+
+// PADDING?
 const MaxWidthContainer = ({ children, bgColor = 'bg-white' }: { children: React.ReactNode; bgColor?: string }) => (
-  <div className={`max-w-4xl mx-auto p-4 rounded-lg ${bgColor}`}>
+  <div className={`max-w-4xl mx-auto lg:p-4 rounded-lg ${bgColor}`}>
     {children}
   </div>
 );
