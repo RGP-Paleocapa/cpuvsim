@@ -1,3 +1,4 @@
+import images from "@/cpuvsim/assets/images/pages/page7";
 import { EBookPage, Section, SectionTitle, H4, InlineDivs, H3, MaxWidthContainer, Text, Figure } from "@common/CustomComponents";
 
 const Page7 = () => {
@@ -105,9 +106,9 @@ const Page7 = () => {
                 </SectionTitle>
                 <InlineDivs>
                     <div className='flex flex-col items-center justify-center space-t-4'>
-                        <img src="https://via.placeholder.com/300" alt="default" className="img-center" />
-                        <img src="https://via.placeholder.com/300" alt="default" className="img-center" />
-                        <img src="https://via.placeholder.com/300" alt="default" className="img-center" />
+                        <img src={images.sum1.src} alt={images.sum1.src} className="img-center" />
+                        <img src={images.sum2.src} alt={images.sum2.src} className="img-center" />
+                        <img src={images.sum3.src} alt={images.sum3.src} className="img-center" />
                     </div>
                     <div className='flex flex-col items-center justify-center space-y-6 m-6 xl:m-28'>
                         <MaxWidthContainer>
@@ -159,9 +160,9 @@ const Page7 = () => {
                 </SectionTitle>
                 <InlineDivs>
                     <div className='flex flex-col items-center justify-center space-t-4'>
-                        <img src="https://via.placeholder.com/300" alt="default" className="img-center" />
-                        <img src="https://via.placeholder.com/300" alt="default" className="img-center" />
-                        <img src="https://via.placeholder.com/300" alt="default" className="img-center" />
+                        <img src={images.formula1.src} alt={images.formula1.alt} className="img-center" />
+                        <img src={images.formula2.src} alt={images.formula2.alt} className="img-center" />
+                        <img src={images.formula3.src} alt={images.formula3.alt} className="img-center" />
                     </div>
                     <div className='flex flex-col items-center justify-center space-y-6 m-6 xl:m-28'>
                         <MaxWidthContainer>
@@ -209,9 +210,9 @@ const Page7 = () => {
                 </SectionTitle>
                 <InlineDivs>
                     <div className='flex flex-col items-center justify-center space-t-4'>
-                        <img src="https://via.placeholder.com/300" alt="default" className="img-center" />
-                        <img src="https://via.placeholder.com/300" alt="default" className="img-center" />
-                        <img src="https://via.placeholder.com/300" alt="default" className="img-center" />
+                        <img src={images.loop1.src} alt={images.loop1.alt} className="img-center" />
+                        <img src={images.loop2.src} alt={images.loop2.alt} className="img-center" />
+                        <img src={images.loop3.src} alt={images.loop3.alt} className="img-center" />
                     </div>
                     <div className='flex flex-col items-center justify-center space-y-6 m-6 xl:m-28'>
                         <MaxWidthContainer>
@@ -248,9 +249,9 @@ const Page7 = () => {
                 </SectionTitle>
                 <InlineDivs>
                     <div className='flex flex-col items-center justify-center space-t-4'>
-                        <img src="https://via.placeholder.com/300" alt="default" className="img-center" />
-                        <img src="https://via.placeholder.com/300" alt="default" className="img-center" />
-                        <img src="https://via.placeholder.com/300" alt="default" className="img-center" />
+                        <img src={images.ifThenElse1.src} alt={images.ifThenElse1.alt} className="img-center" />
+                        <img src={images.ifThenElse2.src} alt={images.ifThenElse2.alt} className="img-center" />
+                        <img src={images.ifThenElse3.src} alt={images.ifThenElse3.alt} className="img-center" />
                     </div>
                     <div className='flex flex-col items-center justify-center space-y-6 m-6 xl:m-28'>
                         <MaxWidthContainer>
@@ -308,9 +309,9 @@ const Page7 = () => {
                 </SectionTitle>
                 <InlineDivs>
                     <div className='flex flex-col items-center justify-center space-t-4'>
-                        <img src="https://via.placeholder.com/300" alt="default" className="img-center" />
-                        <img src="https://via.placeholder.com/300" alt="default" className="img-center" />
-                        <img src="https://via.placeholder.com/300" alt="default" className="img-center" />
+                        <img src={images.while1.src} alt={images.while1.alt} className="img-center" />
+                        <img src={images.while2.src} alt={images.while2.alt} className="img-center" />
+                        <img src={images.while3.src} alt={images.while3.alt} className="img-center" />
                     </div>
                     <div className='flex flex-col items-center justify-center space-y-6 m-6 xl:m-28'>
                         <MaxWidthContainer>
@@ -362,9 +363,9 @@ const Page7 = () => {
                 </SectionTitle>
                 <InlineDivs>
                     <div className='flex flex-col items-center justify-center space-t-4'>
-                        <img src="https://via.placeholder.com/300" alt="default" className="img-center" />
-                        <img src="https://via.placeholder.com/300" alt="default" className="img-center" />
-                        <img src="https://via.placeholder.com/300" alt="default" className="img-center" />
+                        <img src={images.for1.src} alt={images.for1.alt} className="img-center" />
+                        <img src={images.for2.src} alt={images.for2.alt} className="img-center" />
+                        <img src={images.for3.src} alt={images.for3.alt} className="img-center" />
                     </div>
                     <div className='flex flex-col items-center justify-center space-y-6 m-6 xl:m-28'>
                         <MaxWidthContainer>
