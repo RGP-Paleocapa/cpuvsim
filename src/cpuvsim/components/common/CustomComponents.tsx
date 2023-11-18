@@ -23,11 +23,20 @@ const SectionTitle = ({ children }: { children: ReactNode }) => (
 // Max Width Container Component
 
 // PADDING?
-const MaxWidthContainer = ({ children, bgColor = 'bg-white' }: { children: React.ReactNode; bgColor?: string }) => (
-  <div className={`max-w-4xl mx-auto lg:p-4 rounded-lg ${bgColor}`}>
+const MaxWidthContainer = ({
+  children,
+  bgColor = 'bg-white',
+  smallPadding = false
+}: {
+  children: React.ReactNode;
+  bgColor?: string;
+  smallPadding?: boolean;
+}) => (
+  <div className={`max-w-4xl mx-auto ${smallPadding ? 'lg:p-4' : 'p-4'} rounded-lg ${bgColor}`}>
     {children}
   </div>
 );
+
 
 // Text Component
 const Text = ({ children, textSize }: { children: ReactNode; textSize?: string }) => (
@@ -40,7 +49,7 @@ const InlineDivs = ({ children, centerStart = false }: { children: React.ReactNo
     {children.map((child, index) => (
       <div 
         key={index} 
-        className={`w-full md:w-1/2 flex flex-col ${centerStart ? "justify-start" : "justify-center"} py-4 ${index % 2 === 0 ? 'bg-green-500 dark:bg-green-700' : 'bg-red-500 dark:bg-red-700'}`}>
+        className={`w-full md:w-1/2 flex flex-col ${centerStart ? "justify-start" : "justify-center"} py-4  ${index % 2 === 0 ? 'bg-green-500 dark:bg-green-700' : 'bg-red-500 dark:bg-red-700'}`}>
         {child}
       </div>
     ))}

@@ -75,7 +75,7 @@ const Page2 = () => {
                     </Text>
                     
                 </MaxWidthContainer>
-                <MaxWidthContainer>
+                <MaxWidthContainer smallPadding>
                     <Table headerTitles={['Binary', 'Char', 'Binary', 'Char'] } bodyRows={textTable} />
                     <Description alignCenter>
                         A few examples of ASCII codes
@@ -134,7 +134,7 @@ const Page2 = () => {
 
         <Section>
             <InlineDivs centerStart>
-                <MaxWidthContainer>
+                <MaxWidthContainer smallPadding>
                     <Table headerTitles={['binary Code', 'description'] } bodyRows={instructionTable} />
                     <Description>
                         Three examples of operations common to many instruction sets
