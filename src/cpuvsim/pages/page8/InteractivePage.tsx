@@ -1,6 +1,34 @@
+import DraggableContainerGrid from "@common/DraggableContainerGrid";
 import { EBookPage, H4, InlineDivs, MaxWidthContainer, Ol, Section, SectionTitle, Text } from "@common/CustomComponents";
 
 const Page8 = () => {
+    const container1 = [
+        { id: 'container-1', content: 'LOD #5' },
+        { id: 'container-2', content: 'SUB #3' },
+        { id: 'container-3', content: 'LOD X' },
+        { id: 'container-4', content: 'STO X' },
+        { id: 'container-5', content: 'HLT' },
+        { id: 'container-6', content: 'JNZ 10' },
+    ];
+    const container2 = [
+        { id: 'container-1', content: 'LOD X' },
+        { id: 'container-2', content: 'JNZ ELSE' },
+        { id: 'container-3', content: 'ADD Y' },
+        { id: 'container-4', content: 'JMP ENDIF' },
+        { id: 'container-5', content: 'ADD Z' },
+        { id: 'container-6', content: 'LOD #8' },
+        { id: 'container-7', content: 'HTL' },
+        { id: 'container-8', content: '7' },
+        { id: 'container-9', content: 'CMP #3' },
+        { id: 'container-10', content: 'LOD #5' },
+        { id: 'container-11', content: 'STO Y' },
+        { id: 'container-12', content: 'LOD #2' },
+        { id: 'container-13', content: 'STO Z' },
+        { id: 'container-14', content: 'STO X' },
+        { id: 'container-15', content: '3' },
+        { id: 'container-16', content: '6' },
+    ];
+
     return (
         <EBookPage currentPage={8}>
             <Section>
@@ -14,16 +42,34 @@ const Page8 = () => {
             </Section>
 
             <Section>
-                    <InlineDivs>
+                <InlineDivs>
                     <MaxWidthContainer>
-                        <MaxWidthContainer>
-                            <img src="https://via.placeholder.com/300" alt="default" className="img-center" />
-                            <button className='text-black'>Solution</button>
-                        </MaxWidthContainer>
-                        <MaxWidthContainer>
-                            <img src="https://via.placeholder.com/300" alt="default" className="img-center" />
+                    <pre className="bg-gray-100 p-4 rounded-lg overflow-x-auto">
+                        <code className="block whitespace-pre">
+                            IF-THEN
+                            example:
+
+                            IF X==3
+                                THEN Y:=5
+                            ENDIF
+                            HLT
+                        </code>
+                    </pre>
+
+
+                    </MaxWidthContainer>
+                    <MaxWidthContainer>
+                        <DraggableContainerGrid initialContainers={container1} />
                         <button className='text-black'>Solution</button>
-                        </MaxWidthContainer>
+                    </MaxWidthContainer>
+                </InlineDivs>
+            </Section>
+
+            <Section>
+                <InlineDivs>
+                    <MaxWidthContainer>
+                        <DraggableContainerGrid initialContainers={container2} />
+                        <button className='text-black'>Solution</button>
                     </MaxWidthContainer>
                     <MaxWidthContainer>
                         empty
