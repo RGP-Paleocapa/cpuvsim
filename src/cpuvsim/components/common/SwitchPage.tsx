@@ -8,7 +8,6 @@ interface SwitchPageProps {
   currentPage: number;
 }
 
-const basePath = '/cpuvsim'; // Your base path
 const lastPage = 8; // The last page number, stored internally in the component
 
 const SwitchPage: React.FC<SwitchPageProps> = ({ currentPage }) => {
@@ -50,7 +49,7 @@ const SwitchPage: React.FC<SwitchPageProps> = ({ currentPage }) => {
   return (
     <div className="flex justify-between items-center mt-8">
       <button
-        onClick={() => handleNavigation(`${basePath}${prevLink}`, 'bottom')}
+        onClick={() => handleNavigation(`${prevLink}`, 'bottom')}
         className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white flex items-center"
       >
         <FontAwesomeIcon icon={faArrowLeft} />
@@ -63,7 +62,7 @@ const SwitchPage: React.FC<SwitchPageProps> = ({ currentPage }) => {
 
       {currentPage < lastPage && nextLink && (
         <button
-          onClick={() => handleNavigation(`${basePath}${nextLink}`, 'top')}
+          onClick={() => handleNavigation(`${nextLink}`, 'top')}
           className="text-blue-600 dark:text-blue-400 hover:text-blue-900 dark:hover:text-white flex items-center"
         >
           <span className="mr-2">{nextText}</span>
