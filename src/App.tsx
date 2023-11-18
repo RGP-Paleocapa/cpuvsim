@@ -2,8 +2,8 @@
 import Footer from '@components/layout/Footer'
 import Header from '@components/layout/Header'
 import AppRoutes from './Routes'
-import ScrollToTopButton from './cpuvsim/components/common/ScrollToTopButton'
-import ScrollToTop from './cpuvsim/components/common/ScrollToTop'
+import ScrollToTopButton from '@common/ScrollToTopButton'
+import ScrollToTop from '@common/ScrollToTop'
 
 const App = () => {
   return (

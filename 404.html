@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Redirecting...</title>
+  <script>
+    // Parses the URL to get the path and redirects to index.html while preserving the path
+    var path = window.location.pathname;
+    window.location.replace('/index.html#' + path);
+  </script>
+</head>
+<body>
+  <p>Redirecting...</p>
+</body>
+</html>
