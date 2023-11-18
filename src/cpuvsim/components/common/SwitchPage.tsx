@@ -14,8 +14,8 @@ const SwitchPage: React.FC<SwitchPageProps> = ({ currentPage }) => {
   const isFirstPage = currentPage === 1;
   const isLastPage = currentPage === lastPage;
   
-  const prevLink = isFirstPage ? '/cpuvsim/' : `/cpuvsim/page${currentPage - 1}`;
-  const nextLink = isLastPage ? null : `/cpuvsim/page${currentPage + 1}`;
+  const prevLink = isFirstPage ? '/' : `/page${currentPage - 1}`;
+  const nextLink = isLastPage ? null : `/page${currentPage + 1}`;
   
   const prevText = isFirstPage ? 'Home' : `${currentPage - 1}`;
   const nextText = isLastPage ? null : `${currentPage + 1}`;
