@@ -41,40 +41,44 @@ const Page8 = () => {
                 </Text>
             </Section>
 
-            <Section>
-                <InlineDivs>
-                    <MaxWidthContainer>
-                    {/* <pre className="bg-gray-100 p-4 rounded-lg overflow-x-auto">
-                        <code className="block whitespace-pre">
-                            IF-THEN
-                            example:
+            <div className="hidden lg:block">
+                <Section>
+                    <InlineDivs>
+                        <MaxWidthContainer>
+                        {/* <pre className="bg-gray-100 p-4 rounded-lg overflow-x-auto">
+                            <code className="block whitespace-pre">
+                                IF-THEN
+                                example:
 
-                            IF X==3
-                                THEN Y:=5
-                            ENDIF
-                            HLT
-                        </code>
-                    </pre> */}
-                        Empty
-                    </MaxWidthContainer>
-                    <MaxWidthContainer>
-                        <DraggableContainerGrid initialContainers={container1} />
-                        <button className='text-black'>Solution</button>
-                    </MaxWidthContainer>
-                </InlineDivs>
-            </Section>
+                                IF X==3
+                                    THEN Y:=5
+                                ENDIF
+                                HLT
+                            </code>
+                        </pre> */}
+                            Empty
+                        </MaxWidthContainer>
+                        <MaxWidthContainer>
+                            <DraggableContainerGrid initialContainers={container1} />
+                            <button className='text-black'>Solution</button>
+                        </MaxWidthContainer>
+                    </InlineDivs>
+                </Section>
+            </div>
 
-            <Section>
-                <InlineDivs>
-                    <MaxWidthContainer>
-                        <DraggableContainerGrid initialContainers={container2} />
-                        <button className='text-black'>Solution</button>
-                    </MaxWidthContainer>
-                    <MaxWidthContainer>
-                        empty
-                    </MaxWidthContainer>
-                </InlineDivs>
-            </Section>
+            <div className="hidden lg:block">
+                <Section>
+                    <InlineDivs>
+                        <MaxWidthContainer>
+                            <DraggableContainerGrid initialContainers={container2} />
+                            <button className='text-black'>Solution</button>
+                        </MaxWidthContainer>
+                        <MaxWidthContainer>
+                            empty
+                        </MaxWidthContainer>
+                    </InlineDivs>
+                </Section>
+            </div>
 
             <Section>
                 <H4>
