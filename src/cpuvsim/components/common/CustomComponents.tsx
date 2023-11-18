@@ -3,7 +3,7 @@ import SwitchPage from './SwitchPage';
                                                                                                        
 // eBook Page Component
 const EBookPage = ({ children, currentPage }: { children: ReactNode, currentPage: number }) => (
-    <div className="w-full max-w-full mx-0 my-8 pb-4 lg:px-4 rounded-lg bg-white dark:bg-gray-800 shadow-lg dark:shadow-slate-700">
+    <div className="w-full max-w-full mx-0 my-8 pb-4 px-4 rounded-lg bg-white dark:bg-gray-800 shadow-lg dark:shadow-slate-700">
       <SwitchPage currentPage={currentPage} />
       {children}
       <SwitchPage currentPage={currentPage} />
@@ -24,7 +24,7 @@ const SectionTitle = ({ children }: { children: ReactNode }) => (
 
 // PADDING?
 const MaxWidthContainer = ({ children, bgColor = 'bg-white' }: { children: React.ReactNode; bgColor?: string }) => (
-  <div className={`max-w-4xl mx-auto px-4 rounded-lg ${bgColor}`}>
+  <div className={`max-w-4xl mx-auto lg:p-4 rounded-lg ${bgColor}`}>
     {children}
   </div>
 );
