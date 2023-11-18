@@ -44,7 +44,7 @@ const Page8 = () => {
             <Section>
                 <InlineDivs>
                     <MaxWidthContainer>
-                    <pre className="bg-gray-100 p-4 rounded-lg overflow-x-auto">
+                    {/* <pre className="bg-gray-100 p-4 rounded-lg overflow-x-auto">
                         <code className="block whitespace-pre">
                             IF-THEN
                             example:
@@ -54,9 +54,8 @@ const Page8 = () => {
                             ENDIF
                             HLT
                         </code>
-                    </pre>
-
-
+                    </pre> */}
+                        Empty
                     </MaxWidthContainer>
                     <MaxWidthContainer>
                         <DraggableContainerGrid initialContainers={container1} />
