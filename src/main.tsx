@@ -6,7 +6,7 @@ import { BrowserRouter } from 'react-router-dom'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <BrowserRouter basename='/  cpuvsim'>
+    <BrowserRouter basename='/cpuvsim'>
       <React.Suspense fallback="loading">
         <App />
       </React.Suspense>
