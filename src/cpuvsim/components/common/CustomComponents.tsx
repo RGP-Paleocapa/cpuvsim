@@ -1,9 +1,11 @@
 import { ReactNode } from 'react';
 import SwitchPage from './SwitchPage';
+import NavigationMenu from './NavigationMenuProps';
                                                                                                        
 // eBook Page Component
 const EBookPage = ({ children, currentPage }: { children: ReactNode, currentPage: number }) => (
-    <div className="w-full max-w-full mx-0 my-8 pb-4 px-4 rounded-lg bg-white dark:bg-gray-800 shadow-lg dark:shadow-slate-700">
+    <div className="ebook-page-layout">
+      <NavigationMenu currentPage={currentPage} totalPages={8} />
       <SwitchPage currentPage={currentPage} />
       {children}
       <SwitchPage currentPage={currentPage} />
