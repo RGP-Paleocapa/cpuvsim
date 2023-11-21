@@ -14,7 +14,7 @@ const EBookPage = ({ children, currentPage }: { children: ReactNode, currentPage
 
 // Responsive Section Component
 const Section = ({ children }: { children: ReactNode }) => (
-  <section className="py-10">{children}</section>
+  <section className="py-10">{children}</section> 
 );
 
 // Section Title Component
