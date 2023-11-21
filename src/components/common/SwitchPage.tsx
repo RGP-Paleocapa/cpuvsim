@@ -8,7 +8,7 @@ interface SwitchPageProps {
   currentPage: number;
 }
 
-const lastPage = 8; // The last page number, stored internally in the component
+const lastPage = 7; // The last page number, stored internally in the component
 
 const SwitchPage: React.FC<SwitchPageProps> = ({ currentPage }) => {
   const isFirstPage = currentPage === 1;

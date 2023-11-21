@@ -5,7 +5,7 @@ import NavigationMenu from './NavigationMenuProps';
 // eBook Page Component
 const EBookPage = ({ children, currentPage }: { children: ReactNode, currentPage: number }) => (
     <div className="ebook-page-layout">
-      <NavigationMenu currentPage={currentPage} totalPages={8} />
+      <NavigationMenu currentPage={currentPage} totalPages={7} />
       <SwitchPage currentPage={currentPage} />
       {children}
       <SwitchPage currentPage={currentPage} />
@@ -19,7 +19,7 @@ const Section = ({ children }: { children: ReactNode }) => (
 
 // Section Title Component
 const SectionTitle = ({ children }: { children: ReactNode }) => (
-  <h2 className="text-3xl font-bold text-cyan-600 my-5">{children}</h2>
+  <h2 className="text-3xl font-bold dark:text-cyan-400 text-cyan-600 my-5">{children}</h2>
 );
 
 // Max Width Container Component
@@ -27,7 +27,7 @@ const SectionTitle = ({ children }: { children: ReactNode }) => (
 // PADDING?
 const MaxWidthContainer = ({
   children,
-  bgColor = 'bg-white',
+  bgColor = 'bg-white dark:bg-transparent',
   smallPadding = false
 }: {
   children: React.ReactNode;
@@ -42,7 +42,7 @@ const MaxWidthContainer = ({
 
 // Text Component
 const Text = ({ children, textSize }: { children: ReactNode; textSize?: string }) => (
-    <p className={`${textSize ? textSize : 'text-base'} responsive-text text-gray-700 dark:text-gray-400`}>{children}</p>
+    <p className={`${textSize ? textSize : 'text-base'} responsive-text text-gray-700 dark:text-gray-100`}>{children}</p>
 );
   
 // Two Divs Inline Component

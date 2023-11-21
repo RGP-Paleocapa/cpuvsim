@@ -23,8 +23,9 @@ const Page4 = () => {
                             The CPU continuously repeats a <strong>fetch-decode-execute cycle</strong> , in order to execute the instructions in a program, one by one.
                             <br />
                             In this cycle, the CPU goes through three main stages:
+                            <br /><br />
                         </Text>
-                        <Ol>
+                        <Ol color="gray-200">
                             <li>
                                 <strong>Fetches</strong> a program instruction from the main memory;
                             </li>

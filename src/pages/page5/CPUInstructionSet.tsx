@@ -1,7 +1,6 @@
 import Table from "@common/Table";
 import { Description, EBookPage, Section, SectionTitle, Text, Ul } from "@common/CustomComponents";
 import References from "@common/Refrences";
-// import { image1 } from "@/cpuvsim/assets/images/pages/page5";
 import { YourImageComponent } from "@common/images";
 import images from "@assets/images/pages/page5";
 
@@ -86,7 +85,7 @@ const Page5 = () => {
             <br /><br />
             The <b className="text-red-600">digits or text in red</b> represent the operand(s) of the instruction. The operand has different interpretations according to the so-called addressing mode (which is also specified in the opcode). In the case of the simulator, the available addressing modes are:
           </Text>
-          <Ul>
+          <Ul color="gray-200">
             <li>
               <strong>Immediate</strong> (or <strong>numeric</strong>) addressing, as in ADD #8:  in this case the operand is a number (add the number 8)
             </li>
@@ -101,7 +100,7 @@ const Page5 = () => {
           <Text>
               The instructions supported by a CPU can be organized in a few fundamental categories. The most important ones are:
           </Text>
-              <Ul>
+              <Ul color="gray-200">
                 <li>
                   <strong>Data flow operations</strong>: instructions used to  transfer (store) the contents of a CPU register, or the result of a computation to the primary memory, or to transfer (load) data stored in the primary memory to the CPU, in order to perform a computation on it later.
                 </li>

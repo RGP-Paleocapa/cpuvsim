@@ -1,5 +1,5 @@
 import images from "@assets/images/pages/page7";
-import { EBookPage, Section, SectionTitle, H4, InlineDivs, H3, MaxWidthContainer, Text, Figure } from "@common/CustomComponents";
+import { EBookPage, Section, SectionTitle, InlineDivs, MaxWidthContainer, Text } from "@common/CustomComponents";
 
 const Page7 = () => {
 
@@ -28,7 +28,7 @@ const Page7 = () => {
                 </Text>
             </Section>
 
-            <Section>
+            {/* <Section>
                 <H4>
                     Basic constructs
                 </H4>
@@ -96,7 +96,7 @@ const Page7 = () => {
                         </button>
                     </div>
                 </Figure>
-            </Section>
+            </Section> */}
 
             <Section>
                 <SectionTitle>

@@ -70,7 +70,7 @@ const Page3 = () => {
           </Text>
           <InlineDivs>
             <MaxWidthContainer>
-              <Ul>
+              <ul className="list-none">
                 <li>
                   <strong className='text-black'>Arithmetic Logic Unit (ALU):</strong>
                   <Ul color="blue-500"> 
@@ -128,7 +128,7 @@ const Page3 = () => {
                     </li>
                   </Ul>
                 </li>
-              </Ul>
+              </ul>
             </MaxWidthContainer>
             <MaxWidthContainer>
               <img src={images.image3.src} alt={images.image3.alt} className="img-center" />
@@ -195,7 +195,7 @@ const Page3 = () => {
             </MaxWidthContainer>
             <MaxWidthContainer>
               <InteractiveImage src={images.image4.src} alt={images.image4.alt} className="img-center min" />
-              <Description alignCenter><b className="text-red-600">Click to zoom!</b></Description>
+              <Description alignCenter><b className="text-gray-200 text-lg">Click to zoom!</b></Description>
             </MaxWidthContainer>
           </InlineDivs>
         </Section>

@@ -7,7 +7,7 @@ const Page1 = () => {
   const imageArray = Object.values(images).slice(0, 6);
   const gridData = [
     {
-      bgColor: 'bg-amber-800/20',
+      bgColor: 'bg-amber-800/75',
       texts: ['C 01000011', 'a 01100001', 't 01110100'],
       description: 'In a computer, a sequence of binary digits can represent a sequence of characters. For instance, the above code may represent the word "Cat".'
     },
@@ -146,7 +146,7 @@ const Page1 = () => {
             <div key={index} className="flex flex-col items-center justify-start h-full px-4">
               <div className={`${item.bgColor} flex flex-col items-center justify-center w-48 h-48 p-4`}>
                 {item.texts.map((text, textIndex) => (
-                  <p key={textIndex} className="text-center">{text}</p>
+                  <p key={textIndex} className="text-center text-gray-200 text-lg">{text}</p>
                 ))}
               </div>
               <div>

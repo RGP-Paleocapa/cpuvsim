@@ -5,12 +5,12 @@
 @layer components {
     /* EBOOK */
     .ebook-page-layout {
-        @apply w-full max-w-full mx-0 my-8 pb-4 px-4 rounded-lg bg-white dark:bg-gray-800 shadow-lg dark:shadow-slate-700;
+        @apply max-w-full mx-0 lg:ml-28 my-8 pb-4 px-4 rounded-lg bg-white dark:bg-gray-800 shadow-lg dark:shadow-slate-700;
     }
 
     /* EBOOK NAVIGATION */
     .open-nav-button {
-        @apply hidden lg:block fixed top-20 left-32 z-50;
+        @apply hidden lg:block fixed dark:text-gray-400 top-20 left-24 z-50;
     }
     
     .navigation-menu {
