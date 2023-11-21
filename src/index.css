@@ -14,7 +14,7 @@
     }
     
     .navigation-menu {
-        @apply hidden fixed lg:block top-0 left-0 h-full z-10 w-44 bg-white dark:bg-gray-800 shadow-md pt-28 overflow-y-auto;
+        @apply hidden fixed lg:block top-0 left-0 h-full z-10 w-32 bg-white dark:bg-gray-800 shadow-md pt-28 overflow-y-auto;
     }
     
     .navigation-menu .current-page a {

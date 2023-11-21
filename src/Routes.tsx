@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
-import Home from '@/cpuvsim/components/layout/Home';
-import About from '@/cpuvsim/components/layout/About';
+import Home from '@components/layout/Home';
+import About from '@components/layout/About';
 import { NotFound, Maintenance } from '@components/errors/Errors';
 import { Page1, Page2, Page3, Page4, Page5, Page6, Page7, Page8, Page9, Page10 } from '@pages/pages';
 
