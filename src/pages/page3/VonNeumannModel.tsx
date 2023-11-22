@@ -72,8 +72,8 @@ const Page3 = () => {
             <MaxWidthContainer>
               <ul className="list-none">
                 <li>
-                  <strong className='text-black'>Arithmetic Logic Unit (ALU):</strong>
-                  <Ul className="text-white"> 
+                  <strong className='text-gray-900'>Arithmetic Logic Unit (ALU):</strong>
+                  <Ul className="text-gray-300"> 
                     <li>
                       <Text>Performs arithmetic operations such as additions, mUltiplications, and comparisons.</Text>
                     </li>
@@ -83,8 +83,8 @@ const Page3 = () => {
                   </Ul>
                 </li>
                 <li>
-                  <strong className='text-black'>Control Unit and Decoder:</strong>
-                  <Ul className="text-white"> 
+                  <strong className='text-gray-900'>Control Unit and Decoder:</strong>
+                  <Ul className="text-gray-300"> 
                     <li>
                       <Text>Decode instructions.</Text>
                     </li>
@@ -94,14 +94,14 @@ const Page3 = () => {
                   </Ul>
                 </li>
                 <li>
-                  <strong className='text-black'>Specialized Registers:</strong>
-                  <Ul className="text-white"> 
+                  <strong className='text-gray-900'>Specialized Registers:</strong>
+                  <Ul className="text-gray-300"> 
                     <li>
-                      <strong className='text-black'>AccumUlator (Acc):</strong>
+                      <strong className='text-gray-900'>AccumUlator (Acc):</strong>
                       <Text>Stores resUlts produced by the ALU.</Text>
                     </li>
                     <li>
-                      <strong className='text-black'>Program Counter (PC):</strong>
+                      <strong className='text-gray-900'>Program Counter (PC):</strong>
                       <Text>Contains the address of the next instruction to execute.</Text>
                       <Ul> 
                         <li>
@@ -110,11 +110,11 @@ const Page3 = () => {
                       </Ul>
                     </li>
                     <li>
-                      <strong className='text-black'>Instruction Register (IR):</strong>
+                      <strong className='text-gray-900'>Instruction Register (IR):</strong>
                       <Text>Holds the currently executing instruction fetched from memory.</Text>
                     </li>
                     <li>
-                      <strong className='text-black'>Status Word (SW):</strong>
+                      <strong className='text-gray-900'>Status Word (SW):</strong>
                       <Text>Contains flags reflecting properties of ALU resUlts.</Text>
                       <Ul>
                         <li>
@@ -123,7 +123,7 @@ const Page3 = () => {
                       </Ul>
                     </li>
                     <li>
-                      <strong className='text-black'>MUltiplexer (MUX):</strong>
+                      <strong className='text-gray-900'>MUltiplexer (MUX):</strong>
                       <Text>A mUlti-way switch that determines input for the ALU.</Text>
                     </li>
                   </Ul>

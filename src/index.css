@@ -44,11 +44,11 @@
     }
 
     .thead {
-        @apply text-xs text-center text-gray-700 uppercase bg-gray-300 dark:bg-gray-700 dark:text-gray-400;
+        @apply text-xs text-center text-gray-700 uppercase bg-gray-400 dark:bg-gray-700 dark:text-gray-200;
     }
 
     .tbody {
-        @apply bg-slate-500 text-gray-50;
+        @apply bg-slate-600 text-gray-50;
     }
 }   
 
