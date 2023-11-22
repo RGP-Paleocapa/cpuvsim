@@ -73,7 +73,7 @@ const Page3 = () => {
               <ul className="list-none">
                 <li>
                   <strong className='text-black'>Arithmetic Logic Unit (ALU):</strong>
-                  <Ul className="blue-500"> 
+                  <Ul className="text-white"> 
                     <li>
                       <Text>Performs arithmetic operations such as additions, mUltiplications, and comparisons.</Text>
                     </li>
@@ -84,7 +84,7 @@ const Page3 = () => {
                 </li>
                 <li>
                   <strong className='text-black'>Control Unit and Decoder:</strong>
-                  <Ul className="blue-500"> 
+                  <Ul className="text-white"> 
                     <li>
                       <Text>Decode instructions.</Text>
                     </li>
@@ -95,7 +95,7 @@ const Page3 = () => {
                 </li>
                 <li>
                   <strong className='text-black'>Specialized Registers:</strong>
-                  <Ul className="blue-500"> 
+                  <Ul className="text-white"> 
                     <li>
                       <strong className='text-black'>AccumUlator (Acc):</strong>
                       <Text>Stores resUlts produced by the ALU.</Text>

@@ -26,7 +26,7 @@ const SectionTitle = ({ children }: { children: ReactNode }) => (
 // PADDING?
 const MaxWidthContainer = ({
   children,
-  bgColor = 'bg-white dark:bg-transparent',
+  bgColor = 'bg-gray-100 dark:bg-transparent',
   smallPadding = false
 }: {
   children: React.ReactNode;
