@@ -5,7 +5,7 @@ import NavigationMenu from './NavigationMenuProps';
 // eBook Page Component
 const EBookPage = ({ children, currentPage }: { children: ReactNode, currentPage: number }) => (
     <div className="ebook-page-layout">
-      <NavigationMenu currentPage={currentPage} totalPages={7} />
+      <NavigationMenu currentPage={currentPage} totalPages={8} />
       <SwitchPage currentPage={currentPage} />
       {children}
       <SwitchPage currentPage={currentPage} />
@@ -23,7 +23,6 @@ const SectionTitle = ({ children }: { children: ReactNode }) => (
 );
 
 // Max Width Container Component
-
 // PADDING?
 const MaxWidthContainer = ({
   children,
@@ -82,14 +81,15 @@ const H4 = ({ children }: { children: ReactNode }) => (
 );
 
 // Ul Component
-const Ul = ({ children, color }: { children: ReactNode; color?: string }) => (
-  <ul className={`list-disc pl-5 ml-5 ${color ? `text-${color}` : 'text-black'}`}>{children}</ul>
+const Ul = ({ children, className }: { children: React.ReactNode; className?: string }) => (
+  <ul className={`list-disc pl-5 ml-5 ${className ? className : ''}`}>{children}</ul>
 );
 
-// Ul Component
-const Ol = ({ children, color }: { children: ReactNode; color?: string }) => (
-  <ol className={`list-decimal pl-5 ml-5 ${color ? `text-${color}` : 'text-black'}`}>{children}</ol>
+// Ol Component
+const Ol = ({ children, className }: { children: React.ReactNode; className?: string }) => (
+  <ol className={`list-decimal pl-5 ml-5 ${className ? className : ''}`}>{children}</ol>
 );
+
 
 const Figure = ({ children }: { children: ReactNode }) => (
   <figure className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 pt-10 justify-items-center">{children}</figure>
