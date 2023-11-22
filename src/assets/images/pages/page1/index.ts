@@ -16,13 +16,13 @@ interface ImageObject {
 }
 
 export const images: Record<string, ImageObject> = {
-    image1: { src: image1, alt: 'default'},
-    image2: { src: image2, alt: 'default'},
-    image3: { src: image3, alt: 'default'},
-    image4: { src: image4, alt: 'default'},
-    image5: { src: image5, alt: 'default'},
-    image6: { src: image6, alt: 'default'},
-    image7: { src: modernComputer, alt: 'default'},
+    image1: { src: image1, alt: 'default1'},
+    image2: { src: image2, alt: 'default2'},
+    image3: { src: image3, alt: 'default3'},
+    image4: { src: image4, alt: 'default4'},
+    image5: { src: image5, alt: 'default5'},
+    image6: { src: image6, alt: 'default6'},
+    image7: { src: modernComputer, alt: 'default7'},
     architecture1: { src: architecture1, alt: 'architecture1'},
     architecture2: { src: architecture2, alt: 'architecture2'},
     eniac: { src: eniac, alt: 'eniac'},

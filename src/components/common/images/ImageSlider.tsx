@@ -27,7 +27,22 @@ const CarouselSlider = ({ images }: { images: ImageObject[] }) => {
   return (
     <div className="max-w-2xl m-auto relative z-10">
       {/* Fullscreen Overlay */}
-      {isFullscreen && <div className="fullscreen-overlay"></div>}
+      {isFullscreen && (
+        <div className="fullscreen-overlay">
+          {/* Fullscreen Image */}
+          <img
+            src={images[current].src}
+            alt={images[current].alt}
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full fullscreen-image"
+            onClick={toggleFullscreen}
+          />
+
+          {/* Description Overlay */}
+          <div className="absolute bottom-0 w-full text-center p-4 bg-black bg-opacity-50 text-white">
+            {images[current].alt} {/* Description next to the zoomed image */}
+          </div>
+        </div>
+      )}
 
       <div className="relative mb-4 mt-4 ml-4" data-carousel="static">
         <div className="overflow-hidden relative h-56 rounded-lg sm:h-64 xl:h-80 2xl:h-96">
@@ -44,7 +59,7 @@ const CarouselSlider = ({ images }: { images: ImageObject[] }) => {
                   img.customTranslateX || '-translate-x-1/2'
                 } ${img.customTranslateY || '-translate-y-1/2'} w-full ${
                   index === current ? 'block' : 'hidden'
-                } ${isFullscreen ? 'fullscreen-image' : ''}`}
+                }`}
                 onClick={toggleFullscreen}
               />
             </div>
