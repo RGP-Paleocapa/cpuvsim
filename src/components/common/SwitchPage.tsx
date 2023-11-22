@@ -1,4 +1,3 @@
-// SwitchPage.js
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -24,26 +23,26 @@ const SwitchPage: React.FC<SwitchPageProps> = ({ currentPage }) => {
 
   const handleNavigation = (link: string, position: 'top' | 'bottom') => {
       navigate(link);
+
+      // Determine scroll duration based on screen width
+      const screenWidth = window.innerWidth;
+      const scrollDuration = screenWidth < 1024 ? 300 : 100; // Triple the duration for smaller screens
+
       setTimeout(() => {
         if (position === 'top' || isFirstPage) {
           window.scrollTo({ top: 0, behavior: 'smooth' });
         } else if (position === 'bottom') {
-          // Determine offset based on screen width
           let offsetFromBottom;
-          const screenWidth = window.innerWidth;
-
           if (screenWidth > 1200) { // Large screens
             offsetFromBottom = 300;
-          // } else if (screenWidth > 768) { // Medium screens
-          //   offsetFromBottom = 300;
-          } else { // Small screens
+          } else { // Medium and small screens
             offsetFromBottom = 525;
           }
 
           const bottomPosition = document.documentElement.scrollHeight - window.innerHeight - offsetFromBottom;
           window.scrollTo({ top: bottomPosition, behavior: 'smooth' });
         }
-      }, 100);
+      }, scrollDuration);
   };
 
   return (
