@@ -195,7 +195,7 @@ const Page3 = () => {
             </MaxWidthContainer>
             <MaxWidthContainer>
               <InteractiveImage src={images.image4.src} alt={images.image4.alt} className="img-center min" />
-              <Description alignCenter><b className="text-gray-200 text-lg">Click to zoom!</b></Description>
+              <Description alignCenter><b className="text-red-600 dark:text-gray-200 text-lg">Click to zoom!</b></Description>
             </MaxWidthContainer>
           </InlineDivs>
         </Section>

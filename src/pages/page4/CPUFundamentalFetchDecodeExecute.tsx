@@ -25,7 +25,7 @@ const Page4 = () => {
                             In this cycle, the CPU goes through three main stages:
                             <br /><br />
                         </Text>
-                        <Ol className="text-gray-200">
+                        <Ol className="dark:text-gray-200">
                             <li>
                                 <strong>Fetches</strong> a program instruction from the main memory;
                             </li>
