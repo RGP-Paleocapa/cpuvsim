@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
-import Cookies from 'js-cookie';
+// import Cookies from 'js-cookie';
 import Home from '@components/layout/Home';
 import About from '@components/layout/About';
 import { NotFound, Maintenance } from '@errors/Errors';
