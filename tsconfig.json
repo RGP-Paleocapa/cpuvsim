@@ -34,6 +34,6 @@
       "@public/*": ["./public/*"],
     },
   },
-  "include": ["src/**/*", "src/Routes.tsx"],
+  "include": ["src/*", "src/Routes.tsx", "src/main.tsx"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
