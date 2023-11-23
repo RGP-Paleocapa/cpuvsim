@@ -76,7 +76,8 @@ const Page1 = () => {
 
       <Section> 
         <SectionTitle>Examples of Computers</SectionTitle>
-        <Text>Images slider...</Text>
+        {/* <Text>Images slider...</Text> */}
+        <br />
         <ImageSlider images={imageArray} />
         <Description alignCenter><b className="text-red-600">Click to zoom!</b></Description>
       </Section>
