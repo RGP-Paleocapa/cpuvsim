@@ -1,17 +1,6 @@
 import { ReactNode } from 'react';
-import SwitchPage from '../SwitchPage';
-import NavigationMenu from '../NavigationMenuProps';
+import EBookPage from './EBookPage';
                                                                                                        
-// eBook Page Component
-const EBookPage = ({ children, currentPage }: { children: ReactNode, currentPage: number }) => (
-    <div className="ebook-page-layout">
-      <NavigationMenu currentPage={currentPage} totalPages={8} />
-      <SwitchPage currentPage={currentPage} />
-      {children}
-      <SwitchPage currentPage={currentPage} />
-    </div>
-);
-
 // Responsive Section Component
 const Section = ({ children }: { children: ReactNode }) => (
   <section className="py-10">{children}</section> 

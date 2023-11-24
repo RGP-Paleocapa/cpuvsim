@@ -1,8 +1,8 @@
 import { Routes, Route } from 'react-router-dom';
 // import Cookies from 'js-cookie';
 import { NotFound, Maintenance } from '@errors/Errors';
-// import Admin from '@pages/Admin';
-import { Home, About, Admin, Page1, Page2, Page3, Page4, Page5, Page6, Page7 } from '@pages/pages';
+import { Home, About, Admin, Page1, Page2, Page3, Page4, Page5, Page6, Page7, Page8 } from '@pages/pages';
+import ProtectedRoute from './ProtectedRoutes';
 
 const AppRoutes = () => {
     // const adminToken = Cookies.get('token'); // Retrieve the token from cookies
@@ -24,8 +24,12 @@ const AppRoutes = () => {
             <Route path="/page7" element={<Page7 />} />
             {/* <Route 
                 path="/page8" 
-                element={adminToken === 'admin' ? <Page8 /> : <Maintenance />} 
+                element={adminToken === 'demoAdmin' ? <Page8 /> : <Maintenance />} 
             /> */}
+            <Route 
+                path="/page8" 
+                element={<ProtectedRoute component={Page8} />} 
+            />
 
             {/* Redirect to Maintenance */}
             <Route path="/page9" element={<Maintenance />} />
