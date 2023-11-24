@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
-import SwitchPage from './SwitchPage';
-import NavigationMenu from './NavigationMenuProps';
+import SwitchPage from '../SwitchPage';
+import NavigationMenu from '../NavigationMenuProps';
                                                                                                        
 // eBook Page Component
 const EBookPage = ({ children, currentPage }: { children: ReactNode, currentPage: number }) => (

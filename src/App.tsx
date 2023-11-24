@@ -2,8 +2,8 @@
 import Footer from '@components/layout/Footer'
 import Header from '@components/layout/Header'
 import AppRoutes from './Routes'
-import ScrollToTopButton from '@common/ScrollToTopButton'
-import ScrollToTop from '@common/ScrollToTop'
+import ScrollToTopButton from '@/components/utils/ScrollToTopButton'
+import ScrollToTop from '@/components/utils/ScrollToTop'
 
 const App = () => {
   return (

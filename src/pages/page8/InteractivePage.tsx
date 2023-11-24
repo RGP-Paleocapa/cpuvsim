@@ -1,5 +1,5 @@
 import DraggableContainerGrid from "@common/DraggableContainerGrid";
-import { EBookPage, H4, InlineDivs, MaxWidthContainer, Ol, Section, SectionTitle, Text } from "@common/CustomComponents";
+import { EBookPage, H4, InlineDivs, MaxWidthContainer, Ol, Section, SectionTitle, Text } from "@/components/common/eBook/CustomComponents";
 import AssemblyTasksComponent from "@common/AssemblyTaskComponent";
 
 const Page8 = () => {

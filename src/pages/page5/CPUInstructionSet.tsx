@@ -1,5 +1,5 @@
 import Table from "@common/Table";
-import { Description, EBookPage, Section, SectionTitle, Text, Ul } from "@common/CustomComponents";
+import { Description, EBookPage, Section, SectionTitle, Text, Ul } from "@/components/common/eBook/CustomComponents";
 import References from "@common/Refrences";
 import { YourImageComponent } from "@common/images";
 import images from "@assets/images/pages/page5";

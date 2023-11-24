@@ -1,5 +1,5 @@
 import images from "@assets/images/pages/page7";
-import { EBookPage, Section, SectionTitle, InlineDivs, MaxWidthContainer, Text } from "@common/CustomComponents";
+import { EBookPage, Section, SectionTitle, InlineDivs, MaxWidthContainer, Text } from "@/components/common/eBook/CustomComponents";
 
 const Page7 = () => {
 

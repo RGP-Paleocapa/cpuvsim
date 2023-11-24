@@ -1,21 +1,18 @@
 import { Routes, Route } from 'react-router-dom';
 // import Cookies from 'js-cookie';
-import Home from '@components/layout/Home';
-import About from '@components/layout/About';
 import { NotFound, Maintenance } from '@errors/Errors';
 // import Admin from '@pages/Admin';
-import { Page1, Page2, Page3, Page4, Page5, Page6, Page7 } from '@pages/pages';
+import { Home, About, Admin, Page1, Page2, Page3, Page4, Page5, Page6, Page7 } from '@pages/pages';
 
 const AppRoutes = () => {
     // const adminToken = Cookies.get('token'); // Retrieve the token from cookies
 
     return (
         <Routes>
-            {/* Static */}
+            {/* Static / Main */}
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-
-            {/* <Route path="/admin" element={<Admin />} /> */}
+            <Route path="/admin" element={<Admin />} />
 
             {/* Pages */}
             <Route path="/page1" element={<Page1 />} />

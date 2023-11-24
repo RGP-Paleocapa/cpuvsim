@@ -1,4 +1,4 @@
-import { EBookPage, Text, SectionTitle, Section, Description, Figure } from "@common/CustomComponents";
+import { EBookPage, Text, SectionTitle, Section, Description, Figure } from "@/components/common/eBook/CustomComponents";
 import Refrences from "@common/Refrences";
 import images from "@assets/images/pages/page1";
 import { ImageSlider } from "@common/images";

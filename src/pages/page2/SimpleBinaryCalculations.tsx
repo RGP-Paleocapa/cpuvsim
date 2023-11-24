@@ -1,6 +1,6 @@
 import { images } from "@assets/images/pages/page2";
 import Table from "@common/Table";
-import { Description, EBookPage, H3, InlineDivs, MaxWidthContainer, Section, SectionTitle, Text, Ul } from "@common/CustomComponents";
+import { Description, EBookPage, H3, InlineDivs, MaxWidthContainer, Section, SectionTitle, Text, Ul } from "@/components/common/eBook/CustomComponents";
 import References from "@common/Refrences";
 
 const Page2 = () => {

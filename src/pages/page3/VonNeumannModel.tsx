@@ -1,5 +1,5 @@
 import images from "@assets/images/pages/page3";
-import { EBookPage, Section, SectionTitle, InlineDivs, Ul, Text, MaxWidthContainer, Description, H2 } from "@common/CustomComponents";
+import { EBookPage, Section, SectionTitle, InlineDivs, Ul, Text, MaxWidthContainer, Description, H2 } from "@/components/common/eBook/CustomComponents";
 import References from "@common/Refrences";
 import InteractiveImage from "@common/images/InteractiveImage";
 

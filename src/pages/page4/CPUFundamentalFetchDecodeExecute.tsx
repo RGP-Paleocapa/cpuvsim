@@ -1,6 +1,6 @@
 import { YourImageComponent } from "@common/images";
 import images from "@assets/images/pages/page4";
-import { EBookPage, InlineDivs, MaxWidthContainer, Ol, Section, SectionTitle, Text } from "@common/CustomComponents";
+import { EBookPage, InlineDivs, MaxWidthContainer, Ol, Section, SectionTitle, Text } from "@/components/common/eBook/CustomComponents";
 import References from "@common/Refrences";
 
 const Page4 = () => {
