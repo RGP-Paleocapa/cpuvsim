@@ -61,9 +61,9 @@ const SwitchPage: React.FC<SwitchPageProps> = ({ currentPage }) => {
         } else if (position === 'bottom') {
           let offsetFromBottom: number;
           if (screenWidth > 1200) { // Large screens
-            offsetFromBottom = 700;
+            offsetFromBottom = 300;
           } else { // Medium and small screens
-            offsetFromBottom = 525;
+            offsetFromBottom = 1350;
           }
 
           const bottomPosition = document.documentElement.scrollHeight - window.innerHeight - offsetFromBottom;
