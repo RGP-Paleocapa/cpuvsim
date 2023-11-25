@@ -1,7 +1,7 @@
 import EBookPage from "@common/eBook/EBook";
 import { H4, Ol, Section, SectionTitle, Text, DraggableContainerGrid } from "@common/eBook/content";
 import { InlineDivs, MaxWidthContainer } from "@common/eBook/layout";
-import AssemblyTasksComponent from "@common/AssemblyTaskComponent";
+import AssemblyTasksComponent from "@/pages/page8/AssemblyTaskComponent";
 
 const Page8 = () => {
     const container1 = [
@@ -133,7 +133,7 @@ const Page8 = () => {
                 </Ol>
             </Section>
 
-            {/* <Section>
+            <Section>
                 <H4>
                     Develop suitable programs in assembly code, to solve the following problems:
                 </H4>
@@ -256,12 +256,12 @@ const Page8 = () => {
                         <button>Show answer</button>       
                     </div>
                 </InlineDivs>
-            </Section> */}
+            </Section>
 
-            <Section>
+            {/* <Section>
                 <H4>Develop suitable programs in assembly code, to solve the following problems:</H4>
                 <AssemblyTasksComponent lists={lists} />
-            </Section>
+            </Section> */}
         </EBookPage>
     );
 
