@@ -1,7 +1,7 @@
 import EBookPage from "@common/eBook/EBook";
 import { H4, Ol, Section, SectionTitle, Text, DraggableContainerGrid } from "@common/eBook/content";
 import { InlineDivs, MaxWidthContainer } from "@common/eBook/layout";
-import AssemblyTasksComponent from "@/pages/page8/AssemblyTaskComponent";
+// import AssemblyTasksComponent from "@/pages/page8/AssemblyTaskComponent";
 
 const Page8 = () => {
     const container1 = [
@@ -30,35 +30,35 @@ const Page8 = () => {
         { id: 'container-15', content: '3' },
         { id: 'container-16', content: '6' },
     ];
-    const lists = {
-        task1: "Perform the addition, subtraction, multiplication and division of 2 numbers; if the operation is not commutative and the first number is smaller than the second one, reverse them.",
-        task2: "Calculate the mean of 3 numbers.",
-        task3: "Find the maximum and the minimum of 2 numbers.",
-        task4: "Determine the parity (even or odd) of a number.",
-        task5: "Sum the numbers from 1 to 5.",
-        task6: "Calculate the factorial of a number.",
-        task7: "Compute the result of the expression: Y= 3*X + 5, where X and Y are labels corresponding to memory addresses.",
-        task8: "Compute the sum of the numbers from X to Y included, where X and Y are labels corresponding to memory addresses.",
-        task9: "Compute the Greatest Common Divisor problem, using the 'Euclid's Method'.",
-        task10: {
-            title: "Translate the following pseudo-code to assembler:",
-            code: "COUNT:=0; K:=5;\nDO\n    K:=K+37;\n    COUNT:=COUNT+1;\nWHILE K < 612"
-        },
-        task11: "Determine how many bits are set (i.e., have value '1') in a given byte. Example: 87 = 0101 0111 -> 5 Hint: check the last bit, shift right the original number, repeat.",
-        task12: {
-            title: "Translate the following pattern in pseudo-code to assembler:",
-            code: "FOR I:= 5 DOWNTO 0 DO {\n    // Body code here\n}\n\n// Additional code here"
-        },
-        task13: {
-            title: "Translate the following pattern in pseudo-code to assembler:",
-            code: "IF <boolean expression>\n    THEN <statements>\nENDIF\n\n<other statements>"
-        },
-        task14: {
-            title: "Translate the following pattern in pseudo-code to assembler:",
-            code: "IF W<X\n    THEN\n        exchange W and X\nENDIF"
-        },
-        task15: "Determine whether a given positive integer number satisfies the Collatz conjecture (see the definition at https://en.wikipedia.org/wiki/Collatz_conjecture), computing the number of iterations necessary to reach the number 1."
-    };
+    // const lists = {
+    //     task1: "Perform the addition, subtraction, multiplication and division of 2 numbers; if the operation is not commutative and the first number is smaller than the second one, reverse them.",
+    //     task2: "Calculate the mean of 3 numbers.",
+    //     task3: "Find the maximum and the minimum of 2 numbers.",
+    //     task4: "Determine the parity (even or odd) of a number.",
+    //     task5: "Sum the numbers from 1 to 5.",
+    //     task6: "Calculate the factorial of a number.",
+    //     task7: "Compute the result of the expression: Y= 3*X + 5, where X and Y are labels corresponding to memory addresses.",
+    //     task8: "Compute the sum of the numbers from X to Y included, where X and Y are labels corresponding to memory addresses.",
+    //     task9: "Compute the Greatest Common Divisor problem, using the 'Euclid's Method'.",
+    //     task10: {
+    //         title: "Translate the following pseudo-code to assembler:",
+    //         code: "COUNT:=0; K:=5;\nDO\n    K:=K+37;\n    COUNT:=COUNT+1;\nWHILE K < 612"
+    //     },
+    //     task11: "Determine how many bits are set (i.e., have value '1') in a given byte. Example: 87 = 0101 0111 -> 5 Hint: check the last bit, shift right the original number, repeat.",
+    //     task12: {
+    //         title: "Translate the following pattern in pseudo-code to assembler:",
+    //         code: "FOR I:= 5 DOWNTO 0 DO {\n    // Body code here\n}\n\n// Additional code here"
+    //     },
+    //     task13: {
+    //         title: "Translate the following pattern in pseudo-code to assembler:",
+    //         code: "IF <boolean expression>\n    THEN <statements>\nENDIF\n\n<other statements>"
+    //     },
+    //     task14: {
+    //         title: "Translate the following pattern in pseudo-code to assembler:",
+    //         code: "IF W<X\n    THEN\n        exchange W and X\nENDIF"
+    //     },
+    //     task15: "Determine whether a given positive integer number satisfies the Collatz conjecture (see the definition at https://en.wikipedia.org/wiki/Collatz_conjecture), computing the number of iterations necessary to reach the number 1."
+    // };
     
     return (
         <EBookPage currentPage={8}>
