@@ -1,12 +1,14 @@
+import EBookPage from "@common/eBook/EBook";
+import { Section, SectionTitle, Ul, Text, Description, H2 } from "@common/eBook/content";
+import { InlineDivs, MaxWidthContainer } from "@common/eBook/layout";
 import images from "@assets/images/pages/page3";
-import { EBookPage, Section, SectionTitle, InlineDivs, Ul, Text, MaxWidthContainer, Description, H2 } from "@/components/common/eBook/CustomComponents";
-import References from "@common/Refrences";
-import InteractiveImage from "@common/images/InteractiveImage";
+import { InteractiveImage } from "@common/eBook/images/";
+import References from "@common/eBook/Refrences";
 
 const Page3 = () => {
   const references = [
-      {
-        text: 'Von Neumann architecture',
+    {
+      text: 'Von Neumann architecture',
         link: 'https://en.wikipedia.org/wiki/Von_Neumann_architecture',
       },
       {

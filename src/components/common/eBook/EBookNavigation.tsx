@@ -1,1 +1,0 @@
-// Add switchpage and   navigation menu

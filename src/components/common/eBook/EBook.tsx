@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
-import NavigationMenu from "@common/NavigationMenuProps";
-import SwitchPage from "@common/SwitchPage";
+import NavigationMenu from "@common/eBook/navigation/NavigationMenu";
+import SwitchPage from "@common/eBook/navigation/SwitchPage";
 
 interface EBookProps {
     children: ReactNode;

@@ -1,7 +1,9 @@
-import { YourImageComponent } from "@common/images";
 import images from "@assets/images/pages/page4";
-import { EBookPage, InlineDivs, MaxWidthContainer, Ol, Section, SectionTitle, Text } from "@/components/common/eBook/CustomComponents";
-import References from "@common/Refrences";
+import EBookPage from "@common/eBook/EBook";
+import { Ol, Section, SectionTitle, Text } from "@common/eBook/content";
+import { InlineDivs, MaxWidthContainer } from "@common/eBook/layout";
+import { YourImageComponent } from "@common/eBook/images";
+import References from "@common/eBook/Refrences";
 
 const Page4 = () => {
     const references = [

@@ -1,9 +1,13 @@
-import { EBookPage, Text, SectionTitle, Section, Description, Figure } from "@/components/common/eBook/CustomComponents";
-import Refrences from "@common/Refrences";
+import useDocumentMetadata from "@hooks/useDocumentMetadata";
+import EBookPage from "@/components/common/eBook/EBook";
+import { ImageSlider } from "@common/eBook/images";
 import images from "@assets/images/pages/page1";
-import { ImageSlider } from "@common/images";
+import Refrences from "@common/eBook/Refrences";
+import { Figure } from "@common/eBook/layout";
+import { Section, SectionTitle, Description, Text } from "@common/eBook/content";
 
 const Page1 = () => {
+  useDocumentMetadata('ComputersAsGeneralPurpose', "This is the first page");
   const imageArray = Object.values(images).slice(0, 6);
   const gridData = [
     {

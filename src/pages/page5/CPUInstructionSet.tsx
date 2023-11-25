@@ -1,8 +1,8 @@
-import Table from "@common/Table";
-import { Description, EBookPage, Section, SectionTitle, Text, Ul } from "@/components/common/eBook/CustomComponents";
-import References from "@common/Refrences";
-import { YourImageComponent } from "@common/images";
+import EBookPage from "@common/eBook/EBook";
+import { Description, Section, SectionTitle, Text, Ul, Table } from "@common/eBook/content";
 import images from "@assets/images/pages/page5";
+import { YourImageComponent } from "@common/eBook/images";
+import References from "@common/eBook/Refrences";
 
 const Page5 = () => {
   const references = [
