@@ -1,6 +1,7 @@
-import { Link } from 'react-router-dom'; // Import Link for navigation
+import { Link, useLocation } from 'react-router-dom'; // Import Link for navigation
 import { FaArrowDown } from 'react-icons/fa';
 import useDocumentMetadata from '@hooks/useDocumentMetadata';
+import { useEffect } from 'react';
 
 const Home = () => {
   const handleScroll = () => {
@@ -10,6 +11,19 @@ const Home = () => {
       section.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
+  const location = useLocation();
+
+  useEffect(() => {
+    // Check if the URL has a hash
+    if (location.hash) {
+      // Scroll to the element with the matching ID
+      const targetElement = document.querySelector(location.hash);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [location.hash]);
 
   useDocumentMetadata('HomePage', 'This is the main page.');
 

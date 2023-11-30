@@ -1,7 +1,7 @@
 // import './App.css'
 import Footer from '@components/layout/Footer'
 import Header from '@components/layout/Header'
-import AppRoutes from './Routes'
+import AppRoutes from './routes/Routes'
 import ScrollToTopButton from '@/components/utils/ScrollToTopButton'
 import ScrollToTop from '@/components/utils/ScrollToTop'
 
