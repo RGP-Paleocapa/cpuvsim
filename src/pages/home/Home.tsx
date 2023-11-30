@@ -2,8 +2,19 @@ import { Link, useLocation } from 'react-router-dom'; // Import Link for navigat
 import { FaArrowDown } from 'react-icons/fa';
 import useDocumentMetadata from '@hooks/useDocumentMetadata';
 import { useEffect } from 'react';
+import { useFooter } from '@/context/FooterContext';
 
 const Home = () => {
+  const { setFooterData } = useFooter();
+
+  useEffect(() => {
+    console.log("Updating footer data from Home");
+    setFooterData([
+      { text: 'Cortinovis, R. (2021). An educational CPU Visual Simulator, Proceedings of the 32nd Annual Workshop of the Psychology of Programming Interest Group (PPIG).', link: 'https://ppig.org/files/2021-PPIG-32nd-DC-cortinovis.pdf' },
+    ]);
+  }, [setFooterData]); // Dependencies array ensures this runs only when setFooterData changes
+
+
   const handleScroll = () => {
     // Scroll to the section with the specified ID
     const section = document.getElementById('discover-features');

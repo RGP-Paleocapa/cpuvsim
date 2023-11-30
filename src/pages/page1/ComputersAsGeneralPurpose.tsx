@@ -2,13 +2,21 @@ import useDocumentMetadata from "@hooks/useDocumentMetadata";
 import EBookPage from "@/components/common/eBook/EBook";
 import { ImageSlider } from "@common/eBook/images";
 import images from "@assets/images/pages/page1";
-import Refrences from "@common/eBook/Refrences";
+// import Refrences from "@common/eBook/Refrences";
 import { Figure } from "@common/eBook/layout";
 import { Section, SectionTitle, Description, Text } from "@common/eBook/content";
 import { Link } from "react-router-dom";
+import { useFooter } from "@/context/FooterContext";
+import { useEffect } from "react";
 
 const Page1 = () => {
   useDocumentMetadata('ComputersAsGeneralPurpose', "This is the first page");
+  const { setFooterData } = useFooter();
+
+  useEffect(() => {
+    setFooterData(references);
+  }, [setFooterData]);
+  
   const imageArray = Object.values(images).slice(0, 6);
   const gridData = [
     {
@@ -161,7 +169,7 @@ const Page1 = () => {
           ))}
         </Figure>
       </Section>
-      <Refrences references={references}/>
+      {/* <Refrences references={references}/> */}
     </EBookPage>
   );
 }
