@@ -4,8 +4,10 @@ import { Ol, Section, SectionTitle, Text } from "@common/eBook/content";
 import { InlineDivs, MaxWidthContainer } from "@common/eBook/layout";
 import { YourImageComponent } from "@common/eBook/images";
 import References from "@common/eBook/Refrences";
+import useDocumentMetadata from "@hooks/useDocumentMetadata";
 
 const Page4 = () => {
+    useDocumentMetadata('CPU Fundamentals Fetch Decode Execute', "This is the fourth page");
     const references = [
         {
           text: 'The fetch-decode-execute cycle',

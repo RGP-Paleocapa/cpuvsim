@@ -27,7 +27,7 @@ const EBookPage: React.FC<EBookProps> = ({ children, currentPage }) => {
           </svg>
         </button>
       )}
-      <div className={`sidebar-container w-64 ${isNavOpen ? '' : 'hidden'}`}>
+      <div className={`sidebar-container w-0 lg:w-64 ${isNavOpen ? '' : 'hidden'}`}>
         <NavigationMenu currentPage={currentPage} totalPages={8} isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
       </div>
       <div className="content-container flex-1">

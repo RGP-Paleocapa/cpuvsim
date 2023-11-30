@@ -1,9 +1,11 @@
+import useDocumentMetadata from "@hooks/useDocumentMetadata";
 import EBookPage from "@common/eBook/EBook";
 import { H4, Ol, Section, SectionTitle, Text, DraggableContainerGrid } from "@common/eBook/content";
 import { InlineDivs, MaxWidthContainer } from "@common/eBook/layout";
 // import AssemblyTasksComponent from "@/pages/page8/AssemblyTaskComponent";
 
 const Page8 = () => {
+    useDocumentMetadata('Interactive Page', "This is the eighth page");
     const container1 = [
         { id: 'container-1', content: 'LOD #5' },
         { id: 'container-2', content: 'SUB #3' },

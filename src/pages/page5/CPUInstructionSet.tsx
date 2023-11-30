@@ -3,8 +3,10 @@ import { Description, Section, SectionTitle, Text, Ul, Table } from "@common/eBo
 import images from "@assets/images/pages/page5";
 import { YourImageComponent } from "@common/eBook/images";
 import References from "@common/eBook/Refrences";
+import useDocumentMetadata from "@hooks/useDocumentMetadata";
 
 const Page5 = () => {
+  useDocumentMetadata('CPU Instructions Set', "This is the fifth page");
   const references = [
     {
       text: 'Instruction set by Computer Hope (23/10/2021)',

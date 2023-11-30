@@ -1,7 +1,7 @@
 import useDocumentMetadata from "@hooks/useDocumentMetadata";
 
 const About = () => {
-  useDocumentMetadata('About - My App', 'Learn more about our mission and vision.');
+  useDocumentMetadata('About - CPU E-Book', 'Learn more about our mission and vision.');
 
   return (
     <div className="container mx-auto py-8 px-4 sm:px-6 lg:px-8">
@@ -13,28 +13,35 @@ const About = () => {
       </p>
 
       {/* Image Section */}
-      <div className="flex justify-center mb-8">
+      {/* <div className="flex justify-center mb-8">
         <img
           src="/your-about-image.jpg" // Replace with the path to your about image
           alt="About Us"
           className="max-w-full h-auto rounded-lg shadow-lg"
           style={{ maxWidth: '600px' }} // Set a maximum width for the image
         />
-      </div>
+      </div> */}
 
       {/* Content Section */}
       <div className="text-lg text-gray-600 dark:text-gray-400 space-y-4">
         <p>
-          Welcome to [Your App Name], a platform dedicated to [briefly describe the purpose of the app]. Since our inception in [Year], our goal has been to [state main objectives, e.g., provide high-quality assembler resources, facilitate learning, etc.].
+          This e-book and the associated CPUVSIM software have been developed by students for students,
+          as a multiple-years OER-enabled pedagogy project integrated in their more conventional educational activities.
+          This strategy aims to reduce the deplorable waste of resources associated with “disposable” traditional assignments, 
+          demonstrating the feasibility of a self-sustainable process where students fully engage in iteratively improving and extending open resources,
+          developing their professionality while benefiting the commons. These activities,
+          carried out in the context of Computing for Social Good, aim to preparing the next generation of computer scientists,
+          armed not only with coding skills but also with the power to wield technology for the betterment of society.
         </p>
         <p>
-          Our journey began when [brief history or an interesting story about how the app was conceptualized or founded]. We realized the importance of [what problem your app solves or the need it addresses] and set out to create a solution.
-        </p>
-        <p>
-          Today, [Your App Name] is [current status, achievements, or what the app is known for]. We are proud to have [any notable achievements, user milestones, or recognitions].
-        </p>
-        <p>
-          As we look to the future, we are excited to [future plans, upcoming features, or visions]. We invite you to join us on this journey and experience the difference that [Your App Name] can make in [your field or area of focus].
+          This e-book, along with the accompanying CPUVSIM software,
+          has been created by students for students as part of a multi-year OER-enabled pedagogy project integrated into their traditional educational activities.
+          This approach seeks to address the unfortunate waste of resources associated with "disposable" traditional assignments.
+          Instead, it demonstrates the feasibility of a self-sustainable process where students actively participate in iteratively improving and extending open resources.
+          Through this, they develop their professionalism while contributing to the common good.
+          These activities, conducted within the framework of Computing for Social Good,
+          aim to prepare the next generation of computer scientists:
+          not just equipped with coding skills but also empowered to wield technology for the betterment of society.
         </p>
       </div>
     </div>

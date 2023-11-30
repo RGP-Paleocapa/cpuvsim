@@ -4,8 +4,10 @@ import { InlineDivs, MaxWidthContainer } from "@common/eBook/layout";
 import images from "@assets/images/pages/page3";
 import { InteractiveImage } from "@common/eBook/images/";
 import References from "@common/eBook/Refrences";
+import useDocumentMetadata from "@hooks/useDocumentMetadata";
 
 const Page3 = () => {
+  useDocumentMetadata('Von Neumann Model', "This is the third page");
   const references = [
     {
       text: 'Von Neumann architecture',

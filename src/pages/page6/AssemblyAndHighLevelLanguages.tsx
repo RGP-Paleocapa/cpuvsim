@@ -4,8 +4,10 @@ import images from '@assets/images/pages/page6';
 import { Figure } from '@common/eBook/layout';
 import { YourImageComponent } from '@common/eBook/images';
 import References from '@common/eBook/Refrences';
+import useDocumentMetadata from '@hooks/useDocumentMetadata';
 
 const Page6 = () => {
+  useDocumentMetadata('Assembly and High Level Languages', "This is the sixth page");
   const references = [
     {
       text: "Educational CPU Visual Simulator: Interpreting a Simplified but Representative Assembly Language",

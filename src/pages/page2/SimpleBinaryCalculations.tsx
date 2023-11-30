@@ -4,8 +4,10 @@ import EBookPage from "@common/eBook/EBook";
 import { InlineDivs, MaxWidthContainer } from "@common/eBook/layout";
 import { Description, H3, Section, SectionTitle, Text, Ul } from "@common/eBook/content";
 import References from "@common/eBook/Refrences";
+import useDocumentMetadata from "@hooks/useDocumentMetadata";
 
 const Page2 = () => {
+    useDocumentMetadata('Simple Binary Calculations', "This is the second page");
     const references = [
         {
           text: 'Binary arithmetic',
