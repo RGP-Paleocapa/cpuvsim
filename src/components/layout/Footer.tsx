@@ -58,9 +58,9 @@ const Footer = () => {
               className="hover:text-blue-600 dark:hover:text-blue-400 transition duration-300 flex items-center"
             >
               <img
-                src="/by-nc-sa.svg" // Assuming the SVG file is in the public directory
-                alt="Description of SVG"
-                className="h-10 w-25" // Adjust the dimensions as needed
+                src="/by-nc-sa.svg"
+                alt="cc by-nc-sa"
+                className="h-10 w-25"
               />
               <span className="ml-1">CC BY-NC-SA 4.0</span>
             </a>
