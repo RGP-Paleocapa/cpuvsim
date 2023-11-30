@@ -10,7 +10,14 @@ const Footer: React.FC = () => {
   const startYear = 2023;
   const [showCredits, setShowCredits] = useState(false);
   const credits = [
-    'credits', // Define more detailed type if necessary
+    'Rares Gabriel Puiu  (latest version)',
+    'MariaPia Cavaretta',
+    'Giordano Cortinovis',
+    'Giovanni Ingargiola',
+    'Alessandro Suru',
+    'Andrea Sileo',
+    'Sarai Fernandez',
+    'Renato Cortinovis (project coordinator)',
   ];
 
   // Function to render sub references, if any
