@@ -10,11 +10,11 @@
 
     /* EBOOK NAVIGATION */
     .open-nav-button {
-        @apply hidden lg:block fixed dark:text-gray-400 top-20 left-24 z-50;
+        @apply hidden lg:block fixed dark:text-gray-400 top-20 left-80 z-50;
     }
     
     .navigation-menu {
-        @apply hidden fixed lg:block top-0 left-0 h-full z-10 w-32 bg-white dark:bg-gray-800 shadow-md pt-28 overflow-y-auto;
+        @apply hidden fixed lg:block top-0 left-0 h-full z-10 w-96 bg-white dark:bg-gray-800 shadow-md pt-28 overflow-y-auto;
     }
     
     .navigation-menu .current-page a {

@@ -1,5 +1,3 @@
-import React from 'react';
-
 interface Reference {
   text: string;
   link: string;
