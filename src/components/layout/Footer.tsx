@@ -58,7 +58,7 @@ const Footer = () => {
               className="hover:text-blue-600 dark:hover:text-blue-400 transition duration-300 flex items-center"
             >
               <img
-                src="/by-nc-sa.svg"
+                src="/public/by-nc-sa.svg"
                 alt="cc by-nc-sa"
                 className="h-10 w-25"
               />
