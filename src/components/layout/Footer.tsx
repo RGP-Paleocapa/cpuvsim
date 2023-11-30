@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import licenza from "/by-nc-sa.svg"
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -58,7 +59,7 @@ const Footer = () => {
               className="hover:text-blue-600 dark:hover:text-blue-400 transition duration-300 flex items-center"
             >
               <img
-                src="/by-nc-sa.svg"
+                src={licenza}
                 alt="cc by-nc-sa"
                 className="h-10 w-25"
               />
