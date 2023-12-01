@@ -1,0 +1,62 @@
+[
+    {
+      "text": "Perform the addition, subtraction, multiplication and division of 2 numbers; if the operation is not commutative and the first number is smaller than the second one, reverse them.",
+      "link": "https://cpuvisualsimulator.github.io/?program=ICAgICAgICAgICAgICAgTE9EIEEKICAgICAgICAgICAgICAgTE9EIEIKICAgICAgICAgICAgICAgU1RPIFNVTQogICAgICAgICAgICAgICBMT0QgQQogICAgICAgICAgICAgICBNVUwgQgogICAgICAgICAgICAgICBTVE8gTVVMCklGOiAgICAgICAgICAgIExPRCBBCiAgICAgICAgICAgICAgIFNVQiBCCiAgICAgICAgICAgICAgIEpOIEVMU0UKICAgICAgICAgICAgICAgU1RPIFNVQgogICAgICAgICAgICAgICBMT0QgQQogICAgICAgICAgICAgICBESVYgQgogICAgICAgICAgICAgICBTVE8gRElWCiAgICAgICAgICAgICAgIEhMVApFTFNFOiAgICAgICAgICBMT0QgQgogICAgICAgICAgICAgICBTVUIgQQogICAgICAgICAgICAgICBTVE8gU1VCCiAgICAgICAgICAgICAgIExPRCBCCiAgICAgICAgICAgICAgIERJViBBCiAgICAgICAgICAgICAgIFNUTyBESVYKRU5ESUY6ICAgICAgICAgSExUClNVTTogICAgICAgICAgIDIwClNVQjogICAgICAgICAgIDEwCk1VTDogICAgICAgICAgIDc1CkRJVjogICAgICAgICAgIDMKQTogICAgICAgICAgICAgNQpCOiAgICAgICAgICAgICAxNQ%3D%3D"
+    },
+    {
+      "text": "Calculate the mean of 3 numbers.",
+      "link": "https://cpuvisualsimulator.github.io/?program=ICAgICAgICAgICAgICAgTE9EIEEKICAgICAgICAgICAgICAgQUREIEIKICAgICAgICAgICAgICAgQUREIEMKICAgICAgICAgICAgICAgRElWICMzCiAgICAgICAgICAgICAgIFNUTyBNRUFOCiAgICAgICAgICAgICAgIEhMVApNRUFOOiAgICAgICAgICA2CkE6ICAgICAgICAgICAgIDgKQjogICAgICAgICAgICAgMwpDOiAgICAgICAgICAgICA3"
+    },
+    {
+      "text": "Find the maximum and the minimum of 2 numbers.",
+      "link": "https://cpuvisualsimulator.github.io/?program=ICAgICAgICAgICAgICAgU1VCIFkKICAgICAgICAgICAgICAgSk4gRUxTRQogICAgICAgICAgICAgICBMT0QgWAogICAgICAgICAgICAgICBTVE8gTUFYCiAgICAgICAgICAgICAgIExPRCBZCiAgICAgICAgICAgICAgIFNUTyBNSU4KICAgICAgICAgICAgICAgSExUCkVMU0U6ICAgICAgICAgIExPRCBZCiAgICAgICAgICAgICAgIFNUTyBNQVgKICAgICAgICAgICAgICAgTE9EIFgKICAgICAgICAgICAgICAgU1RPIE1JTgogICAgICAgICAgICAgICBITFQKWDogICAgICAgICAgICAgMjAKWTogICAgICAgICAgICAgMTAwCk1BWDogICAgICAgICAgIDEwMApNSU46ICAgICAgICAgICAyMA%3D%3D"
+    },
+    {
+      "text": "Determine the parity (even or odd) of a number.",
+      "link": "https://cpuvisualsimulator.github.io/?program=ICAgICAgICAgICAgICAgTE9EIE5VTUJFUgogICAgICAgICAgICAgICBBTkQgIzEKICAgICAgICAgICAgICAgSlogRVZFTgpPREQ6ICAgICAgICAgICBMT0QgIzEKICAgICAgICAgICAgICAgU1RPIE8KICAgICAgICAgICAgICAgSk1QIEVORApFVkVOOiAgICAgICAgICBMT0QgIzEKICAgICAgICAgICAgICAgU1RPIEUKRU5EOiAgICAgICAgICAgSExUCiAgICAgICAgICAgICAgIE5PUAogICAgICAgICAgICAgICBOT1AKICAgICAgICAgICAgICAgTk9QCk5VTUJFUjogICAgICAgIDk5CkU6ICAgICAgICAgICAgIE5PUApPOiAgICAgICAgICAgICAx"
+    },
+    {
+      "text": "Sum the numbers from 1 to 5.",
+      "hasButton": false
+    },
+    {
+      "text": "Calculate the factorial of a number.",
+      "hasButton": false
+    },
+    {
+      "text": "Compute the result of the expression: Y= 3*X + 5, where X and Y are labels corresponding to memory addresses.",
+      "hasButton": false
+    },
+    {
+      "text": "Compute the sum of the numbers from X to Y included, where X and Y are labels corresponding to memory addresses.",
+      "hasButton": false
+    },
+    {
+      "text": "Compute the Greatest Common Divisor problem, using the 'Euclid's Method'."
+    },
+    {
+      "title": "Translate the following pseudo-code to assembler:",
+      "code": "COUNT:=0; K:=5;DO\n    K:=K+37;\n    COUNT:=COUNT+1;\nWHILE K < 612"
+    },
+    {
+      "text": "Determine how many bits are set (i.e., have value '1') in a given byte. Example: 87 = 0101 0111 -> 5 Hint: check the last bit, shift right the original number, repeat.",
+      "link": " "
+    },
+    {
+      "title": "Translate the following pattern in pseudo-code to assembler:",
+      "code": "FOR I:= 5 DOWNTO 0 DO {\n    // Body code here\n}\n\n// Additional code here"
+    },
+    {
+      "title": "Translate the following pattern in pseudo-code to assembler:",
+      "code": "IF <boolean expression>\n    THEN <statements>\nENDIF\n\n<other statements>"
+    },
+    {
+      "title": "Translate the following pattern in pseudo-code to assembler:",
+      "code": "IF W<X\n    THEN\n        exchange W and X\nENDIF"
+    },
+    {
+      "text": "Determine whether a given positive integer number satisfies the Collatz conjecture (see the Collaz Conjecture), computing the number of iterations necessary to reach the number 1.",
+      "link": "https://en.wikipedia.org/wiki/Collatz_conjecture"
+    }
+  ]
+  

@@ -1,66 +1,48 @@
 import useDocumentMetadata from "@hooks/useDocumentMetadata";
 import EBookPage from "@common/eBook/EBook";
-import { H4, Ol, Section, SectionTitle, Text, DraggableContainerGrid } from "@common/eBook/content";
+import { Ol, Section, SectionTitle, Text, DraggableContainerGrid, H3 } from "@common/eBook/content";
 import { InlineDivs, MaxWidthContainer } from "@common/eBook/layout";
+import { useState } from "react";
+import problemListData from './problems.json';
+import containerData from './containers.json';
 // import AssemblyTasksComponent from "@/pages/page8/AssemblyTaskComponent";
 
+
+
+// Define a TypeScript interface for a problem
+interface Problem {
+    title?: string;
+    code?: string;
+    text?: string;
+    link?: string;
+    hasButton?: boolean; // Add a hasButton property
+}
+
 const Page8 = () => {
+    interface ContainerStates {
+        container1Visible: boolean;
+        container2Visible: boolean;
+    }
+
     useDocumentMetadata('Interactive Page', "This is the eighth page");
-    const container1 = [
-        { id: 'container-1', content: 'LOD #5' },
-        { id: 'container-2', content: 'SUB #3' },
-        { id: 'container-3', content: 'LOD X' },
-        { id: 'container-4', content: 'STO X' },
-        { id: 'container-5', content: 'HLT' },
-        { id: 'container-6', content: 'JNZ 10' },
-    ];
-    const container2 = [
-        { id: 'container-1', content: 'LOD X' },
-        { id: 'container-2', content: 'JNZ ELSE' },
-        { id: 'container-3', content: 'ADD Y' },
-        { id: 'container-4', content: 'JMP ENDIF' },
-        { id: 'container-5', content: 'ADD Z' },
-        { id: 'container-6', content: 'LOD #8' },
-        { id: 'container-7', content: 'HTL' },
-        { id: 'container-8', content: '7' },
-        { id: 'container-9', content: 'CMP #3' },
-        { id: 'container-10', content: 'LOD #5' },
-        { id: 'container-11', content: 'STO Y' },
-        { id: 'container-12', content: 'LOD #2' },
-        { id: 'container-13', content: 'STO Z' },
-        { id: 'container-14', content: 'STO X' },
-        { id: 'container-15', content: '3' },
-        { id: 'container-16', content: '6' },
-    ];
-    // const lists = {
-    //     task1: "Perform the addition, subtraction, multiplication and division of 2 numbers; if the operation is not commutative and the first number is smaller than the second one, reverse them.",
-    //     task2: "Calculate the mean of 3 numbers.",
-    //     task3: "Find the maximum and the minimum of 2 numbers.",
-    //     task4: "Determine the parity (even or odd) of a number.",
-    //     task5: "Sum the numbers from 1 to 5.",
-    //     task6: "Calculate the factorial of a number.",
-    //     task7: "Compute the result of the expression: Y= 3*X + 5, where X and Y are labels corresponding to memory addresses.",
-    //     task8: "Compute the sum of the numbers from X to Y included, where X and Y are labels corresponding to memory addresses.",
-    //     task9: "Compute the Greatest Common Divisor problem, using the 'Euclid's Method'.",
-    //     task10: {
-    //         title: "Translate the following pseudo-code to assembler:",
-    //         code: "COUNT:=0; K:=5;\nDO\n    K:=K+37;\n    COUNT:=COUNT+1;\nWHILE K < 612"
-    //     },
-    //     task11: "Determine how many bits are set (i.e., have value '1') in a given byte. Example: 87 = 0101 0111 -> 5 Hint: check the last bit, shift right the original number, repeat.",
-    //     task12: {
-    //         title: "Translate the following pattern in pseudo-code to assembler:",
-    //         code: "FOR I:= 5 DOWNTO 0 DO {\n    // Body code here\n}\n\n// Additional code here"
-    //     },
-    //     task13: {
-    //         title: "Translate the following pattern in pseudo-code to assembler:",
-    //         code: "IF <boolean expression>\n    THEN <statements>\nENDIF\n\n<other statements>"
-    //     },
-    //     task14: {
-    //         title: "Translate the following pattern in pseudo-code to assembler:",
-    //         code: "IF W<X\n    THEN\n        exchange W and X\nENDIF"
-    //     },
-    //     task15: "Determine whether a given positive integer number satisfies the Collatz conjecture (see the definition at https://en.wikipedia.org/wiki/Collatz_conjecture), computing the number of iterations necessary to reach the number 1."
-    // };
+    const [containerStates, setContainerStates] = useState<ContainerStates>({
+        container1Visible: false,
+        container2Visible: false,
+        // Add more container visibility states as needed
+      });
+    
+      const toggleContainer = (containerKey: keyof ContainerStates) => {
+        setContainerStates((prevState) => ({
+          ...prevState,
+          [containerKey]: !prevState[containerKey],
+        }));
+      };
+    
+    const container1 = containerData.container1;
+    const container1Solved = containerData.container1Solved;
+    const container2 = containerData.container2;
+    const container2Solved = containerData.container2Solved;
+    const problemList: Problem[] = problemListData;
     
     return (
         <EBookPage currentPage={8}>
@@ -78,22 +60,24 @@ const Page8 = () => {
                 <Section>
                     <InlineDivs>
                         <MaxWidthContainer>
-                        {/* <pre className="bg-gray-100 p-4 rounded-lg overflow-x-auto">
-                            <code className="block whitespace-pre">
-                                IF-THEN
-                                example:
-
-                                IF X==3
-                                    THEN Y:=5
-                                ENDIF
-                                HLT
-                            </code>
-                        </pre> */}
-                            Empty
+                            {containerStates.container1Visible && <DraggableContainerGrid initialContainers={container1Solved} />}
+                            <button
+                                className='text-black bg-green-300 py-2 px-5 rounded'
+                                onClick={() => toggleContainer('container1Visible')}
+                            >
+                                Show Solution
+                            </button>
                         </MaxWidthContainer>
                         <MaxWidthContainer>
+                            <Text>
+                                IF-THEN example:
+                                <br /><br />
+                                IF X==3 <br />
+                                    THEN Y:=5 <br />
+                                ENDIF <br />
+                                HLT <br /><br />
+                            </Text>
                             <DraggableContainerGrid initialContainers={container1} />
-                            <button className='text-black'>Solution</button>
                         </MaxWidthContainer>
                     </InlineDivs>
                 </Section>
@@ -104,20 +88,25 @@ const Page8 = () => {
                     <InlineDivs>
                         <MaxWidthContainer>
                             <DraggableContainerGrid initialContainers={container2} />
-                            <button className='text-black'>Solution</button>
                         </MaxWidthContainer>
                         <MaxWidthContainer>
-                            empty
+                            {containerStates.container2Visible && <DraggableContainerGrid initialContainers={container2Solved} />}
+                            <button
+                                className='text-black bg-green-300 py-2 px-5 rounded'
+                                onClick={() => toggleContainer('container2Visible')}
+                            >
+                                Show Solution
+                            </button>
                         </MaxWidthContainer>
                     </InlineDivs>
                 </Section>
             </div>
 
             <Section>
-                <H4>
+                <H3>
                     Perform the following tasks (please remember that any label needs to be defined
                     in the leftmost column of the RAM before it can be used in any instruction):
-                </H4>
+                </H3>
                 <Ol>
                     <li>
                         Describe the difference between numeric and direct addressing.
@@ -136,134 +125,43 @@ const Page8 = () => {
             </Section>
 
             <Section>
-                <H4>
-                    Develop suitable programs in assembly code, to solve the following problems:
-                </H4>
-                <InlineDivs>
-                    <div>
-                        <Ol>
-                            <li>
-                                Perform the addition, subtraction, multiplication and division of 2 numbers;
-                                if the operation is not commutative and the first number is smaller than the second one, reverse them.
-                            </li>
-                            <li>
-                                Calculate the mean of 3 numbers.
-                            </li>
-                            <li>
-                                Find the maximum and the minimum of 2 numbers.
-                            </li>
-                            <li>
-                                Determine the parity (even or odd) of a number.
-                            </li>
-                            <li>
-                                Sum the numbers from 1 to 5.
-                            </li>
-                            <li>
-                                Calculate the factorial of a number.
-                            </li>
-                            <li>
-                                Compute the result of the expression: Y= 3*X + 5, where X and Y are labels corresponding to memory addresses.
-                            </li>
-                            <li>
-                                Compute the sum of the numbers from X to Y included, where X and Y are labels corresponding to memory adresses.
-                            </li>
-                            <li>
-                                Compute the Greatest Common Divisor problem, using the "Euclid's Method".
-                            </li>
-                            <li>
-                                <H4>
-                                    Translate the following pseudo-code to assembler:
-                                </H4>      
-                                <code>
-                                    COUNT:=0; K:=5;
-                                    <br />
-                                    DO
-                                    <br />
-                                        K:=K+37;
-                                        <br />
-                                        COUNT:=COUNT+1;
-                                        <br />
-                                    WHILE K &lt 612
-                                </code>                         
-                            </li>
-                            <li>
-                                Determine how many bits are set (i.e. have value “1”) in a given byte.
-                                Example: 87 = 0101 0111 -&gt 5
-                                Hint: check the last bit, shift right the original number, repeat.
-                            </li>
-                            <li>
-                                <h4>
-                                    Translate the following pattern in pseudo-code to assembler:
-                                </h4>
-                                <code>
-                                    FOR I:= 5 DOWNTO 0 DO {
+  <H3>Develop suitable programs in assembly code, to solve the following problems:</H3>
+  <div className="flex flex-wrap">
+    {problemList.map((problem, index) => (
+      <div key={index} className="w-full p-4 bg-gray-100 dark:bg-gray-800">
+        <div className="flex items-start">
+          <div className="w-3/4"> {/* Adjust the width as needed */}
+            {(problem.text || problem.code) && (
+              <Ol start={index + 1} className="dark:text-white max-w-full">
+                {problem.text && <li>{problem.text}</li>}
+                {problem.code && (
+                  <li>
+                    <strong>{problem.title}</strong>
+                    <code>{problem.code}</code>
+                  </li>
+                )}
+              </Ol>
+            )}
+          </div>
+          <div className="w-1/4 mt-2 md:mt-0">
+            {problem.link ? (
+              <a
+                href={problem.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-blue-500 dark:bg-blue-800 text-white ml-2 px-2 py-1 rounded max-w-sm"
+              >
+                Go to Link
+              </a>
+            ) : null}
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</Section>
 
-                                        // Body code here
-                                        
-                                    }
 
-                                    // Additional code here
-                                </code>
-                            </li>
-                            <li>
-                                <strong>
-                                    Translate the following pattern in pseudo-code to assembler:
-                                </strong>
-                                <code>
-                                    IF &ltboolean expression&gt
-
-                                        THEN &ltstatements&gt
-
-                                    ENDIF
-
-                                    &ltother statements&gt
-                                </code>
-                            </li>
-                            <li>
-                                <H4>
-                                    Translate the following pattern in pseudo-code to assembler:
-                                </H4>
-                                <code>
-                                    IF W&ltX
-
-                                        THEN
-
-                                            exchange W and X
-
-                                    ENDIF
-                                </code>
-                            </li>
-                            <li>
-                                Determine whether a given positive integer number satisfies the Collatz conjecture
-                                (see the definition at https://en.wikipedia.org/wiki/Collatz_conjecture),
-                                computing the number of iterations necessary to reach the number 1.
-                            </li>
-                        </Ol>
-                    </div>
-                    <div>
-                        <button>Show answer</button>
-                        <button>Show answer</button>
-                        <button>Show answer</button>
-                        <button>Show answer</button>
-                        <button>Show answer</button>
-                        <button>Show answer</button>
-                        <button>Show answer</button>
-                        <button>Show answer</button>
-                        <button>Show answer</button>
-                        <button>Show answer</button>
-                        <button>Show answer</button>
-                        <button>Show answer</button>
-                        <button>Show answer</button>
-                        <button>Show answer</button>
-                        <button>Show answer</button>       
-                    </div>
-                </InlineDivs>
-            </Section>
-
-            {/* <Section>
-                <H4>Develop suitable programs in assembly code, to solve the following problems:</H4>
-                <AssemblyTasksComponent lists={lists} />
-            </Section> */}
         </EBookPage>
     );
 

@@ -29,25 +29,28 @@ export const Description = ({ children, alignCenter = false }: { children: React
 
 // H2 Component
 export const H2 = ({ children }: { children: ReactNode }) => (
-  <h2 className="mb-4 mt-10 text-xl font-bold leading-7 text-gray-900 dark:text-gray-200">{children}</h2>
+  <h2 className="mb-4 mt-10 text-xl font-bold leading-7 text-gray-900 dark:text-gray-100">{children}</h2>
 );
 
 // H3 Component
 export const H3 = ({ children }: { children: ReactNode }) => (
-  <h3 className="mb-4 text-lg font-bold leading-7 text-gray-900 dark:text-gray-200">{children}</h3>
+  <h3 className="mb-4 text-lg font-bold leading-7 text-gray-900 dark:text-gray-100">{children}</h3>
 );
 
 // H4 Component
 export const H4 = ({ children }: { children: ReactNode }) => (
-  <h4 className="mb-4 mt-10 text-base font-bold leading-5 text-black">{children}</h4>
+  <h4 className="mb-4 mt-10 text-base font-bold leading-5 text-gray-900 dark:text-gray-100">{children}</h4>
 );
+
 
 // Ul Component
 export const Ul = ({ children, className }: { children: React.ReactNode; className?: string }) => (
-  <ul className={`list-disc pl-5 ml-5 ${className ? className : ''}`}>{children}</ul>
+  <ul className={`list-disc pl-5 ml-5 text-gray-900 dark:text-gray-200 ${className ? className : ''}`}>{children}</ul>
 );
 
 // Ol Component
-export const Ol = ({ children, className }: { children: React.ReactNode; className?: string }) => (
-  <ol className={`list-decimal pl-5 ml-5 ${className ? className : ''}`}>{children}</ol>
+export const Ol = ({ children, className, start }: { children: React.ReactNode; className?: string; start?: number }) => (
+  <ol className={`list-decimal pl-5 ml-5 text-gray-900 dark:text-gray-200 ${className ? className : ''}`} start={start}>
+    {children}
+  </ol>
 );

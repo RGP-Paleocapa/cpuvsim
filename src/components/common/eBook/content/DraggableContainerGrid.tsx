@@ -26,15 +26,17 @@ const getRegisterNumber = (index: number): string => {
 }
 
 const DraggableContainer: React.FC<DraggableContainerProps> = ({ container, index, onDragStart, onDrop, onDragOver }) => (
-  <div className="flex items-center bg-blue-100 dark:bg-blue-800 overflow-hidden">
-    <div className="w-8 h-8 bg-gray-200 text-center leading-8">{getRegisterNumber(index)}</div>
+  <div className="flex items-center bg-blue-100 dark:bg-blue-800 overflow-hidden border-t border-blue-300 dark:border-blue-700">
+    <div className="w-12 h-12 bg-gray-200 text-center">
+      <div className="flex items-center justify-center h-full">{getRegisterNumber(index)}</div>
+    </div>
     <div
       key={container.id}
       onDragStart={e => onDragStart(e, index)}
       onDragOver={onDragOver}
       onDrop={e => onDrop(e, index)}
       draggable
-      className="flex-1 border border-blue-300 dark:border-blue-700 px-2"
+      className="flex-1 border-l border-blue-300 dark:border-blue-700 p-2 dark:text-gray-200"
     >
       {container.content}
     </div>
@@ -66,7 +68,7 @@ const DraggableContainerGrid: React.FC<DraggableContainerGridProps> = ({ initial
   }, []);
 
   return (
-    <div className="container bg-red-400 mx-auto">
+    <div className="container mx-auto">
       <div className="flex flex-col text-center">
         {containers.map((container, index) => (
           <DraggableContainer
