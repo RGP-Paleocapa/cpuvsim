@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import HamburgerMenuIcon from '../../HamburgerMenuIcon';
 
 interface NavigationMenuProps {
   currentPage: number;
@@ -25,15 +26,6 @@ const NavigationMenu: React.FC<NavigationMenuProps> = ({ currentPage, totalPages
 
   return (
     <>
-      {!isNavOpen && (
-        <button onClick={() => setIsNavOpen(true)} className="open-nav-button">
-          {/* SVG for Open Icon */}
-          <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
-          </svg>
-        </button>
-      )}
-      
       {isNavOpen && (
         <nav className="navigation-menu">
           <button onClick={toggleNav} className="absolute top-20 right-4 text-gray-600 hover:text-gray-800">
