@@ -3,11 +3,17 @@ import { Section, SectionTitle, Ul, Text, Description, H2 } from "@common/eBook/
 import { InlineDivs, MaxWidthContainer } from "@common/eBook/layout";
 import images from "@assets/images/pages/page3";
 import { InteractiveImage } from "@common/eBook/images/";
-import References from "@common/eBook/Refrences";
+// import References from "@common/eBook/Refrences";
 import useDocumentMetadata from "@hooks/useDocumentMetadata";
+import { useFooter } from "@/context/FooterContext";
+import { useEffect } from "react";
 
 const Page3 = () => {
   useDocumentMetadata('Von Neumann Model', "This is the third page");
+  const { setFooterData } = useFooter();
+  useEffect(() => {
+    setFooterData(references);
+  }, [setFooterData]);
   const references = [
     {
       text: 'Von Neumann architecture',
@@ -239,7 +245,7 @@ const Page3 = () => {
             and programs which are loaded in the main memory as needed.
           </Text>
         </Section>
-        <References references={references} />
+        {/* <References references={references} /> */}
     </EBookPage>
   );
 }

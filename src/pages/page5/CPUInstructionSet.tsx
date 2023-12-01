@@ -2,11 +2,17 @@ import EBookPage from "@common/eBook/EBook";
 import { Description, Section, SectionTitle, Text, Ul, Table } from "@common/eBook/content";
 import images from "@assets/images/pages/page5";
 import { YourImageComponent } from "@common/eBook/images";
-import References from "@common/eBook/Refrences";
+// import References from "@common/eBook/Refrences";
 import useDocumentMetadata from "@hooks/useDocumentMetadata";
+import { useFooter } from "@/context/FooterContext";
+import { useEffect } from "react";
 
 const Page5 = () => {
   useDocumentMetadata('CPU Instructions Set', "This is the fifth page");
+  const { setFooterData } = useFooter();
+  useEffect(() => {
+    setFooterData(references);
+  }, [setFooterData]);
   const references = [
     {
       text: 'Instruction set by Computer Hope (23/10/2021)',
@@ -127,7 +133,7 @@ const Page5 = () => {
             <Table headerTitles={["Arithmetic-logic"]} bodyRows={arithmeticLogicRows} />
           </div>
         </Section>
-      <References references={references} />
+      {/* <References references={references} /> */}
     </EBookPage>
   );
 }

@@ -3,11 +3,17 @@ import { Description, H3, Section, SectionTitle, Text } from '@common/eBook/cont
 import images from '@assets/images/pages/page6';
 import { Figure } from '@common/eBook/layout';
 import { YourImageComponent } from '@common/eBook/images';
-import References from '@common/eBook/Refrences';
+// import References from '@common/eBook/Refrences';
 import useDocumentMetadata from '@hooks/useDocumentMetadata';
+import { useFooter } from '@/context/FooterContext';
+import { useEffect } from 'react';
 
 const Page6 = () => {
   useDocumentMetadata('Assembly and High Level Languages', "This is the sixth page");
+  const { setFooterData } = useFooter();
+  useEffect(() => {
+    setFooterData(references);
+  }, [setFooterData]);
   const references = [
     {
       text: "Educational CPU Visual Simulator: Interpreting a Simplified but Representative Assembly Language",
@@ -136,7 +142,7 @@ const Page6 = () => {
             and  how constructs such as <strong>For</strong>, <strong>While</strong>, and <strong>If</strong> are translated in assembler and binary code.
           </Text>
         </Section>
-        <References references={references} />
+        {/* <References references={references} /> */}
       </EBookPage>
     );
 }

@@ -3,9 +3,15 @@ import { Section, SectionTitle, Text } from "@common/eBook/content";
 import { InlineDivs, MaxWidthContainer } from "@common/eBook/layout";
 import images from "@assets/images/pages/page7";
 import useDocumentMetadata from "@hooks/useDocumentMetadata";
+import { useFooter } from "@/context/FooterContext";
+import { useEffect } from "react";
 
 const Page7 = () => {
     useDocumentMetadata('Translation of High Level Language', "This is the seventh page");
+    const { setFooterData } = useFooter();
+    useEffect(() => {
+      setFooterData([]);
+    }, [setFooterData]);
     return (
         <EBookPage currentPage={7}>
             <Section>

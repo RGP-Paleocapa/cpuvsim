@@ -3,11 +3,17 @@ import EBookPage from "@common/eBook/EBook";
 import { Ol, Section, SectionTitle, Text } from "@common/eBook/content";
 import { InlineDivs, MaxWidthContainer } from "@common/eBook/layout";
 import { YourImageComponent } from "@common/eBook/images";
-import References from "@common/eBook/Refrences";
+// import References from "@common/eBook/Refrences";
 import useDocumentMetadata from "@hooks/useDocumentMetadata";
+import { useFooter } from "@/context/FooterContext";
+import { useEffect } from "react";
 
 const Page4 = () => {
     useDocumentMetadata('CPU Fundamentals Fetch Decode Execute', "This is the fourth page");
+    const { setFooterData } = useFooter();
+    useEffect(() => {
+      setFooterData(references);
+    }, [setFooterData]);
     const references = [
         {
           text: 'The fetch-decode-execute cycle',
@@ -76,8 +82,7 @@ const Page4 = () => {
                 </Text>
                 <YourImageComponent image={images.altro} />
             </Section>
-
-            <References references={references} />
+            {/* <References references={references} /> */}
         </EBookPage>
     );
 

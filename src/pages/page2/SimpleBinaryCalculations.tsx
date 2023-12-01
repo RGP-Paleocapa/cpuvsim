@@ -3,11 +3,17 @@ import Table from "@common/eBook/content/Table";
 import EBookPage from "@common/eBook/EBook";
 import { InlineDivs, MaxWidthContainer } from "@common/eBook/layout";
 import { Description, H3, Section, SectionTitle, Text, Ul } from "@common/eBook/content";
-import References from "@common/eBook/Refrences";
+// import References from "@common/eBook/Refrences";
 import useDocumentMetadata from "@hooks/useDocumentMetadata";
+import { useFooter } from "@/context/FooterContext";
+import { useEffect } from "react";
 
 const Page2 = () => {
     useDocumentMetadata('Simple Binary Calculations', "This is the second page");
+    const { setFooterData } = useFooter();
+    useEffect(() => {
+      setFooterData(references);
+    }, [setFooterData]);
     const references = [
         {
           text: 'Binary arithmetic',
@@ -200,7 +206,7 @@ const Page2 = () => {
                 </MaxWidthContainer>
             </InlineDivs>
         </Section>
-        <References references={references} />
+        {/* <References references={references} /> */}
     </EBookPage>
   );
 }

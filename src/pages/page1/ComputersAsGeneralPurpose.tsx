@@ -5,14 +5,12 @@ import images from "@assets/images/pages/page1";
 // import Refrences from "@common/eBook/Refrences";
 import { Figure } from "@common/eBook/layout";
 import { Section, SectionTitle, Description, Text } from "@common/eBook/content";
-import { Link } from "react-router-dom";
 import { useFooter } from "@/context/FooterContext";
 import { useEffect } from "react";
 
 const Page1 = () => {
   useDocumentMetadata('ComputersAsGeneralPurpose', "This is the first page");
   const { setFooterData } = useFooter();
-
   useEffect(() => {
     setFooterData(references);
   }, [setFooterData]);
@@ -85,7 +83,6 @@ const Page1 = () => {
         <Text>
           We are all familiar with widely popular <b>“general-purpose”</b> computers such as desktops, laptops, or tablets. Yet, modern mobile phones or gaming consoles are computers too, and even disparate devices such as digital cameras, audio players, watches, TV sets, washing machines, cars, drones, or even modern clothes and shoes, all embed computers that are instrumental to support their functionalities.
         </Text>
-        <Link to="/#discover-features">Discover Features</Link>
       </Section>
 
       <Section> 
