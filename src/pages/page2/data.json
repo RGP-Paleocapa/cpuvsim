@@ -1,0 +1,24 @@
+{
+    "references": [
+      {
+        "text": "Binary arithmetic",
+        "link": "https://www.open.edu/openlearn/science-maths-technology/computing-and-ict/computing/representing-and-manipulating-data-computers/content-section-7.1"
+      },
+      {
+        "text": "Algorithms for Adjusting Brightness and Contrast of an Image",
+        "link": "https://ie.nitk.ac.in/blog/2020/01/19/algorithms-for-adjusting-brightness-and-contrast-of-an-image/"
+      }
+    ],
+    "textTable": [
+      ["0100 0001", "A", "0110 0001", "a"],
+      ["0100 0010", "B", "0110 0010", "b"],
+      ["0100 0011", "C", "0110 0011", "c"],
+      ["0100 0100", "D", "0110 0100", "d"]
+    ],
+    "instructionTable": [
+      ["00000000 | 00001000", "Add content of memory cell number 8 into the Accumulator"],
+      ["00000101 | 00000100", "Store the value of the Accumulator into Memory Location X"],
+      ["00001100 | 00000111", "Unconditional jump to the instruction at location P"]
+    ]
+  }
+  

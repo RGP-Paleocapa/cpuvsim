@@ -6,6 +6,8 @@ import { YourImageComponent } from "@common/eBook/images";
 import useDocumentMetadata from "@hooks/useDocumentMetadata";
 import { useFooter } from "@/context/FooterContext";
 import { useEffect } from "react";
+import data from './data.json';
+import SmoothScrollButton from "@/components/common/SmoothScrollButtonProps";
 
 const Page5 = () => {
   useDocumentMetadata('CPU Instructions Set', "This is the fifth page");
@@ -13,63 +15,11 @@ const Page5 = () => {
   useEffect(() => {
     setFooterData(references);
   }, [setFooterData]);
-  const references = [
-    {
-      text: 'Instruction set by Computer Hope (23/10/2021)',
-      link: 'https://www.computerhope.com/jargon/i/instset.htm',
-    },
-    {
-      text: 'Instruction Sets: Characteristics and Functions (Download PDF)',
-      link: 'https://faculty.tarleton.edu/agapie/documents/cs_343_arch/10_Instruction_Sets_characteristics2.pdf',
-    },
-    {
-      text: 'Data flow operations',
-      link: 'https://en.wikipedia.org/wiki/Instruction_set_architecture#Data_handling_and_memory_operations',
-    },
-    {
-      text: 'Control flow operations',
-      link: 'https://en.wikipedia.org/wiki/Control_flow',
-    },
-    {
-      text: 'Arithmetic-logic operations',
-      link: 'https://en.wikipedia.org/wiki/Arithmetic_logic_unit#Arithmetic_operations',
-    },
-  ];
-  const bodyRows = [
-    ["00000001 | 00001000", "ADD 8", "Add content of memory cell number 8 into the Accumulator"],
-    ["00010001 | 00001000", "ADD #8", "Add number 8 into the Accumulator"],
-    ["00000001 | 00001000", "ADD Y", "Add content of memory cell tagged as Y into the Accumulator"],
-    ];
-  const dataFlowRows = [
-    ["LOD X", "00000101", "Load content of Memory Location X (or number #X) into the Accumulator."],
-    ["LOD #X", "00010101", "Load content of Memory Location X (or number #X) into the Accumulator."],
-    ["STO Y", "00000110", "Store the value of the Accumulator into Memory Location Y."],
-  ];
-  const controlFlowRows = [
-    ["JMP P", "00001101", "Unconditional jump to the instruction at location P."],
-    ["JZ P", "00001110", "Jump on Zero: if Flag Z is set, go to instruction number P, otherwise go to the next instruction."],
-    ["JNZ P", "00001100", "Jump on Not Zero: if Flag Z is cleared, go to instruction number P, otherwise, go to the next instruction."],
-    ["JN P", "00000111", "Jump on Negative: if Flag N is set, go to instruction number P, otherwise go to the next instruction."],
-    ["JNN P", "00001000", "Jump on Not Negative: if Flag N is cleared, go to instruction number P, otherwise go to the next instruction."],
-    ["NOP", "00000000", "No operation, go to next instruction."],
-    ["HLT", "00001111", "Halt execution."],
-  ];
-  const arithmeticLogicRows = [
-    ["ADD X", "00000001", "Add content of Memory Location X (or number #X) to the Accumulator. Flags are updated."],
-    ["ADD #X", "00010001", "Add content of Memory Location X (or number #X) to the Accumulator. Flags are updated."],
-    ["SUB X", "00000010", "Subtract content of Memory Location X (or number #X) from the Accumulator. Flags are updated."],
-    ["SUB #X", "00010010", "Subtract content of Memory Location X (or number #X) from the Accumulator. Flags are updated."],
-    ["MUL X", "00000011", "Multiply the Accumulator by the content of Memory Location X (or number #X). Flags are updated."],
-    ["MUL #X", "00010011", "Multiply the Accumulator by the content of Memory Location X (or number #X). Flags are updated."],
-    ["DIV X", "00000100", "Divide the Accumulator by the content of Memory Location X (or number #X). Flags are updated."],
-    ["DIV #X", "00010100", "Divide the Accumulator by the content of Memory Location X (or number #X). Flags are updated."],
-    ["AND X", "00001001", "Bitwise AND between the Accumulator and the content of Memory Location X (or number #X). Flags are updated."],
-    ["AND #X", "00011001", "Bitwise AND between the Accumulator and the content of Memory Location X (or number #X). Flags are updated."],
-    ["NOT X", "00001010", "Bitwise NOT of the content of Memory Location X (or number #X). The result is stored in the Accumulator."],
-    ["NOT #X", "00011010", "Bitwise NOT of the content of Memory Location X (or number #X). The result is stored in the Accumulator."],
-    ["CMP X", "00001011", "Subtract content of Memory Location X (or number #X) from the Accumulator. Flags are updated, but the content of the Accumulator is not modified."],
-    ["CMP #X", "00011011", "Subtract content of Memory Location X (or number #X) from the Accumulator. Flags are updated, but the content of the Accumulator is not modified."],
-  ];      
+  const references = data.const_references;
+  const bodyRows = data.bodyRows;
+  const dataFlowRows = data.dataFlowRows;
+  const controlFlowRows = data.controlFlowRows;
+  const arithmeticLogicRows = data.arithmeticLogicRows;    
 
   return (
     <EBookPage currentPage={5}>
@@ -110,15 +60,26 @@ const Page5 = () => {
           </Text>
               <Ul className="dark:text-gray-200">
                 <li>
-                  <strong>Data flow operations</strong>: instructions used to  transfer (store) the contents of a CPU register, or the result of a computation to the primary memory, or to transfer (load) data stored in the primary memory to the CPU, in order to perform a computation on it later.
+                  <strong>Data flow operations</strong>: instructions used to  transfer (store) the contents of a CPU register,
+                  or the result of a computation to the primary memory,
+                  or to transfer (load) data stored in the primary memory to the CPU,
+                  in order to perform a computation on it later.
+                  <SmoothScrollButton targetId={"footer"} buttonText={"[1]"} />
                 </li>
                 <br />
                 <li>
-                  <strong>Control flow operations</strong>: instructions that modify the order in which individual instructions are executed (instruction are otherwise executed in sequential order, one after the other). 
+                  <strong>Control flow operations</strong>:
+                  instructions that modify the order in which individual instructions are executed (instruction are otherwise executed in sequential order,
+                  one after the other).
+                  in order to perform a computation on it later.
+                  <SmoothScrollButton targetId={"footer"} buttonText={"[2]"} />
                 </li>
                 <br />
                 <li>
-                  <strong>Arithmetic-logic operations</strong>: instructions that perform arithmetic (addition, subtraction...) and logic operations (and, not...).
+                  <strong>Arithmetic-logic operations</strong>:
+                  instructions that perform arithmetic (addition, subtraction...)
+                  and logic operations (and, not...).
+                  in order to perform a computation on it later. <SmoothScrollButton targetId={"footer"} buttonText={"[3]"} />
                 </li>
               </Ul>
         </Section>

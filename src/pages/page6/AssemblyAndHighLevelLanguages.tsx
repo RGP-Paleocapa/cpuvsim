@@ -7,6 +7,7 @@ import { YourImageComponent } from '@common/eBook/images';
 import useDocumentMetadata from '@hooks/useDocumentMetadata';
 import { useFooter } from '@/context/FooterContext';
 import { useEffect } from 'react';
+import data from './data.json';
 
 const Page6 = () => {
   useDocumentMetadata('Assembly and High Level Languages', "This is the sixth page");
@@ -14,28 +15,7 @@ const Page6 = () => {
   useEffect(() => {
     setFooterData(references);
   }, [setFooterData]);
-  const references = [
-    {
-      text: "Educational CPU Visual Simulator: Interpreting a Simplified but Representative Assembly Language",
-      link: "https://www.oercommons.org/courses/educational-cpu-visual-simulator-interpreting-a-simplified-but-representative-assembly-language",
-    },
-    {
-      text: "Programming Languages - Wikiversity",
-      link: "https://en.wikiversity.org/wiki/Programming_languages",
-    },
-    {
-      text: "High-level programming language - Wikipedia",
-      link: "https://en.wikipedia.org/wiki/High-level_programming_language",
-    },
-    {
-      text: "Assembly language - Wikiversity",
-      link: "https://en.wikiversity.org/wiki/Assembly_language",
-    },
-    {
-      text: "Low-level programming language - Wikipedia",
-      link: "https://en.wikipedia.org/wiki/Low-level_programming_language",
-    },
-  ];
+  const references = data.references;
   
     return (
         <EBookPage currentPage={6}>

@@ -7,6 +7,8 @@ import { Description, H3, Section, SectionTitle, Text, Ul } from "@common/eBook/
 import useDocumentMetadata from "@hooks/useDocumentMetadata";
 import { useFooter } from "@/context/FooterContext";
 import { useEffect } from "react";
+import data from './data.json';
+import SmoothScrollButton from "@/components/common/SmoothScrollButtonProps";
 
 const Page2 = () => {
     useDocumentMetadata('Simple Binary Calculations', "This is the second page");
@@ -14,30 +16,9 @@ const Page2 = () => {
     useEffect(() => {
       setFooterData(references);
     }, [setFooterData]);
-    const references = [
-        {
-          text: 'Binary arithmetic',
-          link: 'https://www.open.edu/openlearn/science-maths-technology/computing-and-ict/computing/representing-and-manipulating-data-computers/content-section-7.1',
-        },
-        {
-          text: 'Algorithms for Adjusting Brightness and Contrast of an Image',
-          link: 'https://ie.nitk.ac.in/blog/2020/01/19/algorithms-for-adjusting-brightness-and-contrast-of-an-image/',
-        },
-    ];
-
-    const textTable = [
-        ["0100 0001", "A", "0110 0001", "a"],
-        ["0100 0010", "B", "0110 0010", "b"],
-        ["0100 0011", "C", "0110 0011", "c"],
-        ["0100 0100", "D", "0110 0100", "d"],
-      ];
-
-    const instructionTable = [
-    ["00000000 | 00001000", "Add content of memory cell number 8 into the Accumulator"],
-    ["00000101 | 00000100", "Store the value of the Accumulator into Memory Location X"],
-    ["00001100 | 00000111", "Unconditional jump to the instruction at location P"],
-    ];
-
+    const references = data.references;
+    const textTable = data.textTable;
+    const instructionTable = data.instructionTable;
 
   return (
     <EBookPage currentPage={2}>
@@ -50,6 +31,7 @@ const Page2 = () => {
                 As said before, computers do not represent and process information using numbers, text, images, or sounds as we do. Instead, they represent everything using just two symbols: <b>1</b> and <b>0</b>.
                 <br /><br />
                 For example, pairs of binary digits are added according to the rules:
+                <SmoothScrollButton targetId="footer" buttonText="[1]" />
                 <br /><br />
                 <b className="text-blue-400">0</b> + <b className="text-blue-400">0</b> = <b className="text-blue-400">0</b>
                 <br />
@@ -155,7 +137,9 @@ const Page2 = () => {
                     <Text>
                         In order to execute programs or process data, computers must follow some specific instructions. 
                         <br />
-                        As discussed in the "CPU instruction set" section, there are many basic operations that a machine can perform. Each one is composed of an opcode (the instruction executed by the CPU) and one or more operands (the data or memory locations the instruction operates on). 
+                        As discussed in the
+                        "CPU instruction set"
+                        section,there are many basic operations that a machine can perform. Each one is composed of an opcode (the instruction executed by the CPU) and one or more operands (the data or memory locations the instruction operates on). 
                         <br />
                         Since binary code is the only language that a computer can understand, these instruction are represented, again, as binary digits.
                     </Text>

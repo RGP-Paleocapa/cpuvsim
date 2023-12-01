@@ -7,6 +7,8 @@ import { Figure } from "@common/eBook/layout";
 import { Section, SectionTitle, Description, Text } from "@common/eBook/content";
 import { useFooter } from "@/context/FooterContext";
 import { useEffect } from "react";
+import data from './data.json';
+import SmoothScrollButton from "@/components/common/SmoothScrollButtonProps";
 
 const Page1 = () => {
   useDocumentMetadata('ComputersAsGeneralPurpose', "This is the first page");
@@ -16,72 +18,21 @@ const Page1 = () => {
   }, [setFooterData]);
   
   const imageArray = Object.values(images).slice(0, 6);
-  const gridData = [
-    {
-      bgColor: 'bg-amber-800/75',
-      texts: ['C 01000011', 'a 01100001', 't 01110100'],
-      description: 'In a computer, a sequence of binary digits can represent a sequence of characters. For instance, the above code may represent the word "Cat".'
-    },
-    {
-      bgColor: 'bg-gray-500',
-      texts: ['01000011', '01100001', '01110100'],
-      description: 'The same sequence may also represents the 3 numbers "67, 97, 116", or "4.415.860" if considered as a single 24-bit number.'
-    },
-    {
-      bgColor: 'bg-green-900',
-      texts: ['01000011', '01100001', '01110100'],
-      description: 'In a different context, the same sequence again may represent the above dark shade of blue. Indeed, by considering 67, 97 and 116 as the levels of red, green and blue intensity, these digits represent a color.'
-    },
-  ]
-  const references = [
-    {
-      text: 'Stored program concept',
-      link: 'https://www.javatpoint.com/store-program-control-concept',
-    },
-    {
-      text: 'E-ACTIVE BODY CONTROL suspension system',
-      link: '', // Add the link to the main page here
-      subReferences: [
-        {
-          text: 'Video',
-          link: 'https://www.youtube.com/watch?v=_sBcHG6HOlw',
-        },
-        {
-          text: 'Wiki',
-          link: 'https://en.wikipedia.org/wiki/Active_suspension',
-        },
-      ],
-    },
-    {
-      text: 'Clothes and shoes as computers',
-      link: '', // Add the link to the main page here
-      subReferences: [
-        {
-          text: 'Article 1',
-          link: 'https://dl.acm.org/doi/10.1145/2971763.2971784',
-        },
-        {
-          text: 'Article 2',
-          link: 'https://www.wired.co.uk/article/smart-shoe-football-analytics-cebit-2017',
-        },
-        {
-          text: 'Video',
-          link: 'https://www.youtube.com/watch?v=4_h0sBCiLNo',
-        },
-        {
-          text: 'Connected clothes',
-          link: 'https://blog.technavio.com/blog/smart-connected-clothes-fashion-technology',
-        },
-      ],
-    },
-  ];      
+  const gridData = data.gridData;
+  const references = data.references;    
+  
 
   return (
     <EBookPage currentPage={1} >
       <Section>
         <SectionTitle>Computers as General-Purpose Machines</SectionTitle>
         <Text>
-          We are all familiar with widely popular <b>“general-purpose”</b> computers such as desktops, laptops, or tablets. Yet, modern mobile phones or gaming consoles are computers too, and even disparate devices such as digital cameras, audio players, watches, TV sets, washing machines, cars, drones, or even modern clothes and shoes, all embed computers that are instrumental to support their functionalities.
+          We are all familiar with widely popular <b>“general-purpose”</b> computers such as desktops,
+          laptops, or tablets. Yet, modern mobile phones or gaming consoles are computers too,
+          and even disparate devices such as digital cameras, audio players, watches, TV sets,
+          washing machines, cars, drones, or even modern clothes and shoes,
+          <SmoothScrollButton targetId="footer" buttonText="[1, 2, 3, 4]" />
+          all embed computers that are instrumental to support their functionalities.
         </Text>
       </Section>
 
@@ -94,7 +45,10 @@ const Page1 = () => {
       <Section>
         <SectionTitle>Computers' Common Generic Architecture</SectionTitle>
         <Text>
-          Despite the huge varieties of computers, every single one of them shares a very similar architecture, and is made out of a physical part (<b>hardware</b>), as well as applications consisting of series of instructions (<b>software</b>).
+          Despite the huge varieties of computers,
+          every single one of them shares a very similar architecture,
+          and is made out of a physical part (<b>hardware</b>),
+          as well as applications consisting of series of instructions (<b>software</b>).
           <br />
           The main objective of the architecture is to identify the main components and define <b>how</b> they interact with each other.
           <br />
@@ -108,15 +62,24 @@ const Page1 = () => {
 
         <div>
           <Text>
-            The core component of any computer is the so-called Central Processing Unit (CPU). The CPU reads and executes instructions fetched one by one from primary (or central, or main) memory, processing the data in input and producing data in output. The input data could come, for example, from a keyboard or from a sensor detecting the level of oxygen in the blood of a patient. The output data, for example, could display a picture on a monitor or control the amount of gasoline injected in the engine of a car.
+            The core component of any computer is the so-called Central Processing Unit (CPU).
+            The CPU reads and executes instructions fetched one by one from primary (or central, or main) memory,
+            processing the data in input and producing data in output. The input data could come, for example,
+            from a keyboard or from a sensor detecting the level of oxygen in the blood of a patient. The output data,
+            for example, could display a picture on a monitor or control the amount of gasoline injected in the engine of a car.
             <br />
             <br />
-            Two key reasons have made it possible to use the same architecture for such a wide variety of contexts: the concept of <b>stored program machine</b> and the <b>digital representation</b> of the information.
+            Two key reasons have made it possible to use the same architecture for such a wide variety of contexts:
+            the concept of
+            <SmoothScrollButton targetId="stored-program-machines" buttonText="stored program machines" />
+            and the
+            <SmoothScrollButton targetId="digital-representation" buttonText="digital representation" />
+            of the information.
           </Text>
         </div>
       </Section>
 
-      <Section>
+      <Section id="stored-program-machines">
         <SectionTitle>Stored Program Machines</SectionTitle>
         <Text>
           Indeed, before the advent of the modern computer, machines able to carry out computations were already available. Yet <b>each machine was custom-built for a single, specific purpose</b>. A stored program computer, on the contrary, <b>is a machine that stores program instructions in memory</b>. By changing the programs in its memory, the same machine can perform totally different functions.
@@ -146,7 +109,7 @@ const Page1 = () => {
         </Figure>
       </Section>
 
-      <Section>
+      <Section id="digital-representation">
         <SectionTitle>Digital (Uniform) Representation of Information</SectionTitle>
         <Text>
           The second reason that made it possible to use the same architecture in many different contexts and applications is the possibility to <b>represent and process different types of information</b>, not only numbers, but also text, audio, images, videos…, uniformly as digits, as discussed in the next session.
@@ -156,7 +119,7 @@ const Page1 = () => {
             <div key={index} className="flex flex-col items-center justify-start h-full px-4">
               <div className={`${item.bgColor} flex flex-col items-center justify-center w-48 h-48 p-4`}>
                 {item.texts.map((text, textIndex) => (
-                  <p key={textIndex} className="text-center text-gray-200 text-lg">{text}</p>
+                  <p key={textIndex} className="text-center text-gray-200 text-lg shadow-slate-700 shadow-sm py-1 px-2 rounded">{text}</p>
                 ))}
               </div>
               <div>

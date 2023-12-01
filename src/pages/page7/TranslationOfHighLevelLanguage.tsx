@@ -12,6 +12,7 @@ const Page7 = () => {
     useEffect(() => {
       setFooterData([]);
     }, [setFooterData]);
+    
     return (
         <EBookPage currentPage={7}>
             <Section>

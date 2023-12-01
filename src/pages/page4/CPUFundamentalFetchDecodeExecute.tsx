@@ -7,6 +7,7 @@ import { YourImageComponent } from "@common/eBook/images";
 import useDocumentMetadata from "@hooks/useDocumentMetadata";
 import { useFooter } from "@/context/FooterContext";
 import { useEffect } from "react";
+import data from './data.json';
 
 const Page4 = () => {
     useDocumentMetadata('CPU Fundamentals Fetch Decode Execute', "This is the fourth page");
@@ -14,12 +15,7 @@ const Page4 = () => {
     useEffect(() => {
       setFooterData(references);
     }, [setFooterData]);
-    const references = [
-        {
-          text: 'The fetch-decode-execute cycle',
-          link: 'https://isaaccomputerscience.org/concepts/gcse_sys_fetch_decode_execute?examBoard=all&stage=all',
-        },
-    ];
+    const references = data.references;
 
     return (
         <EBookPage currentPage={4}>

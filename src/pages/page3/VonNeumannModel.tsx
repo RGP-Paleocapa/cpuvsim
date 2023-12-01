@@ -7,6 +7,7 @@ import { InteractiveImage } from "@common/eBook/images/";
 import useDocumentMetadata from "@hooks/useDocumentMetadata";
 import { useFooter } from "@/context/FooterContext";
 import { useEffect } from "react";
+import data from './data.json';
 
 const Page3 = () => {
   useDocumentMetadata('Von Neumann Model', "This is the third page");
@@ -14,16 +15,7 @@ const Page3 = () => {
   useEffect(() => {
     setFooterData(references);
   }, [setFooterData]);
-  const references = [
-    {
-      text: 'Von Neumann architecture',
-        link: 'https://en.wikipedia.org/wiki/Von_Neumann_architecture',
-      },
-      {
-        text: 'Computer architecture',
-        link: 'https://en.wikipedia.org/wiki/Computer_architecture',
-      },
-  ];
+  const references = data.references;
 
   return (
       <EBookPage currentPage={3} >
@@ -80,7 +72,7 @@ const Page3 = () => {
           </Text>
           <InlineDivs>
             <MaxWidthContainer>
-              <ul className="list-none">
+              <Ul className="list-none">
                 <li>
                   <strong className='text-gray-900'>Arithmetic Logic Unit (ALU):</strong>
                   <Ul className="text-gray-300"> 
@@ -138,7 +130,7 @@ const Page3 = () => {
                     </li>
                   </Ul>
                 </li>
-              </ul>
+              </Ul>
             </MaxWidthContainer>
             <MaxWidthContainer>
               <img src={images.image3.src} alt={images.image3.alt} className="img-center" />
@@ -205,7 +197,7 @@ const Page3 = () => {
             </MaxWidthContainer>
             <MaxWidthContainer>
               <InteractiveImage src={images.image4.src} alt={images.image4.alt} className="img-center min" />
-              <Description alignCenter><b className="text-red-600 dark:text-gray-200 text-lg">Click to zoom!</b></Description>
+              <Description alignCenter><b className="hidden lg:block text-red-600 dark:text-gray-200 text-lg">Click to zoom!</b></Description>
             </MaxWidthContainer>
           </InlineDivs>
         </Section>
