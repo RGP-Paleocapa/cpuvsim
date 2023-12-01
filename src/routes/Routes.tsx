@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import { NotFound, Maintenance } from '@/components/errors';
-import { Home, About, Admin, Page1, Page2, Page3, Page4, Page5, Page6, Page7, Page8 } from '@/pages';
+import { Home, About, Admin, Page1, Page2, Page3, Page4, Page5, Page6, Page7, Page8, Page9, Page10 } from '@/pages';
 import ProtectedRoute from './ProtectedRoutes';
 
 const AppRoutes = () => {
@@ -19,14 +19,19 @@ const AppRoutes = () => {
             <Route path="/page5" element={<Page5 />} />
             <Route path="/page6" element={<Page6 />} />
             <Route path="/page7" element={<Page7 />} />
+            <Route path="/page8" element={<Page8 />} />
             <Route 
-                path="/page8" 
-                element={<ProtectedRoute component={Page8} />} 
+                path="/page9" 
+                element={<ProtectedRoute component={Page9} />} 
+            />
+            <Route 
+                path="/page10" 
+                element={<ProtectedRoute component={Page10} />} 
             />
 
-            {/* Redirect to Maintenance */}
+            {/* Redirect to Maintenance
             <Route path="/page9" element={<Maintenance />} />
-            <Route path="/page10" element={<Maintenance />} />
+            <Route path="/page10" element={<Maintenance />} /> */}
 
             {/* Errors */}
             <Route path="/*" element={<NotFound />} />
