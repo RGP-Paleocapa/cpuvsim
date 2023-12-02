@@ -27,7 +27,7 @@
 
     /* HOME PAGE */
     .home-discovery-text {
-        @apply text-lg text-gray-600 dark:text-gray-400 text-left mt-6;
+        @apply text-lg text-gray-600 dark:text-gray-300 text-left mt-6;
     }
     .responsive-text {
         @apply text-base sm:text-lg md:text-xl;

@@ -89,9 +89,6 @@ const Page8 = () => {
           <Section>
               <InlineDivs>
                   <MaxWidthContainer>
-                      <DraggableContainerGrid initialContainers={container2} />
-                  </MaxWidthContainer>
-                  <MaxWidthContainer>
                       {containerStates.container2Visible && <DraggableContainerGrid initialContainers={container2Solved} />}
                       <button
                           className='text-gray-200 hover:text-gray-800 bg-green-700 border-2 border-gray-50 hover:bg-green-400 py-2 px-5 rounded'
@@ -103,6 +100,9 @@ const Page8 = () => {
                               <p>Show Solution</p>
                           )}
                       </button>
+                  </MaxWidthContainer>
+                  <MaxWidthContainer>
+                      <DraggableContainerGrid initialContainers={container2} />
                   </MaxWidthContainer>
               </InlineDivs>
           </Section>
@@ -157,7 +157,7 @@ const Page8 = () => {
                       rel="noopener noreferrer"
                       className="bg-blue-500 dark:bg-blue-800 hover:bg-gray-100 dark:hover:bg-blue-100 border-2 border-blue-500 dark:border-blue-800  text-white hover:text-blue-500 dark:hover:text-blue-800 ml-2 px-3 py-1 rounded max-w-sm"
                     >
-                      Show solution
+                      Solution
                     </a>
                   ) : null}
                 </div>

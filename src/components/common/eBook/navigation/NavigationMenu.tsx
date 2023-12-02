@@ -18,7 +18,7 @@ const NavigationMenu: React.FC<NavigationMenuProps> = ({ currentPage, totalPages
     "CPUInstructionSet",
     "AssemblyAndHighLevelLanguages",
     "TranslationOfHighLevelLanguage",
-    "InteractivePage",
+    "Exercises",
   ];
 
   const toggleNav = () => setIsNavOpen(!isNavOpen);
