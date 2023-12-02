@@ -35,22 +35,13 @@ const About = () => {
       {/* Content Section */}
       <div className="text-lg text-gray-600 dark:text-gray-400 space-y-4">
         <p>
-          This e-book and the associated CPUVSIM software have been developed by students for students,
-          as a multiple-years OER-enabled pedagogy project integrated in their more conventional educational activities.
-          This strategy aims to reduce the deplorable waste of resources associated with “disposable” traditional assignments, 
-          demonstrating the feasibility of a self-sustainable process where students fully engage in iteratively improving and extending open resources,
-          developing their professionality while benefiting the commons. These activities,
-          carried out in the context of Computing for Social Good, aim to preparing the next generation of computer scientists,
-          armed not only with coding skills but also with the power to wield technology for the betterment of society.
-        </p>
-        <p>
-          This e-book, along with the accompanying CPUVSIM software,
-          has been created by students for students as part of a multi-year OER-enabled pedagogy project integrated into their traditional educational activities.
-          This approach seeks to address the unfortunate waste of resources associated with "disposable" traditional assignments.
-          Instead, it demonstrates the feasibility of a self-sustainable process where students actively participate in iteratively improving and extending open resources.
-          Through this, they develop their professionalism while contributing to the common good.
-          These activities, conducted within the framework of Computing for Social Good,
-          aim to prepare the next generation of computer scientists:
+          This e-book, along with the accompanying CPUVSIM software, 
+          has been created by students for students as part of a multi-year OER-enabled pedagogy project integrated into their traditional educational activities. 
+          This approach seeks to address the unfortunate waste of resources associated with "disposable" traditional assignments. 
+          Instead, it demonstrates the feasibility of a self-sustainable process where students actively participate in iteratively improving and extending open resources. 
+          Through this, they develop their professionalism while contributing to the common good. 
+          These activities, conducted within the framework of Computing for Social Good, 
+          aim to prepare the next generation of computer scientists: 
           not just equipped with coding skills but also empowered to wield technology for the betterment of society.
         </p>
       </div>

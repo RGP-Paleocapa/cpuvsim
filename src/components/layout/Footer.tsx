@@ -7,7 +7,7 @@ import { Ol, Ul } from '../common/eBook/content';
 const Footer: React.FC = () => {
   const { footerData } = useFooter(); // footerData is an array of FooterItem
   const currentYear = new Date().getFullYear();
-  const startYear = 2023;
+  const startYear = 2021;
   const [showCredits, setShowCredits] = useState(false);
   const credits = [
     'Rares Gabriel Puiu  (latest version)',
@@ -87,7 +87,6 @@ const Footer: React.FC = () => {
 
         {/* Copyright and Creative Commons License */}
         <div className="text-center mt-8 border-t pt-4">
-          &copy; {startYear}{currentYear > startYear ? `-${currentYear}` : ''} Your eBook Platform
           <div className="flex justify-center items-center space-x-2 mt-2">
             <a
               href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
@@ -97,12 +96,15 @@ const Footer: React.FC = () => {
             >
               <img
                 src={licenza}
-                alt="cc by-nc-sa"
+                alt=">CC BY-NC-SA 4.0"
                 className="h-10 w-25"
               />
-              <span className="ml-1">CC BY-NC-SA 4.0</span>
+              {/* <span className="ml-1">CC BY-NC-SA 4.0</span> */}
             </a>
           </div>
+          <p className='pt-2'>
+            &copy; {startYear}{currentYear > startYear ? `-${currentYear}` : ''} CPU E-Book
+          </p>
         </div>
       </div>
     </footer>

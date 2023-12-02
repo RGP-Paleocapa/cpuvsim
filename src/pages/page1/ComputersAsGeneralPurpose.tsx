@@ -19,7 +19,13 @@ const Page1 = () => {
   
   const imageArray = Object.values(images).slice(0, 6);
   const gridData = data.gridData;
-  const references = data.references;    
+  const references = data.references;   
+
+  const colors = {
+  amber: "bg-amber-800/75",
+  gray: "bg-gray-500",
+  green: "bg-green-900",
+}; 
   
 
   return (
@@ -115,18 +121,26 @@ const Page1 = () => {
           The second reason that made it possible to use the same architecture in many different contexts and applications is the possibility to <b>represent and process different types of information</b>, not only numbers, but also text, audio, images, videos…, uniformly as digits, as discussed in the next session.
         </Text>
         <Figure>
-          {gridData.map((item, index) => (
-            <div key={index} className="flex flex-col items-center justify-start h-full px-4">
-              <div className={`${item.bgColor} flex flex-col items-center justify-center w-48 h-48 p-4`}>
-                {item.texts.map((text, textIndex) => (
-                  <p key={textIndex} className="text-center text-gray-200 text-lg shadow-slate-700 shadow-sm py-1 px-2 rounded">{text}</p>
-                ))}
-              </div>
-              <div>
-                <Description>{item.description}</Description>
-              </div>
+        {gridData.map((item, index) => (
+          <div key={index} className="flex flex-col items-center justify-start h-full px-4">
+            <div
+              className={`${colors[item.colorKey as keyof typeof colors]} flex flex-col items-center justify-center w-48 h-48 p-4`}
+              // Add "as keyof typeof colors" to tell TypeScript that item.colorKey corresponds to a valid key in colors
+            >
+              {item.texts.map((text, textIndex) => (
+                <p
+                  key={textIndex}
+                  className="text-center text-gray-200 text-lg shadow-slate-700 shadow-sm py-1 px-2 rounded"
+                >
+                  {text}
+                </p>
+              ))}
             </div>
-          ))}
+            <div>
+              <Description>{item.description}</Description>
+            </div>
+          </div>
+        ))}
         </Figure>
       </Section>
       {/* <Refrences references={references}/> */}

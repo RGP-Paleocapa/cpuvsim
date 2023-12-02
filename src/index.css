@@ -57,6 +57,18 @@
         /* padding: 1rem; */
         border: 1px solid #ddd;
     }
+    body {
+    font-family: 'Roboto', sans-serif;
+    }
+
+    h1, h2, h3 {
+    font-family: 'Open Sans', sans-serif;
+    }
+
+    p {
+    font-family: 'Lato', sans-serif;
+    }
+
 }
 
 @layer utilities {
