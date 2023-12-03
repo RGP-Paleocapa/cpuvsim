@@ -44,15 +44,16 @@ const Page8 = () => {
   
   return (
     <EBookPage currentPage={8}>
-      <Section>
+      
           <SectionTitle>
               Exercises
           </SectionTitle>
-          <Text className="hidden lg:block">
+      <div className="hidden lg:block">
+          <Text>
               The aim of the following two exercises is to code in assembler the pseudo-coded algorithms on the left.
               Organize the corresponding assembler instructions on the right in the correct order, by dragging them around.
           </Text>
-      </Section>
+      </div>
 
       <div className="hidden lg:block">
           <Section>
