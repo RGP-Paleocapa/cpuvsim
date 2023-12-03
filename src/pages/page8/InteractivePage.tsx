@@ -48,7 +48,7 @@ const Page8 = () => {
           <SectionTitle>
               Exercises
           </SectionTitle>
-          <Text>
+          <Text className="hidden lg:block">
               The aim of the following two exercises is to code in assembler the pseudo-coded algorithms on the left.
               Organize the corresponding assembler instructions on the right in the correct order, by dragging them around.
           </Text>
