@@ -1,7 +1,7 @@
 import useDocumentMetadata from "@hooks/useDocumentMetadata";
 import EBookPage from "@common/eBook/EBook";
 import { Ol, Section, SectionTitle, Text, DraggableContainerGrid, H3 } from "@common/eBook/content";
-import { InlineDivs, MaxWidthContainer } from "@common/eBook/layout";
+import { InlineDivs, MaxWidthContainer } from "@/components/common/eBook/layout/layout";
 import { useState } from "react";
 import problemListData from './problems.json';
 import containerData from './containers.json';

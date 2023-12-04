@@ -1,6 +1,6 @@
 import EBookPage from "@common/eBook/EBook";
 import { Section, SectionTitle, Text } from "@common/eBook/content";
-import { InlineDivs, MaxWidthContainer } from "@common/eBook/layout";
+import { InlineDivs, MaxWidthContainer } from "@/components/common/eBook/layout/layout";
 import images from "@assets/images/pages/page7";
 import useDocumentMetadata from "@hooks/useDocumentMetadata";
 import { useFooter } from "@/context/FooterContext";

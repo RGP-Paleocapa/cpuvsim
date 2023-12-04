@@ -3,7 +3,7 @@ import EBookPage from "@/components/common/eBook/EBook";
 import { ImageSlider } from "@common/eBook/images";
 import images from "@assets/images/pages/page1";
 // import Refrences from "@common/eBook/Refrences";
-import { Figure } from "@common/eBook/layout";
+import { Figure } from "@/components/common/eBook/layout/layout";
 import { Section, SectionTitle, Description, Text } from "@common/eBook/content";
 import { useFooter } from "@/context/FooterContext";
 import { useEffect } from "react";

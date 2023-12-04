@@ -1,7 +1,7 @@
 import { images } from "@assets/images/pages/page2";
 import Table from "@common/eBook/content/Table";
 import EBookPage from "@common/eBook/EBook";
-import { InlineDivs, MaxWidthContainer } from "@common/eBook/layout";
+import { InlineDivs, MaxWidthContainer } from "@/components/common/eBook/layout/layout";
 import { Description, H3, Section, SectionTitle, Text, Ul } from "@common/eBook/content";
 // import References from "@common/eBook/Refrences";
 import useDocumentMetadata from "@hooks/useDocumentMetadata";

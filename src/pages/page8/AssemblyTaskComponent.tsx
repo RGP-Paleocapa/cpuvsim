@@ -1,5 +1,5 @@
 import { Section, Ol, H4 } from '@/components/common/eBook/content';
-import { InlineDivs, MaxWidthContainer } from '@/components/common/eBook/layout';
+import { InlineDivs, MaxWidthContainer } from '@/components/common/eBook/layout/layout';
 
 // Define the structure of each list item
 interface ListItem {

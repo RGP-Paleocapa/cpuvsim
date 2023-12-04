@@ -1,6 +1,6 @@
 import EBookPage from "@common/eBook/EBook";
 import { Section, SectionTitle, Ul, Text, Description, H2 } from "@common/eBook/content";
-import { InlineDivs, MaxWidthContainer } from "@common/eBook/layout";
+import { InlineDivs, MaxWidthContainer } from "@/components/common/eBook/layout/layout";
 import images from "@assets/images/pages/page3";
 import { InteractiveImage } from "@common/eBook/images/";
 // import References from "@common/eBook/Refrences";
