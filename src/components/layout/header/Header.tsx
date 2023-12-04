@@ -41,7 +41,7 @@ const Header: React.FC = () => {
       <div className="flex justify-between items-center">
         <div>
           <Link to="/" className="text-2xl font-bold text-black dark:text-white" onClick={scrollToTop}>
-            CPU E-Book
+            CPU Visual Simulator E-Book
           </Link>
         </div>
         <div className="md:flex space-x-4 items-center">

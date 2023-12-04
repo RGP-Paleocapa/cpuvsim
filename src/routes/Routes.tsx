@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
-import { NotFound, Maintenance } from '@/components/errors';
 import { Home, About, Admin, Page1, Page2, Page3, Page4, Page5, Page6, Page7, Page8, Page9, Page10 } from '@/pages';
 import ProtectedRoute from './ProtectedRoutes';
+import { Maintenance, NotFound } from '@/pages/errors';
 
 const AppRoutes = () => {
     return (
