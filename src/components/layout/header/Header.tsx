@@ -78,7 +78,7 @@ const Header: React.FC = () => {
           <div className="my-2">
             <Link
               to="/"
-              className="block w-full text-center py-2 px-4 bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-400 hover:bg-gray-300 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white rounded"
+              className="block w-full text-center py-2 px-4 bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-400 hover:bg-gray-300 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white focus:bg-gray-300 dark:focus:bg-gray-800 focus:text-gray-900 dark:focus:text-white rounded"
               onClick={scrollToTop}
             >
               Home
@@ -87,7 +87,7 @@ const Header: React.FC = () => {
           <div className="my-2">
             <Link
               to="/page1"
-              className="block w-full text-center py-2 px-4 bg-blue-200 dark:bg-blue-700 text-blue-600 dark:text-blue-400 hover:bg-blue-300 dark:hover:bg-blue-800 hover:text-blue-900 dark:hover:text-white rounded"
+              className="block w-full text-center py-2 px-4 bg-blue-200 dark:bg-blue-700 text-blue-600 dark:text-blue-400 hover:bg-blue-300 dark:hover:bg-blue-800 hover:text-blue-900 dark:hover:text-white focus:bg-blue-300 dark:focus:bg-blue-800 focus:text-blue-900 dark:focus:text-white rounded"
               onClick={scrollToTop}
             >
               Ebook
@@ -97,7 +97,7 @@ const Header: React.FC = () => {
             <a
               href='https://cpuvisualsimulator.github.io/'
               target='_blank'
-              className="block w-full text-center py-2 px-4 bg-red-200 dark:bg-red-700 text-red-600 dark:text-red-400 hover:bg-red-300 dark:hover:bg-red-800 hover:text-red-900 dark:hover:text-white rounded"
+              className="block w-full text-center py-2 px-4 bg-red-200 dark:bg-red-700 text-red-600 dark:text-red-400 hover:bg-red-300 dark:hover:bg-red-800 hover:text-red-900 dark:hover:text-white focus:bg-red-300 dark:focus:bg-red-800 focus:text-red-900 dark:focus:text-white rounded"
             >
               Simulator
             </a>
@@ -105,14 +105,14 @@ const Header: React.FC = () => {
           <div className="my-2">
             <Link
               to="/about"
-              className="block w-full text-center py-2 px-4 bg-green-200 dark:bg-green-700 text-green-600 dark:text-green-400 hover:bg-green-300 dark:hover:bg-green-800 hover:text-green-900 dark:hover:text-white rounded"
+              className="block w-full text-center py-2 px-4 bg-green-200 dark:bg-green-700 text-green-600 dark:text-green-400 hover:bg-green-300 dark:hover:bg-green-800 hover:text-green-900 dark:hover:text-white focus:bg-green-300 dark:focus:bg-green-800 focus:text-green-900 dark:focus:text-white rounded"
               onClick={scrollToTop}
             >
               About
             </Link>
           </div>
           <button
-            className="mt-4 text-red-600 dark:text-red-400 hover:text-red-900 dark:hover:text-white"
+            className="mt-4 text-red-600 dark:text-red-400 hover:text-red-900 dark:hover:text-white focus:text-red-900 dark:focus:text-white"
             onClick={closeMobileMenu}
           >
             Close Menu
