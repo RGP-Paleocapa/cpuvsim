@@ -11,7 +11,7 @@ const App = () => {
     <FooterProvider>
       <div className='bg-slate-100 dark:bg-slate-900 min-h-screen pt-16'>
         <Header />
-        <div className="container mx-auto py-8 px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto py-8 px-4 sm:px-6 md:px-0">
           <ScrollToTop />
           <AppRoutes />
         </div>

@@ -14,30 +14,38 @@ const Table: React.FC<TableProps> = ({ headerTitles, bodyRows }) => {
   const colSpan = Math.ceil(maxColumns / headerTitles.length);
 
   return (
-    <div className="overflow-x-auto relative">
-      <table className="table">
-        <thead className="thead">
-          <tr>
-            {headerTitles.map((title, index) => (
-              <th key={index} className="py-3 px-6" colSpan={colSpan}>
-                {title}
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody className='tbody'>
-          {bodyRows.map((row, rowIndex) => (
-            <tr key={rowIndex}>
-              {row.map((cell, cellIndex) => (
-                <td key={cellIndex} className="py-3 px-6">
-                  {cell}
-                </td>
-              ))}
-            </tr>
+<div className="overflow-x-auto relative">
+  <table className="table">
+    <thead className="thead">
+      <tr>
+        {headerTitles.map((title, index) => (
+          <th
+            key={index}
+            className="py-3 px-6 whitespace-nowrap text-sm sm:text-base"
+            colSpan={colSpan}
+          >
+            {title}
+          </th>
+        ))}
+      </tr>
+    </thead>
+    <tbody className="tbody">
+      {bodyRows.map((row, rowIndex) => (
+        <tr key={rowIndex}>
+          {row.map((cell, cellIndex) => (
+            <td
+              key={cellIndex}
+              className="py-3 px-6 whitespace-nowrap text-sm sm:text-sm"
+            >
+              {cell}
+            </td>
           ))}
-        </tbody>
-      </table>
-    </div>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
+
   );
 };
 

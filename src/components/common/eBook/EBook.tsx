@@ -19,7 +19,7 @@ const EBookPage: React.FC<EBookProps> = ({ children, currentPage }) => {
   }, [isNavOpen]);
 
   return (
-    <div className="flex max-w-full mx-auto my-8 pb-4 px-4">
+    <div className="flex justify-center max-w-full mx-auto">
       {!isNavOpen && (
         <button onClick={() => setIsNavOpen(true)} className="open-nav-button">
           <HamburgerMenuIcon />
@@ -28,13 +28,11 @@ const EBookPage: React.FC<EBookProps> = ({ children, currentPage }) => {
       <div className={`sidebar-container w-0 lg:w-64 ${isNavOpen ? '' : 'hidden'}`}>
         <NavigationMenu currentPage={currentPage} totalPages={8} isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
       </div>
-      <div className="content-container flex-1">
         <div className="ebook-page-layout">
           <SwitchPage currentPage={currentPage} />
           {children}
           <SwitchPage currentPage={currentPage} />
         </div>
-      </div>
     </div>
   );
 };

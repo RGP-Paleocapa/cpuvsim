@@ -55,7 +55,7 @@ const Page2 = () => {
         </Section>
 
         <Section>
-            <InlineDivs centerStart>
+            <InlineDivs centerStart containsTable>
                 <MaxWidthContainer>
                     <H3>Text</H3>
                     <Text>
