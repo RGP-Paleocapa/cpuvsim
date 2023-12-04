@@ -23,7 +23,7 @@ const Legal = () => {
                 </a>
             </div>
             <p className='pt-2'>
-                &copy; {startYear}{currentYear > startYear ? `-${currentYear}` : ''} CPU E-Book
+                &copy; {startYear}{currentYear > startYear ? `-${currentYear}` : ''}
             </p>
         </div>
     );
