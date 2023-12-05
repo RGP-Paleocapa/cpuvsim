@@ -11,6 +11,10 @@ export default {
         montserrat: ['Montserrat', 'sans'],
         customOpenSans: ['Open Sans', 'sans-serif'],
       },
+      // Define margin classes for normal screens
+      margin: {
+        '140': '140px',
+      },
     },
   },
   plugins: [],
