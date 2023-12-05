@@ -59,13 +59,12 @@ const SwitchPage: React.FC<SwitchPageProps> = ({ currentPage }) => {
       if (position === 'top' || isFirstPage) {
         smoothScrollTo(0, scrollDuration);
       } else if (position === 'bottom') {
-        let offsetFromBottom = 50;
-        // let offsetFromBottom: number;
-        // if (screenWidth > 1200) { // Large screens
-        //   offsetFromBottom = 50;
-        // } else { // Medium and small screens
-        //   offsetFromBottom = 50;
-        // }
+        let offsetFromBottom: number;
+        if (screenWidth > 1200) { // Large screens
+          offsetFromBottom = 50;
+        } else { // Medium and small screens
+          offsetFromBottom = 35;
+        }
   
         const footer = document.querySelector('footer'); // Replace 'footer' with the appropriate selector
         if (footer) {
