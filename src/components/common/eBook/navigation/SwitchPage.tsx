@@ -63,7 +63,7 @@ const SwitchPage: React.FC<SwitchPageProps> = ({ currentPage }) => {
         if (screenWidth > 1200) { // Large screens
           offsetFromBottom = 50;
         } else { // Medium and small screens
-          offsetFromBottom = 35;
+          offsetFromBottom = 65;
         }
   
         const footer = document.querySelector('footer'); // Replace 'footer' with the appropriate selector
