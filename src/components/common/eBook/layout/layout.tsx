@@ -27,7 +27,7 @@ export const InlineDivs = ({
         } flex flex-col ${centerStart ? 'justify-start' : 'justify-center'} py-4 ${
           index % 2 === 0 ? 'bg-green-500 dark:bg-green-700' : 'bg-red-500 dark:bg-red-700'
         }
-        overflow-scroll`}
+        overflow-auto`}
       >
         {child}
       </div>
