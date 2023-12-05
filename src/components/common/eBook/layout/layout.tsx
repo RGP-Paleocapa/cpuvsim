@@ -5,17 +5,36 @@ export const Figure = ({ children }: { children: ReactNode }) => (
   );
 
 // Two Divs Inline Component
-export const InlineDivs = ({ children, containsTable, centerStart = false }: { children: React.ReactNode[], containsTable?: boolean, centerStart?: boolean }) => (
-    <div className={`flex flex-col ${containsTable ? 'lg:flex-row' : 'lg:flex-row'} justify-center items-stretch`}>
-      {children.map((child, index) => (
-        <div 
-          key={index} 
-          className={`${containsTable ? 'w-fit lg:w-1/2' : 'w-full md:w-fit'} flex flex-col ${centerStart ? "justify-start" : "justify-center"} py-4  ${index % 2 === 0 ? 'bg-green-500 dark:bg-green-700' : 'bg-red-500 dark:bg-red-700'}`}>
-          {child}
-        </div>
-      ))}
-    </div>
-  );
+export const InlineDivs = ({
+  children,
+  containsTable,
+  centerStart = false,
+}: {
+  children: React.ReactNode[];
+  containsTable?: boolean;
+  centerStart?: boolean;
+}) => (
+  <div
+    className={`flex flex-col ${
+      containsTable ? 'lg:flex-row' : 'lg:flex-row'
+    } justify-center items-stretch`}
+  >
+    {children.map((child, index) => (
+      <div
+        key={index}
+        className={`${
+          containsTable ? 'w-full lg:w-1/2' : 'w-full md:w-full'
+        } flex flex-col ${centerStart ? 'justify-start' : 'justify-center'} py-4 ${
+          index % 2 === 0 ? 'bg-green-500 dark:bg-green-700' : 'bg-red-500 dark:bg-red-700'
+        }
+        overflow-scroll`}
+      >
+        {child}
+      </div>
+    ))}
+  </div>
+);
+
   
 // Max Width Container Component
 // PADDING?

@@ -111,8 +111,7 @@ const Page8 = () => {
 
       <Section>
           <H3>
-              Perform the following tasks (please remember that any label needs to be defined
-              in the leftmost column of the RAM before it can be used in any instruction):
+              Perform the following tasks:
           </H3>
           <Ol>
               <li>
@@ -132,7 +131,8 @@ const Page8 = () => {
       </Section>
 
       <Section>
-        <H3>Develop suitable programs in assembly code, to solve the following problems:</H3>
+        <H3>Develop suitable programs in assembly code, to solve the following problems (please remember that any label needs to be defined
+              in the leftmost column of the RAM before it can be used in any instruction):</H3>
         <div className="flex flex-wrap">
           {problemList.map((problem, index) => (
             <div key={index} className="w-full p-4 bg-gray-100 dark:bg-gray-800">

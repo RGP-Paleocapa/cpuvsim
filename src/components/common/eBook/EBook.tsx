@@ -10,31 +10,36 @@ interface EBookProps {
 
 const EBookPage: React.FC<EBookProps> = ({ children, currentPage }) => {
   const [isNavOpen, setIsNavOpen] = useState(() => {
-    const saved = localStorage.getItem("navOpen");
-    return saved === null ? true : saved === "true";
+    const saved = localStorage.getItem('navOpen');
+    return saved === null ? true : saved === 'true';
   });
 
   useEffect(() => {
-    localStorage.setItem("navOpen", isNavOpen.toString());
+    localStorage.setItem('navOpen', isNavOpen.toString());
   }, [isNavOpen]);
 
   return (
-<div className="flex justify-center max-w-screen-xl mx-auto px-4">
-  {!isNavOpen && (
-    <button onClick={() => setIsNavOpen(true)} className="open-nav-button">
-      <HamburgerMenuIcon />
-    </button>
-  )}
-  <div className={`sidebar-container w-0 lg:w-64 ${isNavOpen ? '' : 'hidden'}`}>
-    <NavigationMenu currentPage={currentPage} totalPages={8} isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
-  </div>
-  <div className="ebook-page-layout flex-1">
-    <SwitchPage currentPage={currentPage} />
-    {children}
-    <SwitchPage currentPage={currentPage} />
-  </div>
-</div>
-
+    <div className={`bg-slate-100 dark:bg-slate-900 min-h-screen pt-16 ${isNavOpen ? 'overflow-hidden' : ''}`}>
+      <div className="container mx-auto py-8 px-4 sm:px-6 md:px-0">
+        <div className="flex flex-col md:flex-row">
+          <div className={`w-full md:w-64 ${isNavOpen ? '' : 'hidden'}`}>
+            <NavigationMenu currentPage={currentPage} totalPages={8} isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
+          </div>
+          <div className={`w-full flex-1 ${isNavOpen ? 'overflow-hidden' : ''}`}>
+            <div className={isNavOpen ? 'max-w-screen-xl mx-auto px-4' : 'px-4'}>
+              <button onClick={() => setIsNavOpen(!isNavOpen)} className="hidden md:block open-nav-button">
+                <HamburgerMenuIcon />
+              </button>
+              <div className="ebook-page-layout">
+                <SwitchPage currentPage={currentPage} />
+                {children}
+                <SwitchPage currentPage={currentPage} />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 

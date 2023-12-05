@@ -62,8 +62,8 @@ const Page1 = () => {
         </Text>
 
         <div className="flex flex-wrap justify-center lg:justify-evenly items-center py-8 sm:gap-y-8">
-          <img src={images.architecture1.src} alt={images.architecture1.alt} className="w-auto h-64 object-contain mb-4 sm:mb-0" />
-          <img src={images.architecture2.src} alt={images.architecture2.alt} className="w-auto h-64 object-contain" />
+          <img src={images.architecture1.src} alt={images.architecture1.alt} className="w-auto h-[300px] object-contain mb-4 sm:mb-0" />
+          <img src={images.architecture2.src} alt={images.architecture2.alt} className="w-auto h-[300px] object-contain" />
         </div>
 
         <div>
