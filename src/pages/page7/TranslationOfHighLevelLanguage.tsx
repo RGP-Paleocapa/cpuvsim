@@ -57,12 +57,6 @@ const Page7 = () => {
         images.for2.src,
         images.for3.src,
       ]
-
-    // const texts = [
-    //     'text1',
-    //     'text2',
-    //     'text3',
-    // ]
     
     return (
         <EBookPage currentPage={7}>
