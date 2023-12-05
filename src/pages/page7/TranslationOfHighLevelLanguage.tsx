@@ -89,12 +89,48 @@ const Page7 = () => {
                 </Text>
             </Section>
 
-            <ImageSwitcher images={sumSwitcher} instructionsList={sumList} />
-            <ImageSwitcher images={formulaSwitcher} instructionsList={formulaList} />
-            <ImageSwitcher images={loopSwitcher} instructionsList={infiniteLoopList} />
-            <ImageSwitcher images={ifThenElseSwitcher} instructionsList={ifThenElseList} />
-            <ImageSwitcher images={whileSwitcher} instructionsList={whileList} />
-            <ImageSwitcher images={forSwitcher} instructionsList={forLoopList} />
+            <Section>
+                <SectionTitle>
+                    EXAMPLE: translation of the initialization and sum of two variables
+                </SectionTitle>
+                <ImageSwitcher images={sumSwitcher} instructionsList={sumList} />
+            </Section>
+            
+            <Section>
+                <SectionTitle>
+                    EXAMPLE: translation of the initialization and sum of two variables
+                </SectionTitle>
+                <ImageSwitcher images={formulaSwitcher} instructionsList={formulaList} />
+            </Section>
+
+            <Section>
+                <SectionTitle>
+                    EXAMPLE: translation of the initialization and sum of two variables
+                </SectionTitle>
+                <ImageSwitcher images={loopSwitcher} instructionsList={infiniteLoopList} />
+            </Section>
+
+            <Section>
+                <SectionTitle>
+                    EXAMPLE: translation of the initialization and sum of two variables
+                </SectionTitle>
+                <ImageSwitcher images={ifThenElseSwitcher} instructionsList={ifThenElseList} />
+            </Section>
+
+            <Section>
+                <SectionTitle>
+                    EXAMPLE: translation of the initialization and sum of two variables
+                </SectionTitle>
+                <ImageSwitcher images={whileSwitcher} instructionsList={whileList} />
+            </Section>
+
+            <Section>
+                <SectionTitle>
+                    EXAMPLE: translation of the initialization and sum of two variables
+                </SectionTitle>
+                <ImageSwitcher images={forSwitcher} instructionsList={forLoopList} />
+            </Section>
+
 
             {/* <Section>
                 <SectionTitle>

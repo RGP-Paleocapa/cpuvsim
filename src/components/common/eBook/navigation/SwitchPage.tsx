@@ -79,7 +79,7 @@ const SwitchPage: React.FC<SwitchPageProps> = ({ currentPage }) => {
   
 
   return (
-    <div className="flex justify-between items-center mt-8">
+    <div className="flex justify-between items-center">
       <button
         onClick={() => handleNavigation(`${prevLink}`, 'bottom')}
         className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white flex items-center"
