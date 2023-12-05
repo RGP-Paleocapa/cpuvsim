@@ -43,14 +43,14 @@ const CarouselSlider = ({ images }: { images: ImageObject[] }) => {
         {/* Slider Controls */}
         <button
           onClick={prevSlide}
-          className="hover:scale-125 absolute top-1/2 left-0 transform -translate-y-1/2 scale-150 bg-white dark:bg-gray-800 dark:text-white p-4 rounded"
+          className="hover:scale-75 lg:hover:scale-125 absolute top-1/2 left-0 transform -translate-y-1/2 lg:scale-150 bg-white dark:bg-gray-800 dark:text-white p-4 rounded"
           aria-label="Previous slide"
         >
           &lt;
         </button>
         <button
           onClick={nextSlide}
-          className="hover:scale-125 absolute top-1/2 right-0 transform -translate-y-1/2 scale-150 bg-white dark:bg-gray-800 dark:text-white p-4 rounded"
+          className="hover:scale-75 lg:hover:scale-125 absolute top-1/2 right-0 transform -translate-y-1/2 lg:scale-150 bg-white dark:bg-gray-800 dark:text-white p-4 rounded"
           aria-label="Next slide"
         >
           &gt;
