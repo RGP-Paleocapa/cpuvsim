@@ -11,14 +11,14 @@ interface NavigationMenuProps {
 const NavigationMenu: React.FC<NavigationMenuProps> = ({ currentPage, totalPages, isNavOpen, setIsNavOpen }) => {
 
   const pageTexts = [
-    "ComputersAsGeneralPurpose",
-    "SimpleBinaryCalculations",
-    "VonNeumannModel",
-    "CPUFundamentalFetchDecodeExecute",
-    "CPUInstructionSet",
-    "AssemblyAndHighLevelLanguages",
-    "TranslationOfHighLevelLanguage",
-    "Exercises",
+    "1 - ComputersAsGeneralPurpose",
+    "2- SimpleBinaryCalculations",
+    "3 - VonNeumannModel",
+    "4- CPUFundamentalFetchDecodeExecute",
+    "5 - CPUInstructionSet",
+    "6 - AssemblyAndHighLevelLanguages",
+    "7 - TranslationOfHighLevelLanguage",
+    "8 - Exercises",
   ];
 
   const toggleNav = () => setIsNavOpen(!isNavOpen);
