@@ -45,32 +45,39 @@ const SwitchPage: React.FC<SwitchPageProps> = ({ currentPage }) => {
   };
 
   const handleNavigation = (link: string, position: 'top' | 'bottom') => {
-      navigate(link);
-
-      const screenWidth = window.innerWidth;
-      let scrollDuration: number;
-      if (screenWidth < 480) { // Mobile devices
-          scrollDuration = 500; // Longer duration for mobile devices
-      } else { // Tablets and desktops
-          scrollDuration = 300;
-      }
-
-      setTimeout(() => {
-        if (position === 'top' || isFirstPage) {
-          smoothScrollTo(0, scrollDuration);
-        } else if (position === 'bottom') {
-          let offsetFromBottom: number;
-          if (screenWidth > 1200) { // Large screens
-            offsetFromBottom = 300;
-          } else { // Medium and small screens
-            offsetFromBottom = 550;
-          }
-
-          const bottomPosition = document.documentElement.scrollHeight - window.innerHeight - offsetFromBottom;
+    navigate(link);
+  
+    const screenWidth = window.innerWidth;
+    let scrollDuration: number;
+    if (screenWidth < 480) {
+      scrollDuration = 500; // Longer duration for mobile devices
+    } else {
+      scrollDuration = 300; // Tablets and desktops
+    }
+  
+    setTimeout(() => {
+      if (position === 'top' || isFirstPage) {
+        smoothScrollTo(0, scrollDuration);
+      } else if (position === 'bottom') {
+        let offsetFromBottom = 50;
+        // let offsetFromBottom: number;
+        // if (screenWidth > 1200) { // Large screens
+        //   offsetFromBottom = 50;
+        // } else { // Medium and small screens
+        //   offsetFromBottom = 50;
+        // }
+  
+        const footer = document.querySelector('footer'); // Replace 'footer' with the appropriate selector
+        if (footer) {
+          const footerHeight = footer.clientHeight;
+          const bottomPosition = document.documentElement.scrollHeight - window.innerHeight - offsetFromBottom - footerHeight;
           smoothScrollTo(bottomPosition, scrollDuration);
         }
-      }, 300); // Fixed delay of 100ms for all devices
+      }
+    }, 300); // Fixed delay of 300ms for all devices
   };
+  
+  
 
   return (
     <div className="flex justify-between items-center mt-8">
