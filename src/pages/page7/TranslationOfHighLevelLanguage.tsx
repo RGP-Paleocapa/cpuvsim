@@ -1,10 +1,11 @@
 import EBookPage from "@common/eBook/EBook";
 import { Section, SectionTitle, Text } from "@common/eBook/content";
-import { InlineDivs, MaxWidthContainer } from "@/components/common/eBook/layout/layout";
 import images from "@assets/images/pages/page7";
 import useDocumentMetadata from "@hooks/useDocumentMetadata";
 import { useFooter } from "@/context/FooterContext";
 import { useEffect } from "react";
+import ImageSwitcher from "@/components/common/ImageSwitcher";
+import data from './data.json';
 
 const Page7 = () => {
     useDocumentMetadata('Translation of High Level Language', "This is the seventh page");
@@ -12,6 +13,56 @@ const Page7 = () => {
     useEffect(() => {
       setFooterData([]);
     }, [setFooterData]);
+
+    const sumList = data.sum;
+    const formulaList = data.formula;
+    const infiniteLoopList = data.infiniteLoop;
+    const ifThenElseList = data.ifThenElse;
+    const whileList = data.while;
+    const forLoopList = data.forLoop;
+
+    // const imagesSwitcher = [
+    //     'https://picsum.photos/200',
+    //     'https://picsum.photos/id/870/200/300?grayscale&blur=2',
+    //     'https://picsum.photos/200/300.jpg',
+    // ]
+
+    const sumSwitcher = [
+        images.sum1.src,
+        images.sum2.src,
+        images.sum3.src,
+      ]
+    const formulaSwitcher = [
+        images.formula1.src,
+        images.formula2.src,
+        images.formula3.src,
+      ]
+    const loopSwitcher = [
+        images.loop1.src,
+        images.loop2.src,
+        images.loop3.src,
+      ]
+    const ifThenElseSwitcher = [
+        images.ifThenElse1.src,
+        images.ifThenElse2.src,
+        images.ifThenElse3.src,
+      ]
+    const whileSwitcher = [
+        images.while1.src,
+        images.while2.src,
+        images.while3.src,
+      ]
+    const forSwitcher = [
+        images.for1.src,
+        images.for2.src,
+        images.for3.src,
+      ]
+
+    // const texts = [
+    //     'text1',
+    //     'text2',
+    //     'text3',
+    // ]
     
     return (
         <EBookPage currentPage={7}>
@@ -38,77 +89,14 @@ const Page7 = () => {
                 </Text>
             </Section>
 
+            <ImageSwitcher images={sumSwitcher} instructionsList={sumList} />
+            <ImageSwitcher images={formulaSwitcher} instructionsList={formulaList} />
+            <ImageSwitcher images={loopSwitcher} instructionsList={infiniteLoopList} />
+            <ImageSwitcher images={ifThenElseSwitcher} instructionsList={ifThenElseList} />
+            <ImageSwitcher images={whileSwitcher} instructionsList={whileList} />
+            <ImageSwitcher images={forSwitcher} instructionsList={forLoopList} />
+
             {/* <Section>
-                <H4>
-                    Basic constructs
-                </H4>
-                <Figure>
-                    <div>
-                        <H3>
-                            Init/sum of two variables
-                        </H3>
-                        <img src="https://via.placeholder.com/300" alt="default" className="img-center" />
-                        <button>
-                            Click here for more info
-                        </button>
-                    </div>
-                    <div>
-                        <H3>
-                            Arithmetic formula
-                        </H3>
-                        <img src="https://via.placeholder.com/300" alt="default" className="img-center" />
-                        <button>
-                            Click here for more info
-                        </button>
-                    </div>
-                    <div>
-                        <H3>
-                            Infinite loop
-                        </H3>
-                        <img src="https://via.placeholder.com/300" alt="default" className="img-center" /> 
-                        <button>
-                            Click here for more info
-                        </button>
-                    </div>
-                </Figure>
-            </Section>
-
-            <Section>
-                <H4>
-                    More complex constructs
-                </H4>
-                <Figure>
-                    <div>
-                        <H3>
-                            If then else
-                        </H3>
-                        <img src="https://via.placeholder.com/300" alt="default" className="img-center" />
-                        <button>
-                            Click here for more info
-                        </button>
-                    </div>
-                    <div>
-                        <H3>
-                            While do
-                        </H3>
-                        <img src="https://via.placeholder.com/300" alt="default" className="img-center" />
-                        <button>
-                            Click here for more info
-                        </button>
-                    </div>
-                    <div>
-                        <H3>
-                            For
-                        </H3>
-                        <img src="https://via.placeholder.com/300" alt="default" className="img-center" />
-                        <button>
-                            Click here for more info
-                        </button>
-                    </div>
-                </Figure>
-            </Section> */}
-
-            <Section>
                 <SectionTitle>
                     <hr />
                     EXAMPLE: translation of the initialization and sum of two variables
@@ -419,7 +407,7 @@ const Page7 = () => {
                         </MaxWidthContainer>
                     </div>
                 </InlineDivs>
-            </Section>
+            </Section> */}
             {/* <References references={references} /> */}
         </EBookPage>
     );

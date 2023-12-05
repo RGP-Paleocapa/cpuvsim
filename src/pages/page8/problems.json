@@ -71,7 +71,7 @@
     ]
   },
   {
-    "text": "Determine whether a given positive integer number satisfies the Collatz conjecture (see the Collaz Conjecture), computing the number of iterations necessary to reach the number 1.",
+    "text": "Determine whether a given positive integer number satisfies the Collatz conjecture (see the definition at https://en.wikipedia.org/wiki/Collatz_conjecture), computing the number of iterations necessary to reach the number 1.",
     "link": "https://cpuvisualsimulator.github.io/?program=U1RBUlQ6ICAgICAgICAgTE9EIE5VTQogICAgICAgICAgICAgICBDTVAgIzEKICAgICAgICAgICAgICAgSlogRU5ECiAgICAgICAgICAgICAgIExPRCBDT1VOVAogICAgICAgICAgICAgICBBREQgIzEKICAgICAgICAgICAgICAgU1RPIENPVU5UCiAgICAgICAgICAgICAgIExPRCBOVU0KICAgICAgICAgICAgICAgQU5EICMxCiAgICAgICAgICAgICAgIEpOWiBPREQKRVZFTjogICAgICAgICAgTE9EIE5VTQogICAgICAgICAgICAgICBESVYgIzIKICAgICAgICAgICAgICAgU1RPIE5VTQogICAgICAgICAgICAgICBKTVAgU1RBUlQKT0REOiAgICAgICAgICAgTE9EIE5VTQogICAgICAgICAgICAgICBNVUwgIzMKICAgICAgICAgICAgICAgQUREICMxCiAgICAgICAgICAgICAgIFNUTyBOVU0KICAgICAgICAgICAgICAgSk1QIFNUQVJUCkVORDogICAgICAgICAgIEhMVApOVU06ICAgICAgICAgICAxCkNPVU5UOiAgICAgICAgIDI%3D"
   }
 ]
