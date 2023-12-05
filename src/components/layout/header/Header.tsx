@@ -59,7 +59,7 @@ const Header: React.FC = () => {
         Home
       </Link>
       <Link to="/page1" className="text-blue-600 dark:text-blue-400 hover:text-blue-900 dark:hover:text-white" onClick={scrollToTop}>
-        Ebook
+        Start Reading
       </Link>
       <a
         href='https://cpuvisualsimulator.github.io/'

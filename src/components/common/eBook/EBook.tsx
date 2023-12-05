@@ -19,21 +19,22 @@ const EBookPage: React.FC<EBookProps> = ({ children, currentPage }) => {
   }, [isNavOpen]);
 
   return (
-    <div className="flex justify-center max-w-full mx-auto">
-      {!isNavOpen && (
-        <button onClick={() => setIsNavOpen(true)} className="open-nav-button">
-          <HamburgerMenuIcon />
-        </button>
-      )}
-      <div className={`sidebar-container w-0 lg:w-64 ${isNavOpen ? '' : 'hidden'}`}>
-        <NavigationMenu currentPage={currentPage} totalPages={8} isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
-      </div>
-        <div className="ebook-page-layout">
-          <SwitchPage currentPage={currentPage} />
-          {children}
-          <SwitchPage currentPage={currentPage} />
-        </div>
-    </div>
+<div className="flex justify-center max-w-screen-xl mx-auto px-4">
+  {!isNavOpen && (
+    <button onClick={() => setIsNavOpen(true)} className="open-nav-button">
+      <HamburgerMenuIcon />
+    </button>
+  )}
+  <div className={`sidebar-container w-0 lg:w-64 ${isNavOpen ? '' : 'hidden'}`}>
+    <NavigationMenu currentPage={currentPage} totalPages={8} isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
+  </div>
+  <div className="ebook-page-layout flex-1">
+    <SwitchPage currentPage={currentPage} />
+    {children}
+    <SwitchPage currentPage={currentPage} />
+  </div>
+</div>
+
   );
 };
 

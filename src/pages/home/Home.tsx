@@ -15,7 +15,7 @@ const Home = () => {
 
   return (
     <>
-      <section id="discover-features" className="flex flex-col items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900">
+      <section id="discover-features" className="flex flex-col items-center justify-center min-h-screen px-4 lg:px-20 bg-gray-100 dark:bg-gray-900">
         <h2 className="font-montserrat text-3xl my-10 lg:mt-0 md:text-4xl lg:text-5xl text-gray-800 dark:text-white">
           Discover Our Features
         </h2>
