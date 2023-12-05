@@ -41,7 +41,7 @@ const ImageSwitcher: React.FC<ImageSwitcherProps> = ({ images, instructionsList 
               />
             </div>
           </div>
-          <div className="flex-grow p-4 bg-gray-100 dark:bg-gray-700 overflow-y-auto h-[300px]">
+          <div className="flex-grow p-4 bg-gray-100 dark:bg-gray-700 overflow-y-scroll lg:overflow-auto h-[300px]">
             <div className="text-2xl font-bold mb-4">
               {currentInstructions.map((text, index) => (
                 <p key={index} className="mb-2 text-lg dark:text-gray-200">
