@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 interface ImageSwitcherProps {
   images: string[];
@@ -7,6 +7,7 @@ interface ImageSwitcherProps {
 
 const ImageSwitcher: React.FC<ImageSwitcherProps> = ({ images, instructionsList }) => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [imageHeight, setImageHeight] = useState('300px'); // Initial height for mobile
 
   const handleImageClick = (index: number) => {
     setActiveIndex(index);
@@ -16,12 +17,23 @@ const ImageSwitcher: React.FC<ImageSwitcherProps> = ({ images, instructionsList 
 
   const labels = ['High Level', 'Assembler', 'Binary'];
 
+  useEffect(() => {
+    // Adjust the image container height based on the loaded image's aspect ratio
+    const img = new Image();
+    img.src = images[activeIndex];
+    img.onload = () => {
+      const aspectRatio = img.height / img.width;
+      const newHeight = `${300 * aspectRatio}px`; // Adjust for mobile
+      setImageHeight(newHeight);
+    };
+  }, [activeIndex, images]);
+
   return (
     <div className="w-full max-w-full mx-auto p-4 overflow-hidden">
       <div className="border rounded-lg bg-white dark:bg-gray-800 shadow-lg dark:shadow-none">
         <div className="relative flex-row lg:flex">
           <div className="flex-shrink-0 w-full lg:w-1/3 mx-auto">
-            <div className="h-[300px] overflow-hidden">
+            <div className={`h-${imageHeight} sm:h-[300px] overflow-hidden`}>
               <img
                 src={images[activeIndex]}
                 alt={`Image ${activeIndex + 1}`}
