@@ -25,7 +25,7 @@ const ImageSwitcher: React.FC<ImageSwitcherProps> = ({ images, instructionsList 
               <img
                 src={images[activeIndex]}
                 alt={`Image ${activeIndex + 1}`}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover sm:object-none sm:w-auto"
               />
             </div>
           </div>
