@@ -21,7 +21,7 @@ const Table: React.FC<TableProps> = ({ headerTitles, bodyRows }) => {
             {headerTitles.map((title, index) => (
               <th
                 key={index}
-                className="py-2 px-4 sm:py-3 sm:px-6 text-xs sm:text-sm text-center sm:text-left text-gray-700 dark:text-gray-200 uppercase bg-gray-400 dark:bg-gray-700"
+                className="py-2 px-4 sm:py-3 sm:px-6 text-xs sm:text-sm text-center text-gray-700 dark:text-gray-200 uppercase bg-gray-400 dark:bg-gray-700"
                 colSpan={colSpan}
               >
                 {title}
