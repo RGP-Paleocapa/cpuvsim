@@ -14,14 +14,14 @@ const Table: React.FC<TableProps> = ({ headerTitles, bodyRows }) => {
   const colSpan = Math.ceil(maxColumns / headerTitles.length);
 
   return (
-    <div className="overflow-x-auto relative">
+    <div className="overflow-x-auto relative whitespace-nowrap">
       <table className="table">
         <thead className="thead">
           <tr>
             {headerTitles.map((title, index) => (
               <th
                 key={index}
-                className="py-3 px-6 text-sm sm:text-base"
+                className="py-2 px-4 sm:py-3 sm:px-6 text-xs sm:text-sm text-center sm:text-left text-gray-700 dark:text-gray-200 uppercase bg-gray-400 dark:bg-gray-700"
                 colSpan={colSpan}
               >
                 {title}
@@ -35,7 +35,7 @@ const Table: React.FC<TableProps> = ({ headerTitles, bodyRows }) => {
               {row.map((cell, cellIndex) => (
                 <td
                   key={cellIndex}
-                  className="py-3 px-6 text-sm sm:text-sm"
+                  className="py-2 px-4 sm:py-3 sm:px-6 text-xs sm:text-sm text-left text-gray-50"
                 >
                   {cell}
                 </td>
