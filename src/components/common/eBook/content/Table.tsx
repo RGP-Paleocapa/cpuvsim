@@ -14,7 +14,7 @@ const Table: React.FC<TableProps> = ({ headerTitles, bodyRows }) => {
   const colSpan = Math.ceil(maxColumns / headerTitles.length);
 
   return (
-    <div className="overflow-x-auto relative whitespace-nowrap">
+    <div className="overflow-x-auto relative">
       <table className="table">
         <thead className="thead">
           <tr>
@@ -35,7 +35,9 @@ const Table: React.FC<TableProps> = ({ headerTitles, bodyRows }) => {
               {row.map((cell, cellIndex) => (
                 <td
                   key={cellIndex}
-                  className="py-2 px-4 sm:py-3 sm:px-6 text-xs sm:text-sm text-left text-gray-50"
+                  className={`${
+                    cellIndex === 0 ? 'whitespace-nowrap' : ''
+                  } py-2 px-4 sm:py-3 sm:px-6 text-xs sm:text-sm text-left text-gray-50`}
                 >
                   {cell}
                 </td>
