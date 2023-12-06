@@ -20,7 +20,7 @@ const Home = () => {
           A gentle introduction to the Central Processing Unit and Assembly language
         </h1>
         <p className="text-lg text-gray-600 dark:text-gray-400 text-center mb-8">
-          Based on (and in support of) the complementary Educational CPU Visual Simulator
+          Based on (and in support of) the complementary Educational CPU Visual Simulator (CPUVSIM)
         </p>
       </div>
 

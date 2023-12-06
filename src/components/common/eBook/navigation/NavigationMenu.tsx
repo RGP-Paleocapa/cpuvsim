@@ -12,9 +12,9 @@ const NavigationMenu: React.FC<NavigationMenuProps> = ({ currentPage, totalPages
 
   const pageTexts = [
     "1 - ComputersAsGeneralPurpose",
-    "2- SimpleBinaryCalculations",
+    "2 - SimpleBinaryCalculations",
     "3 - VonNeumannModel",
-    "4- CPUFundamentalFetchDecodeExecute",
+    "4 - CPUFundamentalFetchDecodeExecute",
     "5 - CPUInstructionSet",
     "6 - AssemblyAndHighLevelLanguages",
     "7 - TranslationOfHighLevelLanguage",
