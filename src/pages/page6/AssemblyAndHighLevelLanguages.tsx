@@ -64,6 +64,8 @@ const Page6 = () => {
             Low-level languages are dependent on the particular computer, or more precisely the specific CPU,  where they are executed.
           </Text>
       
+          <br /><br />
+
           <H3>
             Machine Language
           </H3> 
@@ -77,6 +79,8 @@ const Page6 = () => {
             as an open (absence of current flowing) or closed (current flowing) circuit, or as a discharged capacitor versus a charged one.
             A binary digit is called "<strong>bit</strong>", and 8 bits form a <strong>byte</strong>.
           </Text>
+
+          <br /><br />
 
           <H3>
             Assembly Language
