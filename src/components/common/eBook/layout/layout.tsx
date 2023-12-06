@@ -1,8 +1,8 @@
 import { ReactNode } from 'react';
 
 export const Figure = ({ children }: { children: ReactNode }) => (
-    <figure className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 pt-10 justify-items-center">{children}</figure>
-  );
+  <figure className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 pt-10 justify-items-center">{children}</figure>
+);
 
 // Two Divs Inline Component
 export const InlineDivs = ({
