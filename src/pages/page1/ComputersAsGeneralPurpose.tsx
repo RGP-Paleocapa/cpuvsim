@@ -94,20 +94,20 @@ const Page1 = () => {
         </Text>
         <Figure>
           <div>
-            <img src={images.eniac.src} alt={images.eniac.alt} className="w-[400px] h-[300px]" />
+            <img src={images.eniac.src} alt={images.eniac.alt} className="2xl:ml-[20px] w-[400px] h-[300px]" />
             <Description>
             The ENIAC was the first computing system, designed in the early 1940s, based on a primitive concept of a Stored Program Computer. Here the instructions, or programs, were stored as a combination of paper cards, plug-board wirings, and mechanical switches.
             </Description>
           </div>
           <div>
-            <img src={images.modernComputer.src} alt={images.modernComputer.alt} className="w-[400px] h-[300px]" />
+            <img src={images.modernComputer.src} alt={images.modernComputer.alt} className="2xl:ml-[20px] w-[400px] h-[300px]" />
               <Description>
                 An example of a modern stored-program machine is the personal computer. In these devices, it is possible to easily install/uninstall and execute different applications, in order to support the most disparate functions.
               </Description>
             
           </div>
           <div>
-            <img src={images.specialPurposeComputer.src} alt={images.specialPurposeComputer.src} className="w-[400px] h-[300px]" />
+            <img src={images.specialPurposeComputer.src} alt={images.specialPurposeComputer.src} className="2xl:ml-[20px] w-[400px] h-[300px]" />
             <Description>
                 “Special-purpose computers” are computers that have fixed, preinstalled programs, hence predefined supported functions (e.g., medical appliances, calculators, traffic lights...). Yet, they have the same standard architecture as the other type of computers.
             </Description>
