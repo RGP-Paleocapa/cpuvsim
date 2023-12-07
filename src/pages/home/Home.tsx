@@ -14,22 +14,17 @@ const Home = () => {
   useDocumentMetadata('HomePage', 'This is the main page.');
 
   return (
-    <>
-      <div className="flex flex-col items-center justify-center h-screen">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl text-center mb-6 text-gray-800 dark:text-white">
-          A gentle introduction to the Central Processing Unit and Assembly language
-        </h1>
-        <p className="text-lg text-gray-600 dark:text-gray-400 text-center mb-8">
-          Based on (and in support of) the complementary Educational CPU Visual Simulator (CPUVSIM)
-        </p>
-      </div>
+    <div className="min-h-screen flex flex-col justify-center items-center">
+      <h1 className="text-3xl md:text-4xl lg:text-5xl text-center mb-6 mt-10 lg:mt-16 text-gray-800 dark:text-white">
+        A gentle introduction to the Central Processing Unit and Assembly language
+      </h1>
+      <p className="text-lg text-gray-600 dark:text-gray-400 text-center">
+        Based on (and in support of) the complementary Educational CPU Visual Simulator (CPUVSIM)
+      </p>
 
-      <hr className="flex flex-col my-16 border-t border-gray-300 dark:border-gray-700" />
+      <hr className="flex flex-col my-4 md:my-16 border-t border-gray-300 dark:border-gray-700" />
 
-      <section id="discover-features" className="flex flex-col items-center justify-center min-h-screen px-4 lg:px-20 bg-gray-100 dark:bg-gray-900">
-        <h2 className="font-montserrat text-3xl mb-10 md:text-4xl lg:text-5xl text-gray-800 dark:text-white">
-          Discover Our Features
-        </h2>
+      <div className="flex-grow px-4">
         <p className="home-discovery-text">
           This e-book aims to illustrate the basics of how a computer works,
           focusing on how a program written in a high-level language ends up being physically executed on a Central Processing Unit (CPU).
@@ -50,7 +45,7 @@ const Home = () => {
         </p>
         <p className="home-discovery-text">
           The associated CPUVSIM allows users to visualize with detailed animations the execution of assembly language code.
-          Its main goal is to support novices in understanding the behaviour of the key components of a CPU,
+          Its main goal is to support novices in understanding the behavior of the key components of a CPU,
           focusing on how code written in high-level languages is actually executed on the hardware of a computer.
           <br />
           It supports a simplified but representative assembly language of 16 (Data Transfer, Control Flow, Arithmetic-Logic) instructions,
@@ -59,8 +54,8 @@ const Home = () => {
           The speed and level of details of the animations can be controlled by the users. At any time,
           it is possible to switch between symbolic and binary representations.
         </p>
-      </section>
-    </>
+      </div>
+    </div>
   );
 }
 
