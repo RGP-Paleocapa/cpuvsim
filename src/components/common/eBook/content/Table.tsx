@@ -36,11 +36,11 @@ const Table: React.FC<TableProps> = ({ headerTitles, bodyRows }) => {
                 <td
                   key={cellIndex}
                   className={`${
-                    cellIndex === 0 ? 'whitespace-nowrap' : ''
-                  } py-2 px-4 sm:py-3 sm:px-6 text-xs sm:text-sm text-left text-gray-50`}
+                    cellIndex < row.length - 1 ? 'w-[140px]' : ''
+                  } ${cellIndex === 0 ? 'whitespace-nowrap' : ''} py-2 px-4 sm:py-3 sm:px-6 text-xs sm:text-sm text-left text-gray-50`}
                 >
                   {cell}
-                </td>
+                </td>              
               ))}
             </tr>
           ))}
