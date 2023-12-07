@@ -1,7 +1,7 @@
 // Header.tsx
 
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import ThemeSwitcher from './ThemeSwitcher';
 import HamburgerMenuIcon from '@/components/common/HamburgerMenuIcon';
 import MobileMenu from './MobileMenu'; // Import the MobileMenu component
@@ -43,6 +43,8 @@ const Header: React.FC = () => {
     };
   }, [lastScrollY]);
 
+  const location = useLocation();
+
   return (
     <>
       <nav className={`fixed w-full z-50 transition-all duration-300 ease-in-out ${show ? 'top-0' : '-top-full'} bg-white dark:bg-slate-800 py-4 px-6 md:px-12 lg:px-16 xl:px-24 shadow-md`}>
@@ -58,11 +60,12 @@ const Header: React.FC = () => {
             </button>
           </div>
           <div className="hidden lg:flex space-x-4 items-center">
-            <Link to="/" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white" onClick={scrollToTop}>
+            {/* Apply different styles conditionally based on the active route */}
+            <Link to="/" className={`text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white ${location.pathname === '/' ? 'font-bold underline decoration-2 underline-offset-2' : ''}`} onClick={scrollToTop}>
               Home
             </Link>
-            <Link to="/page1" className="text-blue-600 dark:text-blue-400 hover.text-blue-900 dark:hover.text-white" onClick={scrollToTop}>
-              Start Reading
+            <Link to="/page1" className={`text-blue-600 dark:text-blue-400 hover:text-blue-900 dark:hover:text-white ${location.pathname === '/page1' ? 'font-bold underline decoration-2 underline-offset-2' : ''}`} onClick={scrollToTop}>
+              Pages
             </Link>
             <a
               href='https://cpuvisualsimulator.github.io/'
@@ -71,7 +74,7 @@ const Header: React.FC = () => {
             >
               Simulator
             </a>
-            <Link to="/about" className="text-green-600 dark:text-green-400 hover:text-green-900 dark:hover:text-white" onClick={scrollToTop}>
+            <Link to="/about" className={`text-green-600 dark:text-green-400 hover:text-green-900 dark:hover:text-white ${location.pathname === '/about' ? 'font-bold underline decoration-2 underline-offset-2' : ''}`} onClick={scrollToTop}>
               About
             </Link>
             <ThemeSwitcher />

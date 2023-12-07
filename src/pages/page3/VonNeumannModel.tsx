@@ -229,6 +229,7 @@ const Page3 = () => {
               <img src={images.image5.src} alt={images.image5.alt} className="img-center" />
             </MaxWidthContainer>
           </InlineDivs>
+          <br /><br />
           <Text>
             Most computers make also use of an additional type of memory, called <strong>secondary memory</strong>.
             This may be implemented as an hard disk or an SSD device - which are considered in the Von Neumann architecture as I/O devices.

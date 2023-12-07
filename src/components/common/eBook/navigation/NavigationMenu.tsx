@@ -11,13 +11,13 @@ interface NavigationMenuProps {
 const NavigationMenu: React.FC<NavigationMenuProps> = ({ currentPage, totalPages, isNavOpen, setIsNavOpen }) => {
 
   const pageTexts = [
-    "1 - ComputersAsGeneralPurpose",
-    "2 - SimpleBinaryCalculations",
-    "3 - VonNeumannModel",
-    "4 - CPUFundamentalFetchDecodeExecute",
-    "5 - CPUInstructionSet",
-    "6 - AssemblyAndHighLevelLanguages",
-    "7 - TranslationOfHighLevelLanguage",
+    "1 - Computers as General-purpose Machines",
+    "2 - Simple Binary Calculations",
+    "3 - VonNeumann Model",
+    "4 - CPU Fundamental Fetch Decode Execute",
+    "5 - CPU Instruction Set",
+    "6 - Assembly And High Level Languages",
+    "7 - From High-level to Assembly Languages",
     "8 - Exercises",
   ];
 

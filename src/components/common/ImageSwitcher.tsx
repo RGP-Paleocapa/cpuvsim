@@ -66,14 +66,17 @@ const ImageSwitcher: React.FC<ImageSwitcherProps> = ({ images, instructionsList 
             <button
               key={index}
               onClick={() => handleImageClick(index)}
-              className={`px-3 py-2 mr-2 mb-2 rounded ${
-                activeIndex === index
-                  ? 'bg-blue-500 text-gray-200'
-                  : 'bg-gray-300 dark:bg-gray-600 text-gray-700 dark:text-white hover:bg-gray-400 dark:hover:bg-gray-700'
-              }`}
+              className={`px-3 py-2 mr-2 mb-6 button w-40 h-16 bg-blue-500 rounded-lg cursor-pointer select-none
+                active:translate-y-2 ${activeIndex === index ? 'active:shadow-[0_0px_0_0_#1b6ff8,0_0px_0_0_#1b70f841] active:border-b-[0px]' : ''}
+                transition-all duration-150 ${activeIndex === index ? 'shadow-[0_10px_0_0_#1747a6,0_15px_0_0_#1747a641] border-blue-400' : 'shadow-[0_10px_0_0_#A9A9A9,0_15px_0_0_#A9A9A941] dark:shadow-[0_10px_0_0_#374151,0_15px_0_0_#37415141] border-gray-400'}
+                border-b-[1px] ${
+                  activeIndex === index
+                    ? 'bg-blue-500 text-gray-200'
+                    : 'bg-gray-300 dark:bg-gray-600 text-gray-700 dark:text-white hover:bg-gray-400 hover:text-white dark:hover:bg-gray-700'
+                }`}
             >
               {label}
-            </button>
+          </button>          
           ))}
         </div>
       </div>

@@ -59,6 +59,17 @@ const Page8 = () => {
           <Section>
               <InlineDivs>
                   <MaxWidthContainer>
+                      <Text>
+                          IF-THEN example:
+                          <br /><br />
+                          IF X==3 <br />
+                              THEN Y:=5 <br />
+                          ENDIF <br />
+                          HLT <br /><br />
+                      </Text>
+                      <DraggableContainerGrid initialContainers={container1} />
+                  </MaxWidthContainer>
+                  <MaxWidthContainer>
                       {containerStates.container1Visible && <DraggableContainerGrid initialContainers={container1Solved} />}
                       <button
                           className='text-gray-200 hover:text-gray-800 bg-green-700 hover:bg-green-400 border-2 border-gray-50 py-2 px-5 rounded'
@@ -71,17 +82,6 @@ const Page8 = () => {
                       )}
                       </button>
                   </MaxWidthContainer>
-                  <MaxWidthContainer>
-                      <Text>
-                          IF-THEN example:
-                          <br /><br />
-                          IF X==3 <br />
-                              THEN Y:=5 <br />
-                          ENDIF <br />
-                          HLT <br /><br />
-                      </Text>
-                      <DraggableContainerGrid initialContainers={container1} />
-                  </MaxWidthContainer>
               </InlineDivs>
           </Section>
       </div>
@@ -89,6 +89,9 @@ const Page8 = () => {
       <div className="hidden lg:block">
           <Section>
               <InlineDivs>
+                  <MaxWidthContainer>
+                      <DraggableContainerGrid initialContainers={container2} />
+                  </MaxWidthContainer>
                   <MaxWidthContainer>
                       {containerStates.container2Visible && <DraggableContainerGrid initialContainers={container2Solved} />}
                       <button
@@ -101,9 +104,6 @@ const Page8 = () => {
                               <p>Show Solution</p>
                           )}
                       </button>
-                  </MaxWidthContainer>
-                  <MaxWidthContainer>
-                      <DraggableContainerGrid initialContainers={container2} />
                   </MaxWidthContainer>
               </InlineDivs>
           </Section>
