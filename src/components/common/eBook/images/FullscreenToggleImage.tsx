@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const InteractiveImage = ({ src, alt, className }: { src: string, alt: string, className?: string }) => {
+const FullscreenToggleImage = ({ src, alt, className }: { src: string, alt: string, className?: string }) => {
   const [isFullscreen, setIsFullscreen] = useState(false);
 
   const toggleFullscreen = () => {
@@ -50,4 +50,4 @@ const InteractiveImage = ({ src, alt, className }: { src: string, alt: string, c
   );
 };
 
-export default InteractiveImage;
+export default FullscreenToggleImage;
