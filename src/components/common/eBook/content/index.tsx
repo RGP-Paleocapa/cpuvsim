@@ -60,7 +60,7 @@ export const Ol = ({ children, className, start }: { children: React.ReactNode; 
 // Pre component
 export const Pre: React.FC<{ content: ReactNode; className?: string }> = ({ content, className }) => {
   return (
-    <pre className={className || "whitespace-pre overflow-auto bg-gray-300 dark:bg-gray-600 rounded p-4"}>
+    <pre className={className || "whitespace-pre overflow-auto text-sm bg-gray-300 dark:bg-gray-600 rounded p-4"}>
       {content}
     </pre>
   );
