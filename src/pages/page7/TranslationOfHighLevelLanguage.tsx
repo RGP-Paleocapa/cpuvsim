@@ -4,7 +4,7 @@ import images from "@assets/images/pages/page7";
 import useDocumentMetadata from "@hooks/useDocumentMetadata";
 import { useFooter } from "@/context/FooterContext";
 import { useEffect } from "react";
-import ImageSwitcher from "@/components/common/ImageSwitcher";
+import ImageSwitcher from "@/components/common/eBook/images/ImageAndTextSwitcher";
 import data from './data.json';
 import { CancelButton, SuccessButton } from "@/components/common/Buttons";
 
