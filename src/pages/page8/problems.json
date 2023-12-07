@@ -33,9 +33,11 @@
   {
     "title": "Translate the following pseudo-code to assembler:",
     "code": [
-      "COUNT:=0; K:=5;DO",
-      "K:=K+37;",
-      "COUNT:=COUNT+1;",
+      "COUNT:=0;",
+      "K:=5;\n",
+      "DO",
+      "   K:=K+37;",
+      "   COUNT:=COUNT+1;",
       "WHILE K < 612"
     ]
   },
@@ -47,7 +49,7 @@
     "title": "Translate the following pattern in pseudo-code to assembler:",
     "code": [
       "FOR I:= 5 DOWNTO 0 DO {",
-      "// Body code here",
+      "   // Body code here",
       "}",
       "// Additional code here"
     ]
@@ -56,7 +58,7 @@
     "title": "Translate the following pattern in pseudo-code to assembler:",
     "code": [
       "IF <boolean expression>",
-      "THEN <statements>",
+      "   THEN <statements>",
       "ENDIF",
       "<other statements>"
     ]
@@ -65,8 +67,8 @@
     "title": "Translate the following pattern in pseudo-code to assembler:",
     "code": [
       "IF W<X",
-      "THEN",
-      "exchange W and X",
+      "   THEN",
+      "   exchange W and X",
       "ENDIF"
     ]
   },

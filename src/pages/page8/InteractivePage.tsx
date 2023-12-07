@@ -1,10 +1,11 @@
 import useDocumentMetadata from "@hooks/useDocumentMetadata";
 import EBookPage from "@common/eBook/EBook";
-import { Ol, Section, SectionTitle, Text, DraggableContainerGrid, H3 } from "@common/eBook/content";
+import { Ol, Section, SectionTitle, Text, DraggableContainerGrid, H3, Pre } from "@common/eBook/content";
 import { InlineDivs, MaxWidthContainer } from "@/components/common/eBook/layout/layout";
 import { useState } from "react";
 import problemListData from './problems.json';
 import containerData from './containers.json';
+import ProblemComponent from "./ProblemComponent";
 // import AssemblyTasksComponent from "@/pages/page8/AssemblyTaskComponent";
 
 // Define a TypeScript interface for a problem
@@ -41,6 +42,15 @@ const Page8 = () => {
   const container2 = containerData.container2;
   const container2Solved = containerData.container2Solved;
   const problemList: Problem[] = problemListData;
+
+  const code = [
+    "IF-THEN example:\n\n",
+    "IF X==3\n",
+    "   THEN\n",
+    "   Y:=5\n",
+    "ENDIF\n",
+    "HLT\n"
+  ]
   
   return (
     <EBookPage currentPage={8}>
@@ -59,15 +69,8 @@ const Page8 = () => {
           <Section>
               <InlineDivs>
                   <MaxWidthContainer>
-                      <Text>
-                          IF-THEN example:
-                          <br /><br />
-                          IF X==3 <br />
-                              THEN Y:=5 <br />
-                          ENDIF <br />
-                          HLT <br /><br />
-                      </Text>
-                      <DraggableContainerGrid initialContainers={container1} />
+                    <Pre content={code} />
+                    <DraggableContainerGrid initialContainers={container1} />
                   </MaxWidthContainer>
                   <MaxWidthContainer>
                       {containerStates.container1Visible && <DraggableContainerGrid initialContainers={container1Solved} />}
@@ -135,35 +138,7 @@ const Page8 = () => {
               in the leftmost column of the RAM before it can be used in any instruction):</H3>
         <div className="flex flex-wrap">
           {problemList.map((problem, index) => (
-            <div key={index} className="w-full p-4 bg-gray-100 dark:bg-gray-800">
-              <div className="flex items-start">
-                <div className="w-3/4">
-                  {(problem.text || problem.code) && (
-                    <Ol start={index + 1} className="dark:text-white max-w-full">
-                      {problem.text && <li>{problem.text}</li>}
-                      {Array.isArray(problem.code) && ( // Check if problem.code is an array
-                        <li>
-                          <strong>{problem.title}</strong>
-                          <pre>{problem.code.join('\n')}</pre>
-                        </li>
-                      )}
-                    </Ol>
-                  )}
-                </div>
-                <div className="w-1/4 mt-2 md:mt-0">
-                  {problem.link ? (
-                    <a
-                      href={problem.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="bg-blue-500 dark:bg-blue-800 hover:bg-gray-100 dark:hover:bg-blue-100 border-2 border-blue-500 dark:border-blue-800  text-white hover:text-blue-500 dark:hover:text-blue-800 ml-2 px-3 py-1 rounded max-w-sm"
-                    >
-                      Solution
-                    </a>
-                  ) : null}
-                </div>
-              </div>
-            </div>
+            <ProblemComponent key={index} problem={problem} index={index} />
           ))}
         </div>
       </Section>

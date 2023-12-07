@@ -1,0 +1,77 @@
+import { Pre } from '@/components/common/eBook/content';
+import React from 'react';
+
+interface ProblemData {
+  title?: string;
+  text?: string;
+  code?: string | string[];
+  link?: string;
+}
+
+interface ProblemComponentProps {
+  problem: ProblemData;
+  index: number;
+}
+
+const ProblemComponent: React.FC<ProblemComponentProps> = ({ problem, index }) => {
+  const renderTextWithLinks = (text: string, link: string | undefined) => {
+    const parts = text.split(/(https?:\/\/\S+)/); // Split by HTTP links while preserving them
+
+    return parts.map((part, index) => {
+      if (link && part.startsWith('http://') || part.startsWith('https://')) {
+        return (
+          <a
+            key={index}
+            href={part}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {part}
+          </a>
+        );
+      } else {
+        return (
+          <span key={index}>{part}</span>
+        );
+      }
+    });
+  };
+
+  return (
+    <div key={index} className="w-full p-4 bg-gray-100 dark:bg-gray-800">
+      <div className="flex items-start">
+        <div className="w-3/4">
+          {(problem.text || problem.code) && (
+            <ol start={index + 1} className="dark:text-white max-w-full">
+              {problem.text && (
+                <li>
+                  {renderTextWithLinks(problem.text, problem.link)}
+                </li>
+              )}
+              {Array.isArray(problem.code) && (
+                <li>
+                  <strong>{problem.title}</strong>
+                  <Pre content={problem.code.join('\n')} />
+                </li>
+              )}
+            </ol>
+          )}
+        </div>
+        <div className="w-1/4 mt-2 md:mt-0">
+          {problem.link ? (
+            <a
+              href={problem.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-blue-500 dark:bg-blue-800 hover:bg-gray-100 dark:hover:bg-blue-100 border-2 border-blue-500 dark:border-blue-800 text-white hover:text-blue-500 dark:hover:text-blue-800 ml-2 px-3 py-1 rounded max-w-sm"
+            >
+              Solution
+            </a>
+          ) : null}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default ProblemComponent;

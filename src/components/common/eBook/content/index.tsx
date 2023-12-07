@@ -56,3 +56,12 @@ export const Ol = ({ children, className, start }: { children: React.ReactNode; 
     {children}
   </ol>
 );
+
+// Pre component
+export const Pre: React.FC<{ content: ReactNode; className?: string }> = ({ content, className }) => {
+  return (
+    <pre className={className || "whitespace-pre bg-gray-300 dark:bg-gray-600 rounded p-4"}>
+      {content}
+    </pre>
+  );
+};
