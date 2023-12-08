@@ -1,10 +1,9 @@
-// Header.tsx
-
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import ThemeSwitcher from './ThemeSwitcher';
 import HamburgerMenuIcon from '@/components/common/HamburgerMenuIcon';
 import MobileMenu from './MobileMenu'; // Import the MobileMenu component
+import routeData from './routes.json';
 
 const Header: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -45,6 +44,45 @@ const Header: React.FC = () => {
 
   const location = useLocation();
 
+  const routes = [
+    {
+      "path": "/",
+      "text": "Home",
+      "pattern": "^/$",
+      "color": {
+        "default": "text-gray-600 dark:text-gray-400",
+        "hover": "hover:text-gray-900 dark:hover:text-white"
+      }
+    },
+    {
+      "path": "/page1",
+      "text": "Pages",
+      "pattern": "^/page[1-8]$",
+      "color": {
+        "default": "text-blue-600 dark:text-blue-400",
+        "hover": "hover:text-blue-900 dark:hover:text-white"
+      }
+    },    
+    {
+      "path": "https://cpuvisualsimulator.github.io/",
+      "text": "Simulator",
+      "pattern": "^https://cpuvisualsimulator.github.io/",
+      "color": {
+        "default": "text-red-600 dark:text-red-400",
+        "hover": "hover:text-red-900 dark:hover:text-white"
+      }
+    },
+    {
+      "path": "/about",
+      "text": "About",
+      "pattern": "^/about$",
+      "color": {
+        "default": "text-green-600 dark:text-green-400",
+        "hover": "hover:text-green-900 dark:hover:text-white"
+      }
+    }
+  ];
+
   return (
     <>
       <nav className={`fixed w-full z-50 transition-all duration-300 ease-in-out ${show ? 'top-0' : '-top-full'} bg-white dark:bg-slate-800 py-4 px-6 md:px-12 lg:px-16 xl:px-24 shadow-md`}>
@@ -60,28 +98,23 @@ const Header: React.FC = () => {
             </button>
           </div>
           <div className="hidden lg:flex space-x-4 items-center">
-            {/* Apply different styles conditionally based on the active route */}
-            <Link to="/" className={`text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white ${location.pathname === '/' ? 'font-bold underline decoration-2 underline-offset-2' : ''}`} onClick={scrollToTop}>
-              Home
-            </Link>
-            <Link to="/page1" className={`text-blue-600 dark:text-blue-400 hover:text-blue-900 dark:hover:text-white ${location.pathname === '/page1' ? 'font-bold underline decoration-2 underline-offset-2' : ''}`} onClick={scrollToTop}>
-              Pages
-            </Link>
-            <a
-              href='https://cpuvisualsimulator.github.io/'
-              target='_blank'
-              className="text-red-600 dark:text-red-400 hover:text-red-900 dark:hover:text-white"
-            >
-              Simulator
-            </a>
-            <Link to="/about" className={`text-green-600 dark:text-green-400 hover:text-green-900 dark:hover:text-white ${location.pathname === '/about' ? 'font-bold underline decoration-2 underline-offset-2' : ''}`} onClick={scrollToTop}>
-              About
-            </Link>
+            <div>
+              {routes.map((route, index) => (
+                <Link
+                  to={route.path}
+                  key={index}
+                  className={`mr-4 ${new RegExp(route.pattern).test(location.pathname) ? 'font-bold underline decoration-2 underline-offset-8' : ''} ${route.color.default} ${location.pathname === route.path ? route.color.hover : ''}`}
+                  onClick={scrollToTop}
+                >
+                  {route.text}
+                </Link>
+              ))}
+            </div>
             <ThemeSwitcher />
           </div>
         </div>
       </nav>
-      <MobileMenu isOpen={mobileMenuOpen} onClose={closeMobileMenu} />
+      <MobileMenu isOpen={mobileMenuOpen} onClose={closeMobileMenu} menuItems={routeData} />
     </>
   );
 };

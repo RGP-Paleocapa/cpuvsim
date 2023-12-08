@@ -1,12 +1,11 @@
+import { useEffect } from "react";
+import useDocumentMetadata from "@hooks/useDocumentMetadata";
 import EBookPage from "@common/eBook/EBook";
 import { Section, SectionTitle, Text } from "@common/eBook/content";
 import images from "@assets/images/pages/page7";
-import useDocumentMetadata from "@hooks/useDocumentMetadata";
 import { useFooter } from "@/context/FooterContext";
-import { useEffect } from "react";
-import ImageSwitcher from "@/components/common/eBook/images/ImageAndTextSwitcher";
+import ImageSwitcher from "@common/eBook/images/ImageAndTextSwitcher";
 import data from './data.json';
-import { CancelButton, SuccessButton } from "@/components/common/Buttons";
 
 const Page7 = () => {
     useDocumentMetadata('Translation of High Level Language', "This is the seventh page");
@@ -127,16 +126,8 @@ const Page7 = () => {
             </Section>
 
             <Section>
-                <SuccessButton onClick={() => alert("SuccessButton clicked!")} />
-                <CancelButton onClick={() => alert("CancelButton clicked!")} />
-                <div className='button w-40 h-16 bg-blue-500 rounded-lg cursor-pointer select-none
-                    active:translate-y-2  active:[box-shadow:0_0px_0_0_#1b6ff8,0_0px_0_0_#1b70f841]
-                    active:border-b-[0px]
-                    transition-all duration-150 [box-shadow:0_10px_0_0_#1b6ff8,0_15px_0_0_#1b70f841]
-                    border-b-[1px] border-blue-400
-                '>
-                        <span className='flex flex-col justify-center items-center h-full text-white font-bold text-lg '>Active</span>
-	            </div>
+                {/* <SuccessButton onClick={() => alert("SuccessButton clicked!")} /> */}
+                {/* <CancelButton onClick={() => alert("CancelButton clicked!")} /> */}
             </Section>
         </EBookPage>
     );

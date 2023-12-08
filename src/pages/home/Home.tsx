@@ -1,9 +1,12 @@
+import { Link, useLocation } from 'react-router-dom'; // Import Link for navigation
+import { FaArrowDown, FaArrowUp } from 'react-icons/fa';
 import useDocumentMetadata from '@hooks/useDocumentMetadata';
 import { useEffect } from 'react';
 import { useFooter } from '@/context/FooterContext';
 
 const Home = () => {
   const { setFooterData } = useFooter();
+
   useEffect(() => {
     console.log("Updating footer data from Home");
     setFooterData([
@@ -11,39 +14,87 @@ const Home = () => {
     ]);
   }, [setFooterData]); // Dependencies array ensures this runs only when setFooterData changes
 
+
+  const handleScroll = () => {
+    // Scroll to the section with the specified ID
+    const section = document.getElementById('discover-features');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const location = useLocation();
+
+  useEffect(() => {
+    // Check if the URL has a hash
+    if (location.hash) {
+      // Scroll to the element with the matching ID
+      const targetElement = document.querySelector(location.hash);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [location.hash]);
+
   useDocumentMetadata('HomePage', 'This is the main page.');
 
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center">
-      <h1 className="text-3xl md:text-4xl lg:text-5xl text-center mb-6 mt-10 lg:mt-16 text-gray-800 dark:text-white">
-        A gentle introduction to the Central Processing Unit and Assembly language
-      </h1>
-      <p className="text-lg text-gray-600 dark:text-gray-400 text-center">
-        Based on (and in support of) the complementary Educational CPU Visual Simulator (CPUVSIM)
-      </p>
+    <>
+      <div className="flex flex-col items-center justify-center h-screen ">
+        <div className='flex flex-col items-center'>
+          <h1 className="text-4xl lg:text-7xl text-center mb-6 px-2 text-gray-800 dark:text-gray-100">
+            A gentle introduction to the Central Processing Unit and Assembly language
+          </h1>
+          <p className="text-lg text-gray-600 dark:text-gray-400 text-center mb-8">
+            Based on (and in support of) the complementary Educational CPU Visual Simulator
+          </p>
+          <div className='flex flex-col-reverse md:flex-row gap-4'>
+            <Link
+              to="/#discover-features"
+              className="bg-blue-500 hover:bg-blue-600 text-gray-100 py-2 px-4 md:py-3 md:px-6 rounded-lg text-xl flex items-center w-full"
+              onClick={handleScroll}
+            >
+              Introduction <FaArrowDown className="inline-block ml-2" />
+            </Link>
+            <Link
+              to="/page1"
+              className="animate-pulse hover:animate-none text-white py-2 px-4 md:py-3 md:px-6 rounded-lg text-xl flex items-center bg-yellow-600 hover:bg-yellow-500 w-full"
+              onClick={handleScroll}
+            >
+              Documentation Pages
+              <div className="ml-2 w-6 h-6 md:w-8 md:h-8 flex items-center justify-center bg-transparent border-t-2 md:border-t-4 border-r-2 md:border-r-4 border-transparent transform rotate-45">
+                <FaArrowUp className="text-gray-100 text-xl md:text-2xl" />
+              </div>
+            </Link>
+          </div>
+        </div>
+      </div>
 
-      <hr className="flex flex-col my-4 md:my-16 border-t border-gray-300 dark:border-gray-700" />
+      <hr className="my-16 border-t border-gray-300 dark:border-gray-700" />
 
-      <div className="flex-grow px-4">
-        <p className="home-discovery-text">
+      <section id="discover-features" className="flex flex-col justify-center mx-4 bg-gray-200/50 dark:bg-gray-700/20 p-4 rounded-xl">
+        <h2 className="text-4xl lg:text-5xl mb-6 text-gray-800 dark:text-white">
+          Computer Architecture Introduction
+        </h2>
+        <p className="text-gray-800 dark:text-gray-100 text-lg my-4">
           This e-book aims to illustrate the basics of how a computer works,
           focusing on how a program written in a high-level language ends up being physically executed on a Central Processing Unit (CPU).
           The e-book is intended to be used in the context of an introductory computer science course at high school or undergraduate level.
         </p>
-        <p className="home-discovery-text">
+        <p className="text-gray-800 dark:text-gray-100 text-lg my-4">
           The e-book starts with a concise explanation of the fundamental architecture shared by a wide variety of modern "computers",
-          such as desktop computers, mobile phones or car control units.
+          such as desktop computers, mobile phones, or car control units.
           This is followed by an explanation of the essential elements of the structure of any CPU,
           and the machine (assembly) language that it can execute.
         </p>
-        <p className="home-discovery-text">
+        <p className="text-gray-800 dark:text-gray-100 text-lg my-4">
           This e-book is built around the Educational CPU Visual Simulator (CPUVSIM) shown on the left,
           which you can access through the 'Simulator' button in the top right corner.
           The e-book is a dynamic document because the simulator is seamlessly integrated with the proposed exercises: by clicking on the
           'Show solution' buttons, the CPUVSIM comes to life, loading the solution for the specific exercise into memory.
           This allows you to experiment directly with the programming exercises presented in the book.
         </p>
-        <p className="home-discovery-text">
+        <p className="text-gray-800 dark:text-gray-100 text-lg my-4">
           The associated CPUVSIM allows users to visualize with detailed animations the execution of assembly language code.
           Its main goal is to support novices in understanding the behavior of the key components of a CPU,
           focusing on how code written in high-level languages is actually executed on the hardware of a computer.
@@ -54,8 +105,8 @@ const Home = () => {
           The speed and level of details of the animations can be controlled by the users. At any time,
           it is possible to switch between symbolic and binary representations.
         </p>
-      </div>
-    </div>
+      </section>
+    </>
   );
 }
 

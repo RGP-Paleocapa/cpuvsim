@@ -16,7 +16,7 @@ const Authors = () => {
 
     return (
       <div className="relative flex flex-col items-center md:items-start">
-        <h4 className="font-bold text-lg mb-2">Authors:</h4>
+        <h4 className="font-bold text-lg mb-2">Credits :</h4>
       <button
         onClick={() => setShowAuthors(!showAuthors)}
         className="text-blue-600 dark:text-blue-400 hover:text-blue-600 dark:hover:text-blue-400 transition duration-300"
