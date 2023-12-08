@@ -3,7 +3,6 @@ import { Link, useLocation } from 'react-router-dom';
 import ThemeSwitcher from './ThemeSwitcher';
 import HamburgerMenuIcon from '@/components/common/HamburgerMenuIcon';
 import MobileMenu from './MobileMenu'; // Import the MobileMenu component
-import routeData from './routes.json';
 
 const Header: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -114,7 +113,7 @@ const Header: React.FC = () => {
           </div>
         </div>
       </nav>
-      <MobileMenu isOpen={mobileMenuOpen} onClose={closeMobileMenu} menuItems={routeData} />
+      <MobileMenu isOpen={mobileMenuOpen} onClose={closeMobileMenu} menuItems={routes} />
     </>
   );
 };
