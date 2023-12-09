@@ -24,7 +24,7 @@ const Authors = () => {
         Authors
       </button>
       {showAuthors && (
-        <div className="fixed inset-0 flex items-center justify-center bg-white dark:bg-gray-800 bg-opacity-80">
+        <div className="fixed inset-0 flex items-center justify-center bg-white dark:bg-gray-800 bg-opacity-80 z-50">
           <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg">
             <h4 className="font-bold text-lg mb-2">Authors:</h4>
             <Ul>
