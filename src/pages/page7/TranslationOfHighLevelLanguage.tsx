@@ -124,11 +124,8 @@ const Page7 = () => {
                 </SectionTitle>
                 <ImageSwitcher images={forSwitcher} instructionsList={forLoopList} />
             </Section>
-
-            <Section>
                 {/* <SuccessButton onClick={() => alert("SuccessButton clicked!")} /> */}
                 {/* <CancelButton onClick={() => alert("CancelButton clicked!")} /> */}
-            </Section>
         </EBookPage>
     );
 }
