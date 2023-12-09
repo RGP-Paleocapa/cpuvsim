@@ -6,8 +6,16 @@ export { Table };
 export { DraggableContainerGrid };
 
 // Responsive Section Component
-export const Section = ({ children, id }: { children: ReactNode; id?: string }) => (
-  <section className="py-10" id={id}>
+export const Section = ({
+  children,
+  id,
+  className
+}: {
+  children: ReactNode;
+  id?: string;
+  className?: string;
+}) => (
+  <section className={`py-10 ${className || ''}`} id={id}>
     {children}
   </section>
 );

@@ -116,7 +116,7 @@ const Page8 = () => {
           <H3>
               Perform the following tasks:
           </H3>
-          <Ol>
+          <Ol className="bg-gray-100 dark:bg-gray-700 py-4 rounded-xl">
               <li>
                   Describe the difference between numeric and direct addressing.
               </li>
@@ -136,7 +136,7 @@ const Page8 = () => {
       <Section>
         <H3>Develop suitable programs in assembly code, to solve the following problems (please remember that any label needs to be defined
               in the leftmost column of the RAM before it can be used in any instruction):</H3>
-        <div className="flex flex-wrap">
+        <div className="flex flex-wrap bg-gray-100 dark:bg-gray-700 rounded-xl">
           {problemList.map((problem, index) => (
             <ProblemComponent key={index} problem={problem} index={index} />
           ))}

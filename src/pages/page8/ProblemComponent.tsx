@@ -1,4 +1,4 @@
-import { Pre } from '@/components/common/eBook/content';
+import { Ol, Pre } from '@/components/common/eBook/content';
 import React from 'react';
 
 interface ProblemData {
@@ -38,11 +38,11 @@ const ProblemComponent: React.FC<ProblemComponentProps> = ({ problem, index }) =
   };
 
   return (
-    <div key={index} className="w-full p-4 bg-gray-100 dark:bg-gray-800">
+    <div key={index} className="w-full p-4">
       <div className="flex items-start">
         <div className="w-3/4">
           {(problem.text || problem.code) && (
-            <ol start={index + 1} className="dark:text-white max-w-full">
+            <Ol start={index + 1} className="dark:text-white max-w-full">
               {problem.text && (
                 <li>
                   {renderTextWithLinks(problem.text, problem.link)}
@@ -54,7 +54,7 @@ const ProblemComponent: React.FC<ProblemComponentProps> = ({ problem, index }) =
                   <Pre content={problem.code.join('\n')} />
                 </li>
               )}
-            </ol>
+            </Ol>
           )}
         </div>
         <div className="w-1/4 mt-2 md:mt-0">
