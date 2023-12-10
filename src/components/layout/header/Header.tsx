@@ -71,15 +71,15 @@ const Header: React.FC = () => {
         "hover": "hover:text-red-900 dark:hover:text-white"
       }
     },
-    {
-      "path": "/about",
-      "text": "About",
-      "pattern": "^/about$",
-      "color": {
-        "default": "text-green-600 dark:text-green-400",
-        "hover": "hover:text-green-900 dark:hover:text-white"
+      {
+        "path": "/about",
+        "text": "About",
+        "pattern": "^/about$",
+        "color": {
+          "default": "text-green-700 dark:text-green-300",
+          "hover": "hover:text-green-900 dark:hover:text-white"
+        }
       }
-    }
   ];
 
   return (
