@@ -21,7 +21,7 @@ const References = () => {
     return (
         <div className="flex flex-col items-center md:items-start">
             {footerData.length > 0 && (
-              <h4 className="font-bold text-lg mb-2">References and Helpful Links:</h4>
+              <h2 className="font-bold text-lg mb-2">References and Helpful Links:</h2>
             )}
             {footerData.length > 0 && (
               <Ol className="mx-20">
