@@ -17,7 +17,7 @@ const Legal = () => {
                 <img
                     src={licenza}
                     alt=">CC BY-NC-SA 4.0"
-                    className="h-10 w-25"
+                    className="h-10 w-24"
                 />
                 {/* <span className="ml-1">CC BY-NC-SA 4.0</span> */}
                 </a>
