@@ -70,6 +70,7 @@ const Page8 = () => {
               <InlineDivs>
                   <MaxWidthContainer>
                     <Pre content={code} />
+                    <br />
                     <DraggableContainerGrid initialContainers={container1} />
                   </MaxWidthContainer>
                   <MaxWidthContainer>
