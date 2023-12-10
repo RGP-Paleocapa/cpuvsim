@@ -1,4 +1,4 @@
-import licenza from "/by-nc-sa.svg";
+import licenza from "/icons/by-nc-sa.svg";
 
 
 const Legal = () => {
