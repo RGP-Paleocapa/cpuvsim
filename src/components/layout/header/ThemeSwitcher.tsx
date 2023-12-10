@@ -50,6 +50,7 @@ const ThemeSwitcher = () => {
         className={`text-xl p-2 rounded-full ${
             theme === 'dark' ? 'bg-gray text-white' : 'bg-white text-gray-800'
         }`}
+        aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
         onClick={handleThemeSwitch}
         >
             {theme === 'dark' ? <FaSun /> : <FaMoon />}
