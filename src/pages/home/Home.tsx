@@ -51,19 +51,19 @@ const Home = () => {
           <div className='flex flex-col-reverse md:flex-row gap-4'>
             <Link
                 to="/#discover-features"
-                className="bg-blue-500 hover:bg-blue-600 text-gray-100 py-4 px-4 md:py-3 md:px-6 rounded-lg text-xl flex items-center justify-center w-full"
+                className="bg-blue-700 hover:bg-blue-800 text-white py-4 px-4 md:py-3 md:px-6 rounded-lg text-xl flex items-center justify-center w-full"
                 onClick={handleScroll}
             >
                 Introduction <FaArrowDown className="inline-block ml-2" />
             </Link>
             <Link
                 to="/page1"
-                className="bg-yellow-600 hover:bg-yellow-500 text-white py-4 px-4 md:py-3 md:px-6 rounded-lg text-xl flex items-center justify-center w-full"
+                className="bg-yellow-700 hover:bg-yellow-800 text-white py-4 px-4 md:py-3 md:px-6 rounded-lg text-xl flex items-center justify-center w-full"
                 onClick={handleScroll}
             >
                 Documentation Pages
                 <div className="ml-2 flex items-center justify-center bg-transparent border-transparent transform rotate-45">
-                    <FaArrowUp className="text-gray-100" />
+                    <FaArrowUp className="text-white" />
                 </div>
             </Link>
           </div>
