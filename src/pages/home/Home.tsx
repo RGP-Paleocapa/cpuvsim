@@ -8,7 +8,6 @@ const Home = () => {
   const { setFooterData } = useFooter();
 
   useEffect(() => {
-    console.log("Updating footer data from Home");
     setFooterData([
       { text: 'Cortinovis, R. (2021). An educational CPU Visual Simulator, Proceedings of the 32nd Annual Workshop of the Psychology of Programming Interest Group (PPIG).', link: 'https://ppig.org/files/2021-PPIG-32nd-DC-cortinovis.pdf' },
     ]);
