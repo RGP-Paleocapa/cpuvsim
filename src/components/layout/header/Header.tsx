@@ -92,7 +92,11 @@ const Header: React.FC = () => {
             </Link>
           </div>
           <div className="flex space-x-4 items-center lg:hidden">
-            <button className='block' onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+            <button
+              className='block' 
+              aria-label="Toggle mobile menu"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
               <HamburgerMenuIcon />
             </button>
           </div>
