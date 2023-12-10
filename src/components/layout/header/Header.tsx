@@ -127,7 +127,6 @@ const Header: React.FC = () => {
       </nav>
       <MobileMenu isOpen={mobileMenuOpen} onClose={closeMobileMenu} menuItems={routes} />
     </>
-
   );
 };
 
