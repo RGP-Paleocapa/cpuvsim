@@ -23,7 +23,7 @@ const SmoothScrollButton: React.FC<SmoothScrollButtonProps> = ({
 
   return (
     <button
-      className="text-sm underline custom-button text-blue-400"
+      className="text-sm underline custom-button text-blue-700"
       onClick={() => smoothScrollToId(targetId)}
     >
       {spaceBefore}
