@@ -28,8 +28,10 @@ const EBookPage: React.FC<EBookProps> = ({ children, currentPage }) => {
           <div className={`w-full flex-1 ${isNavOpen ? 'overflow-hidden' : ''}`}>
             <div className={`mx-auto ${isNavOpen ? 'max-w-screen-xl px-4' : 'px-4 md:max-w-fit lg:max-w-full'}`}>
               <button onClick={() => setIsNavOpen(!isNavOpen)} className="hidden lg:block open-nav-button">
-                {!isNavOpen && <HamburgerMenuIcon /> }
-                {isNavOpen && <CloseIcon /> }
+                {/* Render the HamburgerMenuIcon when navigation is closed */}
+                {!isNavOpen && <HamburgerMenuIcon />}
+                {/* Render the CloseIcon when navigation is open */}
+                {isNavOpen && <CloseIcon />}
               </button>
               <div className={`ebook-page-layout ${isNavOpen ? 'md:ml-[30px] lg:ml-140 2xl:ml-0' : 'md:ml-0 lg:ml-0'}`}>
                 <SwitchPage currentPage={currentPage} />
