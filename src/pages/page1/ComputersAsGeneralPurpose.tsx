@@ -124,13 +124,16 @@ const Page1 = () => {
         {gridData.map((item, index) => (
           <div key={index} className="flex flex-col items-center justify-start h-full px-4">
             <div
-              className={`${colors[item.colorKey as keyof typeof colors]} flex flex-col items-center justify-center w-48 h-48 p-4`}
-              // Add "as keyof typeof colors" to tell TypeScript that item.colorKey corresponds to a valid key in colors
+              className={`${
+                colors[item.colorKey as keyof typeof colors]
+              } flex flex-col items-center justify-center w-48 h-48 p-4 ${
+                index === 1 ? 'text-black' : 'text-gray-200'
+              }`}
             >
               {item.texts.map((text, textIndex) => (
                 <p
                   key={textIndex}
-                  className="text-center text-gray-200 text-lg shadow-slate-700 shadow-sm py-1 px-2 rounded"
+                  className="text-center text-lg shadow-slate-700 shadow-sm py-1 px-2 rounded"
                 >
                   {text}
                 </p>
