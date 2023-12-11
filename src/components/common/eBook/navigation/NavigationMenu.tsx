@@ -8,7 +8,7 @@ interface NavigationMenuProps {
   setIsNavOpen: (isOpen: boolean) => void;
 }
 
-const NavigationMenu: React.FC<NavigationMenuProps> = ({ currentPage, totalPages, isNavOpen, setIsNavOpen }) => {
+const NavigationMenu: React.FC<NavigationMenuProps> = ({ currentPage, totalPages, isNavOpen }) => {
 
   const pageTexts = [
     "1 - Computers as General-purpose Machines",
@@ -21,18 +21,11 @@ const NavigationMenu: React.FC<NavigationMenuProps> = ({ currentPage, totalPages
     "8 - Exercises",
   ];
 
-  const toggleNav = () => setIsNavOpen(!isNavOpen);
 
   return (
     <>
       {isNavOpen && (
         <nav className="navigation-menu">
-          <button onClick={toggleNav} className="absolute top-20 right-4 text-gray-600 hover:text-gray-800">
-            {/* SVG for Close Icon */}
-            <svg className="h-6 w-6 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
-            </svg>
-          </button>
           <ul>
             {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
               <li key={page} className={currentPage === page ? 'current-page' : ''}>
