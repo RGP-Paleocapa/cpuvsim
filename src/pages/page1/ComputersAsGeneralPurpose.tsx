@@ -23,7 +23,7 @@ const Page1 = () => {
 
   const colors = {
   amber: "bg-amber-800/75",
-  gray: "bg-gray-500",
+  gray: "bg-gray-400",
   green: "bg-green-900",
 }; 
   
