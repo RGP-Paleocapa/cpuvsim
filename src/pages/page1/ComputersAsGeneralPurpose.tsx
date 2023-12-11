@@ -22,7 +22,7 @@ const Page1 = () => {
   const references = data.references;   
 
   const colors = {
-  amber: "bg-amber-800/75",
+  amber: "bg-amber-800",
   gray: "bg-gray-400",
   green: "bg-green-900",
 }; 
