@@ -37,7 +37,7 @@ const Page2 = () => {
                 <br />
                 <b className="text-blue-400">0</b> + <b className="text-green-700/75 dark:text-green-500">1</b> = <b className="text-green-700/75 dark:text-green-500">1</b>
                 <br />
-                <b className="text-green-700/75 dark:text-green-500">1</b> + <b className="text-green-700/75 dark:text-green-500">1</b> = <b className="text-red-700">1</b><b className="text-blue-600">0</b>, (one - zero, not ten) which means <b className="text-blue-600">0</b> with <b className="text-red-600">carry 1</b>.
+                <b className="text-green-700/75 dark:text-green-500">1</b> + <b className="text-green-700/75 dark:text-green-500">1</b> = <b className="text-red-700">1</b><b className="text-blue-600">0</b>, (one - zero, not ten) which means <b className="text-blue-600">0</b> with <b className="text-red-700">carry 1</b>.
                 <br /><br />
                 The sequence <b className="text-red-700">1</b><b className="text-blue-600">0</b> <b>as a binary number</b>, that is using only 2 symbols, is the equivalent of 2 as a decimal number.
             </Text>
