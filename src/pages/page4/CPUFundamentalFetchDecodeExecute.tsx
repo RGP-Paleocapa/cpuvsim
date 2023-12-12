@@ -25,7 +25,7 @@ const Page4 = () => {
                 </SectionTitle>
                 <InlineDivs>
                     <MaxWidthContainer>
-                        <Text className="dark:text-black">
+                        <Text isDark>
                             The CPU continuously repeats a <strong>fetch-decode-execute cycle</strong> , in order to execute the instructions in a program, one by one.
                             <br />
                             In this cycle, the CPU goes through three main stages:
@@ -33,17 +33,17 @@ const Page4 = () => {
                         </Text>
                         <Ol className="dark:text-black">
                             <li>
-                                <Text className="dark:text-black">
+                                <Text isDark>
                                     <strong>Fetches</strong> a program instruction from the main memory;
                                 </Text>
                             </li>
                             <li>
-                                <Text className="dark:text-black">
+                                <Text isDark>
                                     <strong>Decodes</strong> the instruction, i.e. it works out what needs to be done;
                                 </Text>
                             </li>
                             <li>
-                                <Text className="dark:text-black">
+                                <Text isDark>
                                     <strong>Executes</strong> ( i.e. carries out) the instruction.
                                 </Text>
                             </li>

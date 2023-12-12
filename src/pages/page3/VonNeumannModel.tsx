@@ -25,7 +25,7 @@ const Page3 = () => {
             </SectionTitle>
             <InlineDivs>
               <MaxWidthContainer>
-                <Text className="dark:text-black">
+                <Text isDark>
                   The <b>Von Neumann's architecture</b>, or Von Neumann's machine, refers to the generic computer architecture
                   illustrated in the picture on the right. This architecture is based on the stored-program computer concept,
                   where instructions and data are stored in the same (primary or main) memory.  This design, first published by
@@ -39,21 +39,21 @@ const Page3 = () => {
 
             <InlineDivs>
               <MaxWidthContainer>
-                <Text className="dark:text-black">
+                <Text isDark>
                   This model has <b>5 essential components</b>, as illustrated in the equivalent schema on the right:
                 </Text>
                 <Ul>
                   <li className="mb-4">
-                    <Text className="dark:text-black">The <strong>Central Processing Unit (CPU)</strong>;</Text>
+                    <Text isDark>The <strong>Central Processing Unit (CPU)</strong>;</Text>
                   </li>
                   <li className="mb-4">
-                    <Text className="dark:text-black">The <strong>(primary or main) memory</strong>;</Text>
+                    <Text isDark>The <strong>(primary or main) memory</strong>;</Text>
                   </li>
                   <li className="mb-4">
-                    <Text className="dark:text-black"><strong>Input</strong> and <strong>Output</strong> devices;</Text>
+                    <Text isDark><strong>Input</strong> and <strong>Output</strong> devices;</Text>
                   </li>
                   <li className="mb-4">
-                    <Text className="dark:text-black">The data, address, and control <strong>buses</strong>.</Text>
+                    <Text isDark>The data, address, and control <strong>buses</strong>.</Text>
                   </li>
                 </Ul>
               </MaxWidthContainer>
@@ -77,10 +77,10 @@ const Page3 = () => {
                   <strong className='text-gray-900'>Arithmetic Logic Unit (ALU):</strong>
                   <Ul className="text-gray-300"> 
                     <li>
-                      <Text className="dark:text-black">Performs arithmetic operations such as additions, mUltiplications, and comparisons.</Text>
+                      <Text isDark>Performs arithmetic operations such as additions, mUltiplications, and comparisons.</Text>
                     </li>
                     <li>
-                      <Text className="dark:text-black">Handles logical operations like AND, OR, and NOT.</Text>
+                      <Text isDark>Handles logical operations like AND, OR, and NOT.</Text>
                     </li>
                   </Ul>
                 </li>
@@ -88,10 +88,10 @@ const Page3 = () => {
                   <strong className='text-gray-900'>Control Unit and Decoder:</strong>
                   <Ul className="text-gray-300"> 
                     <li>
-                      <Text className="dark:text-black">Decode instructions.</Text>
+                      <Text isDark>Decode instructions.</Text>
                     </li>
                     <li>
-                      <Text className="dark:text-black">Provide timing and control signals to coordinate operations.</Text>
+                      <Text isDark>Provide timing and control signals to coordinate operations.</Text>
                     </li>
                   </Ul>
                 </li>
@@ -100,33 +100,33 @@ const Page3 = () => {
                   <Ul className="text-gray-300"> 
                     <li>
                       <strong className='text-gray-900'>AccumUlator (Acc):</strong>
-                      <Text className="dark:text-black">Stores resUlts produced by the ALU.</Text>
+                      <Text isDark>Stores resUlts produced by the ALU.</Text>
                     </li>
                     <li>
                       <strong className='text-gray-900'>Program Counter (PC):</strong>
-                      <Text className="dark:text-black">Contains the address of the next instruction to execute.</Text>
+                      <Text isDark>Contains the address of the next instruction to execute.</Text>
                       <Ul> 
                         <li>
-                          <Text className="dark:text-black">Automatically incremented for sequential instruction execution.</Text>
+                          <Text isDark>Automatically incremented for sequential instruction execution.</Text>
                         </li>
                       </Ul>
                     </li>
                     <li>
                       <strong className='text-gray-900'>Instruction Register (IR):</strong>
-                      <Text className="dark:text-black">Holds the currently executing instruction fetched from memory.</Text>
+                      <Text isDark>Holds the currently executing instruction fetched from memory.</Text>
                     </li>
                     <li>
                       <strong className='text-gray-900'>Status Word (SW):</strong>
-                      <Text className="dark:text-black">Contains flags reflecting properties of ALU resUlts.</Text>
+                      <Text isDark>Contains flags reflecting properties of ALU resUlts.</Text>
                       <Ul>
                         <li>
-                          <Text className="dark:text-black">For example, the Z flag is true if the resUlt is zero, and the N flag is true if the resUlt is negative.</Text>
+                          <Text isDark>For example, the Z flag is true if the resUlt is zero, and the N flag is true if the resUlt is negative.</Text>
                         </li>
                       </Ul>
                     </li>
                     <li>
                       <strong className='text-gray-900'>MUltiplexer (MUX):</strong>
-                      <Text className="dark:text-black">A mUlti-way switch that determines input for the ALU.</Text>
+                      <Text isDark>A mUlti-way switch that determines input for the ALU.</Text>
                     </li>
                   </Ul>
                 </li>
@@ -174,20 +174,20 @@ const Page3 = () => {
             <MaxWidthContainer>
               <Ul>
                 <li>
-                  <Text className="dark:text-black">
+                  <Text isDark>
                     <strong className="bg-blue-600 font-normal p-1 text-white">Data Bus</strong>: transfers the data to be read or written,
                     from/to memory or I/O devices. For example the content of a memory cell.
                   </Text>
                 </li>      
                 <li>
-                  <Text className="dark:text-black">
+                  <Text isDark>
                     <strong className="bg-orange-400/95 dark:bg-orange-600 p-1 font-normal">Address Bus</strong>:
                     transfers the addresses of the memory (or I/O devices) involved in an operation.
                     For example the address of the memory cell involved in a Read operation.
                   </Text>
                 </li>
                 <li>
-                  <Text className="dark:text-black">
+                  <Text isDark>
                     <strong className="bg-red-600 p-1 text-white font-normal">Control Bus</strong>:
                     transfers the control signals to coordinate the operations of the subcomponents involved in an operation.
                     For example signalling a Read versus a Write operation in memory.
@@ -212,7 +212,7 @@ const Page3 = () => {
           </Text>  
           <InlineDivs>
             <MaxWidthContainer>
-              <Text className="dark:text-black">
+              <Text isDark>
                 This memory can be conceptually considered as a set of locations (cells), each of them being able to memorize some information,
                 such as an instruction (or part of it) or elementary data. These cell are depicted in gray in the picture on the right,
                 and in this case they all contain the code corresponding to the computer instruction NOP (No Operation).

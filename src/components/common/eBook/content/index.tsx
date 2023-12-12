@@ -11,13 +11,43 @@ export const SectionTitle = ({ children }: { children: ReactNode }) => (
 );  
 
 // Text Component
-export const Text = ({ children, textSize, className }: { children: ReactNode; textSize?: string; className?: string }) => (
-  <p className={`${textSize ? textSize : 'text-base'} responsive-text text-gray-700 dark:text-gray-100 ${className}`}>{children}</p>
+export const Text = ({
+  children, 
+  textSize, 
+  className,
+  isDark,
+}: { 
+  children: ReactNode; 
+  textSize?: string; 
+  className?: string,
+  isDark?: boolean,
+}) => (
+  <p 
+    className={`${
+      textSize ? textSize : 'text-base'
+    } responsive-text ${isDark ? 'dark:text-black' : 'dark:text-gray-100'} text-gray-700 ${className}`}
+  >
+    {children}
+  </p>
 );
 
 // Description Component
-export const Description = ({ children, alignCenter = false, className }: { children: React.ReactNode, alignCenter?: boolean, className?: string }) => (
-  <p className={`my-4 text-sm leading-5 text-gray-600 dark:text-gray-300 mx-auto max-w-xl ${alignCenter ? 'text-center' : 'text-left'} ${className}`}>
+export const Description = ({ 
+  children, 
+  alignCenter = false, 
+  className,
+  isDark = false,
+}: { 
+  children: React.ReactNode, 
+    alignCenter?: boolean, 
+    className?: string,
+    isDark?: boolean,
+  }) => (
+  <p 
+    className={`my-4 text-sm leading-5 text-gray-600 ${
+      isDark ? 'dark:text-black' : 'dark:text-gray-300'
+    } mx-auto max-w-xl ${alignCenter ? 'text-center' : 'text-left'} ${className}`}
+  >
     {children}
   </p>
 );
@@ -30,8 +60,20 @@ export const H2 = ({ children, className }: { children: ReactNode, className?: s
 );
 
 // H3 Component
-export const H3 = ({ children, className }: { children: ReactNode, className?: string }) => (
-  <h3 className={`mb-4 text-lg font-bold leading-7 text-gray-900 dark:text-gray-100 ${className}`}>
+export const H3 = ({ 
+  children, 
+  className,
+  isDark = false,
+}: { 
+  children: ReactNode, 
+  className?: string,
+  isDark?: boolean,
+}) => (
+  <h3 
+    className={`mb-4 text-lg font-bold leading-7 text-gray-900 ${
+      isDark ? 'dark:text-black' : 'dark:text-gray-100'
+    } ${className}`}
+  >
     {children}
   </h3>
 );
