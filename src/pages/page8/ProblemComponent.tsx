@@ -39,7 +39,7 @@ const ProblemComponent: React.FC<ProblemComponentProps> = ({ problem, index }) =
 
   return (
     <div key={index} className="w-full p-4">
-      <div className="flex items-start">
+      <div className="flex flex-col items-center lg:flex-row lg:items-start ">
         <div className="w-3/4">
           {(problem.text || problem.code) && (
             <Ol start={index + 1} className="dark:text-white max-w-full">
@@ -57,7 +57,7 @@ const ProblemComponent: React.FC<ProblemComponentProps> = ({ problem, index }) =
             </Ol>
           )}
         </div>
-        <div className="w-1/4 mt-2 md:mt-0">
+        <div className="w-1/4 mt-2 md:mt-0 flex justify-center mb-5">
           {problem.link ? (
             <a
               href={problem.link}
