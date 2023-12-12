@@ -97,7 +97,7 @@ const Page8 = () => {
                   <MaxWidthContainer>
                       <DraggableContainerGrid initialContainers={container2} />
                   </MaxWidthContainer>
-                  <MaxWidthContainer>
+                  <MaxWidthContainer classname="flex flex-col items-center">
                       {containerStates.container2Visible && <DraggableContainerGrid initialContainers={container2Solved} />}
                       <button
                         className="text-gray-100 hover:text-gray-800 bg-green-700 hover:bg-green-300 border-2 border-gray-700 py-2 px-5 rounded"
