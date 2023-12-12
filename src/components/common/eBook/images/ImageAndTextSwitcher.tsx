@@ -71,7 +71,7 @@ const ImageSwitcher: React.FC<ImageSwitcherProps> = ({ images, instructionsList 
                 transition-all duration-150 ${activeIndex === index ? 'shadow-[0_10px_0_0_#1747a6,0_15px_0_0_#1747a641] border-blue-400' : 'shadow-[0_10px_0_0_#A9A9A9,0_15px_0_0_#A9A9A941] dark:shadow-[0_10px_0_0_#374151,0_15px_0_0_#37415141] border-gray-400'}
                 border-b-[1px] ${
                   activeIndex === index
-                    ? 'bg-blue-500 text-gray-200'
+                    ? 'bg-blue-500 text-black'
                     : 'bg-gray-300 dark:bg-gray-600 text-gray-700 dark:text-white hover:bg-gray-400 hover:text-white dark:hover:bg-gray-700'
                 }`}
             >

@@ -8,8 +8,6 @@ interface SmoothScrollButtonProps {
 const SmoothScrollButton: React.FC<SmoothScrollButtonProps> = ({
   targetId,
   buttonText,
-  spaceBefore = '\u00A0', // Non-breaking space before
-  spaceAfter = '\u00A0',  // Non-breaking space after
 }) => {
   const smoothScrollToId = (id: string) => {
     const element = document.getElementById(id);
@@ -22,14 +20,16 @@ const SmoothScrollButton: React.FC<SmoothScrollButtonProps> = ({
   };
 
   return (
-    <button
-      className="text-sm underline custom-button text-blue-700 focus:text-blue-900 hover:text-blue-900 dark:text-blue-400 dark:focus:text-white dark:hover:text-white"
-      onClick={() => smoothScrollToId(targetId)}
-    >
-      {spaceBefore}
-      {buttonText}
-      {spaceAfter}
-    </button>
+    <>    
+      {' '}
+      <button
+        className="text-sm underline custom-button text-blue-700 focus:text-blue-900 hover:text-blue-900 dark:text-blue-400 dark:focus:text-white dark:hover:text-white"
+        onClick={() => smoothScrollToId(targetId)}
+      >
+        {buttonText}
+      </button>
+      {' '}
+    </>
   );
 };
 

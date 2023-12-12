@@ -60,13 +60,14 @@ const ProblemComponent: React.FC<ProblemComponentProps> = ({ problem, index }) =
         <div className="w-1/4 mt-2 md:mt-0 flex justify-center mb-5">
           {problem.link ? (
             <a
-              href={problem.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-blue-500 dark:bg-blue-800 hover:bg-gray-100 dark:hover:bg-blue-100 border-2 border-blue-500 dark:border-blue-800 text-white hover:text-blue-500 dark:hover:text-blue-800 ml-2 px-3 py-1 rounded max-w-sm"
-            >
-              Solution
-            </a>
+            href={problem.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-gray-100 hover:bg-gray-200 border-2 border-blue-500 dark:border-blue-800 text-gray-900 hover:text-blue-500 dark:hover:text-blue-800 ml-2 px-3 py-1 rounded max-w-sm"
+          >
+            Solution
+          </a>
+          
           ) : null}
         </div>
       </div>

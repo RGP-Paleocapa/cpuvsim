@@ -1,7 +1,7 @@
 import useDocumentMetadata from "@hooks/useDocumentMetadata";
 import EBookPage from "@common/eBook/EBook";
-import { Ol, Section, SectionTitle, Text, DraggableContainerGrid, H3, Pre } from "@common/eBook/content";
-import { InlineDivs, MaxWidthContainer } from "@/components/common/eBook/layout/layout";
+import { Ol, SectionTitle, Text, DraggableContainerGrid, H3, Pre } from "@common/eBook/content";
+import { Section, InlineDivs, MaxWidthContainer } from "@/components/common/eBook/layout/layout";
 import { useState } from "react";
 import problemListData from './problems.json';
 import containerData from './containers.json';
@@ -73,18 +73,19 @@ const Page8 = () => {
                     <br />
                     <DraggableContainerGrid initialContainers={container1} />
                   </MaxWidthContainer>
-                  <MaxWidthContainer>
+                  <MaxWidthContainer classname="flex flex-col items-center">
                       {containerStates.container1Visible && <DraggableContainerGrid initialContainers={container1Solved} />}
                       <button
-                          className='text-gray-200 hover:text-gray-800 bg-green-700 hover:bg-green-400 border-2 border-gray-50 py-2 px-5 rounded'
-                          onClick={() => toggleContainer('container1Visible')}
-                      >
-                      {containerStates.container1Visible ? (
-                          <p>Hide Solution</p>
-                      ) : (
-                          <p>Show Solution</p>
-                      )}
-                      </button>
+                        className="text-gray-100 hover:text-gray-800 bg-green-700 hover:bg-green-300 border-2 border-gray-700 py-2 px-5 rounded"
+                        onClick={() => toggleContainer('container1Visible')}
+                        style={{ transition: 'background-color 0.3s, color 0.3s' }}
+                        >
+                        {containerStates.container1Visible ? (
+                            <p>Hide Solution</p>
+                            ) : (
+                                <p>Show Solution</p>
+                                )}
+                        </button>
                   </MaxWidthContainer>
               </InlineDivs>
           </Section>
@@ -99,15 +100,16 @@ const Page8 = () => {
                   <MaxWidthContainer>
                       {containerStates.container2Visible && <DraggableContainerGrid initialContainers={container2Solved} />}
                       <button
-                          className='text-gray-200 hover:text-gray-800 bg-green-700 border-2 border-gray-50 hover:bg-green-400 py-2 px-5 rounded'
-                          onClick={() => toggleContainer('container2Visible')}
-                      >
-                         {containerStates.container2Visible ? (
-                              <p>Hide Solution</p>
-                          ) : (
-                              <p>Show Solution</p>
-                          )}
-                      </button>
+                        className="text-gray-100 hover:text-gray-800 bg-green-700 hover:bg-green-300 border-2 border-gray-700 py-2 px-5 rounded"
+                        onClick={() => toggleContainer('container1Visible')}
+                        style={{ transition: 'background-color 0.3s, color 0.3s' }}
+                        >
+                        {containerStates.container2Visible ? (
+                            <p>Hide Solution</p>
+                        ) : (
+                            <p>Show Solution</p>
+                        )}
+                        </button>
                   </MaxWidthContainer>
               </InlineDivs>
           </Section>

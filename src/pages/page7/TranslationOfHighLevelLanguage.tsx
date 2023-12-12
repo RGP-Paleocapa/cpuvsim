@@ -1,11 +1,12 @@
 import { useEffect } from "react";
 import useDocumentMetadata from "@hooks/useDocumentMetadata";
 import EBookPage from "@common/eBook/EBook";
-import { Section, SectionTitle, Text } from "@common/eBook/content";
+import { SectionTitle, Text } from "@common/eBook/content";
 import images from "@assets/images/pages/page7";
 import { useFooter } from "@/context/FooterContext";
 import ImageSwitcher from "@common/eBook/images/ImageAndTextSwitcher";
 import data from './data.json';
+import { Section } from "@/components/common/eBook/layout/layout";
 
 const Page7 = () => {
     useDocumentMetadata('Translation of High Level Language', "This is the seventh page");

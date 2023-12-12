@@ -1,5 +1,5 @@
 import EBookPage from "@common/eBook/EBook";
-import { Description, Section, SectionTitle, Text, Ul, Table } from "@common/eBook/content";
+import { Description, SectionTitle, Text, Ul, Table } from "@common/eBook/content";
 import images from "@assets/images/pages/page5";
 import { YourImageComponent } from "@common/eBook/images";
 // import References from "@common/eBook/Refrences";
@@ -7,7 +7,8 @@ import useDocumentMetadata from "@hooks/useDocumentMetadata";
 import { useFooter } from "@/context/FooterContext";
 import { useEffect } from "react";
 import data from './data.json';
-import SmoothScrollButton from "@/components/common/SmoothScrollButtonProps";
+import SmoothScrollButton from "@common/SmoothScrollButtonProps";
+import { Section } from "@common/eBook/layout/layout";
 
 const Page5 = () => {
   useDocumentMetadata('CPU Instructions Set', "This is the fifth page");
@@ -60,26 +61,30 @@ const Page5 = () => {
           </Text>
               <Ul className="dark:text-gray-200">
                 <li>
-                  <strong>Data flow operations</strong>: instructions used to  transfer (store) the contents of a CPU register,
-                  or the result of a computation to the primary memory,
-                  or to transfer (load) data stored in the primary memory to the CPU,
-                  in order to perform a computation on it later.
-                  <SmoothScrollButton targetId={"footer"} buttonText={"[1]"} />
+                  <Text className="mb-4">
+                    <strong>Data flow operations</strong>: instructions used to  transfer (store) the contents of a CPU register,
+                    or the result of a computation to the primary memory,
+                    or to transfer (load) data stored in the primary memory to the CPU,
+                    in order to perform a computation on it later.
+                    <SmoothScrollButton targetId={"footer"} buttonText={"[1]"} />
+                  </Text>
                 </li>
-                <br />
                 <li>
-                  <strong>Control flow operations</strong>:
-                  instructions that modify the order in which individual instructions are executed (instruction are otherwise executed in sequential order,
-                  one after the other).
-                  in order to perform a computation on it later.
-                  <SmoothScrollButton targetId={"footer"} buttonText={"[2]"} />
+                  <Text className="mb-4">
+                    <strong>Control flow operations</strong>:
+                    instructions that modify the order in which individual instructions are executed (instruction are otherwise executed in sequential order,
+                    one after the other).
+                    in order to perform a computation on it later.
+                    <SmoothScrollButton targetId={"footer"} buttonText={"[2]"} />
+                  </Text>
                 </li>
-                <br />
                 <li>
-                  <strong>Arithmetic-logic operations</strong>:
-                  instructions that perform arithmetic (addition, subtraction...)
-                  and logic operations (and, not...).
-                  in order to perform a computation on it later. <SmoothScrollButton targetId={"footer"} buttonText={"[3]"} />
+                  <Text>
+                    <strong>Arithmetic-logic operations</strong>:
+                    instructions that perform arithmetic (addition, subtraction...)
+                    and logic operations (and, not...).
+                    in order to perform a computation on it later. <SmoothScrollButton targetId={"footer"} buttonText={"[3]"} />
+                  </Text>
                 </li>
               </Ul>
         </Section>

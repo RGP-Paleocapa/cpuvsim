@@ -1,7 +1,7 @@
 import EBookPage from '@common/eBook/EBook';
-import { Description, H3, Section, SectionTitle, Text } from '@common/eBook/content';
+import { Description, H3, SectionTitle, Text } from '@common/eBook/content';
 import images from '@assets/images/pages/page6';
-import { Figure } from '@/components/common/eBook/layout/layout';
+import { Section, Figure } from '@/components/common/eBook/layout/layout';
 import { YourImageComponent } from '@common/eBook/images';
 // import References from '@common/eBook/Refrences';
 import useDocumentMetadata from '@hooks/useDocumentMetadata';

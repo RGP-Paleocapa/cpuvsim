@@ -1,8 +1,8 @@
 import { images } from "@assets/images/pages/page2";
 import Table from "@common/eBook/content/Table";
 import EBookPage from "@common/eBook/EBook";
-import { InlineDivs, MaxWidthContainer } from "@/components/common/eBook/layout/layout";
-import { Description, H3, Section, SectionTitle, Text, Ul } from "@common/eBook/content";
+import { Section, InlineDivs, MaxWidthContainer } from "@/components/common/eBook/layout/layout";
+import { B, Description, H3, SectionTitle, Text, Ul } from "@common/eBook/content";
 // import References from "@common/eBook/Refrences";
 import useDocumentMetadata from "@hooks/useDocumentMetadata";
 import { useFooter } from "@/context/FooterContext";
@@ -24,7 +24,7 @@ const Page2 = () => {
     <EBookPage currentPage={2}>
         <Section>
             <SectionTitle>
-                Computers perform simple calculations on binary digis
+                Computers perform simple calculations on binary digits
             </SectionTitle>
 
             <Text>
@@ -33,13 +33,13 @@ const Page2 = () => {
                 For example, pairs of binary digits are added according to the rules:
                 <SmoothScrollButton targetId="footer" buttonText="[1]" />
                 <br /><br />
-                <b className="text-blue-400">0</b> + <b className="text-blue-400">0</b> = <b className="text-blue-400">0</b>
+                <B className="text-blue-400">0</B> + <B className="text-blue-400">0</B> = <B className="text-blue-400">0</B>
                 <br />
-                <b className="text-blue-400">0</b> + <b className="text-green-700/75 dark:text-green-500">1</b> = <b className="text-green-700/75 dark:text-green-500">1</b>
+                <B className="text-blue-400">0</B> + <B className="text-green-700/75 dark:text-green-500">1</B> = <B className="text-green-700/75 dark:text-green-500">1</B>
                 <br />
-                <b className="text-green-700/75 dark:text-green-500">1</b> + <b className="text-green-700/75 dark:text-green-500">1</b> = <b className="text-red-700">1</b><b className="text-blue-600">0</b>, (one - zero, not ten) which means <b className="text-blue-600">0</b> with <b className="text-red-700">carry 1</b>.
+                <B className="text-green-700/75 dark:text-green-400">1</B> + <B className="text-green-700/75 dark:text-green-500">1</B> = <B className="text-red-700">1</B><B className="text-blue-600">0</B>, (one - zero, not ten) which means <B className="text-blue-600">0</B> with <B className="text-red-700">carry 1</B>.
                 <br /><br />
-                The sequence <b className="text-red-700">1</b><b className="text-blue-600">0</b> <b>as a binary number</b>, that is using only 2 symbols, is the equivalent of 2 as a decimal number.
+                The sequence <B className="text-red-700">1</B><B className="text-blue-600">0</B> <B>as a binary number</B>, that is using only 2 symbols, is the equivalent of 2 as a decimal number.
             </Text>
         </Section>
 
@@ -57,8 +57,8 @@ const Page2 = () => {
         <Section>
             <InlineDivs centerStart containsTable>
                 <MaxWidthContainer>
-                    <H3>Text</H3>
-                    <Text>
+                    <H3 className="dark:text-black">Text</H3>
+                    <Text className="dark:text-black">
                         Text can be represented in a computer by a sequence of binary codes, with each code representing a letter or a punctuation mark.
                         <br /><br />
                         Older computing machinery used the so called ASCII code, which allocates seven bits for each symbol in latin-based alphabets. Because nowadays computers work with 8-bit groups of 1s and 0s (bytes), rather than with 7-bit groups, ASCII codes are often extended by one bit to 8 bits.
@@ -69,15 +69,13 @@ const Page2 = () => {
                 </MaxWidthContainer>
                 <MaxWidthContainer smallPadding>
                     <Table headerTitles={['Binary', 'Char', 'Binary', 'Char'] } bodyRows={textTable} />
-                    <Description alignCenter>
+                    <Description alignCenter className="dark:text-black">
                         A few examples of ASCII codes
                     </Description>
                 </MaxWidthContainer>
             </InlineDivs>
-        </Section>
 
-        <Section>
-            <InlineDivs centerStart>
+            <InlineDivs centerStart isEven>
                 <MaxWidthContainer>
                     {/* First Image */}
                     <img src={images.image1.src} alt={images.image1.alt} className="img-center" />
@@ -85,15 +83,15 @@ const Page2 = () => {
                     {/* Second Image (Square) and Description */}
                     <div className="flex flex-col sm:flex-row items-center sm:items-start">
                         <div className="w-16 h-16 bg-gray-400 mr-4 flex-shrink-0" /> {/* 32x32 pixels square */}
-                        <Description>
+                        <Description className="dark:text-black">
                             Using the RGB color model, the color of this pixel is represented as "37, 154, 170" in decimal, or 100101, 10011010, 10101010 in binary.
                         </Description>
                     </div>
                 </MaxWidthContainer>
 
                 <MaxWidthContainer>
-                    <H3>Images and Videos</H3>
-                    <Text>
+                    <H3 className="dark:text-black">Images and Videos</H3>
+                    <Text className="dark:text-black">
                         In 1886, impressionist painters developed a technique called Pointillism in which small, distinct dots of color were applied in patterns to form an image. Just by switching from dots to little tiny squares (<b>pixels</b>), we can easily understand how an image can be digitally represented. 
                         <br />
                         In color imaging systems, the color of a pixel is typically represented by three or four numbers coding component intensities such as red, green, and blue, or cyan, magenta, yellow, and black.
@@ -102,13 +100,11 @@ const Page2 = () => {
                     </Text>
                 </MaxWidthContainer>
             </InlineDivs>
-        </Section>
 
-        <Section>
             <InlineDivs centerStart>
                 <MaxWidthContainer>
-                    <H3>Audio</H3>
-                    <Text>
+                    <H3 className="dark:text-black">Audio</H3>
+                    <Text className="dark:text-black">
                         Sound, such as speech or music, is an analogue physical quantity, corresponding for example to variations in air pressure. But also this type of information can be converted to a digital form. To obtain a digital representation of a sound, samples of its intensity are taken at a sufficient speed (sampling rate), and the value of each <b>sample is quantised to the nearest binary code</b>.
                         <br />
                         It is important to appreciate that sounds such as speech or music varies rapidly with time, and so its samples will have to be taken at sufficiently closely spaced intervals, if the digital representation is to be faithful to the original.
@@ -116,25 +112,22 @@ const Page2 = () => {
                 </MaxWidthContainer>
                 <MaxWidthContainer>
                     <img src={images.image2.src} alt={images.image2.alt} className="img-center bg-white" />
-                    <Description>
+                    <Description className="dark:text-black">
                         A representation of the quantization process in which every sample is approximated to the closest value that the system can represent.
                     </Description>
                 </MaxWidthContainer>
             </InlineDivs>
-        </Section>
 
-
-        <Section>
-            <InlineDivs centerStart>
+            <InlineDivs centerStart isEven>
                 <MaxWidthContainer smallPadding>
                     <Table headerTitles={['binary Code', 'description'] } bodyRows={instructionTable} />
-                    <Description>
+                    <Description className="dark:text-black">
                         Three examples of operations common to many instruction sets
                     </Description>
                 </MaxWidthContainer>
                 <MaxWidthContainer>
-                    <H3>Instructions</H3>
-                    <Text>
+                    <H3 className="dark:text-black">Instructions</H3>
+                    <Text className="dark:text-black">
                         In order to execute programs or process data, computers must follow some specific instructions. 
                         <br />
                         As discussed in the
@@ -161,22 +154,22 @@ const Page2 = () => {
                 <MaxWidthContainer>
                     <Ul>
                         <li className="mb-4">
-                            <Text>
+                            <Text className="dark:text-black">
                                 The volume of a sound represents the intensity of air pressure variations. Hence, increasing the volume of a song involves a simple multiplication of the value of each sound sample by a factor greater than 1.
                             </Text>
                         </li>
                         <li className="mb-4">
-                            <Text>
+                            <Text className="dark:text-black">
                                 The contrast of an image can be explained as the difference between maximum and minimum pixels colour intensity. Hence, to change the contrast of an image it is sufficient to modify the value of these intensities, increasing the difference between maximum and minimum values, following a simple formula.
                             </Text>
                         </li>
                         <li className="mb-4">
-                            <Text>
+                            <Text className="dark:text-black">
                                 The simplest way to increase the size of an image is replacing every pixel with a number of pixels of the same color. The resulting image is larger than the original and preserves all the original detail.
                             </Text>
                         </li>
                         <li className="mb-4">
-                            <Text>
+                            <Text className="dark:text-black">
                                 To compress a video it is possible, for example,  to reduce the level of detail of the composing frames. This can be achieved, for example, by computing the average color of a group of pixels of different colors, and by replacing them with a single repeated pixel having that averaged color.
                             </Text>
                         </li>
@@ -184,7 +177,7 @@ const Page2 = () => {
                 </MaxWidthContainer>
                 <MaxWidthContainer>
                     <img src={images.image3.src} alt={images.image3.alt} className="img-center" />
-                    <Description alignCenter>
+                    <Description alignCenter className="dark:text-black">
                         Increasing the volume of a sound.
                     </Description>
                 </MaxWidthContainer>

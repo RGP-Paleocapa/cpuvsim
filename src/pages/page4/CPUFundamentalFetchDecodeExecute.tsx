@@ -1,7 +1,7 @@
 import images from "@assets/images/pages/page4";
 import EBookPage from "@common/eBook/EBook";
-import { Ol, Section, SectionTitle, Text } from "@common/eBook/content";
-import { InlineDivs, MaxWidthContainer } from "@/components/common/eBook/layout/layout";
+import { Ol, SectionTitle, Text } from "@common/eBook/content";
+import { Section, InlineDivs, MaxWidthContainer } from "@/components/common/eBook/layout/layout";
 import { YourImageComponent } from "@common/eBook/images";
 // import References from "@common/eBook/Refrences";
 import useDocumentMetadata from "@hooks/useDocumentMetadata";
@@ -25,21 +25,27 @@ const Page4 = () => {
                 </SectionTitle>
                 <InlineDivs>
                     <MaxWidthContainer>
-                        <Text>
+                        <Text className="dark:text-black">
                             The CPU continuously repeats a <strong>fetch-decode-execute cycle</strong> , in order to execute the instructions in a program, one by one.
                             <br />
                             In this cycle, the CPU goes through three main stages:
                             <br /><br />
                         </Text>
-                        <Ol className="dark:text-gray-200">
+                        <Ol className="dark:text-black">
                             <li>
-                                <strong>Fetches</strong> a program instruction from the main memory;
+                                <Text className="dark:text-black">
+                                    <strong>Fetches</strong> a program instruction from the main memory;
+                                </Text>
                             </li>
                             <li>
-                                <strong>Decodes</strong> the instruction, i.e. it works out what needs to be done;
+                                <Text className="dark:text-black">
+                                    <strong>Decodes</strong> the instruction, i.e. it works out what needs to be done;
+                                </Text>
                             </li>
                             <li>
-                                <strong>Executes</strong> ( i.e. carries out) the instruction.
+                                <Text className="dark:text-black">
+                                    <strong>Executes</strong> ( i.e. carries out) the instruction.
+                                </Text>
                             </li>
                         </Ol>
                     </MaxWidthContainer>
