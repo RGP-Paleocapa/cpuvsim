@@ -40,6 +40,8 @@ export const InlineDivs = ({
     <div
       className={`flex flex-col ${
         containsTable ? 'lg:flex-row' : 'lg:flex-row'
+      } ${
+        isEven ? 'flex-col-reverse' : ''
       } justify-center items-stretch`}
     >
       {children.map((child, index) => (
