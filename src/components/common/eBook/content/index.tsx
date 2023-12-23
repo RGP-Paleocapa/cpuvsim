@@ -46,7 +46,7 @@ export const Description = ({
   <p 
     className={`my-4 text-sm leading-5 text-gray-600 ${
       isDark ? 'dark:text-black' : 'dark:text-gray-300'
-    } mx-auto max-w-xl ${alignCenter ? 'text-center' : 'text-left'} ${className}`}
+    } mx-auto max-w-xl ${alignCenter ? 'text-center' : 'text-justify'} ${className}`}
   >
     {children}
   </p>
