@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
-import { Home, About, Admin, Page1, Page2, Page3, Page4, Page5, Page6, Page7, Page8, Page9, Page10 } from '@/pages';
+import { Home, About, Admin, Page1, Page2, Page3, Page4, Page5, Page6, Page7, Page8, Page9, Page10, Page11 as AxiosPage } from '@/pages';
 import ProtectedRoute from './ProtectedRoutes';
 import { Maintenance, NotFound } from '@/pages/errors';
 
@@ -20,8 +20,10 @@ const AppRoutes = () => {
             <Route path="/page6" element={<Page6 />} />
             <Route path="/page7" element={<Page7 />} />
             <Route path="/page8" element={<Page8 />} />
+            <Route path="/page8" element={<Page8 />} />
             <Route path="/page9" element={<ProtectedRoute component={Page9} />} />
             <Route path="/page10" element={<ProtectedRoute component={Page10} />} />
+            <Route path="/page11" element={<ProtectedRoute component={AxiosPage} />} />
 
             {/* Errors */}
             <Route path="/*" element={<NotFound />} />
