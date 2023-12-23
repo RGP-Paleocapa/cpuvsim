@@ -34,7 +34,7 @@ const About = () => {
 
       {/* Content Section */}
       <div className="text-lg text-gray-600 dark:text-gray-400 space-y-4">
-        <p>
+        <p className="text-justify">
           This e-book, along with the accompanying CPUVSIM software, 
           has been created by students for students as part of a multi-year OER-enabled pedagogy project integrated into their traditional educational activities. 
           This approach seeks to address the unfortunate waste of resources associated with "disposable" traditional assignments. 

@@ -1,9 +1,8 @@
 import images from "@assets/images/pages/page4";
 import EBookPage from "@common/eBook/EBook";
-import { Ol, SectionTitle, Text } from "@common/eBook/content";
+import { Li, Ol, SectionTitle, Text } from "@common/eBook/content";
 import { Section, InlineDivs, MaxWidthContainer } from "@/components/common/eBook/layout/layout";
 import { YourImageComponent } from "@common/eBook/images";
-// import References from "@common/eBook/Refrences";
 import useDocumentMetadata from "@hooks/useDocumentMetadata";
 import { useFooter } from "@/context/FooterContext";
 import { useEffect } from "react";
@@ -26,27 +25,21 @@ const Page4 = () => {
                 <InlineDivs>
                     <MaxWidthContainer>
                         <Text isDark>
-                            The CPU continuously repeats a <strong>fetch-decode-execute cycle</strong> , in order to execute the instructions in a program, one by one.
+                            The CPU continuously repeats a <strong>fetch-decode-execute cycle</strong>, in order to execute the instructions in a program, one by one.
                             <br />
                             In this cycle, the CPU goes through three main stages:
                             <br /><br />
                         </Text>
                         <Ol className="dark:text-black">
-                            <li>
-                                <Text isDark>
-                                    <strong>Fetches</strong> a program instruction from the main memory;
-                                </Text>
-                            </li>
-                            <li>
-                                <Text isDark>
-                                    <strong>Decodes</strong> the instruction, i.e. it works out what needs to be done;
-                                </Text>
-                            </li>
-                            <li>
-                                <Text isDark>
-                                    <strong>Executes</strong> ( i.e. carries out) the instruction.
-                                </Text>
-                            </li>
+                            <Li isDark margin0>
+                                <strong>Fetches</strong> a program instruction from the main memory;
+                            </Li>
+                            <Li isDark margin0>
+                                <strong>Decodes</strong> the instruction, i.e. it works out what needs to be done;
+                            </Li>
+                            <Li isDark margin0>
+                                <strong>Executes</strong> ( i.e. carries out) the instruction.
+                            </Li>
                         </Ol>
                     </MaxWidthContainer>
                     <MaxWidthContainer>
@@ -84,7 +77,6 @@ const Page4 = () => {
                 </Text>
                 <YourImageComponent image={images.altro} />
             </Section>
-            {/* <References references={references} /> */}
         </EBookPage>
     );
 

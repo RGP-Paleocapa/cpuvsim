@@ -1,6 +1,6 @@
 import useDocumentMetadata from "@hooks/useDocumentMetadata";
 import EBookPage from "@common/eBook/EBook";
-import { Ol, SectionTitle, Text, DraggableContainerGrid, H3, Pre } from "@common/eBook/content";
+import { Ol, SectionTitle, Text, DraggableContainerGrid, H3, Pre, Li } from "@common/eBook/content";
 import { Section, InlineDivs, MaxWidthContainer } from "@/components/common/eBook/layout/layout";
 import { useState } from "react";
 import problemListData from './problems.json';
@@ -120,19 +120,19 @@ const Page8 = () => {
               Perform the following tasks:
           </H3>
           <Ol className="bg-gray-100 dark:bg-gray-700 py-4 rounded-xl">
-              <li>
+              <Li margin0>
                   Describe the difference between numeric and direct addressing.
-              </li>
-              <li>
+              </Li>
+              <Li margin0>
                   Describe the data transmitted on the data, address and control buses, respectively, 
                   during the execution of the instructions LOD #5, and LOD 5.
-              </li>
-              <li>
+              </Li>
+              <Li margin0>
                   Identify the binary code of the assembler instruction MUL 5.
-              </li>
-              <li>
+              </Li>
+              <Li margin0>
                   Identify the mnemonic instruction corresponding to the machine language instruction 00010011.
-              </li>
+              </Li>
           </Ol>
       </Section>
 

@@ -3,7 +3,6 @@ import { Description, H3, SectionTitle, Text } from '@common/eBook/content';
 import images from '@assets/images/pages/page6';
 import { Section, Figure } from '@/components/common/eBook/layout/layout';
 import { YourImageComponent } from '@common/eBook/images';
-// import References from '@common/eBook/Refrences';
 import useDocumentMetadata from '@hooks/useDocumentMetadata';
 import { useFooter } from '@/context/FooterContext';
 import { useEffect } from 'react';
@@ -126,7 +125,6 @@ const Page6 = () => {
             and  how constructs such as <strong>For</strong>, <strong>While</strong>, and <strong>If</strong> are translated in assembler and binary code.
           </Text>
         </Section>
-        {/* <References references={references} /> */}
       </EBookPage>
     );
 }

@@ -2,13 +2,12 @@ import { images } from "@assets/images/pages/page2";
 import Table from "@common/eBook/content/Table";
 import EBookPage from "@common/eBook/EBook";
 import { Section, InlineDivs, MaxWidthContainer } from "@/components/common/eBook/layout/layout";
-import { B, Description, H3, SectionTitle, Text, Ul } from "@common/eBook/content";
-// import References from "@common/eBook/Refrences";
+import { B, Description, H3, Li, SectionTitle, Text, Ul } from "@common/eBook/content";
 import useDocumentMetadata from "@hooks/useDocumentMetadata";
 import { useFooter } from "@/context/FooterContext";
 import { useEffect } from "react";
 import data from './data.json';
-import SmoothScrollButton from "@/components/common/SmoothScrollButtonProps";
+import SmoothScrollButton from "@/components/common/SmoothScrollButton";
 
 const Page2 = () => {
     useDocumentMetadata('Simple Binary Calculations', "This is the second page");
@@ -153,26 +152,18 @@ const Page2 = () => {
             <InlineDivs>
                 <MaxWidthContainer>
                     <Ul>
-                        <li className="mb-4">
-                            <Text isDark>
-                                The volume of a sound represents the intensity of air pressure variations. Hence, increasing the volume of a song involves a simple multiplication of the value of each sound sample by a factor greater than 1.
-                            </Text>
-                        </li>
-                        <li className="mb-4">
-                            <Text isDark>
-                                The contrast of an image can be explained as the difference between maximum and minimum pixels colour intensity. Hence, to change the contrast of an image it is sufficient to modify the value of these intensities, increasing the difference between maximum and minimum values, following a simple formula.
-                            </Text>
-                        </li>
-                        <li className="mb-4">
-                            <Text isDark>
-                                The simplest way to increase the size of an image is replacing every pixel with a number of pixels of the same color. The resulting image is larger than the original and preserves all the original detail.
-                            </Text>
-                        </li>
-                        <li className="mb-4">
-                            <Text isDark>
-                                To compress a video it is possible, for example,  to reduce the level of detail of the composing frames. This can be achieved, for example, by computing the average color of a group of pixels of different colors, and by replacing them with a single repeated pixel having that averaged color.
-                            </Text>
-                        </li>
+                        <Li isDark>
+                            The volume of a sound represents the intensity of air pressure variations. Hence, increasing the volume of a song involves a simple multiplication of the value of each sound sample by a factor greater than 1.
+                        </Li>
+                        <Li isDark>
+                            The contrast of an image can be explained as the difference between maximum and minimum pixels colour intensity. Hence, to change the contrast of an image it is sufficient to modify the value of these intensities, increasing the difference between maximum and minimum values, following a simple formula.
+                        </Li>
+                        <Li isDark>
+                            The simplest way to increase the size of an image is replacing every pixel with a number of pixels of the same color. The resulting image is larger than the original and preserves all the original detail.
+                        </Li>
+                        <Li isDark>
+                            To compress a video it is possible, for example,  to reduce the level of detail of the composing frames. This can be achieved, for example, by computing the average color of a group of pixels of different colors, and by replacing them with a single repeated pixel having that averaged color.
+                        </Li>
                     </Ul>
                 </MaxWidthContainer>
                 <MaxWidthContainer>
@@ -183,7 +174,6 @@ const Page2 = () => {
                 </MaxWidthContainer>
             </InlineDivs>
         </Section>
-        {/* <References references={references} /> */}
     </EBookPage>
   );
 }

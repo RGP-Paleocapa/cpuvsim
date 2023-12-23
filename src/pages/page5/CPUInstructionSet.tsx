@@ -1,13 +1,12 @@
 import EBookPage from "@common/eBook/EBook";
-import { Description, SectionTitle, Text, Ul, Table } from "@common/eBook/content";
+import { Description, SectionTitle, Text, Ul, Table, Li } from "@common/eBook/content";
 import images from "@assets/images/pages/page5";
 import { YourImageComponent } from "@common/eBook/images";
-// import References from "@common/eBook/Refrences";
 import useDocumentMetadata from "@hooks/useDocumentMetadata";
 import { useFooter } from "@/context/FooterContext";
 import { useEffect } from "react";
 import data from './data.json';
-import SmoothScrollButton from "@common/SmoothScrollButtonProps";
+import SmoothScrollButton from "@/components/common/SmoothScrollButton";
 import { Section } from "@common/eBook/layout/layout";
 
 const Page5 = () => {
@@ -45,12 +44,12 @@ const Page5 = () => {
             The <b className="text-red-600">digits or text in red</b> represent the operand(s) of the instruction. The operand has different interpretations according to the so-called addressing mode (which is also specified in the opcode). In the case of the simulator, the available addressing modes are:
           </Text>
           <Ul className="dark:text-gray-200">
-            <li>
+            <Li>
               <strong>Immediate</strong> (or <strong>numeric</strong>) addressing, as in ADD #8:  in this case the operand is a number (add the number 8)
-            </li>
-            <li>
+            </Li>
+            <Li>
               <strong>Direct</strong> addressing, as in ADD 8: in this case the operand represents a memory address (add the number stored at the memory address 8). Rather than using directly numeric memory addresses, it is more convenient for humans to associate them with meaningful labels, such as Y or COUNTER. Hence a memory address can be more easily identified by a label, as in ADD Y. Important notice: the labels do not physically exist in the CPU or in memory, because they are  translated to the corresponding numerical addresses by the assembler, which can parse the whole assembly program offline. Yet, as the simulator translates the instructions one by one "on the fly", it is necessary first to <strong>define the labels</strong> by entering them in the grayed column, <strong>before</strong> they can be used in any instruction. 
-            </li>
+            </Li>
           </Ul>
             <YourImageComponent image={images}/>
           <Description>
@@ -60,32 +59,26 @@ const Page5 = () => {
               The instructions supported by a CPU can be organized in a few fundamental categories. The most important ones are:
           </Text>
               <Ul className="dark:text-gray-200">
-                <li>
-                  <Text className="mb-4">
+                <Li>
                     <strong>Data flow operations</strong>: instructions used to  transfer (store) the contents of a CPU register,
                     or the result of a computation to the primary memory,
                     or to transfer (load) data stored in the primary memory to the CPU,
                     in order to perform a computation on it later.
                     <SmoothScrollButton targetId={"footer"} buttonText={"[1]"} />
-                  </Text>
-                </li>
-                <li>
-                  <Text className="mb-4">
+                </Li>
+                <Li>
                     <strong>Control flow operations</strong>:
                     instructions that modify the order in which individual instructions are executed (instruction are otherwise executed in sequential order,
                     one after the other).
                     in order to perform a computation on it later.
                     <SmoothScrollButton targetId={"footer"} buttonText={"[2]"} />
-                  </Text>
-                </li>
-                <li>
-                  <Text>
+                </Li>
+                <Li>
                     <strong>Arithmetic-logic operations</strong>:
                     instructions that perform arithmetic (addition, subtraction...)
                     and logic operations (and, not...).
                     in order to perform a computation on it later. <SmoothScrollButton targetId={"footer"} buttonText={"[3]"} />
-                  </Text>
-                </li>
+                </Li>
               </Ul>
         </Section>
 
@@ -99,7 +92,6 @@ const Page5 = () => {
             <Table headerTitles={["Arithmetic-logic"]} bodyRows={arithmeticLogicRows} />
           </div>
         </Section>
-      {/* <References references={references} /> */}
     </EBookPage>
   );
 }

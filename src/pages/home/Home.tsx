@@ -75,25 +75,25 @@ const Home = () => {
         <h2 className="text-3xl sm:text-4xl md:text-5xl mb-6 text-gray-800 dark:text-white">
           Computer Architecture Introduction
         </h2>
-        <p className="text-gray-800 dark:text-gray-200 text-base sm:text-lg my-4">
+        <p className="text-gray-800 dark:text-gray-200 text-base sm:text-lg my-4 text-justify">
           This e-book aims to illustrate the basics of how a computer works,
           focusing on how a program written in a high-level language ends up being physically executed on a Central Processing Unit (CPU).
           The e-book is intended to be used in the context of an introductory computer science course at high school or undergraduate level.
         </p>
-        <p className="text-gray-800 dark:text-gray-200 text-base sm:text-lg my-4">
+        <p className="text-gray-800 dark:text-gray-200 text-base sm:text-lg my-4 text-justify">
           The e-book starts with a concise explanation of the fundamental architecture shared by a wide variety of modern "computers",
           such as desktop computers, mobile phones, or car control units.
           This is followed by an explanation of the essential elements of the structure of any CPU,
           and the machine (assembly) language that it can execute.
         </p>
-        <p className="text-gray-800 dark:text-gray-200 text-base sm:text-lg my-4">
+        <p className="text-gray-800 dark:text-gray-200 text-base sm:text-lg my-4 text-justify">
           This e-book is built around the Educational CPU Visual Simulator (CPUVSIM) shown on the left,
           which you can access through the 'Simulator' button in the top right corner.
           The e-book is a dynamic document because the simulator is seamlessly integrated with the proposed exercises: by clicking on the
           'Show solution' buttons, the CPUVSIM comes to life, loading the solution for the specific exercise into memory.
           This allows you to experiment directly with the programming exercises presented in the book.
         </p>
-        <p className="text-gray-800 dark:text-gray-200 text-base sm:text-lg my-4">
+        <p className="text-gray-800 dark:text-gray-200 text-base sm:text-lg my-4 text-justify">
           The associated CPUVSIM allows users to visualize with detailed animations the execution of assembly language code.
           Its main goal is to support novices in understanding the behavior of the key components of a CPU,
           focusing on how code written in high-level languages is actually executed on the hardware of a computer.

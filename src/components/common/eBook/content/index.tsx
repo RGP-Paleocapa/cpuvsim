@@ -25,7 +25,7 @@ export const Text = ({
   <p 
     className={`${
       textSize ? textSize : 'text-base'
-    } responsive-text ${isDark ? 'dark:text-black' : 'dark:text-gray-100'} text-gray-700 ${className}`}
+    } responsive-text text-justify ${isDark ? 'dark:text-black' : 'dark:text-gray-100'} text-gray-700 ${className}`}
   >
     {children}
   </p>
@@ -102,6 +102,19 @@ export const Ol = ({ children, className, start }: { children: React.ReactNode; 
     {children}
   </ol>
 );
+
+export const Li = ({ children, className, margin0, ...restProps }: { children: React.ReactNode, className?: string, isDark?: boolean, margin0?: boolean }) => {
+  return (
+    <li className={`
+    ${margin0 ? "mb-0" : "mb-4"}
+    ${className}
+    `}>
+        <Text {...restProps}>
+          {children}
+        </Text>
+      </li>
+  );
+}
 
 // Pre component
 export const Pre: React.FC<{ content: ReactNode; className?: string }> = ({ content, className }) => {

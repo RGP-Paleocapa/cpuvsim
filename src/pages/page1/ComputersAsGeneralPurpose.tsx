@@ -2,13 +2,12 @@ import useDocumentMetadata from "@hooks/useDocumentMetadata";
 import EBookPage from "@/components/common/eBook/EBook";
 import { ImageSlider } from "@common/eBook/images";
 import images from "@assets/images/pages/page1";
-// import Refrences from "@common/eBook/Refrences";
 import { Figure, Section } from "@/components/common/eBook/layout/layout";
 import { SectionTitle, Description, Text } from "@common/eBook/content";
 import { useFooter } from "@/context/FooterContext";
 import { useEffect } from "react";
 import data from './data.json';
-import SmoothScrollButton from "@/components/common/SmoothScrollButtonProps";
+import SmoothScrollButton from "@/components/common/SmoothScrollButton";
 
 const Page1 = () => {
   useDocumentMetadata('ComputersAsGeneralPurpose', "This is the first page");
@@ -146,7 +145,6 @@ const Page1 = () => {
         ))}
         </Figure>
       </Section>
-      {/* <Refrences references={references}/> */}
     </EBookPage>
   );
 }
