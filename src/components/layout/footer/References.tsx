@@ -10,7 +10,7 @@ const References = () => {
         <Ul>
         {subReferences.map((subItem, subIndex) => (
             <li key={subIndex}>
-            <a href={subItem.link} target="_blank" className="hover:text-blue-600 dark:hover:text-blue-400 transition duration-300">
+            <a href={subItem.link} target="_blank" className="text-blue-600 dark:text-blue-400 hover:text-inherit transition duration-300">
                 {subItem.text}
             </a>
             </li>
@@ -31,7 +31,7 @@ const References = () => {
                   <a
                     href={item.link}
                     target="_blank"
-                    className="hover:text-blue-600 dark:hover:text-blue-400 transition duration-300 block p-2"
+                    className="text-blue-600 dark:text-blue-400 hover:text-inherit transition duration-300 block p-2"
                   >
                     {item.text}
                   </a>

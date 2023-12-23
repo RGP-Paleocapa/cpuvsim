@@ -1,10 +1,11 @@
-import React, { createContext, useState, useContext } from 'react';
+// FooterContext.tsx
+import { createContext, useState, useContext } from 'react';
 import { FooterItem } from '@/types/footerTypes';
 
-interface FooterContextType {
+type FooterContextType = {
   footerData: FooterItem[];
   setFooterData: (data: FooterItem[]) => void;
-}
+};
 
 const FooterContext = createContext<FooterContextType | undefined>(undefined);
 
@@ -16,10 +17,9 @@ export const useFooter = () => {
   return context;
 };
 
-// Type for the props of FooterProvider, including children
-interface FooterProviderProps {
+type FooterProviderProps = {
   children: React.ReactNode;
-}
+};
 
 export const FooterProvider: React.FC<FooterProviderProps> = ({ children }) => {
   const [footerData, setFooterData] = useState<FooterItem[]>([]);
