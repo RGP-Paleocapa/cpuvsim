@@ -88,9 +88,9 @@ const SwitchPage: React.FC<SwitchPageProps> = ({ currentPage }) => {
         <span className="ml-2">{prevText}</span>
       </button>
 
-      /* {currentPage != lastPage && (
+      {/* {currentPage != lastPage && (
         <p className='text-2xl text-gray-800 dark:text-gray-300'>Page {currentPage}</p>
-      )} */
+      )} */}
 
       {currentPage < lastPage && nextLink && (
         <button
