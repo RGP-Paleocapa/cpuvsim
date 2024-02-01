@@ -9,10 +9,12 @@ interface EBookProps {
 }
 
 const EBookPage: React.FC<EBookProps> = ({ children, currentPage }) => {
-  const [isNavOpen, setIsNavOpen] = useState(() => {
-    const saved = localStorage.getItem('navOpen');
-    return saved === null ? true : saved === 'true';
-  });
+  const [isNavOpen, setIsNavOpen] = useState(true);
+
+  // const [isNavOpen, setIsNavOpen] = useState(() => {
+  //   const saved = localStorage.getItem('navOpen');
+  //   return saved === null ? true : saved === 'true';
+  // });
 
   useEffect(() => {
     localStorage.setItem('navOpen', isNavOpen.toString());

@@ -20,4 +20,5 @@ export default defineConfig({
   },
   plugins: [react()],
   base: "/cpuvsim/",
+  server: { open: true, },
 })
