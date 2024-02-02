@@ -85,7 +85,7 @@ const Page8 = () => {
                             ) : (
                                 <p>Show Solution</p>
                                 )}
-                        </button>
+                      </button>
                   </MaxWidthContainer>
               </InlineDivs>
           </Section>
@@ -101,7 +101,7 @@ const Page8 = () => {
                       {containerStates.container2Visible && <DraggableContainerGrid initialContainers={container2Solved} />}
                       <button
                         className="text-gray-100 hover:text-gray-800 bg-green-700 hover:bg-green-300 border-2 border-gray-700 py-2 px-5 rounded"
-                        onClick={() => toggleContainer('container1Visible')}
+                        onClick={() => toggleContainer('container2Visible')}
                         style={{ transition: 'background-color 0.3s, color 0.3s' }}
                         >
                         {containerStates.container2Visible ? (
