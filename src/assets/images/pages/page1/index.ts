@@ -4,7 +4,7 @@ import image2 from './slider/car.png';
 import image3 from './slider/smartRefrigerator.png';
 import image4 from './slider/controller.png';
 import image5 from './slider/laptop.png';
-import image6 from './slider/smartwatch.png';
+import image6 from './slider/smartWatch.png';
 import architecture1 from './images/architecture_01.jpg';
 import architecture2 from './images/architecture_02.jpg';
 import specialPurposeComputer from './images/special_purpose_computer.png';
