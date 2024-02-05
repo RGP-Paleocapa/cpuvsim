@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 124 124" fill="none">
+    <rect width="124" height="124" fill="#103823"/> <!-- Background -->
+    <path d="M 31,113 L 62,31 L 93,113 Z" fill="#4287f5"/> <!-- 'A' shape -->
+    <rect x="48" y="75" width="28" height="10" fill="#103823"/> <!-- Bar in the middle of 'A' -->
+</svg>

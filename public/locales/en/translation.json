@@ -1,0 +1,19 @@
+{
+    "header": {
+      "languages": {
+        "en": "English",
+        "it": "Italian",
+        "fr": "French",
+        "de": "German"
+      }
+    },
+    "footer": {
+      "links": {
+        "refrences": "References and Helpful Links",
+        "credits": "Credits",
+        "authors": "authors",
+        "close": "close"
+      }
+    }
+  }
+  

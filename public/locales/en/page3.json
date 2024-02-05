@@ -1,0 +1,44 @@
+{
+    "vonNeumannArchitecture": {
+        "title": "The Von Neumann architecture",
+        "description1": "The <b>Von Neumann's architecture</b>, or Von Neumann's machine, refers to the generic computer architecture illustrated in the picture on the right. This architecture is based on the stored-program computer concept, where instructions and data are stored in the same (primary or main) memory. This design, first published by the Hungarian mathematician John Von Neumann in 1945, is still used in most computers produced today, with minor variations.",
+        "description2": "This model has <b>5 essential components</b>, as illustrated in the equivalent schema on the right:",
+        "component1": "The <strong>Central Processing Unit (CPU)</strong>;",
+        "component2": "The <strong>(primary or main) memory</strong>;",
+        "component3": "<strong>Input</strong> and <strong>Output</strong> devices;",
+        "component4": "The data, address, and control <strong>buses</strong>."
+    },
+    "cpuSection": {
+        "title": "Central Processing Unit (CPU)",
+        "description": "The Central Processing Unit (or processor), illustrated in the picture on the right, is the core element of this model. It is the heart of a computer and is responsible for the execution of every computer instruction. It is constituted by the following main elements:",
+        "aluDescription": "Performs arithmetic operations such as additions, multiplications, and comparisons.",
+        "logicOperations": "Handles logical operations like AND, OR, and NOT.",
+        "controlUnitDescription": "Decode instructions.",
+        "timingControlSignals": "Provide timing and control signals to coordinate operations.",
+        "accumulatorDescription": "Stores results produced by the ALU.",
+        "programCounterDescription": "Contains the address of the next instruction to execute. Automatically incremented for sequential instruction execution.",
+        "instructionRegisterDescription": "Holds the currently executing instruction fetched from memory.",
+        "statusWordDescription": "Contains flags reflecting properties of ALU results. For example, the Z flag is true if the result is zero, and the N flag is true if the result is negative.",
+        "multiplexerDescription": "A multi-way switch that determines input for the ALU."
+    },     
+    "ioDevicesSection": {
+        "title": "I/O devices",
+        "description1": "The Input/Output devices, controlled and coordinated by the processor, enable the interaction between the computer and its external environment, including the users.",
+        "inputDevices": "<B>Input devices</B>: allow the introduction of data (including instructions) to the system. For example, a keyboard, a mouse, or a temperature sensor.",
+        "outputDevices": "<B>Output devices</B> are necessary to communicate the processed data to the external world. For example, a monitor, or the controller of a water pump to irrigate a garden.",
+        "additionalInfo": "Some peripheral units can act as both input and output devices; for example a modem, a touch screen, or an SSD device."
+    },
+    "busSystemSection": {
+        "title": "Bus",
+        "description": "The bus is a shared communication channel interconnecting the different components of the architecture, permitting the transfer of the necessary information, according to the operation to be performed. The bus can be subdivided into three components:",
+        "dataBus": "<strong class='bg-blue-600 font-normal p-1 text-white'>Data Bus</strong>: transfers the data to be read or written, from/to memory or I/O devices. For example, the content of a memory cell.",
+        "addressBus": "<strong class='bg-orange-400/95 dark:bg-orange-600 p-1 font-normal'>Address Bus</strong>: transfers the addresses of the memory (or I/O devices) involved in an operation. For example, the address of the memory cell involved in a Read operation.",
+        "controlBus": "<strong class='bg-red-600 p-1 text-white font-normal'>Control Bus</strong>: transfers the control signals to coordinate the operations of the subcomponents involved in an operation. For example, signalling a Read versus a Write operation in memory."
+    },
+    "memorySection": {
+        "title": "Memory",
+        "intro": "Another fundamental component in the Von Neumann model is the memory, where both data and instructions are stored. This type of memory is called Primary or Main Memory.",
+        "mainMemoryDescription": "This memory can be conceptually considered as a set of locations (cells), each of them being able to memorize some information, such as an instruction (or part of it) or elementary data. These cell are depicted in gray in the picture on the right, and in this case they all contain the code corresponding to the computer instruction NOP (No Operation). A unique address is associated with each location (the yellow column in the same picture), so that the CPU can address them.<br /><br />In modern computers, most of this main memory is usually implemented as Random Access Memory (<strong>RAM</strong>). This is a fast but volatile memory used by the CPU to read and store data and instructions. Part of this memory can also be implemented as Read Only Memory (<strong>ROM</strong>), which is a permanent memory as fast as the RAM. The ROM usually contains a relatively few instructions to test the proper functioning of the hardware and 'boot' the computer.",
+        "secondaryMemoryDescription": "Most computers make also use of an additional type of memory, called <strong>secondary memory</strong>. This may be implemented as an hard disk or an SSD device - which are considered in the Von Neumann architecture as I/O devices. This is a much slower memory but it is persistent and usually has a larger storage capacity. Because of its insufficient speed, it is not used directly by the CPU, but it is used to permanently store data and programs which are loaded in the main memory as needed."
+    }        
+}

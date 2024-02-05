@@ -1,0 +1,62 @@
+{
+    "gridData": [
+      {
+        "colorKey": "amber",
+        "texts": ["C 01000011", "a 01100001", "t 01110100"],
+        "description": "In a computer, a sequence of binary digits can represent a sequence of characters. For instance, the above code may represent the word \"Cat\"."
+      },
+      {
+        "colorKey": "gray",
+        "texts": ["01000011", "01100001", "01110100"],
+        "description": "The same sequence may also represents the 3 numbers \"67, 97, 116\", or \"4.415.860\" if considered as a single 24-bit number."
+      },
+      {
+        "colorKey": "green",
+        "texts": ["01000011", "01100001", "01110100"],
+        "description": "In a different context, the same sequence again may represent the above dark shade of blue. Indeed, by considering 67, 97 and 116 as the levels of red, green and blue intensity, these digits represent a color."
+      }
+    ],
+    "references": [
+      {
+        "text": "Stored program concept",
+        "link": "https://www.javatpoint.com/store-program-control-concept"
+      },
+      {
+        "text": "E-ACTIVE BODY CONTROL suspension system",
+        "link": "",
+        "subReferences": [
+          {
+            "text": "Video",
+            "link": "https://www.youtube.com/watch?v=_sBcHG6HOlw"
+          },
+          {
+            "text": "Wiki",
+            "link": "https://en.wikipedia.org/wiki/Active_suspension"
+          }
+        ]
+      },
+      {
+        "text": "Clothes and shoes as computers",
+        "link": "",
+        "subReferences": [
+          {
+            "text": "Article 1",
+            "link": "https://dl.acm.org/doi/10.1145/2971763.2971784"
+          },
+          {
+            "text": "Article 2",
+            "link": "https://www.wired.co.uk/article/smart-shoe-football-analytics-cebit-2017"
+          },
+          {
+            "text": "Video",
+            "link": "https://www.youtube.com/watch?v=4_h0sBCiLNo"
+          }
+        ]
+      },
+      {
+        "text": "Connected clothes",
+        "link": "https://blog.technavio.com/blog/smart-connected-clothes-fashion-technology"
+      }
+    ]
+  }
+  
