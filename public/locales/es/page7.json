@@ -1,0 +1,12 @@
+{
+    "translationOfHighLevelConstructsSection": {
+        "title": "Traducción de Construcciones de Lenguajes de Alto Nivel a Lenguaje Ensamblador/Máquina",
+        "text": "Hoy en día, la mayoría del software es escrito por programadores en un lenguaje de alto nivel, como C++, Java o Python. Sin embargo, cualquier programa que se ejecute en una CPU, necesita ser especificado en su lenguaje de máquina. ¿Cómo es posible, entonces, ejecutar un programa escrito en un lenguaje de alto nivel?<br /><br /> Un lenguaje de alto nivel puede ser físicamente ejecutado en una CPU, que solo puede 'entender' su lenguaje de máquina, con dos técnicas principales (posiblemente combinadas): <strong>interpretación</strong> y <strong>compilación</strong>. En el caso de la interpretación, cada instrucción de alto nivel es ejecutada por un 'intérprete', un programa que actúa como una especie de CPU virtual, teniendo como Conjunto de Instrucciones las instrucciones disponibles en el lenguaje de alto nivel. Sin embargo, este intérprete, a su vez, debe ser ejecutado como un programa en lenguaje de máquina en la CPU real. En el caso de la compilación, los programas en un lenguaje de alto nivel se traducen primero (compilan) a lenguaje de máquina, antes de ser ejecutados en la CPU.<br /><br /> Sin embargo, los programas escritos en lenguajes de alto nivel utilizan construcciones de programación como IF-THEN-ELSE, FOR, WHILE-DO, y así sucesivamente. ¿Cómo pueden estas construcciones traducirse a lenguaje de máquina, donde tales instrucciones de alto nivel no están disponibles? Esto es posible principalmente explotando las instrucciones de control de flujo salto condicional y salto incondicional, como se muestra en esta sección con la ayuda de algunos ejemplos concretos."
+    },
+    "example1Title": "EJEMPLO: Traducción de la Inicialización y Suma de Dos Variables",
+    "example2Title": "EJEMPLO: Traducción de la Inicialización y Suma de Dos Variables",
+    "example3Title": "EJEMPLO: Traducción de la Inicialización y Suma de Dos Variables",
+    "example4Title": "EJEMPLO: Traducción de la Inicialización y Suma de Dos Variables",
+    "example5Title": "EJEMPLO: Traducción de la Inicialización y Suma de Dos Variables",
+    "example6Title": "EJEMPLO: Traducción de la Inicialización y Suma de Dos Variables"
+}

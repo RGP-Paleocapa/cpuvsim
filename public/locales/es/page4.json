@@ -1,0 +1,21 @@
+{
+    "cpuCycleSection": {
+        "title": "El ciclo de Captura/Decodificación/Ejecución de la CPU",
+        "description": "La CPU repite continuamente un <strong>ciclo de captura-decodificación-ejecución</strong>, para ejecutar las instrucciones de un programa, una por una. En este ciclo, la CPU pasa por tres etapas principales:",
+        "fetch": "<strong>Captura</strong> una instrucción del programa de la memoria principal;",
+        "decode": "<strong>Decodifica</strong> la instrucción, es decir, determina lo que se debe hacer;",
+        "execute": "<strong>Ejecuta</strong> (es decir, lleva a cabo) la instrucción."
+    },
+    "fetchSection": {
+        "description": "Durante la etapa de <B>captura</B> del ciclo, el contenido de la celda de memoria direccionada por el contador de programa se recupera y se coloca en el Registro de Instrucciones (IR)."
+    },
+    "executeSection": {
+        "description": "Durante la etapa de <B>ejecución</B> del ciclo, se ejecuta la instrucción, utilizando la ALU si es necesario. A veces, esta etapa puede involucrar la carga o el guardado de datos desde y hacia la memoria principal."
+    },
+    "decodeSection": {
+        "description": "En la parte de <B>decodificación</B> del ciclo, la Unidad de Control determina lo que se debe hacer con la instrucción y envía señales de control para coordinar los otros componentes."
+    },
+    "otherSection": {
+        "description": "Luego, el contenido del PC se incrementa para apuntar a la siguiente instrucción a ejecutar, y un nuevo ciclo de captura comienza de nuevo. En este caso específico, el PC se incrementa en dos porque la memoria RAM está organizada en bytes, y el tamaño de cada instrucción de la CPU es de dos bytes. Vale la pena notar aquí que las CPUs reales, para mejorar su velocidad, realizan el incremento del PC en paralelo a las operaciones anteriores, durante el ciclo de Ejecución."
+    }    
+}

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { FiGlobe } from "react-icons/fi";
-import { De, Fr, Gb, It } from "react-flags-select";
+import { Gb, It, Es } from "react-flags-select";
 
 interface LanguageOption {
     code: string;
@@ -38,16 +38,14 @@ const LanguageSwitcher: React.FC = () => {
     const languages: LanguageOption[] = [
         { code: 'en', labelKey: 'header.languages.en' },
         { code: 'it', labelKey: 'header.languages.it' },
-        { code: 'fr', labelKey: 'header.languages.fr' },
-        { code: 'de', labelKey: 'header.languages.de' },
+        { code: 'es', labelKey: 'header.languages.es' }
         // Add more language options as needed
     ];
 
     const languageIcons: LanguageIcons = {
         en: <Gb className="inline-block text-xl mr-2" />,
-        fr: <Fr className="inline-block text-xl mr-2" />,
         it: <It className="inline-block text-xl mr-2" />,
-        de: <De className="inline-block text-xl mr-2" />,
+        es: <Es className="inline-block text-xl mr-2" />,
         // Add more language icons as needed
     };
 

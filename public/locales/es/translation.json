@@ -1,0 +1,17 @@
+{
+    "header": {
+        "languages": {
+            "en": "Inglés",
+            "it": "Italiano",
+            "es": "Español"
+        }
+    },
+    "footer": {
+        "links": {
+            "refrences": "Referencias y Enlaces Útiles",
+            "credits": "Créditos",
+            "authors": "Autores",
+            "close": "Cerrar"
+        }
+    }
+}

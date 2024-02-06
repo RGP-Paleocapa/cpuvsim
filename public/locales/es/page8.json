@@ -1,0 +1,10 @@
+{
+    "exercisesSectionTitle": "Ejercicios",
+    "exercisesSectionText": "El objetivo de los siguientes dos ejercicios es codificar en ensamblador los algoritmos pseudo-codificados a la izquierda. Organiza las correspondientes instrucciones de ensamblador a la derecha en el orden correcto, arrastrándolas.",
+    "tasksSectionTitle": "Realiza las Siguientes Tareas:",
+    "task1": "Describe la Diferencia entre el Direccionamiento Numérico y el Direccionamiento Directo.",
+    "task2": "Describe los Datos Transmitidos en los Buses de Datos, Direcciones y Control, Respectivamente, Durante la Ejecución de las Instrucciones LOD #5 y LOD 5.",
+    "task3": "Identifica el Código Binario de la Instrucción de Ensamblador MUL 5.",
+    "task4": "Identifica la Instrucción Mnemónica Correspondiente a la Instrucción en Lenguaje de Máquina 00010011.",
+    "assemblyProblemsSectionTitle": "Desarrolla Programas Adecuados en Código Ensamblador para Resolver los Siguientes Problemas (Por Favor Recuerda Que Cualquier Etiqueta Necesita Ser Definida en la Columna Más a la Izquierda de la RAM Antes de Que Pueda Ser Utilizada en Cualquier Instrucción):"
+}
