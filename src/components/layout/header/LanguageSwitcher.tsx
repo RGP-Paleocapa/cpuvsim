@@ -46,7 +46,6 @@ const LanguageSwitcher: React.FC = () => {
         en: <Gb className="inline-block text-xl mr-2" />,
         it: <It className="inline-block text-xl mr-2" />,
         es: <Es className="inline-block text-xl mr-2" />,
-        // Add more language icons as needed
     };
 
     return (
