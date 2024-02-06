@@ -1,17 +1,17 @@
 {
-    "header": {
-      "languages": {
-        "en": "English",
-        "it": "Italian",
-        "es": "Spanish"
-      }
-    },
-    "footer": {
-      "links": {
-        "refrences": "References and Helpful Links",
-        "credits": "Credits",
-        "authors": "Authors",
-        "close": "Close"
-      }
+  "header": {
+    "languages": {
+      "en": "English",
+      "it": "Italian",
+      "es": "Spanish"
+    }
+  },
+  "footer": {
+    "links": {
+      "refrences": "References and Helpful Links",
+      "credits": "Credits",
+      "authors": "Authors",
+      "close": "Close"
     }
   }
+}
