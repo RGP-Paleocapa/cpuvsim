@@ -1,0 +1,33 @@
+{
+    "instructionSetSection": {
+      "title": "L'Insieme di Istruzioni della CPU",
+      "description": "L'insieme di istruzioni di una specifica CPU, chiamato anche Architettura del Set di Istruzioni (ISA), è la collezione di istruzioni che quella CPU specifica può riconoscere ed eseguire. Ogni istruzione è un comando per istruire la CPU a eseguire una certa operazione elementare. Può essere specificato come codice macchina (binario/esadecimale) o codice assembly (equivalente mnemonico delle istruzioni binarie).\n\nEcco alcuni esempi dal simulatore:"
+    },
+    "instructionSection": {
+        "text1": "I <b class=\"text-blue-700\">cifre o testo in blu</b> rappresentano il <strong>Codice di Operazione (opcode)</strong>: un numero binario che rappresenta l'operazione da eseguire. Un numero binario è naturalmente interpretato da una CPU, ma è difficile da ricordare per un essere umano. Pertanto, i programmatori possono utilizzare il loro codice <strong>mnemonico (assembly)</strong> equivalente per identificare l'operazione desiderata, come 'LOD', 'ADD' e 'STO'.",
+        "text2": "Le <b class=\"text-red-600\">cifre o il testo in rosso</b> rappresentano l'operando/i dell'istruzione. L'operando ha diverse interpretazioni in base alla cosiddetta modalità di indirizzamento (che è anche specificata nell'opcode). Nel caso del simulatore, le modalità di indirizzamento disponibili sono:",
+        "text3": "Le istruzioni supportate da una CPU possono essere organizzate in alcune categorie fondamentali. Le più importanti sono:",
+        "addressingModes": {
+            "immediate": "<strong>Indirizzamento Immediato</strong> (o <strong>numerico</strong>), come in ADD #8: in questo caso, l'operando è un numero (aggiungi il numero 8)",
+            "direct": "<strong>Indirizzamento Diretto</strong>, come in ADD 8: in questo caso, l'operando rappresenta un indirizzo di memoria (aggiungi il numero memorizzato all'indirizzo di memoria 8). Piuttosto che utilizzare direttamente indirizzi di memoria numerici, è più comodo per gli esseri umani associarli a etichette significative, come Y o COUNTER. Pertanto, un indirizzo di memoria può essere identificato più facilmente da una etichetta, come in ADD Y. Importante notare: le etichette non esistono fisicamente nella CPU o nella memoria perché vengono tradotte negli indirizzi numerici corrispondenti dall'assemblatore, che può analizzare l'intero programma di assembly offline. Tuttavia, poiché il simulatore traduce le istruzioni una per una 'al volo', è necessario prima <strong>definire le etichette</strong> inserendole nella colonna grigia, <strong>prima</strong> che possano essere utilizzate in qualsiasi istruzione."
+        },
+        "description": "Provalo tu stesso: avvia il simulatore e scrivi alcune istruzioni. Puoi passare dal codice Mnemonico (Assembly) al codice Binario facendo clic sul pulsante Simbolico/Binario.",
+        "operationsSection": {
+            "dataFlow": {
+              "title": "<strong>Operazioni di flusso dati</strong>: istruzioni utilizzate per trasferire (memorizzare) il contenuto di un registro della CPU o il risultato di un calcolo nella memoria principale, o per trasferire (caricare) dati memorizzati nella memoria principale nella CPU, al fine di eseguire un calcolo successivamente.",
+              "buttonText": "[1]"
+            },
+            "controlFlow": {
+              "title": "<strong>Operazioni di flusso di controllo</strong>: istruzioni che modificano l'ordine in cui vengono eseguite le singole istruzioni (in altre parole, le istruzioni vengono altrimenti eseguite in ordine sequenziale, una dopo l'altra), al fine di eseguire un calcolo successivamente.",
+              "buttonText": "[2]"
+            },
+            "arithmeticLogic": {
+              "title": "<strong>Operazioni aritmetiche-logiche</strong>: istruzioni che eseguono operazioni aritmetiche (addizione, sottrazione...) e operazioni logiche (e, non...), al fine di eseguire un calcolo successivamente.",
+              "buttonText": "[3]"
+            }
+        }
+    },
+    "tableSection": {
+        "text": "La seguente tabella riporta l'intero set di istruzioni supportato dal simulatore, organizzato in base alle categorie sopra menzionate. Per ciascuna istruzione vengono riportati: il codice binario opcode in linguaggio macchina, il suo equivalente in codice assembly (mnemonico) e una breve descrizione informale."
+    }
+}
