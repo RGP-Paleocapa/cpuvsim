@@ -1,0 +1,26 @@
+{
+    "languagesSection": {
+        "title": "Lenguajes de máquina, ensamblador y de alto nivel",
+        "description": "A lo largo de los años, los lenguajes de computadora han evolucionado desde Lenguajes de Bajo Nivel hasta Lenguajes de Alto Nivel. <br /><br /> En los primeros días de las computadoras, los primeros programas se escribían directamente en lenguaje de máquina (binario), el único lenguaje directamente entendido por una CPU. Hoy en día, la gran mayoría del software se escribe en lenguajes de alto nivel genéricos, más cercanos a la forma en que los humanos razonan y a los problemas específicos a resolver. Los lenguajes de alto nivel pueden traducirse a lenguaje de máquina a través de programas específicos llamados compiladores. <br /><br /> Por lo tanto, los lenguajes de computadora pueden clasificarse ampliamente de la siguiente manera:",
+        "imageAlt": "Diagrama de Flujo de Lenguajes"
+    },
+    "highLevelLanguagesSection": {
+        "title": "Lenguajes de Alto Nivel",
+        "description": "Los lenguajes de alto nivel son lenguajes de computadora que pueden ser utilizados de manera conveniente y eficiente por los programadores. Generalmente es más fácil y más eficiente para un programador razonar con un lenguaje orientado a los problemas que necesitan resolver, en lugar de con un lenguaje más cercano a lo que el hardware de la computadora puede entender. Lenguajes como <strong>C, C++, JAVA, Python</strong>, etc., son ejemplos de lenguajes de alto nivel. Están más cerca de los lenguajes humanos, en comparación con los lenguajes de bajo nivel. <br /><br /> Aunque los lenguajes de alto nivel son más convenientes para los usuarios, no pueden ser ejecutados directamente por las computadoras. Los lenguajes de alto nivel necesitan ser convertidos en lenguajes de bajo nivel para que sean comprensibles (ejecutables) por una computadora. Se pueden utilizar programas especiales llamados compiladores para convertir lenguajes de alto nivel a lenguajes de bajo nivel, específicos de la CPU. Una ventaja importante resultante es que estos lenguajes de alto nivel son independientes de la máquina (CPU) donde se 'ejecutarán', porque cada CPU tiene su propio compilador, capaz de traducir el mismo lenguaje de alto nivel al peculiar lenguaje de bajo nivel de esa CPU específica."
+    },
+    "lowLevelLanguagesSection": {
+        "title": "Lenguajes de Bajo Nivel",
+        "text1": "Los lenguajes de bajo nivel dependen de la computadora particular, o más precisamente de la CPU específica, donde se ejecutan.",
+        "machineLanguageTitle": "Lenguaje de Máquina",
+        "machineLanguageText": "El nivel más bajo posible de lenguaje (excluyendo por simplicidad el caso de algunas CPUs que hacen uso de microprogramas) se conoce como <strong>Lenguaje de Máquina</strong>, y es el único lenguaje que puede ser entendido por la computadora (en realidad su CPU). Las instrucciones en lenguaje de máquina se escriben en <strong>código binario</strong>, es decir, se expresan con solo dos símbolos, 1 y 0 (dígitos binarios). Estos símbolos pueden estar físicamente representados por el voltaje en un circuito, por ejemplo, 0 como voltaje nulo, y 1 como un voltaje predeterminado. O también pueden representarse, respectivamente, como un circuito abierto (ausencia de corriente fluyendo) o cerrado (corriente fluyendo), o como un condensador descargado versus uno cargado. Un dígito binario se llama '<strong>bit</strong>', y 8 bits forman un '<strong>byte</strong>'.",
+        "assemblyLanguageTitle": "Lenguaje Ensamblador",
+        "assemblyLanguageText": "El <strong>ensamblador</strong> es un lenguaje de computadora cuyas instrucciones consisten en palabras predefinidas llamadas <strong>mnemónicos</strong>, como ADD o NOT. Las instrucciones puras de ensamblador (es decir, excluyendo macroinstrucciones particulares o directivas especiales) corresponden directamente (uno a uno) a las instrucciones en lenguaje de máquina. La computadora no entiende estos mnemónicos, por lo que son traducidos a través de un programa simple llamado <strong>Ensamblador</strong> a <strong>lenguaje de máquina</strong>. Es decir, el Ensamblador toma programas escritos en ensamblador como entrada y produce código de máquina ejecutable como salida. Esto hace posible que la computadora entienda las instrucciones originalmente escritas en Ensamblador."
+    },
+    "programmingLanguagesSection": {
+        "title": "Ejemplos de Diferentes Lenguajes de Programación",
+        "text": "La siguiente sección cubrirá cómo se lleva a cabo la traducción de un lenguaje de alto a bajo nivel, y cómo se traducen construcciones como <strong>For</strong>, <strong>While</strong> y <strong>If</strong> en ensamblador y código binario.",
+        "highLevelLanguageDescription": "Lenguaje de Alto Nivel",
+        "assemblyLanguageDescription": "Lenguaje Ensamblador",
+        "machineLanguageDescription": "Lenguaje de Máquina"
+    }           
+}

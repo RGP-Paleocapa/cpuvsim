@@ -1,0 +1,52 @@
+{
+    "binaryCalculations": {
+        "title": "I computer eseguono calcoli semplici su cifre binarie",
+        "intro": "Come detto prima, i computer non rappresentano ed elaborano le informazioni usando numeri, testi, immagini o suoni come facciamo noi. Invece, rappresentano tutto usando solo due simboli:",
+        "one": "1",
+        "zero": "0",
+        "binaryAdditionRules": "Ad esempio, coppie di cifre binarie vengono sommate secondo le regole:",
+        "firstPart": ", (uno - zero, non dieci) il che significa ",
+        "secondPart": " con ",
+        "thirdPart": "La sequenza ",
+        "fourthPart": ", cioè usando solo 2 simboli, è l'equivalente del numero 2 in decimale."
+    },
+    "binaryRepresentation": {
+        "title": "Le cifre binarie possono rappresentare testi, immagini, video, audio, istruzioni",
+        "intro": "Ma come possono essere rappresentati tipi di informazioni diversi come testi, immagini, suoni o anche istruzioni per computer, usando solo i due simboli 1 e 0?",
+        "codingConventions": "Partendo dai numeri, e presto l'alfabeto, sono state progettate diverse <b>convenzioni di codifica</b>. Ecco alcuni esempi di rappresentazioni binarie di diversi media:"
+    },
+    "textSection": {
+        "title": "Testo",
+        "description1": "Il testo può essere rappresentato in un computer da una sequenza di codici binari, con ogni codice che rappresenta una lettera o un segno di punteggiatura.",
+        "description2": "Le vecchie macchine informatiche usavano il cosiddetto codice ASCII, che assegna sette bit per ciascun simbolo negli alfabeti basati sul latino. Poiché oggi i computer lavorano con gruppi di 1 e 0 da 8 bit (byte), piuttosto che con gruppi da 7 bit, i codici ASCII sono spesso estesi di un bit a 8 bit.",
+        "description3": "Una soluzione più flessibile è Unicode, che utilizza 16 o addirittura 32 bit, permettendo un enorme numero di caratteri diversi (inclusi, ad esempio, cinesi o giapponesi) da codificare",
+        "examplesAscii": "Alcuni esempi di codici ASCII"
+    },
+    "imagesAndVideosSection": {
+        "pixelDescription": "Usando il modello di colore RGB, il colore di questo pixel è rappresentato come \"37, 154, 170\" in decimale, o 100101, 10011010, 10101010 in binario.",
+        "title": "Immagini e Video",
+        "description": "Nel 1886, i pittori impressionisti svilupparono una tecnica chiamata Puntinismo in cui piccoli punti distinti di colore venivano applicati in schemi per formare un'immagine. Passando semplicemente da punti a piccoli quadrati (<b>pixel</b>), possiamo facilmente capire come un'immagine possa essere rappresentata digitalmente.",
+        "colorRepresentation": "Nei sistemi di immagini a colori, il colore di un pixel è tipicamente rappresentato da tre o quattro numeri che codificano intensità di componenti come rosso, verde e blu, o ciano, magenta, giallo e nero.",
+        "imagePerception": "Una serie di immagini fisse (quindi insieme di numeri) visualizzate a intervalli di tempo sufficientemente brevi, è percepita dal nostro sistema visivo come immagini in movimento."
+    },
+    "audioSection": {
+        "title": "Audio",
+        "description": "Il suono, come la voce o la musica, è una quantità fisica analogica, corrispondente ad esempio a variazioni nella pressione dell'aria. Ma anche questo tipo di informazioni può essere convertito in forma digitale. Per ottenere una rappresentazione digitale di un suono, vengono prelevati campioni della sua intensità a una velocità sufficiente (frequenza di campionamento), e il valore di ciascun <b>campione è quantizzato al codice binario più vicino</b>.",
+        "samplingDetail": "È importante apprezzare che suoni come la voce o la musica variano rapidamente nel tempo, e quindi i loro campioni dovranno essere presi a intervalli sufficientemente ravvicinati, se la rappresentazione digitale deve essere fedele all'originale.",
+        "quantizationDescription": "Una rappresentazione del processo di quantizzazione in cui ogni campione è approssimato al valore più vicino che il sistema può rappresentare."
+    },
+    "instructionsSection": {
+        "tableDescription": "Tre esempi di operazioni comuni a molti set di istruzioni",
+        "title": "Istruzioni",
+        "description": "Per eseguire programmi o elaborare dati, i computer devono seguire alcune istruzioni specifiche.\nCome discusso nella sezione \"set di istruzioni della CPU\", ci sono molte operazioni di base che una macchina può eseguire. Ognuna è composta da un opcode (l'istruzione eseguita dalla CPU) e uno o più operandi (i dati o le posizioni di memoria su cui opera l'istruzione).\nPoiché il codice binario è l'unico linguaggio che un computer può capire, queste istruzioni sono rappresentate, di nuovo, come cifre binarie."
+    },
+    "multimediaInformation": {
+        "title": "Le informazioni multimediali possono essere elaborate con calcoli digitali 'elementari'",
+        "intro": "Poiché qualsiasi informazione multimediale appare al computer come numeri binari, dovrebbe essere chiaro ormai che <b>qualsiasi elaborazione di questi dati comporta calcoli digitali</b>. Ecco alcuni esempi:",
+        "example1": "Il volume di un suono rappresenta l'intensità delle variazioni di pressione dell'aria. Pertanto, aumentare il volume di una canzone comporta una semplice moltiplicazione del valore di ciascun campione sonoro per un fattore maggiore di 1.",
+        "example2": "Il contrasto di un'immagine può essere spiegato come la differenza tra intensità massima e minima dei colori dei pixel. Pertanto, per cambiare il contrasto di un'immagine è sufficiente modificare il valore di queste intensità, aumentando la differenza tra i valori massimi e minimi, seguendo una formula semplice.",
+        "example3": "Il modo più semplice per ingrandire un'immagine è sostituire ogni pixel con un numero di pixel dello stesso colore. L'immagine risultante è più grande dell'originale e conserva tutti i dettagli originali.",
+        "example4": "Per comprimere un video è possibile, ad esempio, ridurre il livello di dettaglio dei frame che lo compongono. Questo può essere ottenuto, ad esempio, calcolando il colore medio di un gruppo di pixel di colori diversi, e sostituendoli con un singolo pixel ripetuto avente quel colore medio.",
+        "soundVolumeDescription": "Aumentare il volume di un suono."
+    }
+}

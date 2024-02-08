@@ -8,6 +8,11 @@ import { useEffect } from "react";
 import data from './data.json';
 import SmoothScrollButton from "@/components/common/SmoothScrollButton";
 import { Section } from "@common/eBook/layout/layout";
+<<<<<<< HEAD
+=======
+import { useTranslation } from "react-i18next";
+import RenderHTML from "@/components/common/RenderHTML";
+>>>>>>> source-repo/main
 
 const Page5 = () => {
   useDocumentMetadata('CPU Instructions Set', "This is the fifth page");
@@ -20,11 +25,16 @@ const Page5 = () => {
   const dataFlowRows = data.dataFlowRows;
   const controlFlowRows = data.controlFlowRows;
   const arithmeticLogicRows = data.arithmeticLogicRows;    
+<<<<<<< HEAD
+=======
+  const { t } = useTranslation("page5");
+>>>>>>> source-repo/main
 
   return (
     <EBookPage currentPage={5}>
         <Section>
           <SectionTitle>
+<<<<<<< HEAD
             The CPU Instruction Set
           </SectionTitle>
           <Text>
@@ -78,13 +88,60 @@ const Page5 = () => {
                     instructions that perform arithmetic (addition, subtraction...)
                     and logic operations (and, not...).
                     in order to perform a computation on it later. <SmoothScrollButton targetId={"footer"} buttonText={"[3]"} />
+=======
+              <RenderHTML htmlString={t("instructionSetSection.title")} />
+          </SectionTitle>
+          <Text>
+              <RenderHTML htmlString={t("instructionSetSection.description")} />
+          </Text>
+          <div className="mt-6 xl:mx-40">
+              <Table headerTitles={["Binary code", "Mnemonic code", "Description"]} bodyRows={bodyRows} />
+          </div>
+      </Section>
+
+        <Section>
+          <Text>
+            <RenderHTML htmlString={t("instructionSection.text1")} />
+            <br /><br />
+            <RenderHTML htmlString={t("instructionSection.text2")} />
+          </Text>
+          <Ul className="dark:text-gray-200">
+            <Li>
+              <RenderHTML htmlString={t("instructionSection.addressingModes.immediate")} />
+            </Li>
+            <Li>
+              <RenderHTML htmlString={t("instructionSection.addressingModes.direct")} />
+            </Li>
+          </Ul>
+          <YourImageComponent image={images}/>
+          <Description>
+            <RenderHTML htmlString={t("instructionSection.description")} />
+          </Description>
+          <Text>
+            <RenderHTML htmlString={t("instructionSection.text3")} />
+          </Text>
+              <Ul className="dark:text-gray-200">
+                <Li>
+                  <RenderHTML htmlString={t("instructionSection.operationsSection.dataFlow.title")} />
+                  <SmoothScrollButton targetId={"footer"} buttonText={"[1]"} />
+                </Li>
+                <Li>
+                  <RenderHTML htmlString={t("instructionSection.operationsSection.controlFlow.title")} /><SmoothScrollButton targetId={"footer"} buttonText={"[2]"} />
+                </Li>
+                <Li>
+                  <RenderHTML htmlString={t("instructionSection.operationsSection.arithmeticLogic.title")} /><SmoothScrollButton targetId={"footer"} buttonText={"[3]"} />
+>>>>>>> source-repo/main
                 </Li>
               </Ul>
         </Section>
 
         <Section>
           <Text>
+<<<<<<< HEAD
             The following table reports the full set of instructions supported by the simulator, organized according to the above mentioned categories. For each instruction are reported: the opcode binary code in machine language, its assembly (mnemonic) equivalent, and a short informal description.
+=======
+            <RenderHTML htmlString={t("tableSection.text")} />
+>>>>>>> source-repo/main
           </Text>
           <div className="mt-6 xl:mx-40">
             <Table headerTitles={["Data Flow"]} bodyRows={dataFlowRows} />

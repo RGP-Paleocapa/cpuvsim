@@ -1,8 +1,16 @@
 import { Ul } from "@/components/common/eBook/content";
 import { useState } from "react";
+<<<<<<< HEAD
 
 const Authors = () => {
     const [showAuthors, setShowAuthors] = useState(false);
+=======
+import { useTranslation } from "react-i18next";
+
+const Authors = () => {
+    const [showAuthors, setShowAuthors] = useState(false);
+    const { t } = useTranslation();
+>>>>>>> source-repo/main
     const credits = [
       'Rares Gabriel Puiu  (latest version)',
       'MariaPia Cavaretta',
@@ -16,12 +24,20 @@ const Authors = () => {
 
     return (
       <div className="relative flex flex-col items-center md:items-start">
+<<<<<<< HEAD
         <h2 className="font-bold text-lg mb-2">Credits:</h2>
+=======
+        <h2 className="font-bold text-lg mb-2">{t("footer.links.credits")}:</h2>
+>>>>>>> source-repo/main
       <button
         onClick={() => setShowAuthors(!showAuthors)}
         className="text-blue-600 dark:text-blue-400 hover:text-blue-600 dark:hover:text-blue-400 transition duration-300"
       >
+<<<<<<< HEAD
         Authors
+=======
+        {t("footer.links.authors")}
+>>>>>>> source-repo/main
       </button>
       {showAuthors && (
         <div className="fixed inset-0 flex items-center justify-center bg-white dark:bg-gray-800 bg-opacity-80 z-50">
@@ -36,7 +52,11 @@ const Authors = () => {
               onClick={() => setShowAuthors(false)}
               className="mt-2 text-blue-600 dark:text-blue-400 hover:text-blue-600 dark:hover:text-blue-400 transition duration-300"
             >
+<<<<<<< HEAD
               Close
+=======
+              {t("footer.links.close")}
+>>>>>>> source-repo/main
             </button>
           </div>
         </div>

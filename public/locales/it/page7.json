@@ -1,0 +1,12 @@
+{
+    "translationOfHighLevelConstructsSection": {
+        "title": "Traduzione dei Costrutti del Linguaggio ad Alto Livello in Linguaggio Assembly/Linguaggio Macchina",
+        "text": "Oggi la maggior parte del software viene scritta dai programmatori in un linguaggio ad alto livello, come C++, Java o Python. Tuttavia, qualsiasi programma eseguito su una CPU deve essere specificato nel suo linguaggio macchina. Come è possibile, quindi, eseguire un programma scritto in un linguaggio ad alto livello?<br /><br /> Un linguaggio ad alto livello può essere fisicamente eseguito su una CPU, che può 'comprendere' solo il suo linguaggio macchina, con due principali tecniche (possibilmente combinate): <strong>interpretazione</strong> e <strong>compilazione</strong>. Nel caso dell'interpretazione, ogni istruzione ad alto livello viene eseguita da un 'interprete,' un programma che agisce come una sorta di CPU virtuale, avendo come suo Set di Istruzioni le istruzioni disponibili nel linguaggio ad alto livello. Tuttavia, questo interprete, a sua volta, deve essere eseguito come un programma in linguaggio macchina sulla CPU reale. Nel caso della compilazione, i programmi in un linguaggio ad alto livello vengono prima tradotti (compilati) in linguaggio macchina, prima di essere eseguiti sulla CPU.<br /><br /> Tuttavia, i programmi scritti in linguaggi ad alto livello utilizzano costrutti di programmazione come IF-THEN-ELSE, FOR, WHILE-DO, e così via. Come possono questi costrutti essere tradotti in linguaggio macchina, dove tali istruzioni ad alto livello non sono disponibili? Questo è possibile principalmente sfruttando le istruzioni di flusso di controllo, come il salto condizionale e il salto incondizionato, come mostrato in questa sezione con l'aiuto di alcuni esempi concreti."
+    },
+    "example1Title": "ESEMPIO: Traduzione dell'Inizializzazione e Somma di Due Variabili",
+    "example2Title": "ESEMPIO: Traduzione dell'Inizializzazione e Somma di Due Variabili",
+    "example3Title": "ESEMPIO: Traduzione dell'Inizializzazione e Somma di Due Variabili",
+    "example4Title": "ESEMPIO: Traduzione dell'Inizializzazione e Somma di Due Variabili",
+    "example5Title": "ESEMPIO: Traduzione dell'Inizializzazione e Somma di Due Variabili",
+    "example6Title": "ESEMPIO: Traduzione dell'Inizializzazione e Somma di Due Variabili"    
+}

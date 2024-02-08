@@ -1,0 +1,15 @@
+{
+    "main": {
+        "title": "Una introducción amena al Procesador Central y al lenguaje Ensamblador",
+        "subtitle": "Basado en (y en apoyo de) el complementario Simulador Visual Educativo de la CPU",
+        "button1": "Introducción",
+        "button2": "Páginas de documentación"
+    },
+    "introduction": {
+        "title": "Introducción a la Arquitectura de Computadoras",
+        "p1": "Este libro electrónico tiene como objetivo ilustrar los conceptos básicos de cómo funciona una computadora, centrándose en cómo un programa escrito en un lenguaje de alto nivel termina siendo ejecutado físicamente en una Unidad Central de Procesamiento (CPU). El libro está destinado a ser utilizado en el contexto de un curso introductorio de ciencias de la computación a nivel de secundaria o universitario.",
+        "p2": "El libro comienza con una explicación concisa de la arquitectura fundamental compartida por una amplia variedad de \"computadoras\" modernas, como computadoras de escritorio, teléfonos móviles o unidades de control de automóviles. Esto es seguido por una explicación de los elementos esenciales de la estructura de cualquier CPU, y el lenguaje de máquina (ensamblador) que puede ejecutar.",
+        "p3": "Este libro electrónico se construye en torno al Simulador Visual Educativo de la CPU (CPUVSIM) que se muestra a la izquierda, al que puedes acceder a través del botón \"Simulador\" en la esquina superior derecha. El libro es un documento dinámico porque el simulador está integrado de manera impecable con los ejercicios propuestos: al hacer clic en los botones \"Mostrar solución\", el CPUVSIM cobra vida, cargando la solución para el ejercicio específico en la memoria. Esto te permite experimentar directamente con los ejercicios de programación presentados en el libro.",
+        "p4": "El CPUVSIM asociado permite a los usuarios visualizar con animaciones detalladas la ejecución de código en lenguaje ensamblador. Su objetivo principal es apoyar a los principiantes en la comprensión del comportamiento de los componentes clave de una CPU, centrándose en cómo se ejecuta realmente en el hardware de una computadora el código escrito en lenguajes de alto nivel. \n Admite un lenguaje ensamblador simplificado pero representativo de 16 instrucciones (Transferencia de Datos, Flujo de Control, Aritmética-Lógica), con modalidades de direccionamiento inmediato y directo. Las instrucciones y los datos numéricos se pueden insertar y editar directamente en la RAM. Es posible definir “etiquetas” para ser utilizadas como parámetros en instrucciones de salto, o como identificadores de variables. Los usuarios pueden controlar la velocidad y el nivel de detalle de las animaciones. En cualquier momento, es posible cambiar entre representaciones simbólicas y binarias."
+    }
+}

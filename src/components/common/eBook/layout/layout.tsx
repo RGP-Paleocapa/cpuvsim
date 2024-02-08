@@ -10,7 +10,11 @@ export const Section = ({
   id?: string;
   className?: string;
 }) => (
+<<<<<<< HEAD
   <section className={`py-10 ${className || ''}`} id={id}>
+=======
+  <section className={`whitespace-pre-wrap py-10 ${className || ''}`} id={id}>
+>>>>>>> source-repo/main
     {children}
   </section>
 );
@@ -38,7 +42,11 @@ export const InlineDivs = ({
 
   return (
     <div
+<<<<<<< HEAD
       className={`flex flex-col ${
+=======
+      className={`whitespace-pre-wrap flex flex-col ${
+>>>>>>> source-repo/main
         containsTable ? 'lg:flex-row' : 'lg:flex-row'
       } ${
         isEven ? 'flex-col-reverse' : ''
@@ -73,7 +81,11 @@ export const MaxWidthContainer = ({
   smallPadding?: boolean;
   classname?: string;
 }) => (
+<<<<<<< HEAD
   <div className={`max-w-4xl mx-fit ${smallPadding ? 'lg:p-4' : 'p-4'} rounded-lg ${bgColor} ${classname}`}>
+=======
+  <div className={`whitespace-pre-wrap max-w-4xl mx-fit ${smallPadding ? 'lg:p-4' : 'p-4'} rounded-lg ${bgColor} ${classname}`}>
+>>>>>>> source-repo/main
     {children}
   </div>
 );

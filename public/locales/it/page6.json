@@ -1,0 +1,26 @@
+{
+    "languagesSection": {
+        "title": "Linguaggi di programmazione: Machine, assembly e high-level",
+        "description": "Negli anni, i linguaggi di programmazione per computer hanno evoluto da quelli a basso livello a quelli ad alto livello. <br /><br /> Nei primi giorni dei computer, i primi programmi venivano scritti direttamente in linguaggio macchina (binario), l'unico linguaggio direttamente comprensibile da una CPU. Oggi, la grande maggioranza del software viene scritta in linguaggi ad alto livello generici, più vicini al modo in cui gli esseri umani ragionano e ai problemi specifici da risolvere. I linguaggi ad alto livello possono poi essere tradotti in linguaggio macchina tramite programmi specifici chiamati compilatori. <br /><br /> Pertanto, i linguaggi di programmazione per computer possono essere ampiamente classificati come segue:",
+        "imageAlt": "Diagramma dei linguaggi di programmazione"
+    },
+    "highLevelLanguagesSection": {
+        "title": "Linguaggi ad Alto Livello",
+        "description": "I linguaggi ad alto livello sono linguaggi di programmazione per computer che possono essere utilizzati comodamente ed efficientemente dai programmatori. Solitamente, è più facile ed efficiente per un programmatore ragionare con un linguaggio orientato ai problemi che devono risolvere, piuttosto che con un linguaggio più vicino a ciò che l'hardware del computer può comprendere. Linguaggi come <strong>C, C++, JAVA, Python</strong>, ecc., sono esempi di linguaggi ad alto livello. Sono più vicini alle lingue umane rispetto ai linguaggi a basso livello. <br /><br /> Anche se i linguaggi ad alto livello sono più convenienti per gli utenti, non possono essere eseguiti direttamente dai computer. I linguaggi ad alto livello devono essere convertiti in linguaggi a basso livello per renderli comprensibili (eseguibili) da un computer. Si possono utilizzare programmi speciali chiamati compilatori per convertire i linguaggi ad alto livello in linguaggi a basso livello specifici della CPU. Un importante vantaggio conseguente è che questi linguaggi ad alto livello sono indipendenti dalla macchina (CPU) in cui verranno 'eseguiti', poiché ogni CPU ha il proprio compilatore, in grado di tradurre lo stesso linguaggio ad alto livello nel linguaggio a basso livello peculiare di quella specifica CPU."
+    },
+    "lowLevelLanguagesSection": {
+        "title": "Linguaggi a Basso Livello",
+        "text1": "I linguaggi a basso livello dipendono dal computer particolare, o più precisamente dalla CPU specifica, in cui vengono eseguiti.",
+        "machineLanguageTitle": "Linguaggio Macchina",
+        "machineLanguageText": "Il linguaggio a basso livello più basso possibile (escludendo per semplicità il caso di alcune CPU che fanno uso di microprogrammi) è noto come <strong>Linguaggio Macchina</strong>, ed è l'unico linguaggio comprensibile dal computer (in realtà dalla sua CPU). Le istruzioni in linguaggio macchina sono scritte in <strong>codice binario</strong>, ossia sono espressi con soli due simboli, 1 e 0 (cifre binarie). Questi simboli possono essere rappresentati fisicamente dalla tensione in un circuito, ad esempio 0 come tensione nulla e 1 come tensione predefinita. O possono essere rappresentati, rispettivamente, come un circuito aperto (assenza di corrente) o chiuso (corrente in circolazione), o come un condensatore scarico rispetto a uno carico. Un cifra binaria è chiamata '<strong>bit</strong>', e 8 bit formano un '<strong>byte</strong>'.",
+        "assemblyLanguageTitle": "Linguaggio Assembly",
+        "assemblyLanguageText": "L'<strong>assembly</strong> è un linguaggio di programmazione per computer le cui istruzioni consistono in parole predefinite chiamate <strong>mnemonici</strong>, come ADD o NOT. Le istruzioni di assembly pura (escludendo macroistruzioni particolari o direttive speciali) corrispondono direttamente (uno a uno) alle istruzioni in linguaggio macchina. Il computer non comprende questi mnemonici, quindi vengono tradotti attraverso un semplice programma chiamato <strong>Assembler</strong> in <strong>linguaggio macchina</strong>. In altre parole, l'Assembler prende programmi scritti in assembly come input e produce codice macchina eseguibile come output. Questo consente al computer di comprendere le istruzioni originariamente scritte in Assembly."
+    },
+    "programmingLanguagesSection": {
+        "title": "Esempi di Diversi Linguaggi di Programmazione",
+        "text": "La seguente sezione coprirà come avviene la traduzione da un linguaggio ad alto livello a un linguaggio a basso livello, e come costrutti come <strong>For</strong>, <strong>While</strong> e <strong>If</strong> vengono tradotti in linguaggio assembly e in codice binario.",
+        "highLevelLanguageDescription": "Linguaggio ad Alto Livello",
+        "assemblyLanguageDescription": "Linguaggio Assembly",
+        "machineLanguageDescription": "Linguaggio Macchina"
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "main": {
+        "title": "Un'introduzione gentile all'Unità di Elaborazione Centrale e al linguaggio Assembly",
+        "subtitle": "Basato su (e a supporto di) un Complementare Simulatore Visivo Educativo della CPU",
+        "button1": "Introduzione",
+        "button2": "Pagine di documentazione"
+    },
+    "introduction": {
+        "title": "Introduzione all'Architettura dei Computer",
+        "p1": "Questo e-book ha lo scopo di illustrare le basi di come funziona un computer, concentrandosi su come un programma scritto in un linguaggio ad alto livello finisce per essere eseguito fisicamente su un'Unità di Elaborazione Centrale (CPU). L'e-book è destinato a essere utilizzato nel contesto di un corso introduttivo di informatica a livello scolastico o universitario.",
+        "p2": "L'e-book inizia con una spiegazione concisa dell'architettura fondamentale condivisa da una vasta gamma di moderni \"computer\", come computer desktop, telefoni cellulari o unità di controllo dell'auto. Segue poi una spiegazione degli elementi essenziali della struttura di qualsiasi CPU e del linguaggio di macchina (assembly) che essa può eseguire.",
+        "p3": "Questo e-book è costruito attorno al Simulatore Visivo Educativo della CPU (CPUVSIM) mostrato a sinistra, al quale è possibile accedere tramite il pulsante 'Simulatore' nell'angolo in alto a destra. L'e-book è un documento dinamico perché il simulatore è integrato in modo fluido con gli esercizi proposti: cliccando sui pulsanti 'Mostra soluzione', il CPUVSIM prende vita, caricando la soluzione specifica per l'esercizio in memoria. Ciò consente di sperimentare direttamente con gli esercizi di programmazione presentati nel libro.",
+        "p4": "Il CPUVSIM associato consente agli utenti di visualizzare con animazioni dettagliate l'esecuzione del codice in linguaggio assembly. Il suo obiettivo principale è quello di aiutare i principianti a capire il comportamento dei componenti chiave di una CPU, concentrandosi su come il codice scritto in linguaggi ad alto livello viene effettivamente eseguito sull'hardware di un computer.\nSupporta un linguaggio assembly semplificato ma rappresentativo di 16 istruzioni (Trasferimento dati, Flusso di controllo, Aritmetica-Logica), con modalità di indirizzamento immediato e diretto. Le istruzioni e i dati numerici possono essere inseriti e modificati direttamente nella RAM. È possibile definire \"etichette\" da utilizzare come parametri nelle istruzioni di salto o come identificatori di variabili. La velocità e il livello di dettaglio delle animazioni possono essere controllati dagli utenti. In qualsiasi momento, è possibile passare tra rappresentazioni simboliche e binarie."
+    }
+}

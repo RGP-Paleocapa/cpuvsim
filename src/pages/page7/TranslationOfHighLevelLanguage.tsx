@@ -7,6 +7,11 @@ import { useFooter } from "@/context/FooterContext";
 import ImageSwitcher from "@common/eBook/images/ImageAndTextSwitcher";
 import data from './data.json';
 import { Section } from "@/components/common/eBook/layout/layout";
+<<<<<<< HEAD
+=======
+import { useTranslation } from "react-i18next";
+import RenderHTML from "@/components/common/RenderHTML";
+>>>>>>> source-repo/main
 
 const Page7 = () => {
     useDocumentMetadata('Translation of High Level Language', "This is the seventh page");
@@ -59,10 +64,16 @@ const Page7 = () => {
         images.for3.src,
       ]
 
+<<<<<<< HEAD
+=======
+    const { t } = useTranslation("page7");
+
+>>>>>>> source-repo/main
     return (
         <EBookPage currentPage={7}>
             <Section>
                 <SectionTitle>
+<<<<<<< HEAD
                     Translation of high-level language constructs to Assembly/Machine Language
                 </SectionTitle>
                 <Text>
@@ -81,11 +92,18 @@ const Page7 = () => {
                     and so on. How can these constructs be translated to machine language, where such high-level instructions are not available?
                     This is possible mainly exploiting the control-flow instructions jump on condition and unconditional jump, as shown in this
                     section with the help of a few concrete examples.
+=======
+                    {t("translationOfHighLevelConstructsSection.title")}
+                </SectionTitle>
+                <Text>
+                    <RenderHTML htmlString={t("translationOfHighLevelConstructsSection.text")} />
+>>>>>>> source-repo/main
                 </Text>
             </Section>
 
             <Section>
                 <SectionTitle>
+<<<<<<< HEAD
                     EXAMPLE: translation of the initialization and sum of two variables
                 </SectionTitle>
                 <ImageSwitcher images={sumSwitcher} instructionsList={sumList} />
@@ -94,37 +112,80 @@ const Page7 = () => {
             <Section>
                 <SectionTitle>
                     EXAMPLE: translation of the initialization and sum of two variables
+=======
+                    {t("example1Title")}
+                </SectionTitle>
+                <ImageSwitcher images={sumSwitcher} instructionsList={sumList} />
+            </Section>
+
+                        
+            <Section>
+                <SectionTitle>
+                    {t("example2Title")}
+>>>>>>> source-repo/main
                 </SectionTitle>
                 <ImageSwitcher images={formulaSwitcher} instructionsList={formulaList} />
             </Section>
 
+<<<<<<< HEAD
             <Section>
                 <SectionTitle>
                     EXAMPLE: translation of the initialization and sum of two variables
+=======
+
+            <Section>
+                <SectionTitle>
+                    {t("example3Title")}
+>>>>>>> source-repo/main
                 </SectionTitle>
                 <ImageSwitcher images={loopSwitcher} instructionsList={infiniteLoopList} />
             </Section>
 
+<<<<<<< HEAD
             <Section>
                 <SectionTitle>
                     EXAMPLE: translation of the initialization and sum of two variables
+=======
+
+            <Section>
+                <SectionTitle>
+                    {t("example4Title")}
+>>>>>>> source-repo/main
                 </SectionTitle>
                 <ImageSwitcher images={ifThenElseSwitcher} instructionsList={ifThenElseList} />
             </Section>
 
+<<<<<<< HEAD
             <Section>
                 <SectionTitle>
                     EXAMPLE: translation of the initialization and sum of two variables
+=======
+
+            <Section>
+                <SectionTitle>
+                    {t("example5Title")}
+>>>>>>> source-repo/main
                 </SectionTitle>
                 <ImageSwitcher images={whileSwitcher} instructionsList={whileList} />
             </Section>
 
+<<<<<<< HEAD
             <Section>
                 <SectionTitle>
                     EXAMPLE: translation of the initialization and sum of two variables
                 </SectionTitle>
                 <ImageSwitcher images={forSwitcher} instructionsList={forLoopList} />
             </Section>
+=======
+
+            <Section>
+                <SectionTitle>
+                    {t("example6Title")}
+                </SectionTitle>
+                <ImageSwitcher images={forSwitcher} instructionsList={forLoopList} />
+            </Section>
+
+>>>>>>> source-repo/main
                 {/* <SuccessButton onClick={() => alert("SuccessButton clicked!")} /> */}
                 {/* <CancelButton onClick={() => alert("CancelButton clicked!")} /> */}
         </EBookPage>

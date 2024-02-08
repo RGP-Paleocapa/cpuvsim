@@ -3,6 +3,10 @@ import { Link, useLocation } from 'react-router-dom';
 import ThemeSwitcher from './ThemeSwitcher';
 import { HamburgerMenuIcon } from '@/components/common/SvgIcons';
 import MobileMenu from './MobileMenu'; // Import the MobileMenu component
+<<<<<<< HEAD
+=======
+import LanguageSwitcher from './LanguageSwitcher';
+>>>>>>> source-repo/main
 
 const Header: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -122,9 +126,18 @@ const Header: React.FC = () => {
                       {route.text}
                     </Link>
                   )}
+<<<<<<< HEAD
                 </React.Fragment>
               ))}
             </div>
+=======
+                  
+                </React.Fragment>
+              ))}
+            </div>
+            {/* abc */}
+            <LanguageSwitcher />
+>>>>>>> source-repo/main
             <ThemeSwitcher />
           </div>
         </div>

@@ -8,6 +8,11 @@ import { useFooter } from "@/context/FooterContext";
 import { useEffect } from "react";
 import data from './data.json';
 import SmoothScrollButton from "@/components/common/SmoothScrollButton";
+<<<<<<< HEAD
+=======
+import { useTranslation } from "react-i18next";
+import RenderHTML from "@/components/common/RenderHTML";
+>>>>>>> source-repo/main
 
 const Page1 = () => {
   useDocumentMetadata('ComputersAsGeneralPurpose', "This is the first page");
@@ -26,10 +31,15 @@ const Page1 = () => {
   green: "bg-green-900",
 }; 
   
+<<<<<<< HEAD
+=======
+  const { t } = useTranslation("page1");
+>>>>>>> source-repo/main
 
   return (
     <EBookPage currentPage={1} >
       <Section>
+<<<<<<< HEAD
         <SectionTitle>Computers as General-Purpose Machines</SectionTitle>
         <Text>
           We are all familiar with widely popular <b>“general-purpose”</b> computers such as desktops,
@@ -38,16 +48,28 @@ const Page1 = () => {
           washing machines, cars, drones, or even modern clothes and shoes,
           <SmoothScrollButton targetId="footer" buttonText="[1, 2, 3, 4]" />
           all embed computers that are instrumental to support their functionalities.
+=======
+        <SectionTitle>{t("generalPurposeComputers.title")}</SectionTitle>
+        <Text>
+            <RenderHTML htmlString={t("generalPurposeComputers.familiar_with_computers_part1")} />
+            <SmoothScrollButton targetId="footer" buttonText="[1, 2, 3, 4]" />
+            <RenderHTML htmlString={t("generalPurposeComputers.familiar_with_computers_part2")} />
+>>>>>>> source-repo/main
         </Text>
       </Section>
 
       <Section> 
+<<<<<<< HEAD
         <SectionTitle>Examples of Computers</SectionTitle>
+=======
+        <SectionTitle>{t("examplesOfComputers.title")}</SectionTitle>
+>>>>>>> source-repo/main
         <br />
         <ImageSlider images={imageArray} />
       </Section>
 
       <Section>
+<<<<<<< HEAD
         <SectionTitle>Computers' Common Generic Architecture</SectionTitle>
         <Text>
           Despite the huge varieties of computers,
@@ -58,6 +80,11 @@ const Page1 = () => {
           The main objective of the architecture is to identify the main components and define <b>how</b> they interact with each other.
           <br />
           At the macroscopic level, this generic architecture can be schematized as in the following diagrams.
+=======
+        <SectionTitle>{t("genericArchitecture.title")}</SectionTitle>
+        <Text>
+            <RenderHTML htmlString={t("genericArchitecture.architecture_intro")} />
+>>>>>>> source-repo/main
         </Text>
 
         <div className="flex flex-wrap justify-center lg:justify-evenly items-center py-8 sm:gap-y-8">
@@ -67,6 +94,7 @@ const Page1 = () => {
 
         <div>
           <Text>
+<<<<<<< HEAD
             The core component of any computer is the so-called Central Processing Unit (CPU).
             The CPU reads and executes instructions fetched one by one from primary (or central, or main) memory,
             processing the data in input and producing data in output. The input data could come, for example,
@@ -80,11 +108,19 @@ const Page1 = () => {
             and the
             <SmoothScrollButton targetId="digital-representation" buttonText="digital representation" />
             of the information.
+=======
+              <RenderHTML htmlString={t("genericArchitecture.cpu_description_part1")} />
+              <SmoothScrollButton targetId="stored-program-machines" buttonText={t("genericArchitecture.stored_program_machines_button")} />
+              <RenderHTML htmlString={t("genericArchitecture.cpu_description_part2")} />
+              <SmoothScrollButton targetId="digital-representation" buttonText={t("genericArchitecture.digital_representation_button")} />
+              <RenderHTML htmlString={t("genericArchitecture.cpu_description_part3")} />
+>>>>>>> source-repo/main
           </Text>
         </div>
       </Section>
 
       <Section id="stored-program-machines">
+<<<<<<< HEAD
         <SectionTitle>Stored Program Machines</SectionTitle>
         <Text>
           Indeed, before the advent of the modern computer, machines able to carry out computations were already available. Yet <b>each machine was custom-built for a single, specific purpose</b>. A stored program computer, on the contrary, <b>is a machine that stores program instructions in memory</b>. By changing the programs in its memory, the same machine can perform totally different functions.
@@ -119,6 +155,39 @@ const Page1 = () => {
         <Text>
           The second reason that made it possible to use the same architecture in many different contexts and applications is the possibility to <b>represent and process different types of information</b>, not only numbers, but also text, audio, images, videos…, uniformly as digits, as discussed in the next session.
         </Text>
+=======
+        <SectionTitle>{t("storedProgramMachines.title")}</SectionTitle>
+        <Text>
+            <RenderHTML htmlString={t("storedProgramMachines.description")} />
+        </Text>
+        <Figure>
+            <div>
+                <img src={images.eniac.src} alt={images.eniac.alt} className="2xl:ml-[20px] w-[400px] h-[300px]" />
+                <Description>
+                    {t("storedProgramMachines.eniac_description")}
+                </Description>
+            </div>
+            <div>
+                <img src={images.modernComputer.src} alt={images.modernComputer.alt} className="2xl:ml-[20px] w-[400px] h-[300px]" />
+                <Description>
+                    {t("storedProgramMachines.modern_computer_description")}
+                </Description>
+            </div>
+            <div>
+                <img src={images.specialPurposeComputer.src} alt={images.specialPurposeComputer.alt} className="2xl:ml-[20px] w-[400px] h-[300px]" />
+                <Description>
+                    {t("storedProgramMachines.special_purpose_computer_description")}
+                </Description>
+            </div>
+        </Figure>
+    </Section>
+
+    <Section id="digital-representation">
+      <SectionTitle>{t("digitalRepresentation.title")}</SectionTitle>
+      <Text>
+          <RenderHTML htmlString={t("digitalRepresentation.description")} />
+      </Text>
+>>>>>>> source-repo/main
         <Figure>
         {gridData.map((item, index) => (
           <div key={index} className="flex flex-col items-center justify-start h-full px-4">
