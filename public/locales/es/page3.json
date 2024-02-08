@@ -1,0 +1,44 @@
+{
+    "vonNeumannArchitecture": {
+        "title": "La arquitectura de Von Neumann",
+        "description1": "La <b>arquitectura de Von Neumann</b>, o máquina de Von Neumann, se refiere a la arquitectura de computadora genérica ilustrada en la imagen de la derecha. Esta arquitectura se basa en el concepto de computadora de programa almacenado, donde las instrucciones y los datos se almacenan en la misma memoria (primaria o principal). Este diseño, publicado por primera vez por el matemático húngaro John Von Neumann en 1945, todavía se utiliza en la mayoría de las computadoras producidas hoy en día, con variaciones menores.",
+        "description2": "Este modelo tiene <b>5 componentes esenciales</b>, como se ilustra en el esquema equivalente a la derecha:",
+        "component1": "La <strong>Unidad Central de Procesamiento (CPU)</strong>;",
+        "component2": "La <strong>memoria (primaria o principal)</strong>;",
+        "component3": "Dispositivos de <strong>Entrada</strong> y <strong>Salida</strong>;",
+        "component4": "Los <strong>buses</strong> de datos, direcciones y control."
+    },
+    "cpuSection": {
+        "title": "Unidad Central de Procesamiento (CPU)",
+        "description": "La Unidad Central de Procesamiento (o procesador), ilustrada en la imagen de la derecha, es el elemento central de este modelo. Es el corazón de una computadora y es responsable de la ejecución de cada instrucción informática. Está constituido por los siguientes elementos principales:",
+        "aluDescription": "Realiza operaciones aritméticas como sumas, multiplicaciones y comparaciones.",
+        "logicOperations": "Maneja operaciones lógicas como AND, OR y NOT.",
+        "controlUnitDescription": "Decodifica instrucciones.",
+        "timingControlSignals": "Proporciona señales de control y temporización para coordinar operaciones.",
+        "accumulatorDescription": "Almacena los resultados producidos por la ALU.",
+        "programCounterDescription": "Contiene la dirección de la próxima instrucción a ejecutar. Se incrementa automáticamente para la ejecución secuencial de instrucciones.",
+        "instructionRegisterDescription": "Mantiene la instrucción que se está ejecutando y que se ha obtenido de la memoria.",
+        "statusWordDescription": "Contiene banderas que reflejan propiedades de los resultados de la ALU. Por ejemplo, la bandera Z es verdadera si el resultado es cero, y la bandera N es verdadera si el resultado es negativo.",
+        "multiplexerDescription": "Un interruptor de múltiples vías que determina la entrada para la ALU."
+    },     
+    "ioDevicesSection": {
+        "title": "Dispositivos de E/S",
+        "description1": "Los dispositivos de Entrada/Salida, controlados y coordinados por el procesador, permiten la interacción entre la computadora y su entorno externo, incluyendo los usuarios.",
+        "inputDevices": "<B>Dispositivos de entrada</B>: permiten la introducción de datos (incluidas instrucciones) al sistema. Por ejemplo, un teclado, un ratón o un sensor de temperatura.",
+        "outputDevices": "<B>Dispositivos de salida</B>: son necesarios para comunicar los datos procesados al mundo externo. Por ejemplo, un monitor o el controlador de una bomba de agua para regar un jardín.",
+        "additionalInfo": "Algunas unidades periféricas pueden actuar tanto como dispositivos de entrada como de salida; por ejemplo, un módem, una pantalla táctil o un dispositivo SSD."
+    },
+    "busSystemSection": {
+        "title": "Bus",
+        "description": "El bus es un canal de comunicación compartido que interconecta los diferentes componentes de la arquitectura, permitiendo la transferencia de la información necesaria, según la operación a realizar. El bus se puede subdividir en tres componentes:",
+        "dataBus": "<strong class='bg-blue-600 font-normal p-1 text-white'>Bus de Datos</strong>: transfiere los datos a leer o escribir, desde/hacia la memoria o dispositivos de E/S. Por ejemplo, el contenido de una celda de memoria.",
+        "addressBus": "<strong class='bg-orange-400/95 dark:bg-orange-600 p-1 font-normal'>Bus de Direcciones</strong>: transfiere las direcciones de la memoria (o dispositivos de E/S) involucrados en una operación. Por ejemplo, la dirección de la celda de memoria involucrada en una operación de Lectura.",
+        "controlBus": "<strong class='bg-red-600 p-1 text-white font-normal'>Bus de Control</strong>: transfiere las señales de control para coordinar las operaciones de los subcomponentes involucrados en una operación. Por ejemplo, señalizar una operación de Lectura versus Escritura en la memoria."
+    },
+    "memorySection": {
+        "title": "Memoria",
+        "intro": "Otro componente fundamental en el modelo de Von Neumann es la memoria, donde se almacenan tanto los datos como las instrucciones. Este tipo de memoria se llama Memoria Primaria o Principal.",
+        "mainMemoryDescription": "Esta memoria puede considerarse conceptualmente como un conjunto de ubicaciones (celdas), cada una de ellas capaz de memorizar alguna información, como una instrucción (o parte de ella) o datos elementales. Estas celdas se muestran en gris en la imagen de la derecha, y en este caso todas contienen el código correspondiente a la instrucción NOP (No Operación) de la computadora. Se asocia una dirección única con cada ubicación (la columna amarilla en la misma imagen), para que la CPU pueda direccionarlas.<br /><br />En las computadoras modernas, la mayor parte de esta memoria principal suele implementarse como Memoria de Acceso Aleatorio (<strong>RAM</strong>). Esta es una memoria rápida pero volátil que utiliza la CPU para leer y almacenar datos e instrucciones. Parte de esta memoria también puede implementarse como Memoria de Solo Lectura (<strong>ROM</strong>), que es una memoria permanente tan rápida como la RAM. La ROM generalmente contiene unas pocas instrucciones para probar el correcto funcionamiento del hardware y 'arrancar' la computadora.",
+        "secondaryMemoryDescription": "La mayoría de las computadoras también hacen uso de un tipo adicional de memoria, llamada <strong>memoria secundaria</strong>. Esto puede implementarse como un disco duro o un dispositivo SSD, que se consideran en la arquitectura de Von Neumann como dispositivos de E/S. Esta es una memoria mucho más lenta pero es persistente y generalmente tiene una mayor capacidad de almacenamiento. Debido a su velocidad insuficiente, no se utiliza directamente por la CPU, pero se utiliza para almacenar permanentemente datos y programas que se cargan en la memoria principal según sea necesario."
+    }        
+}

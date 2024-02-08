@@ -1,0 +1,30 @@
+{
+    "generalPurposeComputers": {
+        "title": "Computer come Macchine Polivalenti",
+        "familiar_with_computers_part1": "Siamo tutti familiari con i popolari computer <b>“polivalenti”</b> come desktop, laptop o tablet. Tuttavia, anche i moderni telefoni cellulari o le console di gioco sono computer, così come dispositivi diversi come fotocamere digitali, lettori audio, orologi, televisori, lavatrici, automobili, droni, o addirittura abiti e scarpe moderne, ",
+        "familiar_with_computers_part2": " tutti incorporano computer che sono fondamentali per supportare le loro funzionalità."
+    },
+    "examplesOfComputers": {
+        "title": "Esempi di Computer"
+    },
+    "genericArchitecture": {
+        "title": "Architettura Generica Comune dei Computer",
+        "architecture_intro": "Nonostante l'enorme varietà di computer, ciascuno di essi condivide un'architettura molto simile, composta da una parte fisica (<b>hardware</b>), così come applicazioni costituite da serie di istruzioni (<b>software</b>).<br />L'obiettivo principale dell'architettura è identificare i componenti principali e definire <b>come</b> interagiscono tra loro.<br />A livello macroscopico, questa architettura generica può essere schematizzata come nei diagrammi seguenti.",
+        "cpu_description_part1": "Il componente principale di qualsiasi computer è la cosiddetta Unità di Elaborazione Centrale (CPU). La CPU legge ed esegue istruzioni recuperate una alla volta dalla memoria primaria (o centrale, o principale), elaborando i dati in ingresso e producendo dati in uscita. I dati di ingresso possono, ad esempio, provenire da una tastiera o da un sensore che rileva il livello di ossigeno nel sangue di un paziente. I dati di uscita, ad esempio, potrebbero visualizzare un'immagine su un monitor o controllare la quantità di benzina iniettata nel motore di un'auto.<br /><br />Due motivi principali hanno reso possibile utilizzare la stessa architettura in contesti così vari: il concetto di ",
+        "cpu_description_part2": " e la ",
+        "cpu_description_part3": " delle informazioni.",
+        "stored_program_machines_button": "macchine a programma memorizzato",
+        "digital_representation_button": "rappresentazione digitale"
+    },  
+    "storedProgramMachines": {
+        "title": "Macchine a Programma Memorizzato",
+        "description": "Infatti, prima dell'avvento del computer moderno, erano già disponibili macchine in grado di eseguire calcoli. Tuttavia, <b>ogni macchina era costruita su misura per un singolo scopo specifico</b>. Un computer a programma memorizzato, al contrario, <b>è una macchina che memorizza le istruzioni del programma nella memoria</b>. Cambiando i programmi nella sua memoria, la stessa macchina può eseguire funzioni completamente diverse.<br />Le memorie moderne sono dispositivi elettronici, magnetici o ottici; in passato, le istruzioni del programma erano memorizzate in pannelli di collegamento o meccanismi simili.",
+        "eniac_description": "L'ENIAC è stato il primo sistema di calcolo, progettato nei primi anni '40, basato su un concetto primitivo di Computer a Programma Memorizzato. Qui le istruzioni, o programmi, erano memorizzate come combinazione di schede di carta, cablaggi a pannello e interruttori meccanici.",
+        "modern_computer_description": "Un esempio di macchina moderna a programma memorizzato è il computer personale. In questi dispositivi è possibile installare/disinstallare facilmente ed eseguire diverse applicazioni, al fine di supportare le funzioni più disparate.",
+        "special_purpose_computer_description": "I “computer per scopi speciali” sono computer che hanno programmi fissi, preinstallati e quindi funzioni supportate predefinite (ad esempio, apparecchiature mediche, calcolatrici, semafori...). Tuttavia, hanno la stessa architettura standard degli altri tipi di computer."
+    },    
+    "digitalRepresentation": {
+        "title": "Rappresentazione Digitale (Uniforme) delle Informazioni",
+        "description": "Il secondo motivo che ha reso possibile l'uso della stessa architettura in molti contesti e applicazioni diversi è la possibilità di <b>rappresentare ed elaborare diversi tipi di informazioni</b>, non solo numeri, ma anche testo, audio, immagini, video..., uniformemente come cifre, come discusso nella prossima sessione."
+    }    
+}

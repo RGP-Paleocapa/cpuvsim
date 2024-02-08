@@ -1,0 +1,33 @@
+{
+    "instructionSetSection": {
+        "title": "El Conjunto de Instrucciones de la CPU",
+        "description": "El conjunto de instrucciones de una CPU dada, también llamado Arquitectura del Conjunto de Instrucciones (ISA), es la colección de instrucciones que esa CPU específica puede reconocer y ejecutar. Cada instrucción es un comando para instruir a la CPU a realizar una cierta operación elemental. Puede especificarse como código de Máquina (Binario/Hex) o código Ensamblador (equivalente Mnemónico de las instrucciones binarias).\n\nAquí hay algunos ejemplos del simulador:"
+    },
+    "instructionSection": {
+        "text1": "Los <b class=\"text-blue-700\">dígitos o texto en azul</b> representan el <strong>Código de Operación (opcode)</strong>: un número binario que representa la operación a realizar. Un número binario es naturalmente interpretado por una CPU, pero es difícil de recordar para un humano. Por lo tanto, los programadores pueden usar su equivalente en código <strong>mnemónico (ensamblador)</strong> para identificar la operación deseada, como 'LOD', 'ADD' y 'STO'.",
+        "text2": "Los <b class=\"text-red-600\">dígitos o texto en rojo</b> representan el(los) operando(s) de la instrucción. El operando tiene diferentes interpretaciones de acuerdo al llamado modo de direccionamiento (que también se especifica en el opcode). En el caso del simulador, los modos de direccionamiento disponibles son:",
+        "text3": "Las instrucciones soportadas por una CPU pueden organizarse en unas pocas categorías fundamentales. Las más importantes son:",
+        "addressingModes": {
+            "immediate": "<strong>Inmediato</strong> (o <strong>numérico</strong>), como en ADD #8: en este caso, el operando es un número (añadir el número 8)",
+            "direct": "<strong>Direccionamiento directo</strong>, como en ADD 8: en este caso, el operando representa una dirección de memoria (añadir el número almacenado en la dirección de memoria 8). En lugar de usar directamente direcciones de memoria numéricas, es más conveniente para los humanos asociarlas con etiquetas significativas, como Y o COUNTER. Por lo tanto, una dirección de memoria puede ser más fácilmente identificada por una etiqueta, como en ADD Y. Aviso importante: las etiquetas no existen físicamente en la CPU o en la memoria porque son traducidas a las direcciones numéricas correspondientes por el ensamblador, que puede analizar todo el programa de ensamblaje sin conexión. Sin embargo, como el simulador traduce las instrucciones una por una 'al vuelo', es necesario primero <strong>definir las etiquetas</strong> ingresándolas en la columna en gris, <strong>antes</strong> de que puedan ser utilizadas en cualquier instrucción."
+        },
+        "description": "Pruébalo tú mismo: ejecuta el simulador y escribe algunas instrucciones. Puedes cambiar de código Mnemónico (Ensamblador) a Binario simplemente haciendo clic en el botón Simbólico/Binario.",
+        "operationsSection": {
+            "dataFlow": {
+                "title": "<strong>Operaciones de flujo de datos</strong>: instrucciones utilizadas para transferir (almacenar) el contenido de un registro de la CPU, o el resultado de un cálculo a la memoria principal, o para transferir (cargar) datos almacenados en la memoria principal a la CPU, con el fin de realizar un cálculo sobre ellos más tarde.",
+                "buttonText": "[1]"
+            },
+            "controlFlow": {
+                "title": "<strong>Operaciones de flujo de control</strong>: instrucciones que modifican el orden en que se ejecutan las instrucciones individuales (las instrucciones se ejecutan de otra manera en orden secuencial, una tras otra), con el fin de realizar un cálculo sobre ellas más tarde.",
+                "buttonText": "[2]"
+            },
+            "arithmeticLogic": {
+                "title": "<strong>Operaciones aritmético-lógicas</strong>: instrucciones que realizan operaciones aritméticas (suma, resta...) y lógicas (and, not...), con el fin de realizar un cálculo sobre ellas más tarde.",
+                "buttonText": "[3]"
+            }
+        }
+    },
+    "tableSection": {
+        "text": "La siguiente tabla informa el conjunto completo de instrucciones soportadas por el simulador, organizadas de acuerdo a las categorías mencionadas anteriormente. Para cada instrucción se informa: el código binario del opcode en lenguaje de máquina, su equivalente ensamblador (mnemónico) y una breve descripción informal."
+    }
+}

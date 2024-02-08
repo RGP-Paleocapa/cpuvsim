@@ -7,6 +7,11 @@ import useDocumentMetadata from '@hooks/useDocumentMetadata';
 import { useFooter } from '@/context/FooterContext';
 import { useEffect } from 'react';
 import data from './data.json';
+<<<<<<< HEAD
+=======
+import RenderHTML from '@/components/common/RenderHTML';
+import { useTranslation } from 'react-i18next';
+>>>>>>> source-repo/main
 
 const Page6 = () => {
   useDocumentMetadata('Assembly and High Level Languages', "This is the sixth page");
@@ -15,11 +20,16 @@ const Page6 = () => {
     setFooterData(references);
   }, [setFooterData]);
   const references = data.references;
+<<<<<<< HEAD
+=======
+  const { t } = useTranslation("page6");
+>>>>>>> source-repo/main
   
     return (
         <EBookPage currentPage={6}>
           <Section>
             <SectionTitle>
+<<<<<<< HEAD
               Machine, assembly, and high-level languages
             </SectionTitle>
             <Text>
@@ -33,10 +43,28 @@ const Page6 = () => {
               Hence, computer languages can be broadly classified as follows:
             </Text>
             <img src={images.languagesFlowchart.src} alt={images.languagesFlowchart.alt} className='img-center bg-white' />
+=======
+                {t("languagesSection.title")}
+            </SectionTitle>
+            <Text>
+                <RenderHTML htmlString={t("languagesSection.description")} />
+            </Text>
+            <img src={images.languagesFlowchart.src} alt={t("languagesSection.imageAlt")} className='img-center bg-white' />
+          </Section>
+
+          <Section>
+            <SectionTitle>
+                {t("highLevelLanguagesSection.title")}
+            </SectionTitle>
+            <Text>
+                <RenderHTML htmlString={t("highLevelLanguagesSection.description")} />
+            </Text>
+>>>>>>> source-repo/main
         </Section>
 
         <Section>
           <SectionTitle>
+<<<<<<< HEAD
             High-Level langauges
           </SectionTitle>
           <Text>
@@ -77,11 +105,18 @@ const Page6 = () => {
             and 1 as a predetermined voltage. Or they may also be represented, respectively,
             as an open (absence of current flowing) or closed (current flowing) circuit, or as a discharged capacitor versus a charged one.
             A binary digit is called "<strong>bit</strong>", and 8 bits form a <strong>byte</strong>.
+=======
+              {t("lowLevelLanguagesSection.title")}
+          </SectionTitle>
+          <Text>
+              {t("lowLevelLanguagesSection.text1")}
+>>>>>>> source-repo/main
           </Text>
 
           <br /><br />
 
           <H3>
+<<<<<<< HEAD
             Assembly Language
           </H3>
           <Text>
@@ -125,6 +160,54 @@ const Page6 = () => {
             and  how constructs such as <strong>For</strong>, <strong>While</strong>, and <strong>If</strong> are translated in assembler and binary code.
           </Text>
         </Section>
+=======
+              {t("lowLevelLanguagesSection.machineLanguageTitle")}
+          </H3>
+          <Text>
+              <RenderHTML htmlString={t("lowLevelLanguagesSection.machineLanguageText")} />
+          </Text>
+
+          <br /><br />
+
+          <H3>
+              {t("lowLevelLanguagesSection.assemblyLanguageTitle")}
+          </H3>
+          <Text>
+              <RenderHTML htmlString={t("lowLevelLanguagesSection.assemblyLanguageText")} />
+          </Text>
+      </Section>
+
+      <Section>
+        <SectionTitle>
+            {t("programmingLanguagesSection.title")}
+        </SectionTitle>
+
+        <Figure>
+            <div>
+                <img src={images.image2.src} alt="default" className="img-center w-96 h-28 rounded" />  
+                <Description alignCenter>
+                    <strong>{t("programmingLanguagesSection.highLevelLanguageDescription")}</strong>
+                </Description>
+            </div>
+            <div>
+                <YourImageComponent image={images.image3} className='w-96 h-28' />
+                <Description alignCenter>
+                    <strong>{t("programmingLanguagesSection.assemblyLanguageDescription")}</strong>
+                </Description>
+            </div>
+            <div>
+                <YourImageComponent image={images.image4} className='w-96 h-28' />
+                <Description alignCenter>
+                    <strong>{t("programmingLanguagesSection.machineLanguageDescription")}</strong>
+                </Description>
+            </div>
+        </Figure>
+
+        <Text>
+            <RenderHTML htmlString={t("programmingLanguagesSection.text")} />
+        </Text>
+    </Section>
+>>>>>>> source-repo/main
       </EBookPage>
     );
 }

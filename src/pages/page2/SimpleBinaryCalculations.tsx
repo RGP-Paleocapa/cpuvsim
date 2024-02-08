@@ -8,6 +8,11 @@ import { useFooter } from "@/context/FooterContext";
 import { useEffect } from "react";
 import data from './data.json';
 import SmoothScrollButton from "@/components/common/SmoothScrollButton";
+<<<<<<< HEAD
+=======
+import RenderHTML from "@/components/common/RenderHTML";
+import { useTranslation } from "react-i18next";
+>>>>>>> source-repo/main
 
 const Page2 = () => {
     useDocumentMetadata('Simple Binary Calculations', "This is the second page");
@@ -18,10 +23,15 @@ const Page2 = () => {
     const references = data.references;
     const textTable = data.textTable;
     const instructionTable = data.instructionTable;
+<<<<<<< HEAD
+=======
+    const { t } = useTranslation("page2");
+>>>>>>> source-repo/main
 
   return (
     <EBookPage currentPage={2}>
         <Section>
+<<<<<<< HEAD
             <SectionTitle>
                 Computers perform simple calculations on binary digits
             </SectionTitle>
@@ -39,10 +49,30 @@ const Page2 = () => {
                 <B className="text-green-700/75 dark:text-green-400">1</B> + <B className="text-green-700/75 dark:text-green-500">1</B> = <B className="text-red-700">1</B><B className="text-blue-600">0</B>, (one - zero, not ten) which means <B className="text-blue-600">0</B> with <B className="text-red-700">carry 1</B>.
                 <br /><br />
                 The sequence <B className="text-red-700">1</B><B className="text-blue-600">0</B> <B>as a binary number</B>, that is using only 2 symbols, is the equivalent of 2 as a decimal number.
+=======
+            <SectionTitle>{t("binaryCalculations.title")}</SectionTitle>
+            <Text>
+                <div className="whitespace-pre-wrap">
+                    {t("binaryCalculations.intro")} <B>{t("binaryCalculations.one")}</B> and <B>{t("binaryCalculations.zero")}</B>.
+                    <br /><br />
+                    {t("binaryCalculations.binaryAdditionRules")}
+                    <SmoothScrollButton targetId="footer" buttonText="[1]" />
+                    <br /><br />
+                    <B className="text-blue-400">0</B> + <B className="text-blue-400">0</B> = <B className="text-blue-400">0</B>
+                    <br />
+                    <B className="text-blue-400">0</B> + <B className="text-green-700/75 dark:text-green-400">1</B> = <B className="text-green-700/75 dark:text-green-400">1</B>
+                    <br />
+                    <B className="text-green-700/75 dark:text-green-400">1</B> + <B className="text-green-700/75 dark:text-green-400">1</B> = <B className="text-red-700">1</B><B className="text-blue-600">0</B>
+                    {t("binaryCalculations.firstPart")}<B className="text-blue-600">0</B>{t("binaryCalculations.secondPart")}<B className="text-red-700">carry 1</B>.
+                    <br /><br />
+                    {t("binaryCalculations.thirdPart")}<B className="text-red-700">1</B><B className="text-blue-600">0</B><B> as a binary number</B>{t("binaryCalculations.fourthPart")}
+                </div>
+>>>>>>> source-repo/main
             </Text>
         </Section>
 
         <Section>
+<<<<<<< HEAD
             <SectionTitle>
                 Binary digits can represent text, images, video, audio, instructions
             </SectionTitle>
@@ -50,12 +80,20 @@ const Page2 = () => {
                 But how can different types of information such as text, images, sounds or even computer instructions be represented, using just the two symbols 1 and 0?
                 <br /><br />
                 Starting from the numbers, and soon the alphabet, different <b>coding conventions</b> have been designed. Here are some examples of binary representations of different media:
+=======
+            <SectionTitle>{t("binaryRepresentation.title")}</SectionTitle>
+            <Text>
+                <RenderHTML htmlString={t("binaryRepresentation.intro")} />
+                <br /><br />
+                <RenderHTML htmlString={t("binaryRepresentation.codingConventions")} />
+>>>>>>> source-repo/main
             </Text>
         </Section>
 
         <Section>
             <InlineDivs centerStart containsTable>
                 <MaxWidthContainer>
+<<<<<<< HEAD
                     <H3 isDark>Text</H3>
                     <Text isDark>
                         Text can be represented in a computer by a sequence of binary codes, with each code representing a letter or a punctuation mark.
@@ -65,11 +103,25 @@ const Page2 = () => {
                         A more flexible solution is Unicode, which makes use of 16 or even 32 bits, permitting a huge number of different characters (including, for example, Chinese or Japanese) to be coded
                     </Text>
                     
+=======
+                    <H3 isDark>{t("textSection.title")}</H3>
+                    <Text isDark>
+                        <RenderHTML htmlString={t("textSection.description1")} />
+                        <br /><br />
+                        <RenderHTML htmlString={t("textSection.description2")} />
+                        <br />
+                        <RenderHTML htmlString={t("textSection.description3")} />
+                    </Text>
+>>>>>>> source-repo/main
                 </MaxWidthContainer>
                 <MaxWidthContainer smallPadding>
                     <Table headerTitles={['Binary', 'Char', 'Binary', 'Char'] } bodyRows={textTable} />
                     <Description alignCenter isDark>
+<<<<<<< HEAD
                         A few examples of ASCII codes
+=======
+                        {t("textSection.examplesAscii")}
+>>>>>>> source-repo/main
                     </Description>
                 </MaxWidthContainer>
             </InlineDivs>
@@ -83,12 +135,17 @@ const Page2 = () => {
                     <div className="flex flex-col sm:flex-row items-center sm:items-start">
                         <div className="w-16 h-16 bg-gray-400 mr-4 flex-shrink-0" /> {/* 32x32 pixels square */}
                         <Description isDark>
+<<<<<<< HEAD
                             Using the RGB color model, the color of this pixel is represented as "37, 154, 170" in decimal, or 100101, 10011010, 10101010 in binary.
+=======
+                            {t("imagesAndVideosSection.pixelDescription")}
+>>>>>>> source-repo/main
                         </Description>
                     </div>
                 </MaxWidthContainer>
 
                 <MaxWidthContainer>
+<<<<<<< HEAD
                     <H3 isDark>Images and Videos</H3>
                     <Text isDark>
                         In 1886, impressionist painters developed a technique called Pointillism in which small, distinct dots of color were applied in patterns to form an image. Just by switching from dots to little tiny squares (<b>pixels</b>), we can easily understand how an image can be digitally represented. 
@@ -96,29 +153,51 @@ const Page2 = () => {
                         In color imaging systems, the color of a pixel is typically represented by three or four numbers coding component intensities such as red, green, and blue, or cyan, magenta, yellow, and black.
                         <br /><br />
                         A series of still images (hence set of numbers) visualized at sufficiently short time intervals, is perceived by our visual system as moving images. 
+=======
+                    <H3 isDark>{t("imagesAndVideosSection.title")}</H3>
+                    <Text isDark>
+                        <RenderHTML htmlString={t("imagesAndVideosSection.description")} />
+                        <br />
+                        <RenderHTML htmlString={t("imagesAndVideosSection.colorRepresentation")} />
+                        <br /><br />
+                        {t("imagesAndVideosSection.imagePerception")}
+>>>>>>> source-repo/main
                     </Text>
                 </MaxWidthContainer>
             </InlineDivs>
 
             <InlineDivs centerStart>
                 <MaxWidthContainer>
+<<<<<<< HEAD
                     <H3 isDark>Audio</H3>
                     <Text isDark>
                         Sound, such as speech or music, is an analogue physical quantity, corresponding for example to variations in air pressure. But also this type of information can be converted to a digital form. To obtain a digital representation of a sound, samples of its intensity are taken at a sufficient speed (sampling rate), and the value of each <b>sample is quantised to the nearest binary code</b>.
                         <br />
                         It is important to appreciate that sounds such as speech or music varies rapidly with time, and so its samples will have to be taken at sufficiently closely spaced intervals, if the digital representation is to be faithful to the original.
+=======
+                    <H3 isDark>{t("audioSection.title")}</H3>
+                    <Text isDark>
+                        <RenderHTML htmlString={t("audioSection.description")} />
+                        <br />
+                        {t("audioSection.samplingDetail")}
+>>>>>>> source-repo/main
                     </Text>
                 </MaxWidthContainer>
                 <MaxWidthContainer>
                     <img src={images.image2.src} alt={images.image2.alt} className="img-center bg-white" />
                     <Description isDark>
+<<<<<<< HEAD
                         A representation of the quantization process in which every sample is approximated to the closest value that the system can represent.
+=======
+                        {t("audioSection.quantizationDescription")}
+>>>>>>> source-repo/main
                     </Description>
                 </MaxWidthContainer>
             </InlineDivs>
 
             <InlineDivs centerStart isEven>
                 <MaxWidthContainer smallPadding>
+<<<<<<< HEAD
                     <Table headerTitles={['binary Code', 'description'] } bodyRows={instructionTable} />
                     <Description isDark>
                         Three examples of operations common to many instruction sets
@@ -134,12 +213,24 @@ const Page2 = () => {
                         section,there are many basic operations that a machine can perform. Each one is composed of an opcode (the instruction executed by the CPU) and one or more operands (the data or memory locations the instruction operates on). 
                         <br />
                         Since binary code is the only language that a computer can understand, these instruction are represented, again, as binary digits.
+=======
+                    <Table headerTitles={['binary Code', 'description']} bodyRows={instructionTable} />
+                    <Description isDark>
+                        {t("instructionsSection.tableDescription")}
+                    </Description>
+                </MaxWidthContainer>
+                <MaxWidthContainer>
+                    <H3 isDark>{t("instructionsSection.title")}</H3>
+                    <Text isDark>
+                        <RenderHTML htmlString={t("instructionsSection.description")} />
+>>>>>>> source-repo/main
                     </Text>
                 </MaxWidthContainer>
             </InlineDivs>
         </Section>
 
         <Section>
+<<<<<<< HEAD
             <SectionTitle>
                 Multimedia information can be processed with "elementary" digital calculations
             </SectionTitle>
@@ -164,12 +255,30 @@ const Page2 = () => {
                         <Li isDark>
                             To compress a video it is possible, for example,  to reduce the level of detail of the composing frames. This can be achieved, for example, by computing the average color of a group of pixels of different colors, and by replacing them with a single repeated pixel having that averaged color.
                         </Li>
+=======
+            <SectionTitle>{t("multimediaInformation.title")}</SectionTitle>
+            <Text>
+                <RenderHTML htmlString={t("multimediaInformation.intro")} />
+            </Text>
+            <br />
+            <InlineDivs>
+                <MaxWidthContainer>
+                    <Ul>
+                        <Li isDark>{t("multimediaInformation.example1")}</Li>
+                        <Li isDark>{t("multimediaInformation.example2")}</Li>
+                        <Li isDark>{t("multimediaInformation.example3")}</Li>
+                        <Li isDark>{t("multimediaInformation.example4")}</Li>
+>>>>>>> source-repo/main
                     </Ul>
                 </MaxWidthContainer>
                 <MaxWidthContainer>
                     <img src={images.image3.src} alt={images.image3.alt} className="img-center" />
                     <Description alignCenter isDark>
+<<<<<<< HEAD
                         Increasing the volume of a sound.
+=======
+                        {t("multimediaInformation.soundVolumeDescription")}
+>>>>>>> source-repo/main
                     </Description>
                 </MaxWidthContainer>
             </InlineDivs>

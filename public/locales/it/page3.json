@@ -1,0 +1,44 @@
+{
+    "vonNeumannArchitecture": {
+        "title": "L'architettura di Von Neumann",
+        "description1": "L'<b>architettura di Von Neumann</b>, o macchina di Von Neumann, si riferisce all'architettura generica del computer illustrata nell'immagine a destra. Questa architettura si basa sul concetto di computer a programma memorizzato, in cui istruzioni e dati sono memorizzati nella stessa memoria principale. Questo design, pubblicato per la prima volta dal matematico ungherese John Von Neumann nel 1945, è ancora utilizzato nella maggior parte dei computer prodotti oggi, con piccole variazioni.",
+        "description2": "Questo modello ha <b>5 componenti essenziali</b>, come illustrato nello schema equivalente a destra:",
+        "component1": "La <strong>Unità Centrale di Elaborazione (CPU)</strong>;",
+        "component2": "La <strong>memoria (principale o principale)</strong>;",
+        "component3": "Dispositivi di <strong>input</strong> e <strong>output</strong>;",
+        "component4": "I <strong>bus</strong> dati, indirizzi e di controllo."
+    },
+    "cpuSection": {
+        "title": "Unità Centrale di Elaborazione (CPU)",
+        "description": "L'Unità Centrale di Elaborazione (o processore), illustrata nell'immagine a destra, è l'elemento centrale di questo modello. È il cuore di un computer ed è responsabile dell'esecuzione di ogni istruzione del computer. È costituito dai seguenti elementi principali:",
+        "aluDescription": "Esegue operazioni aritmetiche come addizioni, moltiplicazioni e confronti.",
+        "logicOperations": "Gestisce operazioni logiche come AND, OR e NOT.",
+        "controlUnitDescription": "Decodifica le istruzioni.",
+        "timingControlSignals": "Fornisce segnali di temporizzazione e di controllo per coordinare le operazioni.",
+        "accumulatorDescription": "Memorizza i risultati prodotti dall'ALU.",
+        "programCounterDescription": "Contiene l'indirizzo dell'istruzione successiva da eseguire. Viene incrementato automaticamente per l'esecuzione sequenziale delle istruzioni.",
+        "instructionRegisterDescription": "Contiene l'istruzione attualmente in esecuzione recuperata dalla memoria.",
+        "statusWordDescription": "Contiene bandiere che riflettono le proprietà dei risultati dell'ALU. Ad esempio, la bandiera Z è vera se il risultato è zero, e la bandiera N è vera se il risultato è negativo.",
+        "multiplexerDescription": "Uno switch multiuso che determina l'input per l'ALU."
+    },     
+    "ioDevicesSection": {
+        "title": "Dispositivi di I/O",
+        "description1": "I dispositivi di input/output, controllati e coordinati dalla CPU, consentono l'interazione tra il computer e il suo ambiente esterno, compresi gli utenti.",
+        "inputDevices": "<B>Dispositivi di input</B>: consentono l'introduzione di dati (comprese istruzioni) nel sistema. Ad esempio, una tastiera, un mouse o un sensore di temperatura.",
+        "outputDevices": "<B>Dispositivi di output</B> sono necessari per comunicare i dati elaborati al mondo esterno. Ad esempio, un monitor o il controller di una pompa d'acqua per irrigare un giardino.",
+        "additionalInfo": "Alcune unità periferiche possono fungere da dispositivi di input e output; ad esempio un modem, uno schermo touchscreen o un dispositivo SSD."
+    },
+    "busSystemSection": {
+        "title": "Bus",
+        "description": "Il bus è un canale di comunicazione condiviso che collega i diversi componenti dell'architettura, consentendo il trasferimento delle informazioni necessarie in base all'operazione da eseguire. Il bus può essere suddiviso in tre componenti:",
+        "dataBus": "<strong class='bg-blue-600 font-normal p-1 text-white'>Bus dati</strong>: trasferisce i dati da leggere o scrivere, da/a memoria o dispositivi di I/O. Ad esempio, il contenuto di una cella di memoria.",
+        "addressBus": "<strong class='bg-orange-400/95 dark:bg-orange-600 p-1 font-normal'>Bus degli indirizzi</strong>: trasferisce gli indirizzi della memoria (o dei dispositivi di I/O) coinvolti in un'operazione. Ad esempio, l'indirizzo della cella di memoria coinvolta in un'operazione di lettura.",
+        "controlBus": "<strong class='bg-red-600 p-1 text-white font-normal'>Bus di controllo</strong>: trasferisce i segnali di controllo per coordinare le operazioni dei sottocomponenti coinvolti in un'operazione. Ad esempio, segnalando un'operazione di lettura rispetto a una scrittura in memoria."
+    },
+    "memorySection": {
+        "title": "Memoria",
+        "intro": "Un'altra componente fondamentale nel modello di Von Neumann è la memoria, dove sono memorizzati dati e istruzioni. Questo tipo di memoria è chiamato Memoria Primaria o Principale.",
+        "mainMemoryDescription": "Questa memoria può essere concettualmente considerata come un insieme di posizioni (celle), ciascuna in grado di memorizzare informazioni come un'istruzione (o parte di essa) o dati elementari. Queste celle sono rappresentate in grigio nell'immagine a destra e in questo caso contengono tutti il codice corrispondente all'istruzione del computer NOP (Nessuna Operazione). A ciascuna posizione è associato un indirizzo unico (la colonna gialla nella stessa immagine), in modo che la CPU possa indirizzarle.<br /><br />Nei computer moderni, la maggior parte di questa memoria principale è solitamente implementata come Memoria ad Accesso Casuale (<strong>RAM</strong>). Questa è una memoria veloce ma volatile utilizzata dalla CPU per leggere e memorizzare dati e istruzioni. Parte di questa memoria può anche essere implementata come Memoria di Sola Lettura (<strong>ROM</strong>), che è una memoria permanente quanto la RAM. La ROM contiene di solito poche istruzioni per testare il corretto funzionamento dell'hardware e 'avviare' il computer.",
+        "secondaryMemoryDescription": "La maggior parte dei computer fa uso anche di un tipo aggiuntivo di memoria chiamato <strong>memoria secondaria</strong>. Questa può essere implementata come un disco rigido o un dispositivo SSD, che sono considerati nell'architettura di Von Neumann come dispositivi di I/O. Si tratta di una memoria molto più lenta ma persistente e solitamente ha una capacità di archiviazione maggiore. A causa della sua velocità insufficiente, non è utilizzata direttamente dalla CPU, ma viene utilizzata per archiviare permanentemente dati e programmi che vengono caricati nella memoria principale solo quando necessario."
+    }        
+}

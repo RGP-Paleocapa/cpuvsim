@@ -1,0 +1,21 @@
+{
+    "cpuCycleSection": {
+        "title": "Il Ciclo di Recupero/Decodifica/Esecuzione della CPU",
+        "description": "La CPU ripete continuamente un <strong>ciclo di recupero-decodifica-esecuzione</strong>, al fine di eseguire le istruzioni in un programma, una per volta. In questo ciclo, la CPU passa attraverso tre fasi principali:",
+        "fetch": "<strong>Recupera</strong> un'istruzione del programma dalla memoria principale;",
+        "decode": "<strong>Decodifica</strong> l'istruzione, ossia capisce cosa deve essere fatto;",
+        "execute": "<strong>Esegue</strong> (ossia, mette in atto) l'istruzione."
+    },
+    "fetchSection": {
+        "description": "Durante la fase di <B>recupero</B> del ciclo, il contenuto della cella di memoria indicata dal program counter viene recuperato e inserito nel Registro delle Istruzioni (IR)."
+    },
+    "executeSection": {
+        "description": "Durante la fase di <B>esecuzione</B> del ciclo, l'istruzione viene eseguita, utilizzando l'ALU se necessario. A volte, questa fase può comportare il caricamento o il salvataggio dei dati dalla memoria principale."
+    },
+    "decodeSection": {
+        "description": "Nella parte di <B>decodifica</B> del ciclo, l'Unità di Controllo elabora cosa deve essere fatto dall'istruzione e invia segnali di controllo per coordinare gli altri componenti."
+    },
+    "otherSection": {
+        "description": "Successivamente, il contenuto del PC viene incrementato per indicare la prossima istruzione da eseguire e un nuovo ciclo di recupero inizia nuovamente. In questo caso specifico, il PC viene incrementato di due perché la memoria RAM è organizzata in byte e la dimensione di ogni istruzione della CPU è di due byte. È interessante notare che le CPU reali, al fine di migliorare la loro velocità, eseguono l'incremento del PC in parallelo alle operazioni precedenti, durante il ciclo di esecuzione."
+    }
+}

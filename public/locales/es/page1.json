@@ -1,0 +1,30 @@
+{
+    "generalPurposeComputers": {
+        "title": "Las Computadoras como Máquinas de Propósito General",
+        "familiar_with_computers_part1": "Todos estamos familiarizados con las computadoras <b>“de propósito general”</b> ampliamente populares, como las de escritorio, portátiles o tabletas. Sin embargo, los teléfonos móviles modernos o las consolas de juegos también son computadoras, e incluso dispositivos tan dispares como cámaras digitales, reproductores de audio, relojes, televisores, lavadoras, automóviles, drones o incluso ropa y zapatos modernos, ",
+        "familiar_with_computers_part2": " todos incorporan computadoras que son fundamentales para respaldar sus funcionalidades."
+    },
+    "examplesOfComputers": {
+        "title": "Ejemplos de Computadoras"
+    },
+    "genericArchitecture": {
+        "title": "Arquitectura Genérica Común de las Computadoras",
+        "architecture_intro": "A pesar de las enormes variedades de computadoras, cada una de ellas comparte una arquitectura muy similar y está compuesta por una parte física (<b>hardware</b>), así como aplicaciones que consisten en series de instrucciones (<b>software</b>).<br />El objetivo principal de la arquitectura es identificar los componentes principales y definir <b>cómo</b> interactúan entre sí.<br />A nivel macroscópico, esta arquitectura genérica puede esquematizarse como en los siguientes diagramas.",
+        "cpu_description_part1": "El componente central de cualquier computadora es la llamada Unidad Central de Procesamiento (CPU). La CPU lee y ejecuta instrucciones obtenidas una a una de la memoria primaria (o central, o principal), procesando los datos de entrada y produciendo datos de salida. Los datos de entrada podrían provenir, por ejemplo, de un teclado o de un sensor que detecta el nivel de oxígeno en la sangre de un paciente. Los datos de salida, por ejemplo, podrían mostrar una imagen en un monitor o controlar la cantidad de gasolina inyectada en el motor de un automóvil.<br /><br />Dos razones clave han hecho posible usar la misma arquitectura para una variedad tan amplia de contextos: el concepto de ",
+        "cpu_description_part2": " y la ",
+        "cpu_description_part3": " de la información.",
+        "stored_program_machines_button": "máquinas de programa almacenado",
+        "digital_representation_button": "representación digital"
+    },
+    "storedProgramMachines": {
+        "title": "Máquinas de Programa Almacenado",
+        "description": "De hecho, antes del advenimiento de la computadora moderna, ya existían máquinas capaces de realizar cálculos. Sin embargo, <b>cada máquina estaba construida a medida para un único propósito específico</b>. Una computadora de programa almacenado, por el contrario, <b>es una máquina que almacena instrucciones de programas en la memoria</b>. Al cambiar los programas en su memoria, la misma máquina puede realizar funciones totalmente diferentes.<br />Las memorias modernas son dispositivos electrónicos, magnéticos u ópticos; en el pasado, las instrucciones del programa se almacenaban en tableros de enchufes o mecanismos similares.",
+        "eniac_description": "El ENIAC fue el primer sistema informático, diseñado a principios de la década de 1940, basado en un concepto primitivo de Computadora de Programa Almacenado. Aquí las instrucciones o programas se almacenaban como una combinación de tarjetas de papel, cableados de tableros de enchufes y interruptores mecánicos.",
+        "modern_computer_description": "Un ejemplo de una máquina moderna de programa almacenado es la computadora personal. En estos dispositivos, es posible instalar/desinstalar y ejecutar fácilmente diferentes aplicaciones, con el fin de respaldar las funciones más dispares.",
+        "special_purpose_computer_description": "Las “computadoras de propósito especial” son computadoras que tienen programas fijos preinstalados, por lo tanto, funciones respaldadas predefinidas (por ejemplo, aparatos médicos, calculadoras, semáforos...). Sin embargo, tienen la misma arquitectura estándar que el otro tipo de computadoras."
+    },
+    "digitalRepresentation": {
+        "title": "Representación Digital (Uniforme) de la Información",
+        "description": "La segunda razón que hizo posible usar la misma arquitectura en muchos contextos y aplicaciones diferentes es la posibilidad de <b>representar y procesar diferentes tipos de información</b>, no solo números, sino también texto, audio, imágenes, videos…, uniformemente como dígitos, como se discute en la próxima sesión."
+    }
+}

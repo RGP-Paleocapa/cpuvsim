@@ -1,0 +1,52 @@
+{
+    "binaryCalculations": {
+        "title": "Las computadoras realizan cálculos simples con dígitos binarios",
+        "intro": "Como se mencionó anteriormente, las computadoras no representan y procesan la información usando números, texto, imágenes o sonidos como nosotros. En cambio, representan todo usando solo dos símbolos:",
+        "one": "1",
+        "zero": "0",
+        "binaryAdditionRules": "Por ejemplo, pares de dígitos binarios se suman de acuerdo con las reglas:",
+        "firstPart": ", (uno - cero, no diez) lo que significa ",
+        "secondPart": " con ",
+        "thirdPart": "La secuencia ",
+        "fourthPart": ", es decir, usando solo 2 símbolos, es el equivalente al número 2 en decimal."
+    },
+    "binaryRepresentation": {
+        "title": "Los dígitos binarios pueden representar texto, imágenes, video, audio, instrucciones",
+        "intro": "¿Pero cómo se pueden representar diferentes tipos de información como texto, imágenes, sonidos o incluso instrucciones de computadora, usando solo los dos símbolos 1 y 0?",
+        "codingConventions": "Comenzando por los números, y pronto el alfabeto, se han diseñado diferentes <b>convenciones de codificación</b>. Aquí hay algunos ejemplos de representaciones binarias de diferentes medios:"
+    },
+    "textSection": {
+        "title": "Texto",
+        "description1": "El texto puede ser representado en una computadora por una secuencia de códigos binarios, con cada código representando una letra o un signo de puntuación.",
+        "description2": "Las maquinarias informáticas antiguas usaban el código ASCII, que asigna siete bits para cada símbolo en alfabetos basados en el latín. Debido a que hoy en día las computadoras trabajan con grupos de 8 bits de 1s y 0s (bytes), en lugar de grupos de 7 bits, los códigos ASCII a menudo se extienden en un bit a 8 bits.",
+        "description3": "Una solución más flexible es Unicode, que utiliza 16 o incluso 32 bits, permitiendo que una gran cantidad de caracteres diferentes (incluyendo, por ejemplo, chino o japonés) sean codificados",
+        "examplesAscii": "Algunos ejemplos de códigos ASCII"
+    },
+    "imagesAndVideosSection": {
+        "pixelDescription": "Usando el modelo de color RGB, el color de este píxel se representa como \"37, 154, 170\" en decimal, o 100101, 10011010, 10101010 en binario.",
+        "title": "Imágenes y Videos",
+        "description": "En 1886, los pintores impresionistas desarrollaron una técnica llamada Puntillismo en la cual pequeños puntos distintos de color se aplicaban en patrones para formar una imagen. Simplemente cambiando de puntos a pequeños cuadrados (<b>píxeles</b>), podemos entender fácilmente cómo se puede representar digitalmente una imagen.",
+        "colorRepresentation": "En los sistemas de imágenes a color, el color de un píxel suele representarse por tres o cuatro números que codifican intensidades de componentes como rojo, verde y azul, o cian, magenta, amarillo y negro.",
+        "imagePerception": "Una serie de imágenes fijas (por lo tanto, conjunto de números) visualizadas a intervalos de tiempo suficientemente cortos, es percibida por nuestro sistema visual como imágenes en movimiento."
+    },
+    "audioSection": {
+        "title": "Audio",
+        "description": "El sonido, como el habla o la música, es una cantidad física analógica, que corresponde, por ejemplo, a variaciones en la presión del aire. Pero también este tipo de información puede convertirse en una forma digital. Para obtener una representación digital de un sonido, se toman muestras de su intensidad a una velocidad suficiente (tasa de muestreo), y el valor de cada <b>muestra se cuantifica al código binario más cercano</b>.",
+        "samplingDetail": "Es importante apreciar que sonidos como el habla o la música varían rápidamente con el tiempo, y por lo tanto sus muestras tendrán que ser tomadas a intervalos lo suficientemente cercanos, si la representación digital va a ser fiel al original.",
+        "quantizationDescription": "Una representación del proceso de cuantificación en el que cada muestra se aproxima al valor más cercano que el sistema puede representar."
+    },
+    "instructionsSection": {
+        "tableDescription": "Tres ejemplos de operaciones comunes a muchos conjuntos de instrucciones",
+        "title": "Instrucciones",
+        "description": "Para ejecutar programas o procesar datos, las computadoras deben seguir algunas instrucciones específicas.\nComo se discutió en la sección \"Conjunto de instrucciones de la CPU\", hay muchas operaciones básicas que una máquina puede realizar. Cada una está compuesta por un opcode (la instrucción ejecutada por la CPU) y uno o más operandos (los datos o ubicaciones de memoria en los que opera la instrucción).\nDado que el código binario es el único lenguaje que una computadora puede entender, estas instrucciones se representan, de nuevo, como dígitos binarios."
+    },
+    "multimediaInformation": {
+        "title": "La información multimedia puede ser procesada con cálculos digitales 'elementales'",
+        "intro": "Dado que cualquier información multimedia se ve como números binarios para la computadora, debería estar claro ahora que <b>cualquier procesamiento de estos datos implica cálculos digitales</b>. Aquí hay algunos ejemplos:",
+        "example1": "El volumen de un sonido representa la intensidad de las variaciones de la presión del aire. Por lo tanto, aumentar el volumen de una canción implica una simple multiplicación del valor de cada muestra de sonido por un factor mayor a 1.",
+        "example2": "El contraste de una imagen se puede explicar como la diferencia entre la intensidad máxima y mínima de los colores de los píxeles. Por lo tanto, para cambiar el contraste de una imagen, es suficiente modificar el valor de estas intensidades, aumentando la diferencia entre los valores máximos y mínimos, siguiendo una fórmula simple.",
+        "example3": "La forma más simple de aumentar el tamaño de una imagen es reemplazar cada píxel con una cantidad de píxeles del mismo color. La imagen resultante es más grande que la original y conserva todos los detalles originales.",
+        "example4": "Para comprimir un video es posible, por ejemplo, reducir el nivel de detalle de los cuadros que lo componen. Esto se puede lograr, por ejemplo, calculando el color promedio de un grupo de píxeles de diferentes colores y reemplazándolos con un solo píxel repetido con ese color promedio.",
+        "soundVolumeDescription": "Aumentar el volumen de un sonido."
+    }    
+}

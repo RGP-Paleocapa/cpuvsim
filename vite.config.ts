@@ -19,6 +19,10 @@ export default defineConfig({
     },  
   },
   plugins: [react()],
+<<<<<<< HEAD
   base: "/cpuvsim/",
+=======
+  base: "/cpuvsim-test/",
+>>>>>>> source-repo/main
   server: { open: true, },
 })
