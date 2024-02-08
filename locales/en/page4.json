@@ -1,0 +1,21 @@
+{
+    "cpuCycleSection": {
+        "title": "The CPU Fetch/Decode/Execute cycle",
+        "description": "The CPU continuously repeats a <strong>fetch-decode-execute cycle</strong>, in order to execute the instructions in a program, one by one. In this cycle, the CPU goes through three main stages:",
+        "fetch": "<strong>Fetches</strong> a program instruction from the main memory;",
+        "decode": "<strong>Decodes</strong> the instruction, i.e., it works out what needs to be done;",
+        "execute": "<strong>Executes</strong> (i.e., carries out) the instruction."
+    },
+        "fetchSection": {
+        "description": "During the <B>fetch</B> stage of the cycle, the content of the memory cell addressed by the program counter is retrieved and placed into the Instruction Register (IR)."
+    },
+        "executeSection": {
+        "description": "During the <B>execute</B> stage of the cycle, the instruction is executed, using the ALU if necessary. Sometimes, this stage may involve the loading or saving of data from and to the main memory."
+    },
+        "decodeSection": {
+        "description": "In the <B>decode</B> part of the cycle, the Control Unit works out what needs to be done by the instruction, and sends control signals to coordinate the other components."
+    },
+        "otherSection": {
+        "description": "Then, the content of the PC is increased to point to the next instruction to be executed, and a new fetch cycle starts again. In this specific case, the PC is incremented by two because the RAM memory is organized in bytes, and the size of each CPU instruction is two bytes. It is worthwhile noticing here that real CPUs, in order to improve their speed, perform the increment of the PC in parallel to previous operations, during the Execute cycle."
+    }    
+}

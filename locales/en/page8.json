@@ -1,0 +1,10 @@
+{
+    "exercisesSectionTitle": "Exercises",
+    "exercisesSectionText": "The aim of the following two exercises is to code in assembler the pseudo-coded algorithms on the left. Organize the corresponding assembler instructions on the right in the correct order, by dragging them around.",
+    "tasksSectionTitle": "Perform the Following Tasks:",
+    "task1": "Describe the Difference Between Numeric and Direct Addressing.",
+    "task2": "Describe the Data Transmitted on the Data, Address, and Control Buses, Respectively, During the Execution of the Instructions LOD #5, and LOD 5.",
+    "task3": "Identify the Binary Code of the Assembler Instruction MUL 5.",
+    "task4": "Identify the Mnemonic Instruction Corresponding to the Machine Language Instruction 00010011.",
+    "assemblyProblemsSectionTitle": "Develop Suitable Programs in Assembly Code to Solve the Following Problems (Please Remember That Any Label Needs to Be Defined in the Leftmost Column of the RAM Before It Can Be Used in Any Instruction):"
+}

@@ -1,0 +1,12 @@
+{
+    "translationOfHighLevelConstructsSection": {
+        "title": "Translation of High-Level Language Constructs to Assembly/Machine Language",
+        "text": "Most software today is written by programmers in a high-level language, such as C++, Java, or Python. Yet, whatever program is executed on a CPU, needs to be specified in its machine-language. How is it possible, then, to run a program written in a high-level language?<br /><br /> A high-level language can be physically executed on a CPU, which can only 'understand' its machine-language, with two main (possibly combined) techniques: <strong>interpretation</strong> and <strong>compilation</strong>. In the case of interpretation, each high-level instruction is executed by an 'interpreter,' a program that acts as a sort of virtual CPU, having as its Instruction Set the instructions available in the high-level language. Yet this interpreter, in turn, must be executed as a program in machine-language on the real CPU. In the case of compilation, the programs in a high-level language are first translated (compiled) to machine language, before being executed on the CPU.<br /><br /> Yet, programs written in high-level languages use programming constructs such as IF-THEN-ELSE, FOR, WHILE-DO, and so on. How can these constructs be translated to machine language, where such high-level instructions are not available? This is possible mainly exploiting the control-flow instructions jump on condition and unconditional jump, as shown in this section with the help of a few concrete examples."
+    },
+    "example1Title": "EXAMPLE: Translation of the Initialization and Sum of Two Variables",
+    "example2Title": "EXAMPLE: Translation of the Initialization and Sum of Two Variables",
+    "example3Title": "EXAMPLE: Translation of the Initialization and Sum of Two Variables",
+    "example4Title": "EXAMPLE: Translation of the Initialization and Sum of Two Variables",
+    "example5Title": "EXAMPLE: Translation of the Initialization and Sum of Two Variables",
+    "example6Title": "EXAMPLE: Translation of the Initialization and Sum of Two Variables"    
+}

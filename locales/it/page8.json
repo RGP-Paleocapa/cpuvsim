@@ -1,0 +1,10 @@
+{
+    "exercisesSectionTitle": "Esercizi",
+    "exercisesSectionText": "Lo scopo dei seguenti due esercizi è codificare in linguaggio assembler gli algoritmi pseudo-codificati a sinistra. Organizzare le istruzioni assembler corrispondenti a destra nell'ordine corretto, trascinandole.",
+    "tasksSectionTitle": "Svolgere le Seguenti Attività:",
+    "task1": "Descrivere la Differenza Tra Indirizzamento Numerico e Indirizzamento Diretto.",
+    "task2": "Descrivere i Dati Trasmessi Rispettivamente sulle Linee di Dati, Indirizzi e Controllo Durante l'Esecuzione delle Istruzioni LOD #5 e LOD 5.",
+    "task3": "Identificare il Codice Binario dell'Istruzione Assembler MUL 5.",
+    "task4": "Identificare l'Istruzione Mnemonica Corrispondente all'Istruzione in Linguaggio Macchina 00010011.",
+    "assemblyProblemsSectionTitle": "Sviluppare Programmi Adeguati in Linguaggio Assembler per Risolvere i Seguenti Problemi (Si Ricorda che Qualsiasi Etichetta Deve Essere Definita nella Colonna più a Sinistra della RAM Prima di Poter Essere Utilizzata in Qualsiasi Istruzione):"
+}
