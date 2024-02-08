@@ -6,10 +6,7 @@ import { useState } from "react";
 import problemListData from './problems.json';
 import containerData from './containers.json';
 import ProblemComponent from "./ProblemComponent";
-<<<<<<< HEAD
-=======
 import { useTranslation } from "react-i18next";
->>>>>>> source-repo/main
 // import AssemblyTasksComponent from "@/pages/page8/AssemblyTaskComponent";
 
 // Define a TypeScript interface for a problem
@@ -55,47 +52,6 @@ const Page8 = () => {
     "ENDIF\n",
     "HLT\n"
   ]
-<<<<<<< HEAD
-  
-  return (
-    <EBookPage currentPage={8}>
-      
-          <SectionTitle>
-              Exercises
-          </SectionTitle>
-      <div className="hidden lg:block">
-          <Text>
-              The aim of the following two exercises is to code in assembler the pseudo-coded algorithms on the left.
-              Organize the corresponding assembler instructions on the right in the correct order, by dragging them around.
-          </Text>
-      </div>
-
-      <div className="hidden lg:block">
-          <Section>
-              <InlineDivs>
-                  <MaxWidthContainer>
-                    <Pre content={code} />
-                    <br />
-                    <DraggableContainerGrid initialContainers={container1} />
-                  </MaxWidthContainer>
-                  <MaxWidthContainer classname="flex flex-col items-center">
-                      {containerStates.container1Visible && <DraggableContainerGrid initialContainers={container1Solved} />}
-                      <button
-                        className="text-gray-100 hover:text-gray-800 bg-green-700 hover:bg-green-300 border-2 border-gray-700 py-2 px-5 rounded"
-                        onClick={() => toggleContainer('container1Visible')}
-                        style={{ transition: 'background-color 0.3s, color 0.3s' }}
-                        >
-                        {containerStates.container1Visible ? (
-                            <p>Hide Solution</p>
-                            ) : (
-                                <p>Show Solution</p>
-                                )}
-                      </button>
-                  </MaxWidthContainer>
-              </InlineDivs>
-          </Section>
-      </div>
-=======
 
   const { t } = useTranslation("page8");
   
@@ -137,7 +93,6 @@ const Page8 = () => {
                 </Section>
             </div>
         </Section>
->>>>>>> source-repo/main
 
       <div className="hidden lg:block">
           <Section>
@@ -164,37 +119,6 @@ const Page8 = () => {
       </div>
 
       <Section>
-<<<<<<< HEAD
-          <H3>
-              Perform the following tasks:
-          </H3>
-          <Ol className="bg-gray-100 dark:bg-gray-700 py-4 rounded-xl">
-              <Li margin0>
-                  Describe the difference between numeric and direct addressing.
-              </Li>
-              <Li margin0>
-                  Describe the data transmitted on the data, address and control buses, respectively, 
-                  during the execution of the instructions LOD #5, and LOD 5.
-              </Li>
-              <Li margin0>
-                  Identify the binary code of the assembler instruction MUL 5.
-              </Li>
-              <Li margin0>
-                  Identify the mnemonic instruction corresponding to the machine language instruction 00010011.
-              </Li>
-          </Ol>
-      </Section>
-
-      <Section>
-        <H3>Develop suitable programs in assembly code, to solve the following problems (please remember that any label needs to be defined
-              in the leftmost column of the RAM before it can be used in any instruction):</H3>
-        <div className="flex flex-wrap bg-gray-100 dark:bg-gray-700 rounded-xl">
-          {problemList.map((problem, index) => (
-            <ProblemComponent key={index} problem={problem} index={index} />
-          ))}
-        </div>
-      </Section>
-=======
             <H3>
                 {t("tasksSectionTitle")}
             </H3>
@@ -224,7 +148,6 @@ const Page8 = () => {
                 ))}
             </div>
         </Section>
->>>>>>> source-repo/main
     </EBookPage>
   );  
 }

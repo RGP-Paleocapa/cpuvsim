@@ -25,11 +25,7 @@ const NavigationMenu: React.FC<NavigationMenuProps> = ({ currentPage, totalPages
   return (
     <>
       {isNavOpen && (
-<<<<<<< HEAD
-        <nav className="navigation-menu">
-=======
         <nav className="navigation-menu z-0">
->>>>>>> source-repo/main
           <ul>
             {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
               <li key={page} className={currentPage === page ? 'current-page' : ''}>

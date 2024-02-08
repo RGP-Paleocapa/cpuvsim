@@ -5,10 +5,7 @@ import AppRoutes from './routes/Routes'
 import ScrollToTopButton from '@/components/utils/ScrollToTopButton'
 import ScrollToTop from '@/components/utils/ScrollToTop'
 import { FooterProvider } from './context/FooterContext'
-<<<<<<< HEAD
-=======
 import './i18n';
->>>>>>> source-repo/main
 
 const App = () => {
   return (
