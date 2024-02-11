@@ -43,14 +43,17 @@ const ReadFeedback = () => {
       <div className="max-w-2xl mx-auto mt-10">
         <h2 className="text-xl font-semibold dark:text-white">Feedback Received</h2>
         {feedbacks.length > 0 ? (
-          <ul className="mt-4 space-y-2">
+          <ul className="mt-4 space-y-4">
             {feedbacks.map((feedback, index) => (
               <li key={index} className="p-4 border border-gray-300 rounded-md shadow-sm dark:border-gray-600 dark:bg-gray-800">
-                <p className="dark:text-gray-100">Name: {feedback.name}</p>
-                <p className="dark:text-gray-100">Email: {feedback.email}</p>
-                <p className="dark:text-gray-100">Feedback: {feedback.text}</p>
-                {/* Optionally display 'timestamp' if it exists */}
-                {feedback.timestamp && <span className="text-sm">{feedback.timestamp.toLocaleString()}</span>}
+                <div className="text-gray-800 dark:text-gray-100"> {/* Ensure consistent text color */}
+                  <p className="font-semibold">Name: {feedback.name}</p>
+                  <p>Email: {feedback.email}</p>
+                  <p>Feedback: {feedback.text}</p>
+                  {feedback.timestamp && (
+                    <p className="text-sm">{feedback.timestamp.toLocaleString()}</p>
+                  )}
+                </div>
               </li>
             ))}
           </ul>
