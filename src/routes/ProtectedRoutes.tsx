@@ -6,9 +6,12 @@ interface ProtectedRouteProps {
     component: ComponentType;
 }
 
+
 const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ component: Component }) => {
-    const adminToken = Cookies.get('token');
-    return adminToken === 'demoAdmin' ? <Component /> : <Navigate to="/maintenance" />;
+    const isAuthenticated = Boolean(Cookies.get('adminAuthToken'));
+
+    // Check if the provided token matches the secure admin token
+    return isAuthenticated ? <Component /> : <Navigate to="/admin" />;
 };
 
 export default ProtectedRoute;
