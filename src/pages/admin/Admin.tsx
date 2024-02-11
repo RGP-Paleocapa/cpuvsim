@@ -21,7 +21,7 @@ const Admin: React.FC = () => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
       alert("Admin access granted");
-      navigate("/admin"); // Adjust as needed
+      navigate("/page12"); // Adjust as needed
     } catch (error: any) {
       alert(`Login failed: ${error.message}`);
     }
@@ -31,7 +31,7 @@ const Admin: React.FC = () => {
     try {
       await signOut(auth);
       alert("You have been logged out");
-      navigate("/login"); // Adjust as needed
+      navigate("/admin"); // Adjust as needed
     } catch (error: any) {
       alert(`Logout failed: ${error.message}`);
     }

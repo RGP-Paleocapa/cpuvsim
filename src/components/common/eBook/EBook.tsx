@@ -35,7 +35,7 @@ const EBookPage: React.FC<EBookProps> = ({ children, currentPage }) => {
                 {/* Render the CloseIcon when navigation is open */}
                 {isNavOpen && <CloseIcon />}
               </button>
-              <div className={`ebook-page-layout ${isNavOpen ? 'md:ml-[30px] lg:ml-140 2xl:ml-0' : 'md:ml-0 lg:ml-0'}`}>
+              <div className={`ebook-page-layout ${isNavOpen ? 'md:ml-[30px] lg:ml-140 2xl:ml-140' : 'md:ml-0 lg:ml-0'}`}>
                 <SwitchPage currentPage={currentPage} />
                 {children}
                 <SwitchPage currentPage={currentPage} />
