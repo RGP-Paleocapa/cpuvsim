@@ -1,6 +1,6 @@
 import React, { ComponentType } from 'react';
-import Cookies from 'js-cookie';
 import { Navigate } from 'react-router-dom';
+import Cookies from 'js-cookie';
 
 interface ProtectedRouteProps {
     component: ComponentType;
