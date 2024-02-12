@@ -1,36 +1,37 @@
-// import './App.css'
-import Footer from '@/components/layout/footer/Footer'
-import Header from '@/components/layout/header/Header'
-import AppRoutes from './routes/Routes'
-import ScrollToTopButton from '@/components/utils/ScrollToTopButton'
-import ScrollToTop from '@/components/utils/ScrollToTop'
-import { FooterProvider } from './context/FooterContext'
+import { useEffect } from 'react';
+import useAuthStore from './context/useAuthStore';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import useSessionTimeout from './hooks/useSessionTimeout';
+
+// Import UI components
+import Footer from '@/components/layout/footer/Footer';
+import Header from '@/components/layout/header/Header';
+import AppRoutes from './routes/Routes';
+import ScrollToTopButton from '@/components/utils/ScrollToTopButton';
+import ScrollToTop from '@/components/utils/ScrollToTop';
+import { FooterProvider } from './context/FooterContext';
 import './i18n';
-import { useEffect } from 'react'
-import useAuthStore from './context/useAuthStore'
-import { getAuth, onAuthStateChanged } from 'firebase/auth'
-import useSessionTimeout from './hooks/useSessionTimeout'
 
 const App = () => {
   const { setUser, clearUser } = useAuthStore();
 
   useEffect(() => {
     const auth = getAuth();
-    const unsubscribe = onAuthStateChanged(auth, user => {
-      if (user) {
-        // User is signed in, update the Zustand store
-        setUser({ email: user.email });
+    onAuthStateChanged(auth, (firebaseUser) => {
+      if (firebaseUser) {
+        // If Firebase user exists, sync with Zustand
+        setUser({ email: firebaseUser.email });
       } else {
-        // No user is signed in, clear the Zustand store
+        // If Firebase user does not exist, clear Zustand
         clearUser();
       }
     });
-
-    // Cleanup the listener on component unmount
-    return () => unsubscribe();
   }, [setUser, clearUser]);
 
-  useSessionTimeout(180000);
+    useSessionTimeout(180000);
+
+  // Always call useSessionTimeout but let it decide internally to act or not
+  // useSessionTimeout(180000, !!user); // Pass a second argument to indicate if the user is logged in
 
   return (
     <FooterProvider>
@@ -44,7 +45,7 @@ const App = () => {
         <ScrollToTopButton />
       </div>
     </FooterProvider>
-  )
-}
+  );
+};
 
-export default App
+export default App;

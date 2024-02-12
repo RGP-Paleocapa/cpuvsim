@@ -12,7 +12,7 @@ const LogoutButton: React.FC = () => {
     try {
       await signOut(auth);
       clearUser(); // Clear user information from Zustand store
-      navigate('/login'); // Redirect to login page or home page after logout
+      navigate('/'); // Redirect to login page or home page after logout
     } catch (error) {
       console.error("Logout failed", error);
       // Optionally handle errors (e.g., display a notification)

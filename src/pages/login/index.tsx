@@ -13,12 +13,16 @@ function Login() {
 
   const handleLogin = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
+
     const auth = getAuth();
 
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         setUser({ email: userCredential.user.email });
-        localStorage.setItem('sessionStart', Date.now().toString()); // Store session start time
+
+        // Set session start time in localStorage
+        localStorage.setItem('sessionStart', Date.now().toString());
+
         navigate('/'); // Redirect to dashboard or home page after login
       })
       .catch((error) => {
