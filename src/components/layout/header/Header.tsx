@@ -4,6 +4,8 @@ import ThemeSwitcher from './ThemeSwitcher';
 import { HamburgerMenuIcon } from '@/components/common/SvgIcons';
 import MobileMenu from './MobileMenu'; // Import the MobileMenu component
 import LanguageSwitcher from './LanguageSwitcher';
+import LogoutButton from '@/components/LogoutButton';
+import useAuthStore from '@/context/useAuthStore';
 
 const Header: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -82,6 +84,7 @@ const Header: React.FC = () => {
         }
       }
   ];
+  const { isAuthenticated } = useAuthStore();
 
   return (
     <>
@@ -122,10 +125,10 @@ const Header: React.FC = () => {
                     >
                       {route.text}
                     </Link>
-                  )}
-                  
+                  )}                  
                 </React.Fragment>
               ))}
+                  {isAuthenticated &&  <LogoutButton />}
             </div>
             {/* abc */}
             <LanguageSwitcher />

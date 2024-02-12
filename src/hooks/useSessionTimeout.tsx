@@ -1,26 +1,23 @@
 import { useEffect } from 'react';
-import { getAuth, signOut } from 'firebase/auth';
-import app from "@/firebase";
+import useAuthStore from '@/context/useAuthStore';
 
-const useSessionTimeout = (timeout: number) => { // timeout in milliseconds
+const useSessionTimeout = (timeout: number) => {
+  const { clearUser } = useAuthStore();
+
   useEffect(() => {
-    const auth = getAuth(app);
     const interval = setInterval(() => {
       const sessionStart = parseInt(localStorage.getItem('sessionStart') || '0');
       const now = Date.now();
-      console.log(`Checking session timeout: Now: ${now}, Session Start: ${sessionStart}, Difference: ${now - sessionStart}`);
 
       if (now - sessionStart > timeout) {
-        console.log('Session expired. Signing out...');
-        signOut(auth).then(() => {
-          // Redirect to login page or show a message
-          console.log('Session timed out. User signed out.');
-        });
+        clearUser();
+        localStorage.removeItem('sessionStart'); // Clear session start time
+        // Assume redirection or additional handling is triggered by clearUser or elsewhere
       }
     }, 10000); // Check every 10 seconds
 
     return () => clearInterval(interval);
-  }, [timeout]);
+  }, [timeout, clearUser]);
 };
 
 export default useSessionTimeout;

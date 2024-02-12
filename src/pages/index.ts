@@ -14,4 +14,6 @@ export { default as SubmitFeedback } from './page12/SubmitFeedback';
 export { default as ReadFeedback } from './page12/ReadFeedback';
 export { default as Home } from './home/Home';
 export { default as About } from './about/About';
-export { default as Admin } from './admin/Admin';
+// export { default as Admin } from './admin/Admin';
+export { default as Login } from './login';
+export { default as Signup } from './signUp';

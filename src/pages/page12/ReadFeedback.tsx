@@ -2,46 +2,58 @@ import { useEffect, useState } from 'react';
 import { getFirestore, collection, getDocs, query, orderBy } from 'firebase/firestore';
 import firebaseApp from '@/firebase'; // Adjust the import path as necessary
 import Layout from './Layout';
+import useAuthStore from '@/context/useAuthStore'; // Ensure the correct path
 
-// Define a TypeScript interface for the feedback objects
 export interface Feedback {
   id: string;
   name: string;
   email: string;
-  text: string; // Ensure 'text' is expected to be a string
-  timestamp?: Date | any; // Make 'timestamp' optional or ensure all documents have it
+  text: string;
+  timestamp?: Date | any; // Assuming your Firestore 'timestamp' field is compatible with Date
 }
 
 const ReadFeedback = () => {
-  // Use the 'Feedback' interface for the state
   const [feedbacks, setFeedbacks] = useState<Feedback[]>([]);
+  const { user } = useAuthStore(); // Hook to access user state
 
   useEffect(() => {
     const db = getFirestore(firebaseApp);
+    const userEmail = user?.email; // Accessing the logged-in user's email
+
+    // Ensure userEmail is defined before fetching
+    if (!userEmail) {
+      console.log("User email is undefined. Make sure user is logged in.");
+      return; // Exit if userEmail is undefined
+    }
+
     const fetchFeedback = async () => {
       const q = query(collection(db, "feedback"), orderBy("timestamp", "desc"));
       const querySnapshot = await getDocs(q);
-      // Correctly process each document to fit the 'Feedback' interface
-      const fetchedFeedback = querySnapshot.docs.map(doc => {
-        const data = doc.data() as Feedback; // Cast to Feedback type
-        return {
-          id: doc.id,
-          name: data.name,
-          email: data.email,
-          text: data.text,
-          timestamp: data.timestamp !== undefined ? data.timestamp.toDate() : undefined // Check if it's not undefined before calling toDate()
-        };
-      });
+
+      const fetchedFeedback = querySnapshot.docs
+        .map(doc => {
+          const data = doc.data() as Feedback;
+          return {
+            id: doc.id,
+            name: data.name,
+            email: data.email,
+            text: data.text,
+            timestamp: data.timestamp ? data.timestamp.toDate() : undefined,
+          };
+        })
+        .filter(feedback => feedback.email === userEmail); // Properly filter feedback by userEmail
+
       setFeedbacks(fetchedFeedback);
     };
 
     fetchFeedback();
-  }, []);
+  }, [user]); // Depend on the user state to re-run when user or user email changes
+
 
   return (
     <Layout>
       <div className="max-w-2xl mx-auto mt-10">
-        <h2 className="text-xl font-semibold dark:text-white">Feedback Received</h2>
+        <h2 className="text-xl font-semibold dark:text-white">Feedback Sent</h2>
         {feedbacks.length > 0 ? (
           <ul className="mt-4 space-y-4">
             {feedbacks.map((feedback, index) => (

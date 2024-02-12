@@ -1,7 +1,8 @@
 import { Routes, Route } from 'react-router-dom';
-import { Home, About, Admin, Page1, Page2, Page3, Page4, Page5, Page6, Page7, Page8, Page9, Page10, Page11 as AxiosPage, Page12, SubmitFeedback, ReadFeedback } from '@/pages';
+import { Home, About, Page1, Page2, Page3, Page4, Page5, Page6, Page7, Page8, Page9, Page10, Page11 as AxiosPage, Page12, SubmitFeedback, ReadFeedback, Login, Signup } from '@/pages';
 import ProtectedRoute from './ProtectedRoutes';
 import { Maintenance, NotFound } from '@/pages/errors';
+import GuestRoute from './GuestRoute';
 
 const AppRoutes = () => {
     return (
@@ -9,7 +10,10 @@ const AppRoutes = () => {
             {/* Static / Main */}
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-            <Route path="/admin" element={<Admin />} />
+            {/* <Route path="/admin" element={<Admin />} /> */}
+            <Route path="/login" element={<GuestRoute component={Login} />} />
+            <Route path="/signup" element={<GuestRoute component={Signup} />} />
+            
 
             {/* Pages */}
             <Route path="/page1" element={<Page1 />} />

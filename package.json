@@ -25,7 +25,8 @@
     "react-flags-select": "^2.2.3",
     "react-i18next": "^14.0.1",
     "react-icons": "^4.11.0",
-    "react-router-dom": "^6.18.0"
+    "react-router-dom": "^6.18.0",
+    "zustand": "^4.5.0"
   },
   "devDependencies": {
     "@types/js-cookie": "^3.0.6",
