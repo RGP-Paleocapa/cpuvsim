@@ -28,7 +28,7 @@ const App = () => {
     });
   }, [setUser, clearUser]);
 
-    useSessionTimeout(180000);
+    useSessionTimeout(1_800_000); // 30 minutes
 
   // Always call useSessionTimeout but let it decide internally to act or not
   // useSessionTimeout(180000, !!user); // Pass a second argument to indicate if the user is logged in

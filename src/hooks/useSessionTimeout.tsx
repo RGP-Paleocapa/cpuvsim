@@ -28,19 +28,25 @@ const useSessionTimeout = (timeoutInMilliseconds: number) => {
       const sessionStart = parseInt(localStorage.getItem('sessionStart') || '0');
       const now = Date.now();
       const elapsed = now - sessionStart;
-
-      console.log(`Time elapsed: ${elapsed/1_000}s`);
-
+      const elapsedMinutes = Math.floor(elapsed / (1000 * 60));
+      const elapsedSeconds = Math.floor((elapsed % (1000 * 60)) / 1000);
+    
+      console.log(`Time elapsed: ${elapsedMinutes}m ${elapsedSeconds}s`);
+    
       if (elapsed >= timeoutInMilliseconds) {
         console.log("Session timeout reached. Logging out...");
         logoutUser();
         localStorage.removeItem('sessionStart');
       } else {
-        // Log remaining time for diagnostic purposes
         const remaining = timeoutInMilliseconds - elapsed;
-        console.log(`Session time remaining: ${remaining / 1_000}s`);
+        const remainingMinutes = Math.floor(remaining / (1000 * 60));
+        const remainingSeconds = Math.floor((remaining % (1000 * 60)) / 1000);
+        console.log(`Session time remaining: ${remainingMinutes}m ${remainingSeconds}s`);
       }
-    };
+    };   
+    
+    // Call checkSessionTimeout immediately for an instant check
+    checkSessionTimeout();
 
     // Check the session timeout status every 10 seconds
     const interval = setInterval(checkSessionTimeout, 10000);

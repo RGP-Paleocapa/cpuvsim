@@ -3,6 +3,8 @@ import { getFirestore, collection, addDoc } from 'firebase/firestore';
 import firebaseApp from '@/firebase'; // Adjust the import path as necessary
 import Layout from './Layout';
 import useAuthStore from '@/context/useAuthStore'; // Ensure the correct path to your Zustand store
+// import ReactStars from "react-rating-stars-component";
+import ReactStars from "react-rating-stars-component";
 
 const SubmitFeedback = () => {
   const [feedback, setFeedback] = useState('');
@@ -43,6 +45,23 @@ const SubmitFeedback = () => {
       <div className="max-w-md mx-auto mt-10">
         <h2 className="text-xl font-semibold dark:text-white">Submit Feedback</h2>
         <form onSubmit={handleSubmit} className="mt-4">
+        <ReactStars
+          count={5}
+          // onChange={ratingChanged}
+          size={24}
+          activeColor="#ffd700"
+        />
+
+      {/* <ReactStars
+          count={5}
+          // onChange={ratingChanged}
+          size={24}
+          isHalf={true}
+          emptyIcon={<i className="far fa-star"></i>}
+          halfIcon={<i className="fa fa-star-half-alt"></i>}
+          fullIcon={<i className="fa fa-star"></i>}
+          activeColor="#ffd700"
+        /> */}
           <input
             type='text'
             value={name}
