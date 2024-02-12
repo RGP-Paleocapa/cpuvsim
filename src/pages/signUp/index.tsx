@@ -19,7 +19,11 @@ function Signup() {
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         setUser({ email: userCredential.user.email });
-        navigate('/dashboard'); // Redirect to dashboard or home page after signup
+
+        // Set session start time in localStorage
+        localStorage.setItem('sessionStart', Date.now().toString());
+
+        navigate('/'); // Redirect to dashboard or home page after signup
       })
       .catch((error) => {
         setError(error.message);
