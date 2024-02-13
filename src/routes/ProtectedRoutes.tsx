@@ -27,7 +27,7 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ component: Component })
         return <div>Loading...</div>; // or any other loading indicator
     }
 
-    return isAuthenticated ? <Component /> : <Navigate to="/login" />;
+    return isAuthenticated ? <Component /> : <Navigate to="/auth/login" />;
 };
 
 export default ProtectedRoute;

@@ -16,7 +16,7 @@ function ForgotPassword() {
     sendPasswordResetEmail(auth, email)
       .then(() => {
         setMessage('Check your email to reset your password.');
-        setTimeout(() => navigate('/login'), 3000); // Redirect them to the login page after 3 seconds
+        setTimeout(() => navigate('/auth/login'), 3000); // Redirect them to the login page after 3 seconds
       })
       .catch((error) => {
         setError(error.message);
@@ -44,7 +44,7 @@ function ForgotPassword() {
             Send Reset Email
           </button>
         </form>
-        <p className="text-gray-600">Already have an account? <Link to="/login" className="text-indigo-600 hover:text-indigo-500">Login</Link></p>
+        <p className="text-gray-600">Already have an account? <Link to="/auth/login" className="text-indigo-600 hover:text-indigo-500">Login</Link></p>
       </div>
     </div>
   );

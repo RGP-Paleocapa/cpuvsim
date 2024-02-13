@@ -52,7 +52,7 @@ function Login() {
           />
           <div className="flex items-center justify-between">
             <div className="text-sm">
-              <Link to="/forgot-password" className="font-medium text-indigo-600 hover:text-indigo-500 dark:hover:text-indigo-400">
+              <Link to="/auth/forgot-password" className="font-medium text-indigo-600 hover:text-indigo-500 dark:hover:text-indigo-400">
                 Forgot your password?
               </Link>
             </div>
@@ -64,7 +64,7 @@ function Login() {
             Login
           </button>
         </form>
-        <p className="text-gray-600 dark:text-gray-400">Don't have an account? <Link to="/signup" className="text-indigo-600 hover:text-indigo-500 dark:hover:text-indigo-400">Sign Up</Link></p>
+        <p className="text-gray-600 dark:text-gray-400">Don't have an account? <Link to="/auth/signup" className="text-indigo-600 hover:text-indigo-500 dark:hover:text-indigo-400">Sign Up</Link></p>
       </div>
     </div>
   );

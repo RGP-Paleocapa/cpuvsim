@@ -57,7 +57,7 @@ function Signup() {
             Sign Up
           </button>
         </form>
-        <p className="text-gray-600">Already have an account? <Link to="/login" className="text-indigo-600 hover:text-indigo-500">Login</Link></p>
+        <p className="text-gray-600">Already have an account? <Link to="/auth/login" className="text-indigo-600 hover:text-indigo-500">Login</Link></p>
       </div>
     </div>
   );

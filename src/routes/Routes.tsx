@@ -11,9 +11,9 @@ const AppRoutes = () => {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             {/* <Route path="/admin" element={<Admin />} /> */}
-            <Route path="/login" element={<GuestRoute component={Login} />} />
-            <Route path="/signup" element={<GuestRoute component={Signup} />} />
-            <Route path="/forgot-password" element={<GuestRoute component={ForgotPassword} />} />
+            <Route path="/auth/login" element={<GuestRoute component={Login} />} />
+            <Route path="/auth/signup" element={<GuestRoute component={Signup} />} />
+            <Route path="/auth/forgot-password" element={<GuestRoute component={ForgotPassword} />} />
             
 
             {/* Pages */}
