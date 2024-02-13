@@ -45,7 +45,7 @@ const SubmitFeedback = () => {
       <div className="max-w-md mx-auto mt-10">
         <h2 className="text-xl font-semibold dark:text-white">Submit Feedback</h2>
         <form onSubmit={handleSubmit} className="mt-4">
-        <ReactStars
+        Rating: <ReactStars
           count={5}
           // onChange={ratingChanged}
           size={24}

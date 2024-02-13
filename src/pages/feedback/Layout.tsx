@@ -17,11 +17,11 @@ const LeftMenu = () => {
             <ul className="flex-1">
                 {/* Link 1 */}
                 <li>
-                    <Link to="/feedback/submit-feedback" className="block py-2 px-6 text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700">Submit Feedback</Link>
+                    <Link to="/feedback/submit" className="block py-2 px-6 text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700">Submit Feedback</Link>
                 </li>
                 {/* Link 2 */}
                 <li>
-                    <Link to="/feedback/read-feedback" className="block py-2 px-6 text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700">Read Feedback</Link>
+                    <Link to="/feedback/read" className="block py-2 px-6 text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700">Read Feedback</Link>
                 </li>
             </ul>
         </nav>
