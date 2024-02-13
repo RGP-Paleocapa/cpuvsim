@@ -23,7 +23,7 @@ function Login() {
         // Set session start time in localStorage
         localStorage.setItem('sessionStart', Date.now().toString());
 
-        navigate('/'); // Redirect to dashboard or home page after login
+        navigate('/feedback/submit'); // Redirect to dashboard or home page after login
       })
       .catch((error) => {
         setError(error.message);
