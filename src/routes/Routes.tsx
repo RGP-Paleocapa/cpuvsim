@@ -30,8 +30,8 @@ const AppRoutes = () => {
             <Route path="/page10" element={<ProtectedRoute component={Page10} />} />
             <Route path="/page11" element={<ProtectedRoute component={AxiosPage} />} />
             <Route path="/page12" element={<ProtectedRoute component={Page12} />} /> */}
-            <Route path="/submit-feedback" element={<ProtectedRoute component={SubmitFeedback} />} />
-            <Route path="/read-feedback" element={<ProtectedRoute component={ReadFeedback} />} />
+            <Route path="/feedback/submit-feedback" element={<ProtectedRoute component={SubmitFeedback} />} />
+            <Route path="/feedback/read-feedback" element={<ProtectedRoute component={ReadFeedback} />} />
 
             {/* Errors */}
             <Route path="/*" element={<NotFound />} />
