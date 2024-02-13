@@ -21,7 +21,7 @@ const LeftMenu = () => {
                 </li>
                 {/* Link 2 */}
                 <li>
-                    <Link to="/feedback/read" className="block py-2 px-6 text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700">Read Feedback</Link>
+                    <Link to="/feedback/" className="block py-2 px-6 text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700">Read Feedback</Link>
                 </li>
             </ul>
         </nav>
