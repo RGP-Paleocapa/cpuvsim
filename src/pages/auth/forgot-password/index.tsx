@@ -25,29 +25,30 @@ function ForgotPassword() {
 
   return (
     <div className="flex flex-col justify-center items-center bg-gray-100 py-12 px-4 sm:px-6 lg:px-8 dark:bg-slate-900">
-      <div className="max-w-md w-full space-y-8 border-2 border-gray-300 rounded-lg shadow-md bg-white p-6 dark:border-gray-700 dark:bg-gray-800">
+      <div className="max-w-md w-full space-y-8 border-2 border-gray-300 rounded-lg shadow-md bg-white p-6 dark:border-blue-700 dark:bg-gray-800">
         <h2 className="text-center text-3xl font-extrabold text-gray-900 dark:text-white">Reset Password</h2>
         {message && <p className="text-green-500 text-center">{message}</p>}
         {error && <p className="text-red-500 text-center">{error}</p>}
         <form className="mt-8 space-y-6" onSubmit={handleResetPassword}>
-          <label htmlFor="email" className="text-xl font-semibold text-gray-700 dark:text-green-400 mb-2">Email</label>
+          <label htmlFor="email" className="text-xl font-semibold text-gray-700 dark:text-blue-400 mb-2">Email</label>
           <input
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Email"
-            className='w-full p-4 mt-2 border border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 dark:border-green-500 dark:bg-gray-700 dark:text-gray-100 dark:focus:border-green-400 dark:focus:ring-green-400'
+            className="w-full p-4 mt-2 border border-gray-300 rounded-md shadow-sm hocus:border-blue-500 hocus:ring hocus:ring-blue-500 hocus:ring-opacity-50 dark:border-blue-500 dark:bg-gray-700 dark:text-gray-100 dark:hocus:border-blue-400 dark:hocus:ring-blue-400"
           />
           <button
             type="submit"
-            className="w-full px-6 py-3 text-lg text-white rounded-md bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:ring-opacity-50 dark:bg-green-700 dark:hover:bg-green-800 dark:focus:ring-green-700 shadow-2xl dark:shadow-green-800/50"
+            className="w-full px-6 py-3 text-lg text-white rounded-md bg-blue-700 hocus:bg-blue-800 focus:outline-none hocus:ring-2 hocus:ring-blue-700 hocus:ring-opacity-50 dark:bg-blue-700 dark:hocus:bg-blue-800 dark:hocus:ring-blue-700 shadow-2xl dark:shadow-blue-800/50"
           >
             Send Reset Email
           </button>
         </form>
-        <p className="dark:text-gray-200">Already have an account? <Link to="/auth/login" className="text-green-400 hover:text-green-600 text-lg underline underline-offset-4">Login</Link></p>
+        <p className="dark:text-gray-200">Already have an account? <Link to="/auth/login" className="text-blue-500 hocus:text-blue-700 text-lg underline underline-offset-4">Login</Link></p>
       </div>
     </div>
+  
   );
 }
 

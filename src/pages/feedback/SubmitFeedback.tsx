@@ -55,6 +55,11 @@ const SubmitFeedback = () => {
             />
           </div>
           <div className="flex flex-col">
+            <label htmlFor="rating" className="text-xl font-semibold text-gray-700 dark:text-green-400 mb-2">Your role:</label>
+              <input type="radio" name="student" id="a" value="student" />
+              <input type="radio" name="teacher" id="a" value="teacher" />
+          </div>
+          <div className="flex flex-col">
             <label htmlFor="name" className="text-xl font-semibold text-gray-700 dark:text-green-400 mb-2">Your Name</label>
             <input
               id="name"
