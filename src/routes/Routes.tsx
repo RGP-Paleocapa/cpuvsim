@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
-import { Home, About, Page1, Page2, Page3, Page4, Page5, Page6, Page7, Page8, Page9, Page10, Page11 as AxiosPage, Page12, SubmitFeedback, ReadFeedback, Login, Signup } from '@/pages';
+import { Home, About, Page1, Page2, Page3, Page4, Page5, Page6, Page7, Page8, SubmitFeedback, ReadFeedback, Login, Signup, ForgotPassword } from '@/pages';
 import ProtectedRoute from './ProtectedRoutes';
 import { Maintenance, NotFound } from '@/pages/errors';
 import GuestRoute from './GuestRoute';
@@ -13,6 +13,7 @@ const AppRoutes = () => {
             {/* <Route path="/admin" element={<Admin />} /> */}
             <Route path="/login" element={<GuestRoute component={Login} />} />
             <Route path="/signup" element={<GuestRoute component={Signup} />} />
+            <Route path="/forgot-password" element={<GuestRoute component={ForgotPassword} />} />
             
 
             {/* Pages */}
@@ -25,10 +26,10 @@ const AppRoutes = () => {
             <Route path="/page7" element={<Page7 />} />
             <Route path="/page8" element={<Page8 />} />
             <Route path="/page8" element={<Page8 />} />
-            <Route path="/page9" element={<ProtectedRoute component={Page9} />} />
+            {/* <Route path="/page9" element={<ProtectedRoute component={Page9} />} />
             <Route path="/page10" element={<ProtectedRoute component={Page10} />} />
             <Route path="/page11" element={<ProtectedRoute component={AxiosPage} />} />
-            <Route path="/page12" element={<ProtectedRoute component={Page12} />} />
+            <Route path="/page12" element={<ProtectedRoute component={Page12} />} /> */}
             <Route path="/submit-feedback" element={<ProtectedRoute component={SubmitFeedback} />} />
             <Route path="/read-feedback" element={<ProtectedRoute component={ReadFeedback} />} />
 
