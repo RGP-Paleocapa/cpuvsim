@@ -42,42 +42,42 @@ const SubmitFeedback = () => {
 
   return (
     <Layout>
-      <div className="max-w-md mx-auto mt-10">
-        <h2 className="text-xl font-semibold dark:text-white">Submit Feedback</h2>
-        <form onSubmit={handleSubmit} className="mt-4">
-        Rating: <ReactStars
-          count={5}
-          // onChange={ratingChanged}
-          size={24}
-          activeColor="#ffd700"
-        />
-
-      {/* <ReactStars
-          count={5}
-          // onChange={ratingChanged}
-          size={24}
-          isHalf={true}
-          emptyIcon={<i className="far fa-star"></i>}
-          halfIcon={<i className="fa fa-star-half-alt"></i>}
-          fullIcon={<i className="fa fa-star"></i>}
-          activeColor="#ffd700"
-        /> */}
-          <input
-            type='text'
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            placeholder='Your name'
-            className='w-full p-2 mb-4 border border-gray-300 rounded-md shadow-sm dark:border-gray-600 dark:bg-gray-800 dark:text-gray-100'
-          />
-          {/* Removed the email input field as it's now coming from the Zustand store */}
-          <textarea
-            value={feedback}
-            onChange={(e) => setFeedback(e.target.value)}
-            placeholder="Your feedback"
-            required
-            className="w-full p-2 border border-gray-300 rounded-md shadow-sm dark:border-gray-600 dark:bg-gray-800 dark:text-gray-100"
+      <div className="w-5/6 mx-auto mt-12 bg-white dark:bg-gray-800 p-8 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700">
+        <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8">Submit Feedback</h2>
+        <form onSubmit={handleSubmit} className="space-y-6">
+          <div className="flex flex-col">
+            <label htmlFor="rating" className="text-xl font-semibold text-gray-700 dark:text-green-400 mb-2">Rating:</label>
+            <ReactStars
+              id="rating"
+              count={5}
+              size={30} // Larger star size
+              activeColor="#ffd700"
             />
-          <button type="submit" className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 dark:bg-blue-400 dark:hover:bg-blue-500">
+          </div>
+          <div className="flex flex-col">
+            <label htmlFor="name" className="text-xl font-semibold text-gray-700 dark:text-green-400 mb-2">Your Name</label>
+            <input
+              id="name"
+              type='text'
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder='Enter your name'
+              className='w-full p-4 mt-2 border border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 dark:border-green-500 dark:bg-gray-700 dark:text-gray-100 dark:focus:border-green-400 dark:focus:ring-green-400'
+            />
+          </div>
+          <div className="flex flex-col">
+            <label htmlFor="feedback" className="text-xl font-semibold text-gray-700 dark:text-green-400 mb-2">Your Feedback</label>
+            <textarea
+              id="feedback"
+              value={feedback}
+              onChange={(e) => setFeedback(e.target.value)}
+              placeholder="Share your thoughts"
+              required
+              className="w-full p-4 mt-2 border border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 dark:border-green-500 dark:bg-gray-700 dark:text-gray-100 dark:focus:border-green-400 dark:focus:ring-green-400"
+              rows={5}
+            />
+          </div>
+          <button type="submit" className="w-full px-6 py-3 text-lg text-white rounded-md bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:ring-opacity-50 dark:bg-green-700 dark:hover:bg-green-800 dark:focus:ring-green-700 shadow-2xl dark:shadow-green-800/50">
             Submit Feedback
           </button>
         </form>
