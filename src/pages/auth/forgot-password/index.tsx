@@ -24,9 +24,9 @@ function ForgotPassword() {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center bg-gray-100 py-12 px-4 sm:px-6 lg:px-8 dark:bg-gray-800">
+    <div className="flex flex-col justify-center items-center bg-gray-100 py-12 px-4 sm:px-6 lg:px-8 dark:bg-slate-900">
       <div className="max-w-md w-full space-y-8 border-2 border-gray-300 rounded-lg shadow-md bg-white p-6 dark:border-gray-700 dark:bg-gray-900">
-        <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">Reset Password</h2>
+        <h2 className="text-center text-3xl font-extrabold text-gray-900 dark:text-white">Reset Password</h2>
         {message && <p className="text-green-500 text-center">{message}</p>}
         {error && <p className="text-red-500 text-center">{error}</p>}
         <form className="mt-8 space-y-6" onSubmit={handleResetPassword}>
