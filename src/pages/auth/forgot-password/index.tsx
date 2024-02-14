@@ -1,26 +1,24 @@
-import { useState } from 'react';
-import { getAuth, sendPasswordResetEmail } from "firebase/auth";
+import React, { useState } from 'react';
+import { getAuth, sendPasswordResetEmail } from 'firebase/auth';
 import { Link, useNavigate } from 'react-router-dom';
 
 function ForgotPassword() {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
-
   const navigate = useNavigate();
 
-  const handleResetPassword = (e: { preventDefault: () => void; }) => {
+  const handleResetPassword = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const auth = getAuth();
 
-    sendPasswordResetEmail(auth, email)
-      .then(() => {
-        setMessage('Check your email to reset your password.');
-        setTimeout(() => navigate('/auth/login'), 3000); // Redirect them to the login page after 3 seconds
-      })
-      .catch((error) => {
-        setError(error.message);
-      });
+    try {
+      await sendPasswordResetEmail(auth, email);
+      setMessage('Check your email to reset your password.');
+      setTimeout(() => navigate('/auth/login'), 3000); // Redirect them to the login page after 3 seconds
+    } catch (error: any) {
+      setError(error.message);
+    }
   };
 
   return (

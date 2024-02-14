@@ -10,7 +10,7 @@ function Login() {
   const navigate = useNavigate();
   const { setUser } = useAuthStore();
 
-  const handleLogin = async (e: { preventDefault: () => void; }) => {
+  const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const auth = getAuth();
