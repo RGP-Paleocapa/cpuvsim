@@ -58,7 +58,7 @@ const Header: React.FC = () => {
     },
     {
       "path": "/page1",
-      "text": "Pages",
+      "text": "Content",
       "pattern": "^/page[1-8]$",
       "color": {
         "default": "text-blue-600 dark:text-blue-400",
