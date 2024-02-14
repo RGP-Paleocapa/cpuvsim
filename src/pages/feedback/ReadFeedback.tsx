@@ -52,7 +52,7 @@ const ReadFeedback = () => {
 
   return (
     <Layout>
-      <div className="max-w-2xl mx-auto mt-10">
+      <div className="w-5/6 max-w-2xl mx-auto mt-10">
         <h2 className="text-xl font-semibold dark:text-white">Feedback Sent</h2>
         {feedbacks.length > 0 ? (
           <ul className="mt-4 space-y-6">

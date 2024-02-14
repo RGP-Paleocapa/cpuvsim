@@ -67,7 +67,7 @@ const SubmitFeedback: React.FC = () => {
         <h2 className="text-3xl font-bold text-black dark:text-white mb-8">Submit Feedback</h2>
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="flex flex-col">
-            <label htmlFor="rating" className="text-xl font-semibold text-blue-700 dark:text-green-400 mb-2">Rating: <span className="text-red-500">*</span></label>
+            <span className="text-xl font-semibold text-blue-700 dark:text-green-400 mb-2">Rating: <span className="text-red-500">*</span></span>
             <ReactStars
               key={resetKey}
               id="rating"
@@ -79,7 +79,7 @@ const SubmitFeedback: React.FC = () => {
             />
           </div>
           <div className="flex flex-col">
-            <label htmlFor="role" className="text-xl font-semibold text-blue-700 dark:text-green-400 mb-2">Your Role or Job Title:</label>
+            <span className="text-xl font-semibold text-blue-700 dark:text-green-400 mb-2">Your Role or Job Title:</span>
             <div className="flex items-center mb-2 dark:text-gray-100">
               <input 
                 type="radio" 
