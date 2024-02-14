@@ -7,27 +7,26 @@ function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-
   const navigate = useNavigate();
   const { setUser } = useAuthStore();
 
-  const handleLogin = (e: { preventDefault: () => void; }) => {
+  const handleLogin = async (e: { preventDefault: () => void; }) => {
     e.preventDefault();
 
     const auth = getAuth();
 
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        setUser({ email: userCredential.user.email });
+    try {
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      setUser({ email: userCredential.user.email });
 
-        // Set session start time in localStorage
-        localStorage.setItem('sessionStart', Date.now().toString());
+      // Set session start time in localStorage
+      localStorage.setItem('sessionStart', Date.now().toString());
 
-        navigate('/feedback/submit'); // Redirect to dashboard or home page after login
-      })
-      .catch((error) => {
-        setError(error.message);
-      });
+      // Redirect to dashboard or home page after login
+      navigate('/feedback/submit');
+    } catch (error: any) {
+      setError(error.message);
+    }
   };
 
   return (
