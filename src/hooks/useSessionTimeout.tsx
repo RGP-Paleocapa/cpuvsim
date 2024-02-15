@@ -1,12 +1,13 @@
+import { useEffect } from "react";
 import useAuthStore from "@/context/useAuthStore";
 import { getAuth, signOut } from "firebase/auth";
-import { useEffect } from "react";
 
 const useSessionTimeout = (timeoutInMilliseconds: number) => {
   const { user, clearUser } = useAuthStore();
   const auth = getAuth();
 
   useEffect(() => {
+    // Only set up session timeout logic if a user is logged in
     if (!user) {
       console.log("No user logged in, skipping session timeout.");
       return;
@@ -19,6 +20,7 @@ const useSessionTimeout = (timeoutInMilliseconds: number) => {
         await signOut(auth);
         clearUser();
         console.log("User signed out due to session timeout.");
+        localStorage.removeItem('sessionStart'); // Ensure sessionStart is cleared on logout
       } catch (error) {
         console.error("Error during logout:", error);
       }
@@ -28,29 +30,22 @@ const useSessionTimeout = (timeoutInMilliseconds: number) => {
       const sessionStart = parseInt(localStorage.getItem('sessionStart') || '0');
       const now = Date.now();
       const elapsed = now - sessionStart;
-      const elapsedMinutes = Math.floor(elapsed / (1000 * 60));
-      const elapsedSeconds = Math.floor((elapsed % (1000 * 60)) / 1000);
-    
-      console.log(`Time elapsed: ${elapsedMinutes}m ${elapsedSeconds}s`);
-    
-      if (elapsed >= timeoutInMilliseconds) {
-        console.log("Session timeout reached. Logging out...");
-        logoutUser();
-        localStorage.removeItem('sessionStart');
-      } else {
-        const remaining = timeoutInMilliseconds - elapsed;
-        const remainingMinutes = Math.floor(remaining / (1000 * 60));
-        const remainingSeconds = Math.floor((remaining % (1000 * 60)) / 1000);
-        console.log(`Session time remaining: ${remainingMinutes}m ${remainingSeconds}s`);
-      }
-    };   
-    
-    // Call checkSessionTimeout immediately for an instant check
-    checkSessionTimeout();
 
-    // Check the session timeout status every 10 seconds
+      if (elapsed >= timeoutInMilliseconds) {
+        logoutUser();
+      }
+    };
+
+    // Delay the initial check by a few seconds to ensure all login processes have completed
+    const initialDelay = setTimeout(checkSessionTimeout, 5000);
+
+    // Continue to check the session timeout status at regular intervals
     const interval = setInterval(checkSessionTimeout, 10000);
-    return () => clearInterval(interval);
+
+    return () => {
+      clearTimeout(initialDelay);
+      clearInterval(interval);
+    };
   }, [timeoutInMilliseconds, user, clearUser]);
 };
 
