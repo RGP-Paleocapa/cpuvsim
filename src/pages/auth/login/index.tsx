@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { getAuth, signInWithEmailAndPassword, setPersistence, browserSessionPersistence } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword, setPersistence, browserSessionPersistence, signOut } from "firebase/auth";
 import useAuthStore from '@/context/useAuthStore'; // Adjust the import path as needed
 import { Link, useNavigate } from 'react-router-dom';
 import { Firestore, doc, getDoc, getFirestore } from 'firebase/firestore';
@@ -15,32 +15,43 @@ function Login() {
 
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const auth = getAuth();
+    const auth = getAuth(firebase);
     const db = getFirestore(firebase);
-
+  
     try {
       await setPersistence(auth, browserSessionPersistence);
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
-      const isAdmin = await fetchisAdmin(db, userCredential.user.uid);
-
-      setUser({
-        email: userCredential.user.email,
-        userId: userCredential.user.uid,
-        isAdmin,
-      });
-
-      localStorage.setItem('sessionStart', Date.now().toString());
-      navigate('/feedback/submit'); // Adjust the redirect route as needed
-    } catch (error: any) {
-      setError(error.message);
+  
+      if (userCredential.user.emailVerified) {
+        // Email is verified, fetch additional user info and proceed
+        const isAdmin = await fetchisAdmin(db, userCredential.user.uid);
+  
+        setUser({
+          email: userCredential.user.email,
+          userId: userCredential.user.uid,
+          isAdmin: isAdmin,
+        });
+  
+        localStorage.setItem('sessionStart', Date.now().toString());
+        navigate('/feedback/submit');
+      } else {
+        // Email not verified, do not set user state or navigate
+        // Instead, show error or guidance
+        setError("Please verify your email before logging in.");
+        // Optionally sign the user out here if you don't want to keep them logged in
+        await signOut(auth);
+      }
+    } catch (error) {
+      if (error instanceof Error) setError(error.message);
+      else setError("An unexpected error occurred. Please try again.");
     }
   };
-
-  // Simplified fetchisAdmin function remains the same
+  
+  // Utility function to check if the user is an admin
   const fetchisAdmin = async (db: Firestore, userId: string) => {
     const docRef = doc(db, `users/${userId}`);
     const docSnap = await getDoc(docRef);
-    return docSnap.exists() ? docSnap.data().isAdmin : null;
+    return docSnap.exists() ? docSnap.data().isAdmin : false;
   };
 
 

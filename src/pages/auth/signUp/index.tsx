@@ -1,44 +1,40 @@
 import { useState } from 'react';
-import { getAuth, createUserWithEmailAndPassword, setPersistence, browserSessionPersistence } from "firebase/auth";
-import useAuthStore from '@/context/useAuthStore'; // Adjust the import path as needed
+import { getAuth, createUserWithEmailAndPassword, setPersistence, browserSessionPersistence, sendEmailVerification, signOut } from "firebase/auth";
 import { Link, useNavigate } from 'react-router-dom';
 import firebase from '@/firebase';
-import { doc, getFirestore, setDoc } from 'firebase/firestore';
+// Import removed for doc and setDoc from 'firebase/firestore' as they're not used in this snippet.
 
 function SignUp() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
-  const { setUser } = useAuthStore();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const auth = getAuth();
-    const db = getFirestore(firebase);
+    const auth = getAuth(firebase);
 
     try {
       await setPersistence(auth, browserSessionPersistence);
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
 
-      // Optionally initialize user data, including isAdmin status.
-      // This example defaults isAdmin to false.
-      const userRef = doc(db, `users/${userCredential.user.uid}`);
-      await setDoc(userRef, { email: userCredential.user.email, isAdmin: false }, { merge: true });
-
-      setUser({
-        email: userCredential.user.email,
-        userId: userCredential.user.uid,
-        isAdmin: false, // Assuming new users are not admins by default
-      });
-
-      localStorage.setItem('sessionStart', Date.now().toString());
-      navigate('/'); // Adjust the redirect route as needed
-    } catch (error: any) {
-      setError(error.message);
+      sendEmailVerification(userCredential.user)
+        .then(() => {
+          console.log('Verification email sent.');
+          signOut(auth).then(() => {
+            navigate('/auth/login'); // Redirect to login after signing out
+          });
+        })
+        .catch((error) => {
+          console.error("Error sending verification email", error);
+          setError("Error sending verification email. Please try again later.");
+        });
+    } catch (error) {
+      if (error instanceof Error) setError(error.message);
+      else setError("An unexpected error occurred. Please try again.");
     }
   };
-
+      
 
   return (
     <div className="flex flex-col justify-center items-center bg-gray-100 py-12 px-4 sm:px-6 lg:px-8 dark:bg-slate-900">

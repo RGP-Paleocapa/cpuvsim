@@ -23,7 +23,7 @@ const LeftMenuDesktop = () => {
                 <li>
                     <Link 
                         to="/feedback/submit" 
-                        className={`block py-2 px-6 text-gray-600 dark:text-green-400 hover:bg-gray-50 dark:hover:bg-gray-700 ${
+                        className={`block py-2 px-6 text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700 ${
                           location.pathname === "/feedback/submit" ? "font-bold dark:bg-gray-700 dark:text-green-500" : ""
                         }`}
                     >
@@ -33,7 +33,7 @@ const LeftMenuDesktop = () => {
                 <li>
                     <Link 
                         to="/feedback/" 
-                        className={`block py-2 px-6 text-gray-600 dark:text-green-400 hover:bg-gray-50 dark:hover:bg-gray-700 ${
+                        className={`block py-2 px-6 text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700 ${
                           location.pathname === "/feedback/" ? "font-bold dark:bg-gray-700 dark:text-green-500" : ""
                         }`}
                     >

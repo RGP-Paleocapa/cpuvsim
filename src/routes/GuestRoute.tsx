@@ -12,7 +12,7 @@ const GuestRoute: React.FC<GuestRouteProps> = ({ component: Component, ...rest }
   const { isAuthenticated } = useAuthStore();
 
   // If authenticated, navigate to the root. Otherwise, render the given component.
-  return isAuthenticated ? <Navigate to="/" /> : <Component {...rest} />;
+  return isAuthenticated ? <Navigate to="/feedback" /> : <Component {...rest} />;
 };
 
 export default GuestRoute;
