@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, setPersistence, browserSessionPersistence } from "firebase/auth";
 import useAuthStore from '@/context/useAuthStore'; // Adjust the import path as needed
 import { Link, useNavigate } from 'react-router-dom';
 
-function Signup() {
+function SignUp() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -15,18 +15,24 @@ function Signup() {
 
     const auth = getAuth();
 
-    try {
-      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-      setUser({ email: userCredential.user.email });
+    // Set the persistence level
+    setPersistence(auth, browserSessionPersistence)
+      .then(() => {
+        // Proceed with creating user after setting the persistence
+        return createUserWithEmailAndPassword(auth, email, password);
+      })
+      .then((userCredential) => {
+        setUser({ email: userCredential.user.email });
 
-      // Set session start time in localStorage
-      localStorage.setItem('sessionStart', Date.now().toString());
+        // Set session start time in localStorage for session timeout logic
+        localStorage.setItem('sessionStart', Date.now().toString());
 
-      // Redirect to dashboard or home page after signup
-      navigate('/');
-    } catch (error: any) {
-      setError(error.message);
-    }
+        // Redirect to dashboard or home page after signup
+        navigate('/');
+      })
+      .catch((error) => {
+        setError(error.message);
+      });
   };
 
   return (
@@ -62,4 +68,4 @@ function Signup() {
   );
 }
 
-export default Signup;
+export default SignUp;

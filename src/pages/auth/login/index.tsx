@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword, setPersistence, browserSessionPersistence } from "firebase/auth";
 import useAuthStore from '@/context/useAuthStore'; // Adjust the import path as needed
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -15,19 +15,26 @@ function Login() {
 
     const auth = getAuth();
 
-    try {
-      const userCredential = await signInWithEmailAndPassword(auth, email, password);
-      setUser({ email: userCredential.user.email });
+    // Set the persistence level
+    setPersistence(auth, browserSessionPersistence)
+      .then(() => {
+        // Proceed with signing in after setting the persistence
+        return signInWithEmailAndPassword(auth, email, password);
+      })
+      .then((userCredential) => {
+        setUser({ email: userCredential.user.email });
 
-      // Set session start time in localStorage
-      localStorage.setItem('sessionStart', Date.now().toString());
+        // Optionally, you can set session start time or any other actions here
+        // Set session start time in localStorage for session timeout logic
+        localStorage.setItem('sessionStart', Date.now().toString());
 
-      // Redirect to dashboard or home page after login
-      navigate('/feedback/submit');
-    } catch (error: any) {
-      setError(error.message);
-    }
+        navigate('/feedback/submit'); // Redirect to dashboard or home page after login
+      })
+      .catch((error: any) => {
+        setError(error.message);
+      });
   };
+
 
   return (
     <div className="flex flex-col justify-center items-center bg-gray-100 py-12 px-4 sm:px-6 lg:px-8 dark:bg-slate-900">
