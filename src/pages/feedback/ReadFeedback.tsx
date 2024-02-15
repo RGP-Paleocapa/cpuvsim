@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { getFirestore, collection, getDocs, query, orderBy } from 'firebase/firestore';
+import { getFirestore, collection, getDocs, query, orderBy, collectionGroup } from 'firebase/firestore';
 import firebaseApp from '@/firebase'; // Adjust the import path as necessary
 import Layout from './Layout';
 import useAuthStore from '@/context/useAuthStore'; // Ensure the correct path
@@ -20,31 +20,39 @@ const ReadFeedback = () => {
 
   useEffect(() => {
     const db = getFirestore(firebaseApp);
-    const userId = user?.userId; // Using userId for Firestore path
+    const userId = user?.userId; // Using optional chaining here
 
-    // Ensure userId is defined before fetching
     if (!userId) {
       console.log("User ID is undefined. Make sure user is logged in.");
-      return; // Exit if userId is undefined
+      return;
     }
-
+  
+    const isAdmin = user?.isAdmin;
+  
     const fetchFeedback = async () => {
-      // Correctly using the `userId` in the Firestore path
-      const q = query(collection(db, `users/${userId}/feedback`), orderBy("timestamp", "desc"));
-      const querySnapshot = await getDocs(q);
-
-      const fetchedFeedback = querySnapshot.docs.map(doc => ({
-        id: doc.id,
-        ...doc.data(),
-        // Adjusting for timestamp conversion
-        timestamp: doc.data().timestamp ? new Date(doc.data().timestamp.seconds * 1000) : undefined,
-      })) as Feedback[];
-
-      setFeedbacks(fetchedFeedback);
+      let q;
+  
+      if (isAdmin === true) {
+        q = query(collectionGroup(db, 'feedback'), orderBy("timestamp", "desc"));
+      } else {
+        q = query(collection(db, `users/${userId}/feedback`), orderBy("timestamp", "desc"));
+      }
+  
+      try {
+        const querySnapshot = await getDocs(q);
+        const fetchedFeedback = querySnapshot.docs.map(doc => ({
+          id: doc.id,
+          ...doc.data(),
+          timestamp: doc.data().timestamp ? new Date(doc.data().timestamp.seconds * 1000) : undefined,
+        })) as Feedback[];
+        setFeedbacks(fetchedFeedback);
+      } catch (error) {
+        console.error("Failed to fetch feedback:", error);
+      }      
     };
-
+  
     fetchFeedback();
-  }, [user]); // Depend on the user state to re-run when user or user ID changes
+  }, [user]);  
 
   return (
     <Layout>

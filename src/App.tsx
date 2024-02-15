@@ -1,9 +1,6 @@
-import { useEffect } from 'react';
-import useAuthStore from './context/useAuthStore';
-import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import useFirebaseAuth from '@hooks/useFireAuth'; // Adjust path as necessary
 import useSessionTimeout from './hooks/useSessionTimeout';
 
-// Import UI components
 import Footer from '@/components/layout/footer/Footer';
 import Header from '@/components/layout/header/Header';
 import AppRoutes from './routes/Routes';
@@ -13,28 +10,8 @@ import { FooterProvider } from './context/FooterContext';
 import './i18n';
 
 const App = () => {
-  const { setUser, clearUser } = useAuthStore();
-
-  useEffect(() => {
-    const auth = getAuth();
-    onAuthStateChanged(auth, (firebaseUser) => {
-      if (firebaseUser) {
-        // If Firebase user exists, sync with Zustand
-        setUser({
-          email: firebaseUser.email,
-          userId: firebaseUser.uid,
-        });
-      } else {
-        // If Firebase user does not exist, clear Zustand
-        clearUser();
-      }
-    });
-  }, [setUser, clearUser]);
-
-    useSessionTimeout(1_800_000); // 30 minutes
-
-  // Always call useSessionTimeout but let it decide internally to act or not
-  // useSessionTimeout(180000, !!user); // Pass a second argument to indicate if the user is logged in
+  useFirebaseAuth(); // Custom hook to manage auth state
+  useSessionTimeout(1_800_000); // 30 minutes session timeout
 
   return (
     <FooterProvider>

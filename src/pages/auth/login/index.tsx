@@ -2,6 +2,9 @@ import { useState } from 'react';
 import { getAuth, signInWithEmailAndPassword, setPersistence, browserSessionPersistence } from "firebase/auth";
 import useAuthStore from '@/context/useAuthStore'; // Adjust the import path as needed
 import { Link, useNavigate } from 'react-router-dom';
+import { Firestore, doc, getDoc, getFirestore } from 'firebase/firestore';
+import firebase from '@/firebase';
+
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -12,32 +15,32 @@ function Login() {
 
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
     const auth = getAuth();
+    const db = getFirestore(firebase);
 
-    // Set the persistence level
-    setPersistence(auth, browserSessionPersistence)
-      .then(() => {
-        // Proceed with signing in after setting the persistence
-        return signInWithEmailAndPassword(auth, email, password);
-      })
-      .then((userCredential) => {
-        setUser({
-          email: userCredential.user.email,
-          userId: userCredential.user.uid,
-        });
+    try {
+      await setPersistence(auth, browserSessionPersistence);
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      const isAdmin = await fetchisAdmin(db, userCredential.user.uid);
 
-        console.log(userCredential);
-
-        // Optionally, you can set session start time or any other actions here
-        // Set session start time in localStorage for session timeout logic
-        localStorage.setItem('sessionStart', Date.now().toString());
-
-        navigate('/feedback/submit'); // Redirect to dashboard or home page after login
-      })
-      .catch((error: any) => {
-        setError(error.message);
+      setUser({
+        email: userCredential.user.email,
+        userId: userCredential.user.uid,
+        isAdmin,
       });
+
+      localStorage.setItem('sessionStart', Date.now().toString());
+      navigate('/feedback/submit'); // Adjust the redirect route as needed
+    } catch (error: any) {
+      setError(error.message);
+    }
+  };
+
+  // Simplified fetchisAdmin function remains the same
+  const fetchisAdmin = async (db: Firestore, userId: string) => {
+    const docRef = doc(db, `users/${userId}`);
+    const docSnap = await getDoc(docRef);
+    return docSnap.exists() ? docSnap.data().isAdmin : null;
   };
 
 
