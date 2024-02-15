@@ -22,7 +22,12 @@ function Login() {
         return signInWithEmailAndPassword(auth, email, password);
       })
       .then((userCredential) => {
-        setUser({ email: userCredential.user.email });
+        setUser({
+          email: userCredential.user.email,
+          userId: userCredential.user.uid,
+        });
+
+        console.log(userCredential);
 
         // Optionally, you can set session start time or any other actions here
         // Set session start time in localStorage for session timeout logic

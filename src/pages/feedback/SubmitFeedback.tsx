@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { getFirestore, collection, addDoc } from 'firebase/firestore';
+import { getFirestore, collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import { FieldValue, Timestamp } from 'firebase/firestore';
 import firebaseApp from '@/firebase'; // Adjust the import path as necessary
 import Layout from './Layout';
 import useAuthStore from '@/context/useAuthStore'; // Ensure the correct path to your Zustand store
@@ -7,9 +8,9 @@ import ReactStars from "react-rating-stars-component";
 
 interface FeedbackData {
   name: string;
-  email: string;
+  email: string | null;
   text: string;
-  timestamp: Date;
+  timestamp: FieldValue | Timestamp | null; 
   role?: string; // optional
   rating?: number; // Optional 'rating' field, assuming rating is a number from 1 to 5
 }
@@ -23,7 +24,7 @@ const SubmitFeedback: React.FC = () => {
   const [feedback, setFeedback] = useState<string>('');
 
   const { user } = useAuthStore();
-  const userEmail = user?.email;
+  const userId = user?.userId; // Using userId instead of userEmail for Firestore path
 
   const handleRoleChange = (event: any) => {
     setRole(event.target.value);
@@ -32,23 +33,28 @@ const SubmitFeedback: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault();
 
-    if (!userEmail) {
-      alert('User email is not available. Please log in.');
+    if (!userId) {
+      alert('User ID is not available. Please log in.');
       return;
     }
+
 
     const feedbackData: FeedbackData = {
       ...(typeof rating === 'number' && { rating }),
       ...(role && { role }),
       name,
       text: feedback,
-      email: userEmail,
-      timestamp: new Date(),
+      email: user?.email, // It's safe to use userEmail here since it's part of the feedback data
+      timestamp: serverTimestamp(),
     };
 
+    console.log(Object.keys(feedbackData));
+
     const db = getFirestore(firebaseApp);
+
     try {
-      await addDoc(collection(db, "feedback"), feedbackData);
+      // Correctly using the `userId` in the Firestore path
+      await addDoc(collection(db, `users/${userId}/feedback`), feedbackData);
       setFeedback('');
       setName('');
       setRole('');

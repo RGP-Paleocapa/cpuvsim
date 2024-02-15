@@ -22,7 +22,10 @@ function SignUp() {
         return createUserWithEmailAndPassword(auth, email, password);
       })
       .then((userCredential) => {
-        setUser({ email: userCredential.user.email });
+        setUser({
+          email: userCredential.user.email,
+          userId: userCredential.user.uid,
+        });
 
         // Set session start time in localStorage for session timeout logic
         localStorage.setItem('sessionStart', Date.now().toString());

@@ -3,6 +3,7 @@ import { create } from 'zustand';
 
 interface UserType {
   email: string | null;
+  userId: string | null;
 }
 
 interface UseAuthStoreTypes {
@@ -17,7 +18,13 @@ const useAuthStore = create<UseAuthStoreTypes>((set) => ({
   isAuthenticated: false,
   checkingAuth: true, // Initial state is true, indicating we're checking auth status
   user: null,
-  setUser: (user) => set({ isAuthenticated: !!user, user, checkingAuth: false }),
+  setUser: (user) => set({
+    isAuthenticated: !!user,
+    user: {
+      email: user?.email || null,
+      userId: user?.userId || null,
+    },
+    checkingAuth: false }),
   clearUser: () => set({ isAuthenticated: false, user: null, checkingAuth: false }),
 }));
 

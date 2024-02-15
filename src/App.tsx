@@ -20,7 +20,10 @@ const App = () => {
     onAuthStateChanged(auth, (firebaseUser) => {
       if (firebaseUser) {
         // If Firebase user exists, sync with Zustand
-        setUser({ email: firebaseUser.email });
+        setUser({
+          email: firebaseUser.email,
+          userId: firebaseUser.uid,
+        });
       } else {
         // If Firebase user does not exist, clear Zustand
         clearUser();
