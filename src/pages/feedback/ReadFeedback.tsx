@@ -34,7 +34,7 @@ const ReadFeedback = () => {
   
       if (isAdmin) { // Simplified check, assuming isAdmin correctly reflects the user's admin status
         // Collection group query for admin users
-        q = query(collectionGroup(db, 'feedback'));
+        q = query(collectionGroup(db, 'feedback'), orderBy("timestamp", "desc"));
       } else {
         // Specific user query for non-admin users
         q = query(collection(db, `users/${userId}/feedback`), orderBy("timestamp", "desc"));
