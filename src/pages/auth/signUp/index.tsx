@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { getAuth, createUserWithEmailAndPassword, setPersistence, browserSessionPersistence } from "firebase/auth";
 import useAuthStore from '@/context/useAuthStore'; // Adjust the import path as needed
 import { Link, useNavigate } from 'react-router-dom';
+import firebase from '@/firebase';
+import { doc, getFirestore, setDoc } from 'firebase/firestore';
 
 function SignUp() {
   const [email, setEmail] = useState('');
@@ -12,31 +14,31 @@ function SignUp() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
     const auth = getAuth();
+    const db = getFirestore(firebase);
 
-    // Set the persistence level
-    setPersistence(auth, browserSessionPersistence)
-      .then(() => {
-        // Proceed with creating user after setting the persistence
-        return createUserWithEmailAndPassword(auth, email, password);
-      })
-      .then((userCredential) => {
-        setUser({
-          email: userCredential.user.email,
-          userId: userCredential.user.uid,
-        });
+    try {
+      await setPersistence(auth, browserSessionPersistence);
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
 
-        // Set session start time in localStorage for session timeout logic
-        localStorage.setItem('sessionStart', Date.now().toString());
+      // Optionally initialize user data, including isAdmin status.
+      // This example defaults isAdmin to false.
+      const userRef = doc(db, `users/${userCredential.user.uid}`);
+      await setDoc(userRef, { email: userCredential.user.email, isAdmin: false }, { merge: true });
 
-        // Redirect to dashboard or home page after signup
-        navigate('/');
-      })
-      .catch((error) => {
-        setError(error.message);
+      setUser({
+        email: userCredential.user.email,
+        userId: userCredential.user.uid,
+        isAdmin: false, // Assuming new users are not admins by default
       });
+
+      localStorage.setItem('sessionStart', Date.now().toString());
+      navigate('/'); // Adjust the redirect route as needed
+    } catch (error: any) {
+      setError(error.message);
+    }
   };
+
 
   return (
     <div className="flex flex-col justify-center items-center bg-gray-100 py-12 px-4 sm:px-6 lg:px-8 dark:bg-slate-900">
