@@ -48,8 +48,6 @@ const SubmitFeedback: React.FC = () => {
       timestamp: serverTimestamp(),
     };
 
-    console.log(Object.keys(feedbackData));
-
     const db = getFirestore(firebaseApp);
 
     try {
