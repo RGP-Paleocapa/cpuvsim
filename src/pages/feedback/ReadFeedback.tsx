@@ -32,23 +32,31 @@ const ReadFeedback = () => {
     const fetchFeedback = async () => {
       let q;
   
-      if (isAdmin === true) {
-        q = query(collectionGroup(db, 'feedback'), orderBy("timestamp", "desc"));
+      if (isAdmin) { // Simplified check, assuming isAdmin correctly reflects the user's admin status
+        // Collection group query for admin users
+        q = query(collectionGroup(db, 'feedback'));
       } else {
+        // Specific user query for non-admin users
         q = query(collection(db, `users/${userId}/feedback`), orderBy("timestamp", "desc"));
       }
   
       try {
         const querySnapshot = await getDocs(q);
-        const fetchedFeedback = querySnapshot.docs.map(doc => ({
-          id: doc.id,
-          ...doc.data(),
-          timestamp: doc.data().timestamp ? new Date(doc.data().timestamp.seconds * 1000) : undefined,
-        })) as Feedback[];
+        const fetchedFeedback = querySnapshot.docs.map((doc) => {
+          const data = doc.data();
+          // More robust handling of the timestamp conversion
+          const timestamp = data.timestamp?.toDate ? data.timestamp.toDate() : new Date();
+          return {
+            id: doc.id,
+            ...data,
+            timestamp, // Use the converted Date object directly
+          };
+        }) as Feedback[];
+      
         setFeedbacks(fetchedFeedback);
       } catch (error) {
         console.error("Failed to fetch feedback:", error);
-      }      
+      }
     };
   
     fetchFeedback();
