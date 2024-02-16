@@ -1,4 +1,4 @@
-import useDocumentMetadata from "../../../hooks/useDocumentMetadata";
+import useDocumentMetadata from "@hooks/useDocumentMetadata";
 
 const Maintenance = () => {
     const goBack = () => {
