@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { getAuth, sendPasswordResetEmail } from 'firebase/auth';
 import { Link } from 'react-router-dom';
+import { FirebaseError } from 'firebase/app';
 
 function ForgotPassword() {
   const [email, setEmail] = useState('');
@@ -10,17 +11,30 @@ function ForgotPassword() {
 
   const handleResetPassword = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const auth = getAuth();
+    const auth = getAuth(); // Ensure you initialize Firebase Auth correctly elsewhere in your app
 
     setMessage(''); // Clear any previous message
     setError(''); // Clear any previous error
 
+    if (!email.trim()) {
+      setError('Please enter your email address.');
+      return;
+    }
+
     try {
-      await sendPasswordResetEmail(auth, email);
+      await sendPasswordResetEmail(auth, email.trim());
       setMessage('Check your email to reset your password.');
-      // setTimeout(() => navigate('/auth/login'), 3000); // Redirect them to the login page after 3 seconds
-    } catch (error: any) {
-      setError(error.message);
+      // Consider providing further instructions or automating navigation if appropriate
+    } catch (error) {
+      const firebaseError = error as FirebaseError; // Type assertion to FirebaseError
+      if (firebaseError.code === 'auth/user-not-found') {
+        setError('No user found with this email address. Please check and try again.');
+      } else if (firebaseError.code === 'auth/invalid-email') {
+        setError('Invalid email address format. Please enter a valid email address.');
+      } else {
+        setError('An unexpected error occurred. Please try again later.');
+        console.error('Reset password error:', firebaseError); // Logging the cast error
+      }
     }
   };
 

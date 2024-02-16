@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { getAuth, createUserWithEmailAndPassword, setPersistence, browserSessionPersistence, sendEmailVerification, signOut } from "firebase/auth";
 import { Link, useNavigate } from 'react-router-dom';
 import firebase from '@/firebase';
+import { FirebaseError } from 'firebase/app';
 // Import removed for doc and setDoc from 'firebase/firestore' as they're not used in this snippet.
 
 function SignUp() {
@@ -15,25 +16,42 @@ function SignUp() {
     const auth = getAuth(firebase);
 
     try {
-      await setPersistence(auth, browserSessionPersistence);
-      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        await setPersistence(auth, browserSessionPersistence);
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
 
-      sendEmailVerification(userCredential.user)
-        .then(() => {
-          console.log('Verification email sent.');
-          signOut(auth).then(() => {
-            navigate('/auth/login'); // Redirect to login after signing out
-          });
-        })
-        .catch((error) => {
-          console.error("Error sending verification email", error);
-          setError("Error sending verification email. Please try again later.");
-        });
+        sendEmailVerification(userCredential.user)
+            .then(() => {
+                console.log('Verification email sent.');
+                signOut(auth).then(() => {
+                    navigate('/auth/login'); // Redirect to login after signing out
+                });
+            })
+            .catch((error) => {
+                console.error("Error sending verification email", error);
+                setError("Error sending verification email. Please try again later.");
+            });
     } catch (error) {
-      if (error instanceof Error) setError(error.message);
-      else setError("An unexpected error occurred. Please try again.");
+        if (error instanceof FirebaseError) {
+            // Handle specific Firebase errors
+            switch (error.code) {
+                case "auth/email-already-in-use":
+                    setError("Email is already in use. Please choose another one.");
+                    break;
+                case "auth/weak-password":
+                    setError("Password is too weak. Please choose a stronger password.");
+                    break;
+                case "auth/invalid-email":
+                    setError("Invalid email format. Please enter a valid email address.");
+                    break;
+                default:
+                    setError("An unexpected error occurred. Please try again.");
+                    break;
+            }
+        } else {
+            setError("An unexpected error occurred. Please try again.");
+        }
     }
-  };
+};
       
 
   return (
