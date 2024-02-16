@@ -2,56 +2,35 @@ import { useEffect, useState } from "react";
 import { FaSun, FaMoon } from 'react-icons/fa';
 
 const ThemeSwitcher = () => {
-    const [theme, setTheme] = useState<'dark' | 'light'>(localStorage.getItem('theme') as 'dark' | 'light' || 'light');
+    // Directly initialize the theme based on localStorage or system preference
+    const [theme, setTheme] = useState<'dark' | 'light'>(() => {
+        const storedTheme = localStorage.getItem('theme') as 'dark' | 'light';
+        if (storedTheme) return storedTheme;
+        return window.matchMedia("(prefers-color-scheme: dark)").matches ? 'dark' : 'light';
+    });
 
     useEffect(() => {
-        // Check the initial theme, either from localStorage or system preference
-        const storedTheme = localStorage.getItem('theme') as 'dark' | 'light';
-        if (storedTheme) {
-            setTheme(storedTheme);
-        } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-            setTheme('dark');
-        }
+        // Apply the theme class to the document and store user preference
+        document.documentElement.classList.toggle('dark', theme === 'dark');
+        localStorage.setItem('theme', theme);
 
-        // Listen for changes in the system theme
+        // System theme change listener setup
         const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
         const themeChangeListener = (e: MediaQueryListEvent) => {
-            const newTheme = e.matches ? 'dark' : 'light';
-            setTheme(newTheme);
-            localStorage.setItem('theme', newTheme);
+            setTheme(e.matches ? 'dark' : 'light');
         };
-
         mediaQuery.addEventListener('change', themeChangeListener);
 
-        // Clean up the event listener when the component unmounts
-        return () => {
-            mediaQuery.removeEventListener('change', themeChangeListener);
-        };
-    }, []);
-
-    useEffect(() => {
-        if (theme === 'dark') {
-            document.documentElement.classList.add('dark');
-        } else {
-            document.documentElement.classList.remove('dark');
-        }
-        // Store the user's preference in localStorage
-        localStorage.setItem('theme', theme);
+        return () => mediaQuery.removeEventListener('change', themeChangeListener);
     }, [theme]);
 
-    const handleThemeSwitch = () => {
-        const newTheme = theme === 'dark' ? 'light' : 'dark';
-        setTheme(newTheme);
-        localStorage.setItem('theme', newTheme);
-    }
+    const handleThemeSwitch = () => setTheme(prevTheme => prevTheme === 'dark' ? 'light' : 'dark');
 
     return (
         <button
-        className={`text-xl p-2 rounded-full ${
-            theme === 'dark' ? 'bg-gray text-white' : 'bg-white text-gray-800'
-        }`}
-        aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
-        onClick={handleThemeSwitch}
+            className={`text-xl p-2 rounded-full ${theme === 'dark' ? 'bg-gray-800 text-white' : 'bg-white text-gray-800'}`}
+            aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+            onClick={handleThemeSwitch}
         >
             {theme === 'dark' ? <FaSun /> : <FaMoon />}
         </button>

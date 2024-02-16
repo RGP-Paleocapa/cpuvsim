@@ -1,4 +1,3 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getAuth, signOut } from "firebase/auth";
 import useAuthStore from '@/context/useAuthStore'; // Ensure the import path is correct

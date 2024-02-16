@@ -5,7 +5,7 @@ import ThemeSwitcher from './ThemeSwitcher';
 import { HamburgerMenuIcon } from '@/components/common/SvgIcons';
 import MobileMenu from './mobileMenu/MobileMenu';
 import LanguageSwitcher from './LanguageSwitcher';
-import LogoutButton from '@/components/LogoutButton';
+import LogoutButton from './LogoutButton';
 import useAuthStore from '@/context/useAuthStore';
 import NavLink from './NavLink';
 
@@ -83,7 +83,8 @@ const Header: React.FC = () => {
       <nav className={navClassName}>
         <div className="flex justify-between items-center">
           <Link to="/" className="text-2xl font-bold text-black dark:text-white" onClick={scrollToTop}>
-            CPU Visual Simulator E-Book
+            <span className='block sm:hidden'>CPU Visual Simulator<br />E-Book</span>
+            <span className='hidden sm:block'>CPU Visual Simulator E-Book</span>
           </Link>
           <div className="lg:hidden">
             <button aria-label="Toggle mobile menu" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
