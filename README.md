@@ -31,9 +31,16 @@ Thanks to all contributors and the community for their support and input.
 
 ## Screenshots/Demos
 
-Here are some screenshots/demo videos showcasing the eBook and simulator interface:
+Here are some screenshots/demo videos showcasing the eBook interface and the integrated simulator:
 
+<!-- ![EBook Interface](link-to-ebook-screenshot) -->
 ![EBook Interface](https://img.oercommons.org/300x168/oercommons/media/upload/materials/images/CPUVSIM_E-book.png)
+
+This screenshot shows the main interface of our eBook platform.
+
+<!-- ![Simulator Interface](link-to-simulator-screenshot) -->
 ![Simulator Interface](https://img.oercommons.org/300x168/oercommons/media/upload/materials/images/Screenshot_2023-05-11_140821.jpg)
+
+This screenshot demonstrates the integrated CPU simulator accessible through the eBook platform.
 
 <!-- [Watch Demo Video](link-to-demo-video) -->
