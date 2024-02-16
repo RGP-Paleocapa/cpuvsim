@@ -92,8 +92,8 @@ export const B = ({ children, className }: { children: ReactNode; className?: st
 );
 
 // Ul Component
-export const Ul = ({ children, className }: { children: React.ReactNode; className?: string }) => (
-  <ul className={`list-disc pl-5 ml-5 text-gray-900 dark:text-gray-200 ${className ? className : ''}`}>{children}</ul>
+export const Ul = ({ id, children, className }: { id?: string; children: React.ReactNode; className?: string }) => (
+  <ul id={id} className={`list-disc pl-5 ml-5 text-gray-900 dark:text-gray-200 ${className ? className : ''}`}>{children}</ul>
 );
 
 // Ol Component
