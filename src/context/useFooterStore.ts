@@ -11,7 +11,6 @@ type FooterStore = {
     setFooterData: (data: FooterItem[]) => void;
 };
 
-
 export const useFooterStore = create<FooterStore>((set) => ({
     footerData: [],
     setFooterData: (data) => set({ footerData: data }),

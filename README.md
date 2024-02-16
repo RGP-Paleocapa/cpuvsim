@@ -21,7 +21,7 @@ Welcome to the "Assembler Learning Companion," an interactive eBook designed to 
 - **Issue Reporting**: Found a bug or an issue? Please open an issue in our GitHub repository with a detailed description.
 
 ## License
-This project is licensed under [License Name]. See the LICENSE file for details.
+This project is licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (CC BY-NC-SA 4.0)](https://creativecommons.org/licenses/by-nc-sa/4.0/). See the [LICENSE](LICENSE) file for details.
 
 ## Support and Contact Information
 For support or queries, reach out at [Contact Email/Support Link].
