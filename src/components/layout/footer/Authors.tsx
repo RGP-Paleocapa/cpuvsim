@@ -1,4 +1,4 @@
-import { Ul } from "@/components/common/eBook/content";
+import { Ul } from "@/components/features/eBook/content";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 

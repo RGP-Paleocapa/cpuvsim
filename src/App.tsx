@@ -1,8 +1,8 @@
 import useFirebaseAuth from '@hooks/useFireAuth'; // Adjust path as necessary
 import useSessionTimeout from './hooks/useSessionTimeout';
 
-import Footer from '@/components/layout/footer/Footer';
-import Header from '@/components/layout/header/Header';
+import Footer from '@/components/layout/footer';
+import Header from '@/components/layout/header';
 import AppRoutes from './routes/Routes';
 import ScrollToTopButton from '@/components/utils/ScrollToTopButton';
 import ScrollToTop from '@/components/utils/ScrollToTop';

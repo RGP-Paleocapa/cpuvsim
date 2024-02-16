@@ -1,4 +1,4 @@
-import { Ol, Ul } from "@/components/common/eBook/content";
+import { Ol, Ul } from "@/components/features/eBook/content";
 import { useFooter } from "@/context/FooterContext";
 import { FooterItem } from "@/types/footerTypes";
 import { useTranslation } from "react-i18next";
