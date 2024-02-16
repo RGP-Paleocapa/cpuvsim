@@ -56,7 +56,7 @@ To use these components in your project:
 
 ## Contributing
 
-If you wish to contribute new components or improve existing ones, please refer to the [CONTRIBUTING.md](CONTRIBUTING.md) file for guidelines on how to get started.
+If you wish to contribute new components or improve existing ones, please refer to the [CONTRIBUTING.md](../../CONTRIBUTING.md) file for guidelines on how to get started.
 
 ## License
 

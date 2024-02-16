@@ -16,7 +16,7 @@ Welcome to the "Assembler Learning Companion," an interactive eBook designed to 
 - **Exploring Resources**: Check out the Resource Hub for additional materials and links.
 
 ## Contributing Guidelines
-- **Code Contributions**: If you're interested in contributing code, please adhere to the coding standards and guidelines outlined in our CONTRIBUTING.md file.
+- **Code Contributions**: If you're interested in contributing code, please adhere to the coding standards and guidelines outlined in our [CONTRIBUTING.md](CONTRIBUTING.md) file.
 - **Feedback and Suggestions**: We welcome feedback on the eBook content, simulator functionality, and overall user experience.
 - **Issue Reporting**: Found a bug or an issue? Please open an issue in our GitHub repository with a detailed description.
 
@@ -24,10 +24,16 @@ Welcome to the "Assembler Learning Companion," an interactive eBook designed to 
 This project is licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (CC BY-NC-SA 4.0)](https://creativecommons.org/licenses/by-nc-sa/4.0/). See the [LICENSE](LICENSE) file for details.
 
 ## Support and Contact Information
-For support or queries, reach out at [Contact Email/Support Link].
+For support or queries, reach out at [Contact Email/Support Link](https://rgp-paleocapa.github.io/cpuvsim/#/feedback).
 
 ## Acknowledgments
 Thanks to all contributors and the community for their support and input.
 
 ## Screenshots/Demos
-[Include links or embed images of the eBook and simulator interface.]
+
+Here are some screenshots/demo videos showcasing the eBook and simulator interface:
+
+![EBook Interface](https://img.oercommons.org/300x168/oercommons/media/upload/materials/images/CPUVSIM_E-book.png)
+![Simulator Interface](https://img.oercommons.org/300x168/oercommons/media/upload/materials/images/Screenshot_2023-05-11_140821.jpg)
+
+<!-- [Watch Demo Video](link-to-demo-video) -->

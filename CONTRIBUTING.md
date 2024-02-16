@@ -35,6 +35,6 @@ Please ensure that your code follows our coding standards and conventions. If yo
 
 ## License
 
-By contributing to this project, you agree to license your contributions under the same [license](../LICENSE) as the project.
+By contributing to this project, you agree to license your contributions under the same [license](LICENSE) as the project.
 
 If you have any questions or need further assistance, feel free to reach out to us.
