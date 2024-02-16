@@ -4,15 +4,15 @@ import { Section, InlineDivs, MaxWidthContainer } from "@/components/features/eB
 import images from "@assets/images/pages/page3";
 import { InteractiveImage } from "@/components/features/eBook/images/";
 import useDocumentMetadata from "@hooks/useDocumentMetadata";
-import { useFooter } from "@/context/FooterContext";
 import { useEffect } from "react";
 import data from './data.json';
 import RenderHTML from "@/components/common/RenderHTML";
 import { useTranslation } from "react-i18next";
+import { useFooterStore } from "@/context/useFooterStore";
 
 const Page3 = () => {
   useDocumentMetadata('Von Neumann Model', "This is the third page");
-  const { setFooterData } = useFooter();
+  const { setFooterData } = useFooterStore();
   useEffect(() => {
     setFooterData(references);
   }, [setFooterData]);

@@ -3,17 +3,17 @@ import { Description, SectionTitle, Text, Ul, Table, Li } from "@/components/fea
 import images from "@assets/images/pages/page5";
 import { YourImageComponent } from "@/components/features/eBook/images";
 import useDocumentMetadata from "@hooks/useDocumentMetadata";
-import { useFooter } from "@/context/FooterContext";
 import { useEffect } from "react";
 import data from './data.json';
 import SmoothScrollButton from "@/components/common/SmoothScrollButton";
 import { Section } from "@/components/features/eBook/layout/layout";
 import { useTranslation } from "react-i18next";
 import RenderHTML from "@/components/common/RenderHTML";
+import { useFooterStore } from "@/context/useFooterStore";
 
 const Page5 = () => {
   useDocumentMetadata('CPU Instructions Set', "This is the fifth page");
-  const { setFooterData } = useFooter();
+  const { setFooterData } = useFooterStore();
   useEffect(() => {
     setFooterData(references);
   }, [setFooterData]);

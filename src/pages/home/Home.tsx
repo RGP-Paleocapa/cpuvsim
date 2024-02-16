@@ -2,11 +2,11 @@ import { Link, useLocation } from 'react-router-dom'; // Import Link for navigat
 import { FaArrowDown, FaArrowUp } from 'react-icons/fa';
 import useDocumentMetadata from '@hooks/useDocumentMetadata';
 import { useEffect } from 'react';
-import { useFooter } from '@/context/FooterContext';
 import { useTranslation } from 'react-i18next';
+import { useFooterStore } from '@/context/useFooterStore';
 
 const Home = () => {
-  const { setFooterData } = useFooter();
+  const { setFooterData } = useFooterStore();
 
   useEffect(() => {
     setFooterData([

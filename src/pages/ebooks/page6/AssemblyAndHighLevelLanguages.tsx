@@ -4,15 +4,15 @@ import images from '@assets/images/pages/page6';
 import { Section, Figure } from '@/components/features/eBook/layout/layout';
 import { YourImageComponent } from '@/components/features/eBook/images';
 import useDocumentMetadata from '@hooks/useDocumentMetadata';
-import { useFooter } from '@/context/FooterContext';
 import { useEffect } from 'react';
 import data from './data.json';
 import RenderHTML from '@/components/common/RenderHTML';
 import { useTranslation } from 'react-i18next';
+import { useFooterStore } from '@/context/useFooterStore';
 
 const Page6 = () => {
   useDocumentMetadata('Assembly and High Level Languages', "This is the sixth page");
-  const { setFooterData } = useFooter();
+  const { setFooterData } = useFooterStore();
   useEffect(() => {
     setFooterData(references);
   }, [setFooterData]);

@@ -1,10 +1,9 @@
 import { Ol, Ul } from "@/components/features/eBook/content";
-import { useFooter } from "@/context/FooterContext";
-import { FooterItem } from "@/types/footerTypes";
+import { useFooterStore, FooterItem } from "@/context/useFooterStore";
 import { useTranslation } from "react-i18next";
 
 const References = () => {
-    const { footerData } = useFooter();
+    const { footerData } = useFooterStore();
     const { t } = useTranslation();
 
     // Function to render sub references, if any

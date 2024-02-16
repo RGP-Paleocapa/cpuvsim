@@ -4,16 +4,16 @@ import EBookPage from "@/components/features/eBook/EBook";
 import { Section, InlineDivs, MaxWidthContainer } from "@/components/features/eBook/layout/layout";
 import { B, Description, H3, Li, SectionTitle, Text, Ul } from "@/components/features/eBook/content";
 import useDocumentMetadata from "@hooks/useDocumentMetadata";
-import { useFooter } from "@/context/FooterContext";
 import { useEffect } from "react";
 import data from './data.json';
 import SmoothScrollButton from "@/components/common/SmoothScrollButton";
 import RenderHTML from "@/components/common/RenderHTML";
 import { useTranslation } from "react-i18next";
+import { useFooterStore } from "@/context/useFooterStore";
 
 const Page2 = () => {
     useDocumentMetadata('Simple Binary Calculations', "This is the second page");
-    const { setFooterData } = useFooter();
+    const { setFooterData } = useFooterStore();
     useEffect(() => {
       setFooterData(references);
     }, [setFooterData]);

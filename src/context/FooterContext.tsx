@@ -1,32 +1,38 @@
-// FooterContext.tsx
-import { createContext, useState, useContext } from 'react';
-import { FooterItem } from '@/types/footerTypes';
+// // FooterContext.tsx
+// import { createContext, useState, useContext } from 'react';
 
-type FooterContextType = {
-  footerData: FooterItem[];
-  setFooterData: (data: FooterItem[]) => void;
-};
+// export interface FooterItem {
+//   text: string;
+//   link: string;
+//   subReferences?: FooterItem[];
+// }
 
-const FooterContext = createContext<FooterContextType | undefined>(undefined);
 
-export const useFooter = () => {
-  const context = useContext(FooterContext);
-  if (!context) {
-    throw new Error('useFooter must be used within a FooterProvider');
-  }
-  return context;
-};
+// type FooterContextType = {
+//   footerData: FooterItem[];
+//   setFooterData: (data: FooterItem[]) => void;
+// };
 
-type FooterProviderProps = {
-  children: React.ReactNode;
-};
+// const FooterContext = createContext<FooterContextType | undefined>(undefined);
 
-export const FooterProvider: React.FC<FooterProviderProps> = ({ children }) => {
-  const [footerData, setFooterData] = useState<FooterItem[]>([]);
+// export const useFooter = () => {
+//   const context = useContext(FooterContext);
+//   if (!context) {
+//     throw new Error('useFooter must be used within a FooterProvider');
+//   }
+//   return context;
+// };
 
-  return (
-    <FooterContext.Provider value={{ footerData, setFooterData }}>
-      {children}
-    </FooterContext.Provider>
-  );
-};
+// type FooterProviderProps = {
+//   children: React.ReactNode;
+// };
+
+// export const FooterProvider: React.FC<FooterProviderProps> = ({ children }) => {
+//   const [footerData, setFooterData] = useState<FooterItem[]>([]);
+
+//   return (
+//     <FooterContext.Provider value={{ footerData, setFooterData }}>
+//       {children}
+//     </FooterContext.Provider>
+//   );
+// };

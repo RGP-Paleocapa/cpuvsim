@@ -1,11 +1,11 @@
-import { useFooter } from "@/context/FooterContext";
+import { useFooterStore } from "@/context/useFooterStore";
 import useDocumentMetadata from "@hooks/useDocumentMetadata";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
 const About = () => {
   useDocumentMetadata('About - CPU E-Book', 'Learn more about our mission and vision.');
-  const { setFooterData } = useFooter();
+  const { setFooterData } = useFooterStore();
 
   useEffect(() => {
     setFooterData([

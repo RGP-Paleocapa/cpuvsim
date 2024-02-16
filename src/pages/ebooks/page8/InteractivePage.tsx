@@ -2,11 +2,12 @@ import useDocumentMetadata from "@hooks/useDocumentMetadata";
 import EBookPage from "@/components/features/eBook/EBook";
 import { Ol, SectionTitle, Text, DraggableContainerGrid, H3, Pre, Li } from "@/components/features/eBook/content";
 import { Section, InlineDivs, MaxWidthContainer } from "@/components/features/eBook/layout/layout";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import problemListData from './problems.json';
 import containerData from './containers.json';
 import ProblemComponent from "./ProblemComponent";
 import { useTranslation } from "react-i18next";
+import { useFooterStore } from "@/context/useFooterStore";
 // import AssemblyTasksComponent from "@/pages/page8/AssemblyTaskComponent";
 
 // Define a TypeScript interface for a problem
@@ -16,14 +17,17 @@ interface Problem {
     text?: string;
     link?: string;
 }
+interface ContainerStates {
+    container1Visible: boolean;
+    container2Visible: boolean;
+}
 
 const Page8 = () => {
-  interface ContainerStates {
-      container1Visible: boolean;
-      container2Visible: boolean;
-  }
-
   useDocumentMetadata('Interactive Page', "This is the eighth page");
+  const { setFooterData } = useFooterStore();
+  useEffect(() => {
+    setFooterData([]);
+  }, [setFooterData]);
 
   const [containerStates, setContainerStates] = useState<ContainerStates>({
       container1Visible: false,

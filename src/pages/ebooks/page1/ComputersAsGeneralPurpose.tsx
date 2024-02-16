@@ -4,16 +4,16 @@ import { ImageSlider } from "@/components/features/eBook/images";
 import images from "@assets/images/pages/page1";
 import { Figure, Section } from "@/components/features/eBook/layout/layout";
 import { SectionTitle, Description, Text } from "@/components/features/eBook/content";
-import { useFooter } from "@/context/FooterContext";
 import { useEffect } from "react";
 import data from './data.json';
 import SmoothScrollButton from "@/components/common/SmoothScrollButton";
 import { useTranslation } from "react-i18next";
 import RenderHTML from "@/components/common/RenderHTML";
+import { useFooterStore } from "@/context/useFooterStore";
 
 const Page1 = () => {
   useDocumentMetadata('ComputersAsGeneralPurpose', "This is the first page");
-  const { setFooterData } = useFooter();
+  const { setFooterData } = useFooterStore();
   useEffect(() => {
     setFooterData(references);
   }, [setFooterData]);
