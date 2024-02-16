@@ -1,7 +1,7 @@
 import React from 'react';
 import { Navigate } from 'react-router-dom';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
-import app from "@/firebase"; // Ensure this imports your Firebase app initialization correctly
+import app from "@/services/firebase"; // Ensure this imports your Firebase app initialization correctly
 import { useState, useEffect } from 'react';
 
 interface ProtectedRouteProps {

@@ -3,7 +3,7 @@ import { getAuth, signInWithEmailAndPassword, setPersistence, browserSessionPers
 import useAuthStore from '@/context/useAuthStore'; // Adjust the import path as needed
 import { Link, useNavigate } from 'react-router-dom';
 import { Firestore, doc, getDoc, getFirestore } from 'firebase/firestore';
-import firebase from '@/firebase';
+import firebase from '@/services/firebase';
 import { FirebaseError } from 'firebase/app';
 
 

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { getFirestore, collection, getDocs, query, orderBy, collectionGroup } from 'firebase/firestore';
-import firebaseApp from '@/firebase'; // Adjust the import path as necessary
+import firebaseApp from '@/services/firebase'; // Adjust the import path as necessary
 import Layout from '../feedbackLayout/Layout';
 import useAuthStore from '@/context/useAuthStore'; // Ensure the correct path
 

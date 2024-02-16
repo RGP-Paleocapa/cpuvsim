@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { getAuth, createUserWithEmailAndPassword, setPersistence, browserSessionPersistence, sendEmailVerification, signOut } from "firebase/auth";
 import { Link, useNavigate } from 'react-router-dom';
-import firebase from '@/firebase';
+import firebase from '@/services/firebase';
 import { FirebaseError } from 'firebase/app';
 // Import removed for doc and setDoc from 'firebase/firestore' as they're not used in this snippet.
 
