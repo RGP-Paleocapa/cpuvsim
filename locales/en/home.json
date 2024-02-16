@@ -1,6 +1,6 @@
 {
     "main": {
-        "title": "A gentle introduction to the Central Processing Unit and Assembly language",
+        "title": "A gentle introduction to the Central Processing Unit (CPU) and Assembly language",
         "subtitle": "Based on (and in support of) the complementary Educational CPU Visual Simulator",
         "button1": "Introduction",
         "button2": "Documentation pages"

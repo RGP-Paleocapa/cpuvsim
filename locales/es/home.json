@@ -1,6 +1,6 @@
 {
     "main": {
-        "title": "Una introducción amena al Procesador Central y al lenguaje Ensamblador",
+        "title": "Una introducción amena al Procesador Central (CPU) y al lenguaje Ensamblador",
         "subtitle": "Basado en (y en apoyo de) el complementario Simulador Visual Educativo de la CPU",
         "button1": "Introducción",
         "button2": "Páginas de documentación"
