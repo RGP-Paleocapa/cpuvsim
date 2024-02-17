@@ -8,5 +8,143 @@
     "example3Title": "ESEMPIO: traduzione di un ciclo infinito",
     "example4Title": "ESEMPIO: traduzione di una costruzione IF-THEN-ELSE",
     "example5Title": "ESEMPIO: Traduzione di una costruzione While",
-    "example6Title": "ESEMPIO: Traduzione di una costruzione For"
+    "example6Title": "ESEMPIO: Traduzione di una costruzione For",
+    "sum": [
+        [
+          "W, X e Y sono inizializzati (viene assegnato loro un valore numerico).",
+          "La somma di W e X viene poi assegnata alla variabile Y."
+        ],
+        [
+          "Inizialmente W=0, X=0, Y=0 (etichette delle ultime tre celle di memoria).",
+          "LOD #2: 2 viene caricato nell'accumulatore.",
+          "STO W: il risultato viene memorizzato nella cella di memoria di indirizzo W",
+          "LOD #8: 8 viene caricato nell'accumulatore.",
+          "STO X: il risultato viene memorizzato nella cella di memoria di indirizzo X",
+          "LOD W: il contenuto della cella di memoria di indirizzo W viene caricato nell'accumulatore.",
+          "ADD X: il contenuto della cella di indirizzo X viene aggiunto al valore nell'accumulatore.",
+          "STO Y: il risultato viene memorizzato nella cella di memoria di indirizzo Y.",
+          "HLT: Arresta tutte le ulteriori operazioni.",
+          "Risultati: W=2, X=8, Y=10."
+        ],
+        [
+          "Qui il contenuto della memoria RAM, così come gli indirizzi di memoria, sono visualizzati in codice binario.",
+          "Questi sono i valori come sono fisicamente memorizzati e gestiti - ma è ovviamente più conveniente, per un essere umano, utilizzare le mnemoniche equivalenti, lavorando con il linguaggio assembler e una base numerica più familiare."
+        ]
+      ],
+      "formula": [
+        [
+          "Inizialmente Y=10, W=2 e X=0;",
+          "3 viene moltiplicato per il valore di Y. Il risultato viene poi assegnato a una variabile temporanea (TMP), e successivamente aggiunto al quoziente di 2/W;",
+          "il risultato sarà: Y=10, W=2, TMP=30 e X=31."
+        ],
+        [
+          "Asserzione: Y=10, W=2, TMP=0, X=0 (etichette delle ultime quattro celle di memoria).",
+          "LOD #3: 3 viene caricato nell'accumulatore.",
+          "MUL Y: il contenuto della cella di indirizzo Y viene moltiplicato per il valore nell'accumulatore.",
+          "STO TMP: il risultato viene memorizzato nella cella di memoria di indirizzo TMP",
+          "LOD #2: 2 viene caricato nell'accumulatore.",
+          "DIV W: il contenuto della cella di indirizzo W viene diviso per il valore nell'accumulatore.",
+          "ADD TMP: il contenuto della cella di indirizzo TMP viene aggiunto al valore nell'accumulatore.",
+          "STO X: il risultato viene memorizzato nella cella di memoria di indirizzo X.",
+          "HLT: Arresta tutte le ulteriori operazioni.",
+          "Risultati: Y=10, W=2, TMP=30, X=31"
+        ],
+        [
+          "Qui il contenuto della memoria RAM, così come gli indirizzi di memoria, sono visualizzati in codice binario.",
+          "Questi sono i valori come sono fisicamente memorizzati e gestiti - ma è ovviamente più conveniente, per un essere umano, utilizzare le mnemoniche equivalenti, lavorando con il linguaggio assembler e una base numerica più familiare."
+        ]
+      ],
+      "infiniteLoop": [
+        [
+          "Inizialmente COUNT=0;",
+          "Ciclo infinito in cui COUNT viene incrementato di uno ad ogni iterazione."
+        ],
+        [
+          "Inizialmente A=0 (etichetta dell'ultima cella di memoria).",
+          "LOD A: il contenuto della cella di memoria di indirizzo A viene caricato nell'accumulatore.",
+          "ADD #1: 1 viene aggiunto al valore nell'accumulatore.",
+          "STO A: il risultato viene memorizzato nella cella di memoria di indirizzo A.",
+          "JMP FOR: Salta incondizionatamente all'indirizzo corrispondente all'etichetta \"FOR\".",
+          "Risultati: A assume i valori 0, 1, 2, 3, ..."
+        ],
+        [
+          "Qui il contenuto della memoria RAM, così come gli indirizzi di memoria, sono visualizzati in codice binario.",
+          "Questi sono i valori come sono fisicamente memorizzati e gestiti - ma è ovviamente più conveniente, per un essere umano, utilizzare le mnemoniche equivalenti, lavorando con il linguaggio assembly e una base numerica più familiare."
+        ]
+      ],
+      "ifThenElse": [
+        [
+          "Inizialmente X=8, Y=0 e Z=1;",
+          "Il codice ad alto livello specifica che se X è uguale a 3 allora Y viene impostato a Y+5, altrimenti Z viene impostato a Z+2.",
+          "In questo caso X è diverso da 3, quindi viene eseguita la clausola ELSE. Di conseguenza il risultato sarà: Y=2 e Z=3."
+        ],
+        [
+          "Inizialmente X=8, Y=2, Z=1 (etichette delle ultime tre celle di memoria).",
+          "LOD X: il contenuto della cella di memoria di indirizzo X viene caricato nell'accumulatore.",
+          "CMP #3: X viene confrontato con 3. Cioè, viene eseguita l'operazione 8-3, che imposta il flag NZ (senza influenzare l'accumulatore).",
+          "JNZ ELSE: essendo il flag NZ impostato, si salta all'indirizzo corrispondente all'etichetta \"ELSE\".",
+          "LOD #5: 5 viene caricato nell'accumulatore.",
+          "ADD Y: il contenuto della cella di indirizzo Y viene aggiunto al valore nell'accumulatore.",
+          "STO Y: il risultato viene memorizzato nella cella di memoria di indirizzo Y.",
+          "LOD #2: 2 viene caricato nell'accumulatore.",
+          "ADD Z: il contenuto della cella di indirizzo Z viene aggiunto al valore nell'accumulatore.",
+          "STO Z: il risultato viene memorizzato nella cella di memoria di indirizzo Z.",
+          "HLT: Arresta tutte le ulteriori operazioni.",
+          "Risultati: X=8, Y=2, Z=3."
+        ],
+        [
+          "Qui il contenuto della memoria RAM, così come gli indirizzi di memoria, sono visualizzati in codice binario.",
+          "Questi sono i valori come sono fisicamente memorizzati e gestiti - ma è ovviamente più conveniente, per un essere umano, utilizzare le mnemoniche equivalenti, lavorando con il linguaggio assembly e una base numerica più familiare."
+        ]
+      ],
+      "while": [
+        [
+          "Inizialmente MAX=5, COUNT=0, SUM=0",
+          "Il codice ad alto livello specifica che finché COUNT è diverso da MAX, devono essere eseguite le istruzioni COUNT=COUNT+1 e SUM=SUM+COUNT.",
+          "Il risultato dell'esecuzione di questo ciclo sarà: MAX=5, COUNT=5, SUM=15."
+        ],
+        [
+          "Inizialmente MAX=5, COUNT=0, SUM=0 (etichette delle ultime tre celle di memoria).",
+          "LOD COUNT: COUNT viene caricato nell'Accumulatore.",
+          "CMP MAX: MAX viene confrontato con l'accumulatore, impostando i flag corrispondenti.",
+          "L'operazione (0-5) viene eseguita nel primo ciclo, l'operazione (5-5) nell'ultimo ciclo.",
+          "JZ ENDWHILE: il flag Z non è impostato nel primo ciclo, quindi il salto non viene eseguito. Il flag Z viene impostato solo nell'ultimo ciclo, quando il controllo salta all'indirizzo corrispondente all'etichetta “END WHILE”, terminando le iterazioni.",
+          "ADD #1: 1 viene aggiunto al contenuto dell'accumulatore.",
+          "STO COUNT: il risultato viene memorizzato nella cella di memoria COUNT.",
+          "ADD SUM: SUM viene aggiunto al valore dell'accumulatore.",
+          "STO SUM: il risultato viene memorizzato nella cella di indirizzo SUM.",
+          "JMP WHILE: Salta incondizionatamente all'indirizzo corrispondente all'etichetta “WHILE”.",
+          "HLT: Arresta tutte le ulteriori operazioni."
+        ],
+        [
+          "Qui il contenuto della memoria RAM, così come gli indirizzi di memoria, sono visualizzati in codice binario.",
+          "Questi sono i valori come sono fisicamente memorizzati e gestiti - ma è ovviamente più conveniente, per un essere umano, utilizzare le mnemoniche equivalenti, lavorando con il linguaggio assembly e una base numerica più familiare."
+        ]
+      ],
+      "forLoop": [
+        [
+          "Inizialmente COUNT=0.",
+          "Partendo da I=3, ciclare all'indietro attraverso il ciclo fino a quando I raggiunge 0.",
+          "Ogni ciclo incrementa il contatore COUNT di uno.",
+          "Il risultato sarà: COUNT=3, I=0."
+        ],
+        [
+          "Inizialmente I=3, COUNT=0 (etichette delle ultime due celle di memoria).",
+          "LOD I: il contenuto della cella di memoria di indirizzo I viene caricato nell'accumulatore.",
+          "CMP #1: 1 viene confrontato con il contenuto dell'accumulatore. Nel caso l'accumulatore contenga 1, l'operazione (1-1) imposta il flag Z.",
+          "JZ ENDFOR: Se il flag Z è impostato, si salta all'indirizzo corrispondente all'etichetta “ENDFOR”.",
+          "LOD COUNT: il contenuto della cella di memoria di indirizzo COUNT viene caricato nell'accumulatore.",
+          "ADD #1: 1 viene aggiunto al valore dell'accumulatore.",
+          "STO COUNT: il risultato viene memorizzato nella cella di memoria di indirizzo COUNT.",
+          "LOD I: il contenuto della cella di memoria di indirizzo I viene caricato nell'accumulatore.",
+          "SUB #1: 1 viene sottratto dal valore dell'accumulatore.",
+          "STO I: il risultato viene memorizzato nella cella di memoria di indirizzo I.",
+          "JMP FOR: Salta all'indirizzo corrispondente all'etichetta “For”.",
+          "HLT: Arresta tutte le ulteriori operazioni."
+        ],
+        [
+          "Qui il contenuto della memoria RAM, così come gli indirizzi di memoria, sono visualizzati in codice binario.",
+          "Questi sono i valori come sono fisicamente memorizzati e gestiti - ma è ovviamente più conveniente, per un essere umano, utilizzare le mnemoniche equivalenti, lavorando con il linguaggio assembly e una base numerica più familiare."
+        ]
+      ]
 }
