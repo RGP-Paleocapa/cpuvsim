@@ -1,12 +1,10 @@
 import { useState } from 'react';
-import { getAuth, createUserWithEmailAndPassword, setPersistence, browserSessionPersistence, sendEmailVerification, signOut } from "firebase/auth";
 import { Link, useNavigate } from 'react-router-dom';
-import firebase from '@/services/firebase';
 import { FirebaseError } from 'firebase/app';
-import { handleFirebaseSignupError } from './firebaseSignupError';
-// Import removed for doc and setDoc from 'firebase/firestore' as they're not used in this snippet.
+import { signUpWithEmailAndPassword } from '../firebaseUtils';
+import { handleFirebaseSignupError } from '../firebaseErrorHandling';
 
-function SignUp() {
+const SignUp = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -14,32 +12,18 @@ function SignUp() {
 
   const handleSignUp = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const auth = getAuth(firebase);
 
     try {
-        await setPersistence(auth, browserSessionPersistence);
-        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-
-        sendEmailVerification(userCredential.user)
-            .then(() => {
-                console.log('Verification email sent.');
-                signOut(auth).then(() => {
-                    navigate('/auth/login'); // Redirect to login after signing out
-                });
-            })
-            .catch((error) => {
-                console.error("Error sending verification email", error);
-                setError("Error sending verification email. Please try again later.");
-            });
+      await signUpWithEmailAndPassword(email, password, navigate);
     } catch (error) {
-        if (error instanceof FirebaseError) {
-            const errorMessage = handleFirebaseSignupError(error);
-            setError(errorMessage);
-        } else {
-            setError("An unexpected error occurred. Please try again.");
-        }
+      if (error instanceof FirebaseError) {
+        const errorMessage = handleFirebaseSignupError(error);
+        setError(errorMessage);
+      } else {
+        setError("An unexpected error occurred. Please try again.");
+      }
     }
-};
+  };
       
 
   return (

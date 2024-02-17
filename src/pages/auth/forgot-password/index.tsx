@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { getAuth, sendPasswordResetEmail } from 'firebase/auth';
 import { Link } from 'react-router-dom';
 import { FirebaseError } from 'firebase/app';
 import { doc, getDoc, getFirestore } from 'firebase/firestore';
-import firebase from '@/services/firebase';
+import { handleFirebaseForgotPasswordError } from '../firebaseErrorHandling';
+import { sendResetPasswordEmail } from '../firebaseUtils';
 
 function ForgotPassword() {
   const [email, setEmail] = useState('');
@@ -13,8 +13,7 @@ function ForgotPassword() {
 
   const handleResetPassword = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const auth = getAuth();
-    const db = getFirestore(firebase); 
+    const db = getFirestore();
 
     setMessage('');
     setError('');
@@ -24,30 +23,23 @@ function ForgotPassword() {
       return;
     }
 
-    // Check if user exists in Firestore
-    const userDocRef = doc(db, "users", email.trim()); // Assuming the document ID is the email
-    const docSnap = await getDoc(userDocRef);
-
-    if (!docSnap.exists()) {
-      setError('No user found with this email address. Please check and try again.');
-      console.log("done");
-      return;
-    }
-
-    // If user exists, attempt to send password reset email
     try {
-      await sendPasswordResetEmail(auth, email.trim());
+      // Check if user exists in Firestore
+      const userDocRef = doc(db, "users", email.trim()); // Assuming the document ID is the email
+      const docSnap = await getDoc(userDocRef);
+
+      if (!docSnap.exists()) {
+        setError('No user found with this email address. Please check and try again.');
+        return;
+      }
+
+      // If user exists, attempt to send password reset email
+      await sendResetPasswordEmail(email.trim());
       setMessage('Check your email to reset your password.');
     } catch (error) {
       const firebaseError = error as FirebaseError;
-      if (firebaseError.code === 'auth/user-not-found') {
-        setError('No user found with this email address. Please check and try again.');
-      } else if (firebaseError.code === 'auth/invalid-email') {
-        setError('Invalid email address format. Please enter a valid email address.');
-      } else {
-        setError('An unexpected error occurred. Please try again later.');
-        console.error('Reset password error:', firebaseError);
-      }
+      setError(handleFirebaseForgotPasswordError(firebaseError));
+      console.error('Reset password error:', firebaseError);
     }
   };
 

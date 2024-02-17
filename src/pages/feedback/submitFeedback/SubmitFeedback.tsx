@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { getFirestore, collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { FieldValue, Timestamp } from 'firebase/firestore';
-import firebaseApp from '@/services/firebase'; // Adjust the import path as necessary
+import firebaseApp from '@/services/firebaseConfig'; // Adjust the import path as necessary
 import Layout from '../feedbackLayout/Layout';
 import useAuthStore from '@/context/useAuthStore'; // Ensure the correct path to your Zustand store
 import ReactStars from "react-rating-stars-component";
