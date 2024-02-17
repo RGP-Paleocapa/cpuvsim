@@ -17,49 +17,12 @@ const Page7 = () => {
       setFooterData([]);
     }, [setFooterData]);
 
-    const sumList = data.sum;
-    const formulaList = data.formula;
-    const infiniteLoopList = data.infiniteLoop;
-    const ifThenElseList = data.ifThenElse;
-    const whileList = data.while;
-    const forLoopList = data.forLoop;
-
-    // const imagesSwitcher = [
-    //     'https://picsum.photos/200',
-    //     'https://picsum.photos/id/870/200/300?grayscale&blur=2',
-    //     'https://picsum.photos/200/300.jpg',
-    // ]
-
-    const sumSwitcher = [
-        images.sum1,
-        images.sum2,
-        images.sum3,
-      ]
-    const formulaSwitcher = [
-        images.formula1,
-        images.formula2,
-        images.formula3,
-      ]
-    const loopSwitcher = [
-        images.loop1,
-        images.loop2,
-        images.loop3,
-      ]
-    const ifThenElseSwitcher = [
-        images.ifThenElse1,
-        images.ifThenElse2,
-        images.ifThenElse3,
-      ]
-    const whileSwitcher = [
-        images.while1,
-        images.while2,
-        images.while3,
-      ]
-    const forSwitcher = [
-        images.for1,
-        images.for2,
-        images.for3,
-      ]
+    const sumListText = data.sum;
+    const formulaListText = data.formula;
+    const infiniteLoopListText = data.infiniteLoop;
+    const ifThenElseListText = data.ifThenElse;
+    const whileListText = data.while;
+    const forLoopListText = data.forLoop;
 
     const { t } = useTranslation("page7");
 
@@ -78,7 +41,7 @@ const Page7 = () => {
                 <SectionTitle>
                     {t("example1Title")}
                 </SectionTitle>
-                <ImageSwitcher images={sumSwitcher} instructionsList={sumList} />
+                <ImageSwitcher images={images.sum} instructionsList={sumListText} />
             </Section>
 
                         
@@ -86,7 +49,7 @@ const Page7 = () => {
                 <SectionTitle>
                     {t("example2Title")}
                 </SectionTitle>
-                <ImageSwitcher images={formulaSwitcher} instructionsList={formulaList} />
+                <ImageSwitcher images={images.formula} instructionsList={formulaListText} />
             </Section>
 
 
@@ -94,7 +57,7 @@ const Page7 = () => {
                 <SectionTitle>
                     {t("example3Title")}
                 </SectionTitle>
-                <ImageSwitcher images={loopSwitcher} instructionsList={infiniteLoopList} />
+                <ImageSwitcher images={images.loop} instructionsList={infiniteLoopListText} />
             </Section>
 
 
@@ -102,7 +65,7 @@ const Page7 = () => {
                 <SectionTitle>
                     {t("example4Title")}
                 </SectionTitle>
-                <ImageSwitcher images={ifThenElseSwitcher} instructionsList={ifThenElseList} />
+                <ImageSwitcher images={images.ifThenElse} instructionsList={ifThenElseListText} />
             </Section>
 
 
@@ -110,7 +73,7 @@ const Page7 = () => {
                 <SectionTitle>
                     {t("example5Title")}
                 </SectionTitle>
-                <ImageSwitcher images={whileSwitcher} instructionsList={whileList} />
+                <ImageSwitcher images={images.while} instructionsList={whileListText} />
             </Section>
 
 
@@ -118,11 +81,8 @@ const Page7 = () => {
                 <SectionTitle>
                     {t("example6Title")}
                 </SectionTitle>
-                <ImageSwitcher images={forSwitcher} instructionsList={forLoopList} />
+                <ImageSwitcher images={images.for} instructionsList={forLoopListText} />
             </Section>
-
-                {/* <SuccessButton onClick={() => alert("SuccessButton clicked!")} /> */}
-                {/* <CancelButton onClick={() => alert("CancelButton clicked!")} /> */}
         </EBookPage>
     );
 }

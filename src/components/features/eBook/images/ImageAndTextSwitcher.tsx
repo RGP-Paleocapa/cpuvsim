@@ -55,7 +55,7 @@ const ImageSwitcher: React.FC<ImageSwitcherProps> = ({ images, instructionsList 
                   border-b-[1px] ${
                     activeIndex === index
                       ? 'bg-blue-500 text-black'
-                      : 'bg-gray-300 dark:bg-gray-600 text-gray-700 dark:text-white hover:bg-gray-400 hover:text-white dark:hover:bg-gray-700'
+                      : 'bg-gray-300 dark:bg-gray-600 text-gray-700 dark:text-white hocus:bg-gray-400 hocus:text-white dark:hocus:bg-gray-700'
                   }`}
               >
                 {label}

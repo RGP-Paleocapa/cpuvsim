@@ -1,3 +1,4 @@
+// Import images
 import image1 from './images/high-sum.webp';
 import image2 from './images/assembler-sum.webp';
 import image3 from './images/binary-sum.webp';
@@ -18,25 +19,44 @@ import image17 from './images/assembler-for.webp';
 import image18 from './images/binary-for.webp';
 import { ImageObject } from '@/types/images';
 
-const images: Record<string, ImageObject> = {
-    sum1: { src: image1, alt: 'default'},
-    sum2: { src: image2, alt: 'default'},
-    sum3: { src: image3, alt: 'default'},
-    formula1: { src: image4, alt: 'default'},
-    formula2: { src: image5, alt: 'default'},
-    formula3: { src: image6, alt: 'default'},
-    loop1: { src: image7, alt: 'default'},
-    loop2: { src: image8, alt: 'default'},
-    loop3: { src: image9, alt: 'default'},
-    ifThenElse1: { src: image10, alt: 'default'},
-    ifThenElse2: { src: image11, alt: 'default'},
-    ifThenElse3: { src: image12, alt: 'default'},
-    while1: { src: image13, alt: 'default'},
-    while2: { src: image14, alt: 'default'},
-    while3: { src: image15, alt: 'default'},
-    for1: { src: image16, alt: 'default'},
-    for2: { src: image17, alt: 'default'},
-    for3: { src: image18, alt: 'default'},
+type Category = 'sum' | 'formula' | 'loop' | 'ifThenElse' | 'while' | 'for';
+
+const urls: Record<Category, string> = {
+    sum: 'https://cpuvisualsimulator.github.io/?program=ICAgICAgICAgICAgICAgTE9EICMyCiAgICAgICAgICAgICAgIFNUTyBXCiAgICAgICAgICAgICAgIExPRCAjOAogICAgICAgICAgICAgICBTVE8gWAogICAgICAgICAgICAgICBMT0QgVwogICAgICAgICAgICAgICBBREQgWAogICAgICAgICAgICAgICBTVE8gWQogICAgICAgICAgICAgICBITFQKICAgICAgICAgICAgICAgTk9QCiAgICAgICAgICAgICAgIE5PUAogICAgICAgICAgICAgICBOT1AKICAgICAgICAgICAgICAgTk9QCiAgICAgICAgICAgICAgIE5PUApXOiAgICAgICAgICAgICBOT1AKWDogICAgICAgICAgICAgTk9QClk6ICAgICAgICAgICAgIE5PUA%3D%3D',
+    formula: 'https://cpuvisualsimulator.github.io/?program=ICAgICAgICAgICAgICAgTE9EICMzCiAgICAgICAgICAgICAgIE1VTCBZCiAgICAgICAgICAgICAgIFNUTyBUTVAKICAgICAgICAgICAgICAgTE9EICMyCiAgICAgICAgICAgICAgIERJViBXCiAgICAgICAgICAgICAgIEFERCBUTVAKICAgICAgICAgICAgICAgU1RPIFgKICAgICAgICAgICAgICAgSExUCiAgICAgICAgICAgICAgIE5PUAogICAgICAgICAgICAgICBOT1AKICAgICAgICAgICAgICAgTk9QCiAgICAgICAgICAgICAgIE5PUApZOiAgICAgICAgICAgICAxMApXOiAgICAgICAgICAgICAyClRNUDogICAgICAgICAgIE5PUApYOiAgICAgICAgICAgICBOT1A%3D',
+    loop: 'https://cpuvisualsimulator.github.io/?program=Rk9SRVZFUjogICAgICAgTE9EIENPVU5UCiAgICAgICAgICAgICAgIEFERCAjMQogICAgICAgICAgICAgICBTVE8gQ09VTlQKRU5ERlJWUjogICAgICAgSk1QIEZPUkVWRVIKICAgICAgICAgICAgICAgTk9QCiAgICAgICAgICAgICAgIE5PUAogICAgICAgICAgICAgICBOT1AKICAgICAgICAgICAgICAgTk9QCiAgICAgICAgICAgICAgIE5PUAogICAgICAgICAgICAgICBOT1AKICAgICAgICAgICAgICAgTk9QCiAgICAgICAgICAgICAgIE5PUAogICAgICAgICAgICAgICBOT1AKICAgICAgICAgICAgICAgTk9QCiAgICAgICAgICAgICAgIE5PUApDT1VOVDogICAgICAgICBOT1A%3D',
+    ifThenElse: 'https://cpuvisualsimulator.github.io/?program=ICAgICAgICAgICAgICAgTE9EIFgKICAgICAgICAgICAgICAgQ01QICMzCiAgICAgICAgICAgICAgIEpOWiBFTFNFClRIRU46ICAgICAgICAgIExPRCAjNQogICAgICAgICAgICAgICBBREQgWQogICAgICAgICAgICAgICBTVE8gWQogICAgICAgICAgICAgICBKTVAgRU5ESUYKRUxTRTogICAgICAgICAgTE9EICMyCiAgICAgICAgICAgICAgIEFERCBaCiAgICAgICAgICAgICAgIFNUTyBaCkVORElGOiAgICAgICAgIEhMVApYOiAgICAgICAgICAgICA4Clk6ICAgICAgICAgICAgIDIKWjogICAgICAgICAgICAgMQ%3D%3D',
+    while: 'https://cpuvisualsimulator.github.io/?program=V0hJTEU6ICAgICAgICAgTE9EIENPVU5UCiAgICAgICAgICAgICAgIENNUCBNQVgKICAgICAgICAgICAgICAgSlogRU5EV0hJTEUKICAgICAgICAgICAgICAgQUREICMxCiAgICAgICAgICAgICAgIFNUTyBDT1VOVAogICAgICAgICAgICAgICBBREQgU1VNCiAgICAgICAgICAgICAgIFNUTyBTVU0KICAgICAgICAgICAgICAgSk1QIFdISUxFCkVORFdISUxFOiAgICAgIEhMVAogICAgICAgICAgICAgICBOT1AKTUFYOiAgICAgICAgICAgNQpDT1VOVDogICAgICAgICBOT1AKU1VNOiAgICAgICAgICAgTk9Q',
+    for: 'https://cpuvisualsimulator.github.io/?program=V0hJTEU6ICAgICAgICAgTE9EIENPVU5UCiAgICAgICAgICAgICAgIENNUCBNQVgKICAgICAgICAgICAgICAgSlogRU5EV0hJTEUKICAgICAgICAgICAgICAgQUREICMxCiAgICAgICAgICAgICAgIFNUTyBDT1VOVAogICAgICAgICAgICAgICBBREQgU1VNCiAgICAgICAgICAgICAgIFNUTyBTVU0KICAgICAgICAgICAgICAgSk1QIFdISUxFCkVORFdISUxFOiAgICAgIEhMVAogICAgICAgICAgICAgICBOT1AKTUFYOiAgICAgICAgICAgNQpDT1VOVDogICAgICAgICBOT1AKU1VNOiAgICAgICAgICAgTk9Q',
 }
+
+// Dynamically generate image objects
+function generateImageObjects(): Record<string, ImageObject[]> {
+    const categories: Category[] = ['sum', 'formula', 'loop', 'ifThenElse', 'while', 'for'];
+    const imagesPerCategory = 3; // Assuming 3 images per category
+    const imageImports = [
+        image1, image2, image3, // sum
+        image4, image5, image6, // formula
+        image7, image8, image9, // loop
+        image10, image11, image12, // ifThenElse
+        image13, image14, image15, // while
+        image16, image17, image18, // for
+    ];
+
+    const images: Record<string, ImageObject[]> = {};
+
+    categories.forEach((category, index) => {
+        const baseIndex = index * imagesPerCategory;
+        images[category] = imageImports.slice(baseIndex, baseIndex + imagesPerCategory).map((src, i) => ({
+            src,
+            alt: `default ${category} ${i + 1}`,
+            url: i === 1 || i === 2 ? urls[category] : undefined, // Add URL only to the 2nd and 3rd images
+        }));
+    });
+
+    return images;
+}
+
+const images = generateImageObjects();
 
 export default images;

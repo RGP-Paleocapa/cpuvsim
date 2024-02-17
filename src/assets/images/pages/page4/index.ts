@@ -3,12 +3,7 @@ import image2 from './images/fetch.gif';
 import image3 from './images/decode.gif';
 import image4 from './images/execute.gif';
 import image5 from './images/something_else.gif';
-
-interface ImageObject {
-    src: string;
-    alt: string;
-    url?: string;
-}
+import { ImageObject } from '@/types/images';
 
 export const images: Record<string, ImageObject> = {
     fetchCodeExecute: { src: image1, alt: 'default' }, // no url
