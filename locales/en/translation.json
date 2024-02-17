@@ -13,5 +13,15 @@
       "authors": "Authors",
       "close": "Close"
     }
+  },
+  "navigationMenu": {
+    "page1Title": "1 - Computers as General-purpose Machines",
+    "page2Title": "2 - Simple Binary Calculations",
+    "page3Title": "3 - VonNeumann Model",
+    "page4Title": "4 - CPU Fundamental Fetch Decode Execute",
+    "page5Title": "5 - CPU Instruction Set",
+    "page6Title": "6 - Assembly And High Level Languages",
+    "page7Title": "7 - From High-level to Assembly Languages",
+    "page8Title": "8 - Exercises"
   }
 }

@@ -13,6 +13,16 @@
             "authors": "Autores",
             "close": "Cerrar"
         }
+    },
+    "navigationMenu": {
+        "page1Title": "1 - Computadoras como máquinas de propósito general",
+        "page2Title": "2 - Cálculos Binarios Simples",
+        "page3Title": "3 - Modelo de Von Neumann",
+        "page4Title": "4 - CPU Fundamental Fetch Decode Execute",
+        "page5Title": "5 - Conjunto de instrucciones de CPU",
+        "page6Title": "6 - Lenguajes de Ensamblaje y de Alto Nivel",
+        "page7Title": "7 - De lenguajes de alto nivel a lenguajes de ensamblaje",
+        "page8Title": "8 - Ejercicios"
     }
 }
  
