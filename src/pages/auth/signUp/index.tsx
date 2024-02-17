@@ -3,6 +3,7 @@ import { getAuth, createUserWithEmailAndPassword, setPersistence, browserSession
 import { Link, useNavigate } from 'react-router-dom';
 import firebase from '@/services/firebase';
 import { FirebaseError } from 'firebase/app';
+import { handleFirebaseSignupError } from './firebaseSignupError';
 // Import removed for doc and setDoc from 'firebase/firestore' as they're not used in this snippet.
 
 function SignUp() {
@@ -11,7 +12,7 @@ function SignUp() {
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSignUp = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const auth = getAuth(firebase);
 
@@ -32,21 +33,8 @@ function SignUp() {
             });
     } catch (error) {
         if (error instanceof FirebaseError) {
-            // Handle specific Firebase errors
-            switch (error.code) {
-                case "auth/email-already-in-use":
-                    setError("Email is already in use. Please choose another one.");
-                    break;
-                case "auth/weak-password":
-                    setError("Password is too weak. Please choose a stronger password.");
-                    break;
-                case "auth/invalid-email":
-                    setError("Invalid email format. Please enter a valid email address.");
-                    break;
-                default:
-                    setError("An unexpected error occurred. Please try again.");
-                    break;
-            }
+            const errorMessage = handleFirebaseSignupError(error);
+            setError(errorMessage);
         } else {
             setError("An unexpected error occurred. Please try again.");
         }
@@ -59,7 +47,7 @@ function SignUp() {
       <div className="max-w-md w-full space-y-8 border-2 border-gray-300 rounded-lg shadow-md bg-white p-6 dark:border-blue-700 dark:bg-gray-800">
         <h2 className="text-center text-3xl font-extrabold text-gray-900 dark:text-white">Sign Up</h2>
         {error && <p className="text-red-500 text-center">{error}</p>}
-        <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
+        <form className="mt-8 space-y-6" onSubmit={handleSignUp}>
           <input
             type="email"
             value={email}
