@@ -22,7 +22,7 @@ const References = () => {
 
   return (
       <div className="flex flex-col items-center md:items-start">
-          <h2 className="font-bold text-lg mb-2">{t("footer.links.references")}:</h2>
+          <h2 className="font-bold text-lg mb-2">{t("footer.links.refrences")}:</h2>
           <Ol className="mx-20">
               {footerData.map((item, index) => (
                   <li key={`${item.text}-${index}`}>
