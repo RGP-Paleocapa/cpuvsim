@@ -1,14 +1,8 @@
 {
     "binaryCalculations": {
         "title": "Computers perform simple calculations on binary digits",
-        "intro": "As said before, computers do not represent and process information using numbers, text, images, or sounds as we do. Instead, they represent everything using just two symbols:",
-        "one": "1",
-        "zero": "0",
-        "binaryAdditionRules": "For example, pairs of binary digits are added according to the rules:",
-        "firstPart": ", (one - zero, not ten) which means ",
-        "secondPart": " with ",
-        "thirdPart": "The sequence ",
-        "fourthPart": ", that is using only 2 symbols, is the equivalent of 2 as a decimal number."
+        "partOne": "As said before, computers do not represent and process information using numbers, text, images, or sounds as we do. Instead, they represent everything using just two symbols: <b>1</b> and <b>0</b>.<br /><br />For example, pairs of binary digits are added according to the rules:",
+        "partTwo": "<br /><br /><b className=\"text-blue-400\">0</b> + <b className=\"text-blue-400\">0</b> = <b className=\"text-blue-400\">0</b><br /><b className=\"text-blue-400\">0</b> + <b className=\"text-green-700/75 dark:text-green-500\">1</b> = <b className=\"text-green-700/75 dark:text-green-500\">1</b><br /><b className=\"text-green-700/75 dark:text-green-500\">1</b> + <b className=\"text-green-700/75 dark:text-green-500\">1</b> = <b className=\"text-red-700\">1</b><b className=\"text-blue-600\">0</b>, (one - zero, not ten) which means <b className=\"text-blue-600\">0</b> with <b className=\"text-red-700\">carry 1</b>.<br /><br />The sequence <b className=\"text-red-700\">1</b><b className=\"text-blue-600\">0</b> <b>as a binary number</b>, that is using only 2 symbols, is the equivalent of 2 as a decimal number.</Text>"
     },
     "binaryRepresentation": {
         "title": "Binary digits can represent text, images, video, audio, instructions",
