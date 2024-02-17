@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
 interface NavigationMenuProps {
@@ -8,18 +9,9 @@ interface NavigationMenuProps {
 }
 
 const NavigationMenu: React.FC<NavigationMenuProps> = ({ currentPage, totalPages, isNavOpen }) => {
-
-  const pageTexts = [
-    "1 - Computers as General-purpose Machines",
-    "2 - Simple Binary Calculations",
-    "3 - VonNeumann Model",
-    "4 - CPU Fundamental Fetch Decode Execute",
-    "5 - CPU Instruction Set",
-    "6 - Assembly And High Level Languages",
-    "7 - From High-level to Assembly Languages",
-    "8 - Exercises",
-  ];
-
+  const { t } = useTranslation();
+  const nameSpace = "navigationMenu";
+  const getPageTextKey = (pageNumber: number) => `${nameSpace}.page${pageNumber}Title`;
 
   return (
     <>
@@ -33,7 +25,9 @@ const NavigationMenu: React.FC<NavigationMenuProps> = ({ currentPage, totalPages
                   <svg className="h-4 w-4 mr-2" viewBox="0 0 20 20" fill="currentColor">
                     <path d="M10 5a5 5 0 100 10 5 5 0 000-10zM2 10a8 8 0 1116 0 8 8 0 010-16H2z" />
                   </svg>
-                  {pageTexts[page - 1]}
+                  <span className='text-justify'>
+                    {t(getPageTextKey(page))};
+                  </span>
                 </Link>
               </li>
             ))}

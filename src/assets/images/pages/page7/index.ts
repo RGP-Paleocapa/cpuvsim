@@ -16,12 +16,7 @@ import image15 from './images/binary-while.webp';
 import image16 from './images/high-for.webp';
 import image17 from './images/assembler-for.webp';
 import image18 from './images/binary-for.webp';
-
-interface ImageObject {
-    src: string;
-    alt: string;
-    url?: string;
-}
+import { ImageObject } from '@/types/images';
 
 const images: Record<string, ImageObject> = {
     sum1: { src: image1, alt: 'default'},

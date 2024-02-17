@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { getAuth, sendPasswordResetEmail } from 'firebase/auth';
 import { Link } from 'react-router-dom';
 import { FirebaseError } from 'firebase/app';
+import { doc, getDoc, getFirestore } from 'firebase/firestore';
+import firebase from '@/services/firebase';
 
 function ForgotPassword() {
   const [email, setEmail] = useState('');
@@ -11,29 +13,40 @@ function ForgotPassword() {
 
   const handleResetPassword = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const auth = getAuth(); // Ensure you initialize Firebase Auth correctly elsewhere in your app
+    const auth = getAuth();
+    const db = getFirestore(firebase); 
 
-    setMessage(''); // Clear any previous message
-    setError(''); // Clear any previous error
+    setMessage('');
+    setError('');
 
     if (!email.trim()) {
       setError('Please enter your email address.');
       return;
     }
 
+    // Check if user exists in Firestore
+    const userDocRef = doc(db, "users", email.trim()); // Assuming the document ID is the email
+    const docSnap = await getDoc(userDocRef);
+
+    if (!docSnap.exists()) {
+      setError('No user found with this email address. Please check and try again.');
+      console.log("done");
+      return;
+    }
+
+    // If user exists, attempt to send password reset email
     try {
       await sendPasswordResetEmail(auth, email.trim());
       setMessage('Check your email to reset your password.');
-      // Consider providing further instructions or automating navigation if appropriate
     } catch (error) {
-      const firebaseError = error as FirebaseError; // Type assertion to FirebaseError
+      const firebaseError = error as FirebaseError;
       if (firebaseError.code === 'auth/user-not-found') {
         setError('No user found with this email address. Please check and try again.');
       } else if (firebaseError.code === 'auth/invalid-email') {
         setError('Invalid email address format. Please enter a valid email address.');
       } else {
         setError('An unexpected error occurred. Please try again later.');
-        console.error('Reset password error:', firebaseError); // Logging the cast error
+        console.error('Reset password error:', firebaseError);
       }
     }
   };

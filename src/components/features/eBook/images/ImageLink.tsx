@@ -1,15 +1,13 @@
+import { ImageObject } from '@/types/images';
 import React, { useState } from 'react';
 
 type ImageLinkProps = {
-  image: {
-    src: string;
-    alt?: string;
-    url?: string;
-  };
+  image: ImageObject;
   className?: string;
+  isNotCentered?: boolean;
 };
 
-const ImageLink: React.FC<ImageLinkProps> = ({ image, className }) => {
+const ImageLink: React.FC<ImageLinkProps> = ({ image, className, isNotCentered }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const handleClick = () => {
@@ -21,7 +19,7 @@ const ImageLink: React.FC<ImageLinkProps> = ({ image, className }) => {
     }
   };
 
-  const baseClassName = 'img-center rounded';
+  const baseClassName = isNotCentered ? '' : 'img-center rounded';
   const combinedClassName = `${baseClassName} ${className || ''}`;
 
   return (

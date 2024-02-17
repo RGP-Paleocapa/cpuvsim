@@ -24,7 +24,7 @@ const EBookPage: React.FC<EBookProps> = ({ children, currentPage }) => {
     <div className={`bg-slate-100 dark:bg-slate-900 min-h-screen ${isNavOpen ? 'overflow-hidden' : ''}`}>
       <div className="container mx-auto py-4 sm:px-6 md:px-0">
         <div className="flex flex-col md:flex-row">
-          <div className={`w-full md:w-0 lg:w-64 ${isNavOpen ? '' : 'hidden'}`}>
+          <div className={`w-full md:w-0 lg:w-80 ${isNavOpen ? '' : 'hidden'}`}>
             <NavigationMenu currentPage={currentPage} totalPages={8} isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
           </div>
           <div className={`w-full flex-1 ${isNavOpen ? 'overflow-hidden' : ''}`}>

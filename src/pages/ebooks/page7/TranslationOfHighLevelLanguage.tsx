@@ -31,34 +31,34 @@ const Page7 = () => {
     // ]
 
     const sumSwitcher = [
-        images.sum1.src,
-        images.sum2.src,
-        images.sum3.src,
+        images.sum1,
+        images.sum2,
+        images.sum3,
       ]
     const formulaSwitcher = [
-        images.formula1.src,
-        images.formula2.src,
-        images.formula3.src,
+        images.formula1,
+        images.formula2,
+        images.formula3,
       ]
     const loopSwitcher = [
-        images.loop1.src,
-        images.loop2.src,
-        images.loop3.src,
+        images.loop1,
+        images.loop2,
+        images.loop3,
       ]
     const ifThenElseSwitcher = [
-        images.ifThenElse1.src,
-        images.ifThenElse2.src,
-        images.ifThenElse3.src,
+        images.ifThenElse1,
+        images.ifThenElse2,
+        images.ifThenElse3,
       ]
     const whileSwitcher = [
-        images.while1.src,
-        images.while2.src,
-        images.while3.src,
+        images.while1,
+        images.while2,
+        images.while3,
       ]
     const forSwitcher = [
-        images.for1.src,
-        images.for2.src,
-        images.for3.src,
+        images.for1,
+        images.for2,
+        images.for3,
       ]
 
     const { t } = useTranslation("page7");
