@@ -10,11 +10,7 @@ import architecture2 from './images/architecture_02.jpg';
 import specialPurposeComputer from './images/special_purpose_computer.png';
 import modernComputer from './images/modern_computer.png';
 import eniac from './images/796px-ENIAC_Penn1.jpg';
-
-interface ImageObject {
-    src: string;
-    alt: string;
-}
+import { ImageObject } from '@/types/images';
 
 export const images: Record<string, ImageObject> = {
     image4: { src: image1, alt: 'Drone'},

@@ -67,8 +67,8 @@ const Page3 = () => {
       </Text>
       <InlineDivs isEven>
           <MaxWidthContainer>
-              <Ul className="list-none">
-                  <Li>
+              <Ul className="list-none pl-0 ml-0">
+                  <Ul className="pl-0 ml-0">
                       <strong className='text-gray-900'>Arithmetic Logic Unit (ALU):</strong>
                       <Ul className="text-gray-300"> 
                           <Li isDark>
@@ -78,8 +78,8 @@ const Page3 = () => {
                               {t("cpuSection.logicOperations")}
                           </Li>
                       </Ul>
-                  </Li>
-                  <Li>
+                  </Ul>
+                  <Ul>
                       <strong className='text-gray-900'>Control Unit and Decoder:</strong>
                       <Ul className="text-gray-300"> 
                           <Li isDark>
@@ -89,8 +89,8 @@ const Page3 = () => {
                               {t("cpuSection.timingControlSignals")}
                           </Li>
                       </Ul>
-                  </Li>
-                  <Li>
+                  </Ul>
+                  <Ul>
                       <strong className='text-gray-900'>Specialized Registers:</strong>
                       <Ul className="text-gray-300"> 
                           <Li isDark>
@@ -114,7 +114,7 @@ const Page3 = () => {
                               {t("cpuSection.multiplexerDescription")}
                           </Li>
                       </Ul>
-                  </Li>
+                  </Ul>
               </Ul>
           </MaxWidthContainer>
           <MaxWidthContainer>

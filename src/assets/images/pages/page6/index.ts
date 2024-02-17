@@ -2,12 +2,7 @@ import image1 from './images/languagesFlowchart.jpg';
 import image2 from './images/counter.jpg';
 import image3 from './images/assemblerRam.png';
 import image4 from './images/binarioRam.png';
-
-interface ImageObject {
-    src: string;
-    alt: string;
-    url?: string;
-}
+import { ImageObject } from '@/types/images';
 
 export const images: Record<string, ImageObject> = {
     languagesFlowchart: { src: image1, alt: 'default'},

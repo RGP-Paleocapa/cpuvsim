@@ -4,12 +4,7 @@ import image2 from './images/InputOutput.jpg';
 import image3 from './images/Screenshot 2023-11-11 163842.png';
 import image4 from './images/Screenshot 2023-11-11 163708.png';
 import image5 from './images/Screenshot 2023-11-11 163825.png';
-
-// ImageObject interface
-interface ImageObject {
-  src: string;
-  alt: string;
-}
+import { ImageObject } from '@/types/images';
 
 // Exporting images with alt text
 export const images: Record<string, ImageObject> = {

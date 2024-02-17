@@ -27,21 +27,19 @@ const Page2 = () => {
         <Section>
             <SectionTitle>{t("binaryCalculations.title")}</SectionTitle>
             <Text>
-                <div className="whitespace-pre-wrap">
-                    {t("binaryCalculations.intro")} <B>{t("binaryCalculations.one")}</B> and <B>{t("binaryCalculations.zero")}</B>.
-                    <br /><br />
-                    {t("binaryCalculations.binaryAdditionRules")}
-                    <SmoothScrollButton targetId="footer" buttonText="[1]" />
-                    <br /><br />
-                    <B className="text-blue-400">0</B> + <B className="text-blue-400">0</B> = <B className="text-blue-400">0</B>
-                    <br />
-                    <B className="text-blue-400">0</B> + <B className="text-green-700/75 dark:text-green-400">1</B> = <B className="text-green-700/75 dark:text-green-400">1</B>
-                    <br />
-                    <B className="text-green-700/75 dark:text-green-400">1</B> + <B className="text-green-700/75 dark:text-green-400">1</B> = <B className="text-red-700">1</B><B className="text-blue-600">0</B>
-                    {t("binaryCalculations.firstPart")}<B className="text-blue-600">0</B>{t("binaryCalculations.secondPart")}<B className="text-red-700">carry 1</B>.
-                    <br /><br />
-                    {t("binaryCalculations.thirdPart")}<B className="text-red-700">1</B><B className="text-blue-600">0</B><B> as a binary number</B>{t("binaryCalculations.fourthPart")}
-                </div>
+                {t("binaryCalculations.intro")} <B>{t("binaryCalculations.one")}</B> and <B>{t("binaryCalculations.zero")}</B>.
+                <br /><br />
+                {t("binaryCalculations.binaryAdditionRules")}
+                <SmoothScrollButton targetId="footer" buttonText="[1]" />
+                <br /><br />
+                <B className="text-blue-400">0</B> + <B className="text-blue-400">0</B> = <B className="text-blue-400">0</B>
+                <br />
+                <B className="text-blue-400">0</B> + <B className="text-green-700/75 dark:text-green-400">1</B> = <B className="text-green-700/75 dark:text-green-400">1</B>
+                <br />
+                <B className="text-green-700/75 dark:text-green-400">1</B> + <B className="text-green-700/75 dark:text-green-400">1</B> = <B className="text-red-700">1</B><B className="text-blue-600">0</B>
+                {t("binaryCalculations.firstPart")}<B className="text-blue-600">0</B>{t("binaryCalculations.secondPart")}<B className="text-red-700">carry 1</B>.
+                <br /><br />
+                {t("binaryCalculations.thirdPart")}<B className="text-red-700">1</B><B className="text-blue-600">0</B><B> as a binary number</B>{t("binaryCalculations.fourthPart")}
             </Text>
         </Section>
 

@@ -27,21 +27,19 @@ const Page4 = () => {
                 </SectionTitle>
                 <InlineDivs>
                     <MaxWidthContainer>
-                        <Text isDark>
-                            <RenderHTML htmlString={t("cpuCycleSection.description")} />
-                            <br /><br />
-                            <Ol className="dark:text-black">
-                                <Li isDark margin0>
-                                    <RenderHTML htmlString={`${t("cpuCycleSection.fetch")}`} />
-                                </Li>
-                                <Li isDark margin0>
-                                    <RenderHTML htmlString={`${t("cpuCycleSection.decode")}`} />
-                                </Li>
-                                <Li isDark margin0>
-                                    <RenderHTML htmlString={`${t("cpuCycleSection.execute")}`} />
-                                </Li>
-                            </Ol>
-                        </Text>
+                        <Text isDark><RenderHTML htmlString={t("cpuCycleSection.description")} /></Text>
+                        <br /><br />
+                        <Ol className="dark:text-black">
+                            <Li isDark margin0>
+                                <RenderHTML htmlString={`${t("cpuCycleSection.fetch")}`} />
+                            </Li>
+                            <Li isDark margin0>
+                                <RenderHTML htmlString={`${t("cpuCycleSection.decode")}`} />
+                            </Li>
+                            <Li isDark margin0>
+                                <RenderHTML htmlString={`${t("cpuCycleSection.execute")}`} />
+                            </Li>
+                        </Ol>
                     </MaxWidthContainer>
                     <MaxWidthContainer>
                         <img src={images.fetchCodeExecute.src} alt={images.fetchCodeExecute.alt} className="img-center" />

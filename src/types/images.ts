@@ -1,6 +1,6 @@
 export type ImageObject = {
     src: string;
-    alt?: string;
+    alt: string;
     url?: string;
     width?: string;
     height?: string;
