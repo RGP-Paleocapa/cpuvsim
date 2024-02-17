@@ -8,5 +8,143 @@
     "example3Title": "EJEMPLO: traducción de un bucle infinito",
     "example4Title": "EJEMPLO: traducción de una construcción IF-THEN-ELSE",
     "example5Title": "EJEMPLO: Traducción de una construcción While",
-    "example6Title": "EJEMPLO: Traducción de una construcción For"
+    "example6Title": "EJEMPLO: Traducción de una construcción For",
+    "sum": [
+        [
+          "W, X e Y se inicializan (se les asigna un valor numérico).",
+          "La suma de W y X se asigna entonces a la variable Y."
+        ],
+        [
+          "Inicialmente W=0, X=0, Y=0 (etiquetas de las últimas tres celdas de memoria).",
+          "LOD #2: Se carga 2 en el acumulador.",
+          "STO W: el resultado se almacena en (la celda de memoria de dirección) W",
+          "LOD #8: Se carga 8 en el acumulador.",
+          "STO X: el resultado se almacena en (la celda de memoria de dirección) X",
+          "LOD W: el contenido de (la celda de memoria de dirección) W se carga en el acumulador.",
+          "ADD X: (el contenido de la celda de dirección) X se añade al valor en el acumulador.",
+          "STO Y: el resultado se almacena en (la celda de memoria de dirección) Y.",
+          "HLT: Detiene todas las operaciones posteriores.",
+          "Resultados: W=2, X=8, Y=10."
+        ],
+        [
+          "Aquí el contenido de la memoria RAM, así como las direcciones de memoria, se visualizan en código binario.",
+          "Estos son los valores tal como se almacenan y manejan físicamente - pero es obviamente más conveniente, para un humano, usar las mnemotécnicas equivalentes, trabajando con el lenguaje ensamblador y una base numérica más familiar."
+        ]
+      ],
+      "formula": [
+        [
+          "Inicialmente Y=10, W=2, y X=0;",
+          "Se multiplica 3 por el valor de Y. El resultado se asigna entonces a una variable temporal (TMP), y posteriormente se añade al cociente de 2/W;",
+          "el resultado será: Y=10, W=2, TMP=30 y X=31."
+        ],
+        [
+          "Afirmación: Y=10, W=2, TMP=0, X=0 (etiquetas de las últimas cuatro celdas de memoria).",
+          "LOD #3: Se carga 3 en el acumulador.",
+          "MUL Y: (el contenido de la celda de dirección) Y se multiplica por el valor en el acumulador.",
+          "STO TMP: el resultado se almacena en (la celda de memoria de dirección) TMP",
+          "LOD #2: Se carga 2 en el acumulador.",
+          "DIV W: (el contenido de la celda de dirección) W se divide por el valor en el acumulador.",
+          "ADD TMP: (el contenido de la celda de dirección) TMP se añade al valor en el acumulador.",
+          "STO X: el resultado se almacena en (la celda de memoria de dirección) X.",
+          "HLT: Detiene todas las operaciones posteriores.",
+          "Resultados: Y=10, W=2, TMP=30, X=31"
+        ],
+        [
+          "Aquí el contenido de la memoria RAM, así como las direcciones de memoria, se visualizan en código binario.",
+          "Estos son los valores tal como se almacenan y manejan físicamente - pero es obviamente más conveniente, para un humano, usar las mnemotécnicas equivalentes, trabajando con el lenguaje ensamblador y una base numérica más familiar."
+        ]
+      ],
+      "infiniteLoop": [
+        [
+          "Inicialmente COUNT=0;",
+          "Bucle infinito en el cual COUNT se incrementa en uno en cada iteración."
+        ],
+        [
+          "Inicialmente A=0 (etiqueta de la última celda de memoria).",
+          "LOD A: el contenido de (la celda de memoria de dirección) A se carga en el acumulador.",
+          "ADD #1: se añade 1 al valor en el acumulador.",
+          "STO A: el resultado se almacena en (la celda de memoria de dirección) A.",
+          "JMP FOR: Salta incondicionalmente a la dirección correspondiente a la etiqueta \"FOR\".",
+          "Resultados: A toma los valores 0, 1, 2, 3, ..."
+        ],
+        [
+          "Aquí el contenido de la memoria RAM, así como las direcciones de memoria, se visualizan en código binario.",
+          "Estos son los valores tal como se almacenan y manejan físicamente - pero es obviamente más conveniente, para un humano, usar las mnemotécnicas equivalentes, trabajando con el lenguaje ensamblador y una base numérica más familiar."
+        ]
+      ],
+      "ifThenElse": [
+        [
+          "Inicialmente X=8, Y=0, y Z=1;",
+          "El código de alto nivel especifica que si X es igual a 3 entonces Y se establece a Y+5, de lo contrario Z se establece a Z+2.",
+          "En este caso X es diferente de 3, por lo tanto se ejecuta la cláusula ELSE. Por lo tanto, el resultado será: Y=2 y Z=3."
+        ],
+        [
+          "Inicialmente X=8, Y=2, Z=1 (etiquetas de las últimas tres celdas de memoria).",
+          "LOD X: el contenido de (la celda de memoria de dirección) X se carga en el acumulador.",
+          "CMP #3: X se compara con 3. Es decir, se realiza la operación 8-3, lo que establece el Flag NZ (sin afectar el acumulador).",
+          "JNZ ELSE: como el Flag NZ está establecido, se salta a la dirección correspondiente a la etiqueta \"ELSE\".",
+          "LOD #5: se carga 5 en el acumulador.",
+          "ADD Y: (el contenido de la celda de dirección) Y se añade al valor en el acumulador.",
+          "STO Y: el resultado se almacena en (la celda de memoria de dirección) Y.",
+          "LOD #2: se carga 2 en el acumulador.",
+          "ADD Z: (el contenido de la celda de dirección) Z se añade al valor en el acumulador.",
+          "STO Z: el resultado se almacena en (la celda de memoria de dirección) Z.",
+          "HLT: Detiene todas las operaciones posteriores.",
+          "Resultados: X=8, Y=2, Z=3."
+        ],
+        [
+          "Aquí el contenido de la memoria RAM, así como las direcciones de memoria, se visualizan en código binario.",
+          "Estos son los valores tal como se almacenan y manejan físicamente - pero es obviamente más conveniente, para un humano, usar las mnemotécnicas equivalentes, trabajando con el lenguaje ensamblador y una base numérica más familiar."
+        ]
+      ],
+      "while": [
+        [
+          "Inicialmente MAX=5, COUNT=0, SUM=0",
+          "El código de alto nivel especifica que mientras COUNT sea diferente de MAX, se deben ejecutar las instrucciones COUNT=COUNT+1 y SUM=SUM+COUNT.",
+          "El resultado de la ejecución de este bucle será: MAX=5, COUNT=5, SUM=15."
+        ],
+        [
+          "Inicialmente MAX=5, COUNT=0, SUM=0 (etiquetas de las últimas tres celdas de memoria).",
+          "LOD COUNT: COUNT se carga en el Acumulador.",
+          "CMP MAX: MAX se compara con el acumulador, estableciendo los flags correspondientes.",
+          "La operación (0-5) se ejecuta en el primer ciclo, la operación (5-5) en el último ciclo.",
+          "JZ ENDWHILE: el flag Z no está establecido en el primer ciclo, por lo tanto, el salto no se ejecuta. El flag Z solo se establece en el último ciclo, cuando el control salta a la dirección correspondiente a la etiqueta \"END WHILE\", terminando las iteraciones.",
+          "ADD #1: se añade 1 al contenido del acumulador.",
+          "STO COUNT: el resultado se almacena en (la celda de memoria) COUNT.",
+          "ADD SUM: SUM se añade al valor del acumulador.",
+          "STO SUM: el resultado se almacena en (la celda de dirección) SUM.",
+          "JMP WHILE: Salta incondicionalmente a la dirección correspondiente a la etiqueta \"WHILE\".",
+          "HLT: Detiene todas las operaciones posteriores."
+        ],
+        [
+          "Aquí el contenido de la memoria RAM, así como las direcciones de memoria, se visualizan en código binario.",
+          "Estos son los valores tal como se almacenan y manejan físicamente - pero es obviamente más conveniente, para un humano, usar las mnemotécnicas equivalentes, trabajando con el lenguaje ensamblador y una base numérica más familiar."
+        ]
+      ],
+      "forLoop": [
+        [
+          "Inicialmente COUNT=0.",
+          "Comenzando desde I=3, ciclar hacia atrás a través del bucle hasta que I llegue a 0.",
+          "Cada bucle incrementa el contador COUNT en uno.",
+          "El resultado será: COUNT=3, I=0."
+        ],
+        [
+          "Inicialmente I=3, COUNT=0 (etiquetas de las últimas dos celdas de memoria).",
+          "LOD I: el contenido de la celda de memoria de dirección I se carga en el acumulador.",
+          "CMP #1: se compara 1 con el contenido del acumulador. En caso de que el acumulador contenga 1, la operación (1-1) establece el flag Z.",
+          "JZ ENDFOR: Si el flag Z está establecido, salta a la dirección correspondiente a la etiqueta \"ENDFOR\".",
+          "LOD COUNT: (el contenido de la celda de memoria de dirección) COUNT se carga en el acumulador.",
+          "ADD #1: se añade 1 al valor del acumulador.",
+          "STO COUNT: el resultado se almacena en la celda de memoria de dirección COUNT.",
+          "LOD I: el contenido de (la celda de memoria de dirección) I se carga en el acumulador.",
+          "SUB #1: se sustrae 1 del valor del acumulador.",
+          "STO I: el resultado se almacena en la celda de memoria de dirección I.",
+          "JMP FOR: Salta a la dirección correspondiente a la etiqueta \"For\".",
+          "HLT: Detiene todas las operaciones posteriores."
+        ],
+        [
+          "Aquí el contenido de la memoria RAM, así como las direcciones de memoria, se visualizan en código binario.",
+          "Estos son los valores tal como se almacenan y manejan físicamente - pero es obviamente más conveniente, para un humano, usar las mnemotécnicas equivalentes, trabajando con el lenguaje ensamblador y una base numérica más familiar."
+        ]
+      ]
 }
