@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { isEmailRegistered, sendResetPasswordEmail } from '../firebaseUtils';
+import { handleFirebaseForgotPasswordError } from '../firebaseErrorHandling';
+import { FirebaseError } from 'firebase/app';
 
 function ForgotPassword() {
   const [email, setEmail] = useState('');
@@ -30,7 +32,12 @@ function ForgotPassword() {
       setMessage('Check your email to reset your password.');
       // setTimeout(() => navigate('/auth/login'), 3000); // Redirect them to the login page after 3 seconds
     } catch (error: any) {
-      setError(error.message);
+      if (error instanceof FirebaseError) {
+        const errorMessage = handleFirebaseForgotPasswordError(error);
+        setError(errorMessage);
+      } else {
+        setError(error.message);
+      }
     }
   };  
 
