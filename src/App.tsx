@@ -11,6 +11,7 @@ import { useEffect } from 'react';
 import { handleRedirectResult } from './pages/auth/firebaseUtils';
 import useAuthStore from './context/useAuthStore';
 import { useNavigate } from 'react-router-dom';
+import './trusted-security-policies'
 
 const App = () => {
   useFirebaseAuth(); // Custom hook to manage auth state
