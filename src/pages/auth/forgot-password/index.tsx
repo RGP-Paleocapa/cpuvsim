@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { isEmailRegistered, sendResetPasswordEmail } from '../firebaseUtils';
+import { sendResetPasswordEmail } from '../firebaseUtils';
 import { handleFirebaseForgotPasswordError } from '../firebaseErrorHandling';
 import { FirebaseError } from 'firebase/app';
 
@@ -22,11 +22,11 @@ function ForgotPassword() {
     }
   
     try {
-      const isRegistered = await isEmailRegistered(email.trim()); // Await the result of isEmailRegistered
-      if (!isRegistered) {
-        setError('No user found with this email address. Please check and try again.');
-        return;
-      }
+      // const isRegistered = await isEmailRegistered(email.trim()); // Await the result of isEmailRegistered
+      // if (!isRegistered) {
+      //   setError('No user found with this email address. Please check and try again.');
+      //   return;
+      // }
   
       await sendResetPasswordEmail(email);
       setMessage('Check your email to reset your password.');
@@ -57,6 +57,7 @@ function ForgotPassword() {
             className="w-full p-4 mt-2 border border-gray-300 rounded-md shadow-sm hocus:border-blue-500 hocus:ring hocus:ring-blue-500 hocus:ring-opacity-50 dark:border-blue-500 dark:bg-gray-700 dark:text-gray-100 dark:hocus:border-blue-400 dark:hocus:ring-blue-400"
           />
           <button
+            
             type="submit"
             className="w-full px-6 py-3 text-lg text-white rounded-md bg-blue-700 hocus:bg-blue-800 focus:outline-none hocus:ring-2 hocus:ring-blue-700 hocus:ring-opacity-50 dark:bg-blue-700 dark:hocus:bg-blue-800 dark:hocus:ring-blue-700 shadow-2xl dark:shadow-blue-800/50"
           >

@@ -19,6 +19,7 @@ const Login = () => {
     try {
       await signInWithEmailAndPasswordAndFetchUserInfo(email, password, navigate, setUser);
     } catch (error) {
+      console.log((error as FirebaseError).code); // Temporary log for debugging
       if ((error as FirebaseError).name === "UnverifiedEmailError") {
         setError("Please verify your email before logging in.");
       } else if (error instanceof FirebaseError) {

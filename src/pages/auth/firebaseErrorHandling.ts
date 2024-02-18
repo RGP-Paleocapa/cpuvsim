@@ -4,6 +4,7 @@ export const handleFirebaseLoginError = (error: FirebaseError): string => {
     switch (error.code) {
         // Common authentication errors
         case "auth/user-not-found":
+            return "Email is not registered. Please check your email or sign up.";
         case "auth/wrong-password":
         case "auth/invalid-password":
         case "auth/invalid-email":
