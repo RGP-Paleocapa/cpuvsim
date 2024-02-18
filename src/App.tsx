@@ -7,21 +7,21 @@ import AppRoutes from './routes/Routes';
 import ScrollToTopButton from '@/components/utils/ScrollToTopButton';
 import ScrollToTop from '@/components/utils/ScrollToTop';
 import './i18n';
-import { useEffect } from 'react';
-import { handleRedirectResult } from './pages/auth/firebaseUtils';
-import useAuthStore from './context/useAuthStore';
-import { useNavigate } from 'react-router-dom';
+// import { useEffect } from 'react';
+// import { handleRedirectResult } from './pages/auth/firebaseUtils';
+// import useAuthStore from './context/useAuthStore';
+// import { useNavigate } from 'react-router-dom';
 import './trusted-security-policies'
 
 const App = () => {
   useFirebaseAuth(); // Custom hook to manage auth state
   useSessionTimeout(1_800_000); // 30 minutes session timeout
-  const navigate = useNavigate();
-  const { setUser } = useAuthStore();
+  // const navigate = useNavigate();
+  // const { setUser } = useAuthStore();
 
-  useEffect(() => {
-    handleRedirectResult(navigate, setUser).catch(console.error);
-  }, []); // Run once on component mount
+  // useEffect(() => {
+  //   handleRedirectResult(navigate, setUser).catch(console.error);
+  // }, []); // Run once on component mount
 
   return (
       <div className='bg-slate-100 dark:bg-slate-900 min-h-screen pt-16'>

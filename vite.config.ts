@@ -20,5 +20,10 @@ export default defineConfig({
   },
   plugins: [react()],
   base: "/cpuvsim/",
-  server: { open: true, },
+  server: {
+    open: true,
+    headers: {
+      'Cross-Origin-Embedder-Policy': 'unsafe-none'
+    },
+  },
 })

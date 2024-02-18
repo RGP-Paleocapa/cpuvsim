@@ -31,6 +31,13 @@ const Login = () => {
     }
   };
 
+  const handleGoogleSignIn = async () => {
+    const errorMessage = await signInWithGoogle(navigate, setUser);
+    if (errorMessage) {
+      setError(errorMessage);
+    }
+  };
+
   return (
     <div className="flex flex-col justify-center items-center bg-gray-100 py-12 px-4 sm:px-6 lg:px-8 dark:bg-slate-900">
       <div className="max-w-md w-full space-y-8 border-2 border-gray-300 rounded-lg shadow-md bg-white p-6 dark:border-blue-700 dark:bg-gray-800">
@@ -67,7 +74,7 @@ const Login = () => {
 
             <button
               disabled
-              onClick={() => signInWithGoogle()}
+              onClick={handleGoogleSignIn}
               className="w-full px-6 py-3 mt-4 text-lg font-medium text-white rounded-md bg-red-500 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50 shadow-lg transition duration-150 ease-in-out"
             >
               Sign in with Google
