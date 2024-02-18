@@ -1,6 +1,6 @@
 // firebaseUtils.ts
 
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, setPersistence, browserSessionPersistence, signOut, sendEmailVerification, sendPasswordResetEmail, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, setPersistence, browserSessionPersistence, signOut, sendEmailVerification, sendPasswordResetEmail, GoogleAuthProvider, signInWithPopup, getRedirectResult, signInWithRedirect } from 'firebase/auth';
 import { getFirestore, Firestore, doc, getDoc } from 'firebase/firestore';
 import firebaseConfig from '@/services/firebaseConfig';
 
@@ -27,26 +27,48 @@ export const signUpWithEmailAndPassword = async (email: string, password: string
   }
 };
 
-export const signInWithGoogle = async (navigate: any, setUser: any): Promise<void> => {
+export const signInWithGoogle = async (): Promise<void> => {
   const provider = new GoogleAuthProvider();
   try {
-    const result = await signInWithPopup(auth, provider);
-    // Here you can set user details or perform additional checks
-    setUser({
-      email: result.user.email,
-      userId: result.user.uid,
-      // Add other user details as needed
-    });
-
-    localStorage.setItem('sessionStart', Date.now().toString());
-    navigate('/feedback/submit'); // Redirect as needed
+    // Initiate the sign-in with redirect
+    await signInWithRedirect(auth, provider);
   } catch (error) {
-    console.error("Error signing in with Google:", error);
+    console.error("Error initiating sign-in with Google:", error);
     throw error;
   }
 };
 
+export const handleRedirectResult = async (navigate: any, setUser: any): Promise<void> => {
+  try {
+    // Get the result of the redirect sign-in
+    const result = await getRedirectResult(auth);
 
+    if (result && result.user) {
+      // User signed in successfully
+      const { email, uid } = result.user;
+
+      // Perform additional checks or user details setup here if needed
+
+      // Set user details
+      setUser({
+        email: email,
+        userId: uid,
+        // Add other user details as needed
+      });
+
+      // Save session start time
+      localStorage.setItem('sessionStart', Date.now().toString());
+
+      // Redirect to a specific route after successful sign-in
+      navigate('/feedback/submit');
+    }
+  } catch (error) {
+    console.error("Error handling redirect result:", error);
+    // Handle error (e.g., display error message)
+    // You can redirect to a login page or display an error message to the user
+    // navigate('/login'); // Redirect to login page
+  }
+};
 
 export const signInWithEmailAndPasswordAndFetchUserInfo = async (email: string, password: string, navigate: any, setUser: any): Promise<void> => {
   try {
