@@ -1,6 +1,6 @@
 // firebaseUtils.ts
 
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, setPersistence, browserSessionPersistence, signOut, sendEmailVerification, sendPasswordResetEmail } from 'firebase/auth';
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, setPersistence, browserSessionPersistence, signOut, sendEmailVerification, sendPasswordResetEmail, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { getFirestore, Firestore, doc, getDoc } from 'firebase/firestore';
 import firebaseConfig from '@/services/firebaseConfig';
 
@@ -26,6 +26,26 @@ export const signUpWithEmailAndPassword = async (email: string, password: string
     throw error;
   }
 };
+
+export const signInWithGoogle = async (navigate: any, setUser: any): Promise<void> => {
+  const provider = new GoogleAuthProvider();
+  try {
+    const result = await signInWithPopup(auth, provider);
+    // Here you can set user details or perform additional checks
+    setUser({
+      email: result.user.email,
+      userId: result.user.uid,
+      // Add other user details as needed
+    });
+
+    localStorage.setItem('sessionStart', Date.now().toString());
+    navigate('/feedback/submit'); // Redirect as needed
+  } catch (error) {
+    console.error("Error signing in with Google:", error);
+    throw error;
+  }
+};
+
 
 
 export const signInWithEmailAndPasswordAndFetchUserInfo = async (email: string, password: string, navigate: any, setUser: any): Promise<void> => {
