@@ -86,11 +86,17 @@ export const handleFirebaseSignupError = (error: FirebaseError): string => {
 
 export const handleFirebaseForgotPasswordError = (error: FirebaseError): string => {
     switch (error.code) {
-      case 'auth/user-not-found':
-        return 'No user found with this email address. Please check and try again.';
-      case 'auth/invalid-email':
-        return 'Invalid email address format. Please enter a valid email address.';
-      default:
-        return 'An unexpected error occurred. Please try again later.';
+        case 'auth/user-not-found':
+            return 'No user found with this email address. Please check and try again.';
+          case 'auth/invalid-email':
+            return 'Invalid email address format. Please enter a valid email address.';
+          // Add more cases as needed
+          case 'auth/network-request-failed':
+            return 'Network error. Please check your internet connection and try again.';
+          case 'auth/too-many-requests':
+            return 'Too many attempts. Please try again later.';
+          // ...
+          default:
+            return 'An unexpected error occurred. Please try again later.';
     }
 };

@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FirebaseError } from 'firebase/app';
-import { doc, getDoc, getFirestore } from 'firebase/firestore';
-import { handleFirebaseForgotPasswordError } from '../firebaseErrorHandling';
-import { sendResetPasswordEmail } from '../firebaseUtils';
+import { isEmailRegistered, sendResetPasswordEmail } from '../firebaseUtils';
 
 function ForgotPassword() {
   const [email, setEmail] = useState('');
@@ -13,35 +10,29 @@ function ForgotPassword() {
 
   const handleResetPassword = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const db = getFirestore();
-
-    setMessage('');
-    setError('');
-
+  
+    setMessage(''); // Clear any previous message
+    setError(''); // Clear any previous error
+  
     if (!email.trim()) {
       setError('Please enter your email address.');
       return;
     }
-
+  
     try {
-      // Check if user exists in Firestore
-      const userDocRef = doc(db, "users", email.trim()); // Assuming the document ID is the email
-      const docSnap = await getDoc(userDocRef);
-
-      if (!docSnap.exists()) {
+      const isRegistered = await isEmailRegistered(email.trim()); // Await the result of isEmailRegistered
+      if (!isRegistered) {
         setError('No user found with this email address. Please check and try again.');
         return;
       }
-
-      // If user exists, attempt to send password reset email
-      await sendResetPasswordEmail(email.trim());
+  
+      await sendResetPasswordEmail(email);
       setMessage('Check your email to reset your password.');
-    } catch (error) {
-      const firebaseError = error as FirebaseError;
-      setError(handleFirebaseForgotPasswordError(firebaseError));
-      console.error('Reset password error:', firebaseError);
+      // setTimeout(() => navigate('/auth/login'), 3000); // Redirect them to the login page after 3 seconds
+    } catch (error: any) {
+      setError(error.message);
     }
-  };
+  };  
 
   return (
     <div className="flex flex-col justify-center items-center bg-gray-100 py-12 px-4 sm:px-6 lg:px-8 dark:bg-slate-900">

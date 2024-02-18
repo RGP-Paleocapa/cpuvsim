@@ -1,7 +1,7 @@
 // firebaseUtils.ts
 
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, setPersistence, browserSessionPersistence, signOut, sendEmailVerification, sendPasswordResetEmail } from 'firebase/auth';
-import { getFirestore, Firestore, doc, getDoc } from 'firebase/firestore';
+import { getFirestore, Firestore, doc, getDoc, collection, query, where, getDocs } from 'firebase/firestore';
 import firebaseConfig from '@/services/firebaseConfig';
 
 const auth = getAuth(firebaseConfig);
@@ -77,9 +77,13 @@ export const sendResetPasswordEmail = async (email: string): Promise<void> => {
   }
 };
 
-export const checkUserExists = async (email: string): Promise<boolean> => {
-  const db = getFirestore();
-  const userDocRef = doc(db, "users", email.trim());
-  const docSnap = await getDoc(userDocRef);
-  return docSnap.exists();
+export const isEmailRegistered = async (email: string): Promise<boolean> => {
+  console.log(email);
+  const trimmedEmail = email.trim();
+  const usersCollectionRef = collection(db, "users");
+  const q = query(usersCollectionRef, where("email", "==", trimmedEmail));
+  const querySnapshot = await getDocs(q);
+
+  console.log("Query completed");
+  return !querySnapshot.empty;
 };
