@@ -60,7 +60,7 @@ export const handleRedirectResult = async (navigate: any, setUser: any): Promise
       localStorage.setItem('sessionStart', Date.now().toString());
 
       // Redirect to a specific route after successful sign-in
-      navigate('/feedback/submit');
+      navigate('/feedback/submit', { replace: true }); // Redirect directly to the final route
     }
   } catch (error) {
     console.error("Error handling redirect result:", error);
