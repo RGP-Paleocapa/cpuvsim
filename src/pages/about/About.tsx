@@ -2,6 +2,7 @@ import { useFooterStore } from "@/context/useFooterStore";
 import useDocumentMetadata from "@hooks/useDocumentMetadata";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 const About = () => {
   useDocumentMetadata('About - CPU E-Book', 'Learn more about our mission and vision.');
@@ -30,6 +31,14 @@ const About = () => {
         <p className="text-justify">
           {t("content")}
         </p>
+      </div>
+
+      {/* Prompt and Button for Feedback */}
+      <div className="hidden justify-center text-center mt-8 dark:text-gray-400">
+        <div className="text-center dark:text-gray-400 border-4 max-w-xl p-4 rounded-xl">
+          <p className="mb-4">Do you want to share your thoughts?</p>
+          <Link to="/feedback/submit" className="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded dark:bg-red-800 dark:hover:bg-red-700">Send Feedback</Link>
+        </div>
       </div>
     </div>
   );

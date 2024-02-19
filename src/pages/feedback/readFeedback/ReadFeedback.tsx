@@ -26,7 +26,7 @@ const ReadFeedback = () => {
                 {isAdmin && <p className="text-gray-600 dark:text-gray-400">Email: {feedback.email}</p>}
                 {/* <p className="text-gray-700 dark:text-gray-300">Feedback: {feedback.text}</p> */}
                 {feedback.text.split('\n\n').map((text, idx) => (
-                  <p key={idx} className="text-gray-700 dark:text-gray-300">- {feedbackTitles[idx]}: {text}</p>
+                  <p key={idx} className="text-gray-700 dark:text-gray-300">{feedbackTitles[idx]}: {text}</p>
                 ))}
                 <p className="text-gray-700 dark:text-gray-300">Role: {feedback.role}</p>
                 {feedback.rating && <p className="text-gray-700 dark:text-gray-300">Rating: {feedback.rating}</p>}

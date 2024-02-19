@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { FiGlobe } from "react-icons/fi";
 import { Gb, It, Es } from "react-flags-select";
@@ -19,11 +19,11 @@ const LanguageSwitcher: React.FC = () => {
     const [language, setLanguage] = useState<string>(savedLanguage);
     const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
     const { t, i18n } = useTranslation();
+    let closeTimeout: NodeJS.Timeout;
 
     const changeLanguage = (lng: string): void => {
         setLanguage(lng);
         i18n.changeLanguage(lng);
-        setIsDropdownOpen(false);
         localStorage.setItem('userLanguage', lng);
     };
 
@@ -31,8 +31,25 @@ const LanguageSwitcher: React.FC = () => {
         i18n.changeLanguage(savedLanguage);
     }, [savedLanguage, i18n]);
 
-    const toggleDropdown = (): void => {
-        setIsDropdownOpen(!isDropdownOpen);
+    const handleMouseEnter = (): void => {
+        clearTimeout(closeTimeout);
+        setIsDropdownOpen(true);
+    };
+
+    const handleMouseLeave = (): void => {
+        closeTimeout = setTimeout(() => {
+            setIsDropdownOpen(false);
+        }, 250);
+    };
+
+    const handleDropdownMouseEnter = (): void => {
+        clearTimeout(closeTimeout);
+    };
+
+    const handleDropdownMouseLeave = (): void => {
+        closeTimeout = setTimeout(() => {
+            setIsDropdownOpen(false);
+        }, 250);
     };
 
     const languages: LanguageOption[] = [
@@ -49,11 +66,14 @@ const LanguageSwitcher: React.FC = () => {
     };
 
     return (
-        <div className="relative inline-block text-left">
+        <div
+            className="relative inline-block text-left"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+        >
             <button
                 type="button"
                 className="flex items-center text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white focus:outline-none"
-                onClick={toggleDropdown}
             >
                 {languageIcons[language] || <FiGlobe className="inline-block text-xl mr-2" />}
                 <span>{t('header.languages.' + language)}</span>
@@ -66,6 +86,8 @@ const LanguageSwitcher: React.FC = () => {
                 role="menu"
                 aria-orientation="vertical"
                 aria-labelledby="options-menu"
+                onMouseEnter={handleDropdownMouseEnter}
+                onMouseLeave={handleDropdownMouseLeave}
             >
                 <div className="py-1" role="none">
                     {languages.map((lang) => (
