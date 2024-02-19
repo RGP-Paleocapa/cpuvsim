@@ -4,8 +4,8 @@ import Layout from '../feedbackLayout/Layout';
 import useAuthStore from '@/context/useAuthStore'; // Ensure the correct path to your Zustand store
 import ReactStars from "react-rating-stars-component";
 import { FeedbackComponent } from './FeedbackComponent';
-import { FeedbackData, submitFeedback } from '../Formutils';
 import { RadioGroupComponent } from './RadioGroupComponents';
+import { FeedbackData, submitFeedback } from '../FormUtils';
 
 const SubmitFeedback: React.FC = () => {
   const [rating, setRating] = useState<number | undefined>(undefined);

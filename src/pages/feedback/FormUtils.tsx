@@ -3,7 +3,7 @@ import firebaseApp from '@/services/firebaseConfig'; // Adjust the import path a
 import useAuthStore from '@/context/useAuthStore';
 import { useEffect, useState } from 'react';
 
-export interface FeedbackData {
+export type FeedbackData = {
     email: string;
     text: string;
     timestamp: FieldValue | Timestamp | Date | null | any; 
