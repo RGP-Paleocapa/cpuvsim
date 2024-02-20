@@ -1,8 +1,8 @@
 import React from 'react';
 import { Navigate } from 'react-router-dom';
-import { getAuth, onAuthStateChanged } from 'firebase/auth';
-import app from "@/firebase/firebaseConfig"; // Ensure this imports your Firebase app initialization correctly
+import { onAuthStateChanged } from 'firebase/auth';
 import { useState, useEffect } from 'react';
+import { auth } from '@/firebase/firebaseConfig';
 
 interface ProtectedRouteProps {
     component: React.ComponentType;
@@ -13,7 +13,6 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ component: Component })
     const [isAuthenticated, setIsAuthenticated] = useState(false);
 
     useEffect(() => {
-        const auth = getAuth(app);
         const unsubscribe = onAuthStateChanged(auth, (user) => {
             setIsAuthenticated(!!user); // !!user converts user to boolean: true if user exists, false otherwise
             setIsLoading(false);

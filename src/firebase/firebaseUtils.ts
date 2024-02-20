@@ -1,14 +1,11 @@
 // firebaseUtils.ts
 
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, setPersistence, browserSessionPersistence, signOut, sendEmailVerification, sendPasswordResetEmail, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
-import { getFirestore, Firestore, doc, getDoc } from 'firebase/firestore';
-import firebaseConfig from '@/firebase/firebaseConfig';
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, setPersistence, browserSessionPersistence, signOut, sendEmailVerification, sendPasswordResetEmail, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { Firestore, doc, getDoc } from 'firebase/firestore';
 // import useAuthStore from '@/context/useAuthStore';
 import { FirebaseError } from 'firebase/app';
 import { handleFirebaseForgotPasswordError } from './firebaseErrorHandling';
-
-const auth = getAuth(firebaseConfig);
-const db = getFirestore(firebaseConfig);
+import { auth, db } from './firebaseConfig';
 
 export const signUpWithEmailAndPassword = async (email: string, password: string, navigate: any): Promise<any> => {
   try {

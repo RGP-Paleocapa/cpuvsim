@@ -1,7 +1,7 @@
-import { getFirestore, collection, addDoc, FieldValue, Timestamp, serverTimestamp, query, collectionGroup, orderBy, getDocs } from 'firebase/firestore';
-import firebaseApp from '@/firebase/firebaseConfig'; // Adjust the import path as necessary
+import { collection, addDoc, FieldValue, Timestamp, serverTimestamp, query, collectionGroup, orderBy, getDocs } from 'firebase/firestore';
 import useAuthStore from '@/context/useAuthStore';
 import { useEffect, useState } from 'react';
+import { db } from '@/firebase/firebaseConfig';
 
 export type FeedbackData = {
     email: string;
@@ -19,8 +19,6 @@ export async function submitFeedback(
     if (!userId) {
         return 'User ID is not available. Please log in.';
     }
-
-    const db = getFirestore(firebaseApp);
 
     try {
         await addDoc(collection(db, `users/${userId}/feedback`), {
@@ -52,7 +50,6 @@ export interface Feedback {
   
     useEffect(() => {
       const fetchFeedback = async () => {
-        const db = getFirestore(firebaseApp);
         const userId = user?.userId; // Using optional chaining here
   
         if (!userId) {

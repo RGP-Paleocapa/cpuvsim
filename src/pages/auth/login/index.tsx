@@ -39,6 +39,7 @@ const Login = () => {
 
   const handleGoogleSignIn = async () => {
     const errorMessage = await signInWithGoogle(navigate, setUser);
+    console.log("Finsihed awayit");
     if (errorMessage) {
       setError(errorMessage);
     }
@@ -55,6 +56,8 @@ const Login = () => {
                 Email:
               </label>
               <input
+                autoComplete="email"
+                id="email"
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -68,6 +71,7 @@ const Login = () => {
                 Password:
               </label>
               <input
+                id="password"
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -90,8 +94,10 @@ const Login = () => {
             <OrSeparator />
 
             <button
-              disabled
-              onClick={handleGoogleSignIn}
+              onClick={(e) => {
+                e.preventDefault();
+                handleGoogleSignIn();
+              }}
               className="w-full px-6 py-3 mt-4 text-lg font-medium text-white rounded-md bg-red-500 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50 shadow-lg transition duration-150 ease-in-out"
             >
               Sign in with Google

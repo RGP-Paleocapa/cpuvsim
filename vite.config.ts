@@ -18,12 +18,13 @@ export default defineConfig({
       '@public': path.resolve(__dirname, './public/'),
     },  
   },
-  plugins: [react()],
+  plugins: [react()], 
   base: "/cpuvsim/",
   server: {
     open: true,
     headers: {
-      'Cross-Origin-Embedder-Policy': 'unsafe-none'
+      'Cross-Origin-Embedder-Policy': 'unsafe',
+      'Cross-Origin-Opener-Policy': 'same-origin-allow-popups', // Add this line
     },
   },
 })
