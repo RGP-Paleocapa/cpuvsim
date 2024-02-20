@@ -1,6 +1,6 @@
 {
     "name": "CPU Visual Simulator E-Book",
-    "short_name": "App",
+    "short_name": "CPUVsim",
     "start_url": "/cpuvsim/",
     "display": "standalone",
     "background_color": "#1c1f24",
