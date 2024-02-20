@@ -2,8 +2,9 @@ import { useState } from 'react';
 import useAuthStore from '@/context/useAuthStore'; // Adjust the import path as needed
 import { Link, useNavigate } from 'react-router-dom';
 import { FirebaseError } from 'firebase/app';
-import { signInWithEmailAndPasswordAndFetchUserInfo, signInWithGoogle } from '../firebaseUtils';
-import { handleFirebaseLoginError } from '../firebaseErrorHandling';
+import { signInWithEmailAndPasswordAndFetchUserInfo, signInWithGoogle } from '../../../firebase/firebaseUtils';
+import { handleFirebaseLoginError } from '../../../firebase/firebaseErrorHandling';
+import OrSeparator from '@/components/common/OrSeparator';
 
 
 const Login = () => {
@@ -15,6 +16,11 @@ const Login = () => {
 
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if (password.trim() === '') {
+      setError("Password cannot be empty.");
+      return;
+    }
 
     try {
       await signInWithEmailAndPasswordAndFetchUserInfo(email, password, navigate, setUser);
@@ -44,20 +50,31 @@ const Login = () => {
           <h2 className="text-center text-3xl font-extrabold text-gray-900 dark:text-white">Login</h2>
           {error && <p className="text-red-500 text-center">{error}</p>}
           <form className="mt-8 space-y-6" onSubmit={handleLogin}>
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Email"
-              className="w-full p-4 mt-2 border border-gray-300 rounded-md shadow-sm hocus:border-blue-500 hocus:ring hocus:ring-blue-500 hocus:ring-opacity-50 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100 dark:hocus:border-blue-400 dark:hocus:ring-blue-400"
-            />
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="Password"
-              className="w-full p-4 mt-2 border border-gray-300 rounded-md shadow-sm hocus:border-blue-500 hocus:ring hocus:ring-blue-500 hocus:ring-opacity-50 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100 dark:hocus:border-blue-400 dark:hocus:ring-blue-400"
-            />
+            <div>
+              <label htmlFor="email" className="dark:text-white">
+                Email:
+              </label>
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Email"
+                className="w-full p-4 mt-2 border border-gray-300 rounded-md shadow-sm hocus:border-blue-500 hocus:ring hocus:ring-blue-500 hocus:ring-opacity-50 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100 dark:hocus:border-blue-400 dark:hocus:ring-blue-400"
+                />
+            </div>
+
+            <div>
+              <label htmlFor="password" className="dark:text-white">
+                Password:
+              </label>
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Password"
+                className="w-full p-4 mt-2 border border-gray-300 rounded-md shadow-sm hocus:border-blue-500 hocus:ring hocus:ring-blue-500 hocus:ring-opacity-50 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100 dark:hocus:border-blue-400 dark:hocus:ring-blue-400"
+                />
+            </div>
             <div className="flex items-center justify-between">
               <div className="text-sm">
                 <Link to="/auth/forgot-password" className="text-blue-400 hocus:text-blue-600 text-lg underline underline-offset-4">Forgot your password?</Link>
@@ -70,7 +87,7 @@ const Login = () => {
               Login
             </button>
             
-            <hr className="my-4 border-gray-300 dark:border-gray-700" />
+            <OrSeparator />
 
             <button
               disabled

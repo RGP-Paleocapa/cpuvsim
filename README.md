@@ -1,7 +1,7 @@
-# Assembler Learning Companion: eBook with Integrated CPU Simulator
+# CPU Visual Simulator E-Book: eBook with Integrated CPU Simulator
 
 ## Description
-Welcome to the "Assembler Learning Companion," an interactive eBook designed to teach the fundamentals and advanced concepts of assembler programming. This resource-rich platform offers comprehensive textual content and includes a virtual CPU simulator, allowing users to apply and test their learning in a dynamic environment. Access both the eBook and the simulator seamlessly through our web-based platform.
+Welcome to the "CPU Visual Simulator E-Book," an interactive eBook designed to teach the fundamentals and advanced concepts of assembler programming. This resource-rich platform offers comprehensive textual content and includes a virtual CPU simulator, allowing users to apply and test their learning in a dynamic environment. Access both the eBook and the simulator seamlessly through our web-based platform.
 
 ## Features
 - **Interactive eBook Content**: Chapters covering basic to advanced assembler programming.

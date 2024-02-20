@@ -1,5 +1,5 @@
 import { getFirestore, collection, addDoc, FieldValue, Timestamp, serverTimestamp, query, collectionGroup, orderBy, getDocs } from 'firebase/firestore';
-import firebaseApp from '@/services/firebaseConfig'; // Adjust the import path as necessary
+import firebaseApp from '@/firebase/firebaseConfig'; // Adjust the import path as necessary
 import useAuthStore from '@/context/useAuthStore';
 import { useEffect, useState } from 'react';
 

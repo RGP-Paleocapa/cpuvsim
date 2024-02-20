@@ -2,7 +2,7 @@
 
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, setPersistence, browserSessionPersistence, signOut, sendEmailVerification, sendPasswordResetEmail, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { getFirestore, Firestore, doc, getDoc } from 'firebase/firestore';
-import firebaseConfig from '@/services/firebaseConfig';
+import firebaseConfig from '@/firebase/firebaseConfig';
 // import useAuthStore from '@/context/useAuthStore';
 import { FirebaseError } from 'firebase/app';
 import { handleFirebaseForgotPasswordError } from './firebaseErrorHandling';

@@ -1,6 +1,6 @@
 import useAuthStore from '@/context/useAuthStore';
 import Layout from '../feedbackLayout/Layout';
-import { useFeedback } from '../FormUtils';
+import { useFeedback } from '../../../utils/FormUtils';
 
 const ReadFeedback = () => {
   const feedbacks = useFeedback();  
@@ -13,6 +13,7 @@ const ReadFeedback = () => {
     "Interesting Features",
     "Challenges Faced",
     "Enhancements Suggestions",
+    "Custom feedback"
   ]
 
   return (

@@ -3,9 +3,9 @@ import { serverTimestamp } from 'firebase/firestore';
 import Layout from '../feedbackLayout/Layout';
 import useAuthStore from '@/context/useAuthStore'; // Ensure the correct path to your Zustand store
 import ReactStars from "react-rating-stars-component";
-import { FeedbackComponent } from './FeedbackComponent';
-import { RadioGroupComponent } from './RadioGroupComponents';
-import { FeedbackData, submitFeedback } from '../FormUtils';
+import { FeedbackTextareaWithLabel } from '../../../components/features/feedback/FeedbackTextareaWithLabel';
+import { RadioGroupWithLabel } from '../../../components/features/feedback/RadioGroupWithLabel';
+import { FeedbackData, submitFeedback } from '../../../utils/FormUtils';
 
 const SubmitFeedback: React.FC = () => {
   const [rating, setRating] = useState<number | undefined>(undefined);
@@ -14,6 +14,7 @@ const SubmitFeedback: React.FC = () => {
   const [feedback1, setFeedback1] = useState<string>('');
   const [feedback2, setFeedback2] = useState<string>('');
   const [feedback3, setFeedback3] = useState<string>('');
+  const [feedback4, setFeedback4] = useState<string>('');
   const [role, setRole] = useState<string>('');
 
   const { user } = useAuthStore();
@@ -26,7 +27,7 @@ const SubmitFeedback: React.FC = () => {
 
     const feedbackData: FeedbackData = {
       email: userEmail, // Ensuring email is a string
-      text: [feedback0, feedback1, feedback2, feedback3].filter(t => t).join('\n\n'), // Combining non-empty feedback texts
+      text: [feedback0, feedback1, feedback2, feedback3, feedback4].filter(t => t).join('\n\n'), // Combining non-empty feedback texts
       timestamp: serverTimestamp(), // Correct as long as FeedbackData expects a Firebase timestamp
       ...(typeof rating === 'number' ? { rating } : {}), // Conditionally adding rating if it's a number
       role, // Conditionally adding role if it's not empty
@@ -47,6 +48,7 @@ const SubmitFeedback: React.FC = () => {
     setFeedback1('');
     setFeedback2('');
     setFeedback3('');
+    setFeedback4('');
     setRole('');
     setRating(undefined);
     setResetKey(prevKey => prevKey + 1); // Increment key to force re-mount
@@ -68,6 +70,7 @@ const SubmitFeedback: React.FC = () => {
   return (
     <Layout>
       <div className="w-5/6 mx-auto mt-12 bg-white dark:bg-gray-800 p-8 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700">
+
         <h2 className="text-3xl font-bold text-black dark:text-white mb-8">Submit Feedback</h2>
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="flex flex-col">
@@ -83,42 +86,49 @@ const SubmitFeedback: React.FC = () => {
             />
           </div>
           
-          <RadioGroupComponent
+          <RadioGroupWithLabel
             options={roleOptions}
             name="role"
             selectedValue={role}
             onValueChange={setRole}
             label="Your Role or Job Title"
             required
-            />
+          />
 
-          <FeedbackComponent
+          <FeedbackTextareaWithLabel
             id="feedback0"
             feedback={feedback0}
             setFeedback={setFeedback0}
             label={labels[0]}
             required
           />
-          <FeedbackComponent
+          <FeedbackTextareaWithLabel
             id="feedback1"
             feedback={feedback1}
             setFeedback={setFeedback1}
             label={labels[1]}
             required
           />
-          <FeedbackComponent
+          <FeedbackTextareaWithLabel
             id="feedback2"
             feedback={feedback2}
             setFeedback={setFeedback2}
             label={labels[2]}
             required
           />
-          <FeedbackComponent
+          <FeedbackTextareaWithLabel
             id="feedback3"
             feedback={feedback3}
             setFeedback={setFeedback3}
             label={labels[3]}
             required
+          />
+
+          <FeedbackTextareaWithLabel
+            id="feedback4"
+            feedback={feedback4}
+            setFeedback={setFeedback4}
+            label={"Thank you for your feedback so far! Anything else on your mind?"}
           />
 
           <p className="text-sm text-gray-600 dark:text-gray-400">Fields marked with <span className="text-red-500">*</span> are required.</p>

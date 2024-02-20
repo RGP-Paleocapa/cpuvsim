@@ -1,6 +1,6 @@
 import React from 'react';
 
-type RadioGroupComponentProps = {
+type RadioGroupWithLabelProps = {
     options: { id: string; value: string; label: string }[];
     name: string;
     selectedValue: string;
@@ -9,7 +9,7 @@ type RadioGroupComponentProps = {
     required?: boolean; // Adding the required prop
 };
 
-export const RadioGroupComponent: React.FC<RadioGroupComponentProps> = ({
+export const RadioGroupWithLabel: React.FC<RadioGroupWithLabelProps> = ({
     options,
     name,
     selectedValue,
@@ -18,12 +18,12 @@ export const RadioGroupComponent: React.FC<RadioGroupComponentProps> = ({
     required // Destructuring required prop
 }) => {
     return (
-        <div className="flex flex-col">
-            <span className="text-xl font-semibold text-blue-700 dark:text-green-400 mb-2">
+        <fieldset className="flex flex-col">
+            <legend className="text-xl font-semibold text-blue-700 dark:text-green-400 mb-2">
                 {label}
                 :
                 {' '}{required && <span className="text-red-500">*</span>} {/* Render asterisk if required prop is true */}
-            </span>
+            </legend>
             <div className="flex items-center mb-2 dark:text-gray-100">
                 {options.map((option) => (
                     <div key={option.id} className="mr-4 flex items-center">
@@ -42,6 +42,6 @@ export const RadioGroupComponent: React.FC<RadioGroupComponentProps> = ({
                     </div>
                 ))}
             </div>
-        </div>
+        </fieldset>
     );
 };
