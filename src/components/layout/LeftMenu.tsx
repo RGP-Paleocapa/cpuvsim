@@ -1,33 +1,81 @@
-import { useState } from 'react';
+import { ReactElement, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
-const LeftMenuDesktop = () => {
+interface MenuItemProps {
+    label: string;
+    pathname: string;
+    isOpen: boolean;
+    onClick: () => void;
+    children: ReactElement[];
+}
+
+const MenuItem: React.FC<MenuItemProps> = ({ label, pathname, isOpen, onClick, children }) => {
     const location = useLocation();
+    const isActive = location.pathname === pathname;
+
+    return (
+        <li>
+            <button 
+                className={`block py-2 px-6 w-full text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700 ${
+                    isActive ? "font-bold dark:bg-gray-700 dark:text-green-500" : ""
+                }`}
+                onClick={onClick}
+            >
+                {label}
+            </button>
+            {isOpen && (
+                <ul className="bg-gray-100 dark:bg-gray-900">
+                    {children}
+                </ul>
+            )}
+        </li>
+    );
+};
+
+interface SubmenuItemProps {
+    to: string;
+    label: string;
+}
+
+const SubmenuItem: React.FC<SubmenuItemProps> = ({ to, label }) => {
+    return (
+        <li>
+            <Link 
+                to={to} 
+                className={`block py-2 px-6 text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700`}
+            >
+                {label}
+            </Link>
+        </li>
+    );
+};
+
+const LeftMenuDesktop: React.FC = () => {
+    const [submitSubMenuOpen, setSubmitSubMenuOpen] = useState(false);
+    const [readSubMenuOpen, setReadSubMenuOpen] = useState(false);
 
     return (
         <nav className="hidden inset-y-0 pt-16 left-0 bg-gray-200 dark:bg-gray-800 w-64 min-h-screen fixed lg:flex flex-col">
-            {/* <ul className="flex-1 mt-4">
-                <li>
-                    <Link 
-                        to="/feedback/submit" 
-                        className={`block py-2 px-6 text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700 ${
-                          location.pathname === "/feedback/submit" ? "font-bold dark:bg-gray-700 dark:text-green-500" : ""
-                        }`}
-                    >
-                        Submit Feedback
-                    </Link>
-                </li>
-                <li>
-                    <Link 
-                        to="/feedback/" 
-                        className={`block py-2 px-6 text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700 ${
-                          location.pathname === "/feedback/" ? "font-bold dark:bg-gray-700 dark:text-green-500" : ""
-                        }`}
-                    >
-                        Read Feedback
-                    </Link>
-                </li>
-            </ul> */}
+            <ul className="flex-1 mt-4">
+                <MenuItem
+                    label="Submit Feedback"
+                    pathname="/feedback/submit"
+                    isOpen={submitSubMenuOpen}
+                    onClick={() => setSubmitSubMenuOpen(!submitSubMenuOpen)}
+                >
+                    <SubmenuItem to="/feedback/submit" label="Submenu Link 1" />
+                    <SubmenuItem to="/feedback/submit" label="Submenu Link 2" />
+                </MenuItem>
+                <MenuItem
+                    label="Read Feedback"
+                    pathname="/feedback/"
+                    isOpen={readSubMenuOpen}
+                    onClick={() => setReadSubMenuOpen(!readSubMenuOpen)}
+                >
+                    <SubmenuItem to="/feedback/" label="Submenu Link 1" />
+                    <SubmenuItem to="/feedback/" label="Submenu Link 2" />
+                </MenuItem>
+            </ul>
         </nav>
     );
 }
