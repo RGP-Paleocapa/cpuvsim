@@ -1,6 +1,6 @@
 import useAuthStore from '@/context/useAuthStore';
 import Layout from '../feedbackLayout/Layout';
-import { useFeedback } from '../../../utils/FormUtils';
+import { useFeedback } from '@/firebase/FormUtils';
 
 const ReadFeedback = () => {
   const feedbacks = useFeedback();  

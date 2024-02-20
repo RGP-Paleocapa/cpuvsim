@@ -39,7 +39,6 @@ const Login = () => {
 
   const handleGoogleSignIn = async () => {
     const errorMessage = await signInWithGoogle(navigate, setUser);
-    console.log("Finsihed awayit");
     if (errorMessage) {
       setError(errorMessage);
     }

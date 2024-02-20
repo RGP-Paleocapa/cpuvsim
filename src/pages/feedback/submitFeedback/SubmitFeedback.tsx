@@ -5,7 +5,7 @@ import useAuthStore from '@/context/useAuthStore'; // Ensure the correct path to
 import ReactStars from "react-rating-stars-component";
 import { FeedbackTextareaWithLabel } from '../../../components/features/feedback/FeedbackTextareaWithLabel';
 import { RadioGroupWithLabel } from '../../../components/features/feedback/RadioGroupWithLabel';
-import { FeedbackData, submitFeedback } from '../../../utils/FormUtils';
+import { FeedbackData, submitFeedback } from '@/firebase/FormUtils';
 
 const SubmitFeedback: React.FC = () => {
   const [rating, setRating] = useState<number | undefined>(undefined);
