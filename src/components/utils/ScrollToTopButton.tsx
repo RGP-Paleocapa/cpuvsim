@@ -1,9 +1,11 @@
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons/faArrowUp';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState, useEffect } from 'react';
+import { useScrollState } from '@/context/useScrollState';
 
 const ScrollToTopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const { scrollPosition, setScrollPosition } = useScrollState();
 
   const toggleVisibility = () => {
     if (window.scrollY > 300) {
@@ -15,9 +17,10 @@ const ScrollToTopButton = () => {
 
   const scrollToTop = () => {
     window.scrollTo({
-      top: 0,
+      top: scrollPosition,
       behavior: 'smooth'
     });
+    setScrollPosition(0);
   };
 
   useEffect(() => {
