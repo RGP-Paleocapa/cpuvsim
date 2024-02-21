@@ -7,26 +7,19 @@ import AppRoutes from './routes/Routes';
 import ScrollToTopButton from '@/components/utils/ScrollToTopButton';
 import ScrollToTop from '@/components/utils/ScrollToTop';
 import './i18n';
-// import { useEffect } from 'react';
-// import { handleRedirectResult } from './pages/auth/firebaseUtils';
-// import useAuthStore from './context/useAuthStore';
-// import { useNavigate } from 'react-router-dom';
 import './trusted-security-policies'
+import { useResetScrollOnRouteChange } from './context/useScrollState';
 
 const App = () => {
   useFirebaseAuth(); // Custom hook to manage auth state
   useSessionTimeout(1_800_000); // 30 minutes session timeout
-  // const navigate = useNavigate();
-  // const { setUser } = useAuthStore();
-
-  // useEffect(() => {
-  //   handleRedirectResult(navigate, setUser).catch(console.error);
-  // }, []); // Run once on component mount
+  useResetScrollOnRouteChange();
 
   return (
       <div className='bg-slate-100 dark:bg-slate-900 min-h-screen pt-16'>
         <Header />
         <div className="container mx-auto py-8 px-4 sm:px-6 md:px-0">
+          {/* Istant scroll to top */}
           <ScrollToTop />
           <AppRoutes />
         </div>

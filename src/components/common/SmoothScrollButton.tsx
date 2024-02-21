@@ -23,7 +23,7 @@ const SmoothScrollButton: React.FC<SmoothScrollButtonProps> = ({
   const { setScrollPosition } = useScrollState(); // Get setScrollPosition from your Zustand store
 
   const handleClick = () => {
-    const currentPosition = window.pageYOffset || document.documentElement.scrollTop;
+    const currentPosition = window.scrollY || document.documentElement.scrollTop;
     setScrollPosition(currentPosition);
     smoothScrollToId(targetId);
   };
