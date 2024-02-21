@@ -26,5 +26,22 @@
     "digitalRepresentation": {
         "title": "Digital (Uniform) Representation of Information",
         "description": "The second reason that made it possible to use the same architecture in many different contexts and applications is the possibility to <b>represent and process different types of information</b>, not only numbers, but also text, audio, images, videos…, uniformly as digits, as discussed in the next session."
-    }    
+    },
+    "gridData": [
+      {
+        "colorKey": "amber",
+        "texts": ["C 01000011", "a 01100001", "t 01110100"],
+        "description": "In a computer, a sequence of binary digits can represent a sequence of characters. For instance, the above code may represent the word \"Cat\"."
+      },
+      {
+        "colorKey": "gray",
+        "texts": ["01000011", "01100001", "01110100"],
+        "description": "The same sequence may also represents the 3 numbers \"67, 97, 116\", or \"4.415.860\" if considered as a single 24-bit number."
+      },
+      {
+        "colorKey": "green",
+        "texts": ["01000011", "01100001", "01110100"],
+        "description": "In a different context, the same sequence again may represent the above dark shade of blue. Indeed, by considering 67, 97 and 116 as the levels of red, green and blue intensity, these digits represent a color."
+      }
+    ]
 }

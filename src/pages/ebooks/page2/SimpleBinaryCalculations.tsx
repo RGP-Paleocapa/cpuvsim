@@ -42,7 +42,6 @@ const Page2 = () => {
                 {t("binaryCalculations.thirdPart")}<B className="text-red-700">1</B><B className="text-blue-600">0</B><B> as a binary number</B>{t("binaryCalculations.fourthPart")}
             </Text>
         </Section>
-
         <Section>
             <SectionTitle>{t("binaryRepresentation.title")}</SectionTitle>
             <Text>
@@ -51,7 +50,6 @@ const Page2 = () => {
                 <RenderHTML htmlString={t("binaryRepresentation.codingConventions")} />
             </Text>
         </Section>
-
         <Section>
             <InlineDivs centerStart containsTable>
                 <MaxWidthContainer>
@@ -71,12 +69,10 @@ const Page2 = () => {
                     </Description>
                 </MaxWidthContainer>
             </InlineDivs>
-
             <InlineDivs centerStart isEven>
                 <MaxWidthContainer>
                     {/* First Image */}
                     <img src={images.image1.src} alt={images.image1.alt} className="img-center" />
-
                     {/* Second Image (Square) and Description */}
                     <div className="flex flex-col sm:flex-row items-center sm:items-start">
                         <div className="w-16 h-16 bg-gray-400 mr-4 flex-shrink-0" /> {/* 32x32 pixels square */}
@@ -85,7 +81,6 @@ const Page2 = () => {
                         </Description>
                     </div>
                 </MaxWidthContainer>
-
                 <MaxWidthContainer>
                     <H3 isDark>{t("imagesAndVideosSection.title")}</H3>
                     <Text isDark>
@@ -97,7 +92,6 @@ const Page2 = () => {
                     </Text>
                 </MaxWidthContainer>
             </InlineDivs>
-
             <InlineDivs centerStart>
                 <MaxWidthContainer>
                     <H3 isDark>{t("audioSection.title")}</H3>
@@ -114,7 +108,6 @@ const Page2 = () => {
                     </Description>
                 </MaxWidthContainer>
             </InlineDivs>
-
             <InlineDivs centerStart isEven>
                 <MaxWidthContainer smallPadding>
                     <Table headerTitles={['binary Code', 'description']} bodyRows={instructionTable} />
@@ -130,7 +123,6 @@ const Page2 = () => {
                 </MaxWidthContainer>
             </InlineDivs>
         </Section>
-
         <Section>
             <SectionTitle>{t("multimediaInformation.title")}</SectionTitle>
             <Text>

@@ -1,5 +1,6 @@
 import { ReactNode, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import SidebarMenuItem from './SideBarMenuItem';
 
 interface MainContentProps {
     children: ReactNode;
@@ -14,36 +15,32 @@ const LeftMenu = () => {
     );
 }
 
-const LeftMenuDesktop = () => {
-    const location = useLocation();
-
+const LeftMenuDesktop: React.FC = () => {
     return (
-        <nav className="hidden inset-y-0 pt-16 left-0 bg-gray-200 dark:bg-gray-800 w-64 min-h-screen fixed lg:flex flex-col">
+        <aside className="hidden inset-y-0 pt-16 left-0 bg-gray-200 dark:bg-gray-800 w-80 min-h-screen fixed lg:flex flex-col">
             <ul className="flex-1 mt-4">
-                <li>
-                    <Link 
-                        to="/feedback/submit" 
-                        className={`block py-2 px-6 text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700 ${
-                          location.pathname === "/feedback/submit" ? "font-bold dark:bg-gray-700 dark:text-green-500" : ""
-                        }`}
-                    >
-                        Submit Feedback
-                    </Link>
-                </li>
-                <li>
-                    <Link 
-                        to="/feedback/" 
-                        className={`block py-2 px-6 text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700 ${
-                          location.pathname === "/feedback/" ? "font-bold dark:bg-gray-700 dark:text-green-500" : ""
-                        }`}
-                    >
-                        Read Feedback
-                    </Link>
-                </li>
+                
+                {/* Feedback Menu Item with Sub-menu */}
+                <SidebarMenuItem
+                    label="Submit Feedback"
+                    submenus={[
+                        { label: "Overall Experience Feedback", path: "/feedback/submit" },
+                        { label: "Feedback 2", path: "/feedback/specific", disabled: true },
+                        { label: "Feedback 3", path: "/feedback/another", disabled: true }
+                    ]}
+                />
+                {/* Feedback Menu Item with Sub-menu */}
+                <SidebarMenuItem
+                    label="Read Feedback"
+                    submenus={[
+                        { label: "Your feedbacks", path: "/feedback/" },
+                    ]}
+                />
+                {/* <SidebarMenuItem label={'Coming soon!'} /> */}
             </ul>
-        </nav>
+        </aside>
     );
-}
+};
 
 const LeftMenuMobile = () => {
     const [isOpen, setIsOpen] = useState(false);

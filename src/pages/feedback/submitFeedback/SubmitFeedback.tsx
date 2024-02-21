@@ -71,7 +71,7 @@ const SubmitFeedback: React.FC = () => {
     <Layout>
       <div className="w-5/6 mx-auto mt-12 bg-white dark:bg-gray-800 p-8 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700">
 
-        <h2 className="text-3xl font-bold text-black dark:text-white mb-8">Submit Feedback</h2>
+        <h2 className="text-3xl font-bold text-black dark:text-white mb-8">Overall Experience Feedback</h2>
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="flex flex-col">
             <span className="text-xl font-semibold text-blue-700 dark:text-green-400 mb-2">Rating:</span>
@@ -124,12 +124,12 @@ const SubmitFeedback: React.FC = () => {
             required
           />
 
-          <FeedbackTextareaWithLabel
+          {/* <FeedbackTextareaWithLabel
             id="feedback4"
             feedback={feedback4}
             setFeedback={setFeedback4}
             label={"Thank you for your feedback so far! Anything else on your mind?"}
-          />
+          /> */}
 
           <p className="text-sm text-gray-600 dark:text-gray-400">Fields marked with <span className="text-red-500">*</span> are required.</p>
           <button type="submit" className="w-full px-6 py-3 text-lg text-white rounded-md bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:ring-opacity-50 dark:bg-green-700 dark:hover:bg-green-800 dark:focus:ring-green-700 shadow-2xl dark:shadow-green-800/50">
