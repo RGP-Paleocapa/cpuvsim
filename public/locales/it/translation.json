@@ -18,9 +18,9 @@
         "page1Title": "1 - I computer come macchine a scopo generale",
         "page2Title": "2 - Calcoli binari semplici",
         "page3Title": "3 - Modello di Von Neumann",
-        "page4Title": "4 - CPU Fondamenti di Fetch Decode Execute",
+        "page4Title": "4 - Fasi fondamentali della CPU: Fetch, Decode, Execute",
         "page5Title": "5 - Set di istruzioni della CPU",
-        "page6Title": "6 - Linguaggi di Assemblaggio e ad Alto Livello",
+        "page6Title": "6 - Linguaggio Assembly e Linguaggi ad Alto Livello",
         "page7Title": "7 - Da linguaggi ad alto livello a linguaggi di assemblaggio",
         "page8Title": "8 - Esercizi"
     }
