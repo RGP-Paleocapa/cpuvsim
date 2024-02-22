@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { useTranslation } from 'react-i18next';
 
 interface SwitchPageProps {
   currentPage: number;
@@ -9,16 +10,17 @@ interface SwitchPageProps {
 const lastPage = 8; // The last page number, stored internally in the component
 
 const SwitchPage: React.FC<SwitchPageProps> = ({ currentPage }) => {
+  const { t } = useTranslation();
+  const navigate = useNavigate();
+
   const isFirstPage = currentPage === 1;
   const isLastPage = currentPage === lastPage;
-  
+
   const prevLink = isFirstPage ? '/' : `/page${currentPage - 1}`;
   const nextLink = isLastPage ? null : `/page${currentPage + 1}`;
-  
-  const prevText = isFirstPage ? 'Home' : `${currentPage - 1}`;
-  const nextText = isLastPage ? null : `${currentPage + 1}`;
 
-  const navigate = useNavigate();
+  const prevText = isFirstPage ? "Home Page" : t(`navigationMenu.page${currentPage - 1}Title`).split(' - ')[1];
+  const nextText = isLastPage ? null : t(`navigationMenu.page${currentPage + 1}Title`).split(' - ')[1];
 
   const smoothScrollTo = (targetY: number, duration: number) => {
     const startY = window.scrollY;
@@ -45,7 +47,7 @@ const SwitchPage: React.FC<SwitchPageProps> = ({ currentPage }) => {
 
   const handleNavigation = (link: string, position: 'top' | 'bottom') => {
     navigate(link);
-  
+
     const screenWidth = window.innerWidth;
     let scrollDuration: number;
     if (screenWidth < 480) {
@@ -53,7 +55,7 @@ const SwitchPage: React.FC<SwitchPageProps> = ({ currentPage }) => {
     } else {
       scrollDuration = 300; // Tablets and desktops
     }
-  
+
     setTimeout(() => {
       if (position === 'top' || isFirstPage) {
         smoothScrollTo(0, scrollDuration);
@@ -64,7 +66,7 @@ const SwitchPage: React.FC<SwitchPageProps> = ({ currentPage }) => {
         } else { // Medium and small screens
           offsetFromBottom = 50;
         }
-  
+
         const footer = document.querySelector('footer'); // Replace 'footer' with the appropriate selector
         if (footer) {
           const footerHeight = footer.clientHeight;
@@ -74,8 +76,6 @@ const SwitchPage: React.FC<SwitchPageProps> = ({ currentPage }) => {
       }
     }, 300); // Fixed delay of 300ms for all devices
   };
-  
-  
 
   return (
     <div className="flex justify-between items-center">
@@ -86,10 +86,6 @@ const SwitchPage: React.FC<SwitchPageProps> = ({ currentPage }) => {
         <FontAwesomeIcon icon={faArrowLeft} />
         <span className="ml-2">{prevText}</span>
       </button>
-
-      {/* {currentPage != lastPage && (
-        <p className='text-2xl text-gray-800 dark:text-gray-300'>Page {currentPage}</p>
-      )} */}
 
       {currentPage < lastPage && nextLink && (
         <button
