@@ -1,4 +1,3 @@
-// MobileMenu.tsx
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import ThemeSwitcher from '../ThemeSwitcher';
@@ -14,24 +13,31 @@ interface MobileMenuProps {
 const MobileMenu: React.FC<MobileMenuProps> = React.memo(({ isOpen, onClose, menuItems }) => {
   const location = useLocation();
 
-  if (!isOpen) return null;
+  if (!isOpen) return <></>;
 
   return (
-    <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 backdrop-blur-md z-50">
-      <div className="bg-white dark:bg-black p-6 rounded-lg shadow-lg dark:text-white">
-        {menuItems.map((menuItem) => {
-          const isCurrentPathMatched = new RegExp(menuItem.pattern).test(location.pathname);
-          return <MenuItem key={menuItem.path} menuItem={menuItem} isCurrentPathMatched={isCurrentPathMatched} onClose={onClose} />;
-        })}
-        <ThemeSwitcher />
-        <button
-          className="mt-4 text-lg ml-3 dark:text-red-300 dark:hover:text-white focus:text-red-900 dark:focus:text-white"
-          onClick={onClose}
-        >
-          Close Menu
-        </button>
+    <nav className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-75 backdrop-blur-md z-50">
+      <div className="flex flex-col w-full h-full bg-white dark:bg-black p-6 justify-between">
+        <div>
+          {menuItems.map((menuItem) => {
+            const isCurrentPathMatched = new RegExp(menuItem.pattern).test(location.pathname);
+            return <MenuItem key={menuItem.path} menuItem={menuItem} isCurrentPathMatched={isCurrentPathMatched} onClose={onClose} />;
+          })}
+        </div>
+        <footer className="flex justify-between items-center">
+          <div className="bg-blue-500 text-white p-2 rounded-md hover:bg-blue-700 transition duration-150 ease-in-out">
+            <ThemeSwitcher />
+          </div>
+          <button
+            aria-label="Close menu"
+            className="bg-red-500 text-white p-2 rounded-md hover:bg-red-700 transition duration-150 ease-in-out text-lg"
+            onClick={onClose}
+          >
+            Close Menu
+          </button>
+        </footer>
       </div>
-    </div>
+    </nav>
   );
 });
 
