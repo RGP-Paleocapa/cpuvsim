@@ -9,7 +9,7 @@ const useSessionTimeout = (timeoutInMilliseconds: number) => {
   useEffect(() => {
     // Only set up session timeout logic if a user is logged in
     if (!user) {
-      console.log("No user logged in, skipping session timeout.");
+      // console.log("No user logged in, skipping session timeout.");
       return;
     }
 
