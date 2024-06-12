@@ -6,13 +6,11 @@ on:
       - opened
       - synchronize
       - reopened
-  pull_request_review:
-    types:
-      - submitted
 
 jobs:
   automerge:
     runs-on: ubuntu-latest
+    if: github.actor == 'dependabot[bot]'
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -28,5 +26,3 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           mergeMethod: squash
-          mergeLabel: automerge
-          approved: true
