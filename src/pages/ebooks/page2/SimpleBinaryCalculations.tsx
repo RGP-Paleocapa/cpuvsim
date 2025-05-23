@@ -2,7 +2,7 @@ import { images } from "@assets/images/pages/page2";
 import Table from "@/components/features/eBook/content/Table";
 import EBookPage from "@/components/features/eBook/EBook";
 import { Section, InlineDivs, MaxWidthContainer } from "@/components/features/eBook/layout/layout";
-import { B, Description, H3, Li, SectionTitle, Text, Ul } from "@/components/features/eBook/content";
+// import { B, Description, Heading3, Li, SectionTitle, ParagraphText, Ul } from "@/components/features/eBook/content";
 import useDocumentMetadata from "@hooks/useDocumentMetadata";
 import { useEffect } from "react";
 import data from './data.json';
@@ -10,14 +10,15 @@ import SmoothScrollButton from "@/components/common/SmoothScrollButton";
 import RenderHTML from "@/components/common/RenderHTML";
 import { useTranslation } from "react-i18next";
 import { useFooterStore } from "@/context/useFooterStore";
+import { Bold, Description, Heading3, ListItem, ParagraphText, SectionTitle, UnorderedList } from "@/components/features/eBook/typography";
 
 const Page2 = () => {
     useDocumentMetadata('Simple Binary Calculations', "This is the second page");
     const { setFooterData } = useFooterStore();
+    const references = data.references;
     useEffect(() => {
       setFooterData(references);
     }, [setFooterData]);
-    const references = data.references;
     const textTable = data.textTable;
     const instructionTable = data.instructionTable;
     const { t } = useTranslation("page2");
@@ -26,41 +27,41 @@ const Page2 = () => {
     <EBookPage currentPage={2}>
         <Section>
             <SectionTitle>{t("binaryCalculations.title")}</SectionTitle>
-            <Text>
-                {t("binaryCalculations.intro")} <B>{t("binaryCalculations.one")}</B> and <B>{t("binaryCalculations.zero")}</B>.
+            <ParagraphText>
+                {t("binaryCalculations.intro")} <Bold>{t("binaryCalculations.one")}</Bold> and <Bold>{t("binaryCalculations.zero")}</Bold>.
                 <br /><br />
                 {t("binaryCalculations.binaryAdditionRules")}
                 <SmoothScrollButton targetId="footer" buttonText="[1]" />
                 <br /><br />
-                <B className="text-blue-400">0</B> + <B className="text-blue-400">0</B> = <B className="text-blue-400">0</B>
+                <Bold className="text-blue-400">0</Bold> + <Bold className="text-blue-400">0</Bold> = <Bold className="text-blue-400">0</Bold>
                 <br />
-                <B className="text-blue-400">0</B> + <B className="text-green-700/75 dark:text-green-400">1</B> = <B className="text-green-700/75 dark:text-green-400">1</B>
+                <Bold className="text-blue-400">0</Bold> + <Bold className="text-green-700/75 dark:text-green-400">1</Bold> = <Bold className="text-green-700/75 dark:text-green-400">1</Bold>
                 <br />
-                <B className="text-green-700/75 dark:text-green-400">1</B> + <B className="text-green-700/75 dark:text-green-400">1</B> = <B className="text-red-700">1</B><B className="text-blue-600">0</B>
-                {t("binaryCalculations.firstPart")}<B className="text-blue-600">0</B>{t("binaryCalculations.secondPart")}<B className="text-red-700">carry 1</B>.
+                <Bold className="text-green-700/75 dark:text-green-400">1</Bold> + <Bold className="text-green-700/75 dark:text-green-400">1</Bold> = <Bold className="text-red-700">1</Bold><Bold className="text-blue-600">0</Bold>
+                {t("binaryCalculations.firstPart")}<Bold className="text-blue-600">0</Bold>{t("binaryCalculations.secondPart")}<Bold className="text-red-700">carry 1</Bold>.
                 <br /><br />
-                {t("binaryCalculations.thirdPart")}<B className="text-red-700">1</B><B className="text-blue-600">0</B><B> as a binary number</B>{t("binaryCalculations.fourthPart")}
-            </Text>
+                {t("binaryCalculations.thirdPart")}<Bold className="text-red-700">1</Bold><Bold className="text-blue-600">0</Bold><Bold> as a binary number</Bold>{t("binaryCalculations.fourthPart")}
+            </ParagraphText>
         </Section>
         <Section>
             <SectionTitle>{t("binaryRepresentation.title")}</SectionTitle>
-            <Text>
+            <ParagraphText>
                 <RenderHTML htmlString={t("binaryRepresentation.intro")} />
                 <br /><br />
                 <RenderHTML htmlString={t("binaryRepresentation.codingConventions")} />
-            </Text>
+            </ParagraphText>
         </Section>
         <Section>
             <InlineDivs centerStart containsTable>
                 <MaxWidthContainer>
-                    <H3 isDark>{t("textSection.title")}</H3>
-                    <Text isDark>
+                    <Heading3 isDark>{t("textSection.title")}</Heading3>
+                    <ParagraphText isDark>
                         <RenderHTML htmlString={t("textSection.description1")} />
                         <br /><br />
                         <RenderHTML htmlString={t("textSection.description2")} />
                         <br />
                         <RenderHTML htmlString={t("textSection.description3")} />
-                    </Text>
+                    </ParagraphText>
                 </MaxWidthContainer>
                 <MaxWidthContainer smallPadding>
                     <Table headerTitles={['Binary', 'Char', 'Binary', 'Char'] } bodyRows={textTable} />
@@ -82,24 +83,24 @@ const Page2 = () => {
                     </div>
                 </MaxWidthContainer>
                 <MaxWidthContainer>
-                    <H3 isDark>{t("imagesAndVideosSection.title")}</H3>
-                    <Text isDark>
+                    <Heading3 isDark>{t("imagesAndVideosSection.title")}</Heading3>
+                    <ParagraphText isDark>
                         <RenderHTML htmlString={t("imagesAndVideosSection.description")} />
                         <br />
                         <RenderHTML htmlString={t("imagesAndVideosSection.colorRepresentation")} />
                         <br /><br />
                         {t("imagesAndVideosSection.imagePerception")}
-                    </Text>
+                    </ParagraphText>
                 </MaxWidthContainer>
             </InlineDivs>
             <InlineDivs centerStart>
                 <MaxWidthContainer>
-                    <H3 isDark>{t("audioSection.title")}</H3>
-                    <Text isDark>
+                    <Heading3 isDark>{t("audioSection.title")}</Heading3>
+                    <ParagraphText isDark>
                         <RenderHTML htmlString={t("audioSection.description")} />
                         <br />
                         {t("audioSection.samplingDetail")}
-                    </Text>
+                    </ParagraphText>
                 </MaxWidthContainer>
                 <MaxWidthContainer>
                     <img src={images.image2.src} alt={images.image2.alt} className="img-center bg-white" />
@@ -116,27 +117,27 @@ const Page2 = () => {
                     </Description>
                 </MaxWidthContainer>
                 <MaxWidthContainer>
-                    <H3 isDark>{t("instructionsSection.title")}</H3>
-                    <Text isDark>
+                    <Heading3 isDark>{t("instructionsSection.title")}</Heading3>
+                    <ParagraphText isDark>
                         <RenderHTML htmlString={t("instructionsSection.description")} />
-                    </Text>
+                    </ParagraphText>
                 </MaxWidthContainer>
             </InlineDivs>
         </Section>
         <Section>
             <SectionTitle>{t("multimediaInformation.title")}</SectionTitle>
-            <Text>
+            <ParagraphText>
                 <RenderHTML htmlString={t("multimediaInformation.intro")} />
-            </Text>
+            </ParagraphText>
             <br />
             <InlineDivs>
                 <MaxWidthContainer>
-                    <Ul>
-                        <Li isDark>{t("multimediaInformation.example1")}</Li>
-                        <Li isDark>{t("multimediaInformation.example2")}</Li>
-                        <Li isDark>{t("multimediaInformation.example3")}</Li>
-                        <Li isDark>{t("multimediaInformation.example4")}</Li>
-                    </Ul>
+                    <UnorderedList>
+                        <ListItem isDark>{t("multimediaInformation.example1")}</ListItem>
+                        <ListItem isDark>{t("multimediaInformation.example2")}</ListItem>
+                        <ListItem isDark>{t("multimediaInformation.example3")}</ListItem>
+                        <ListItem isDark>{t("multimediaInformation.example4")}</ListItem>
+                    </UnorderedList>
                 </MaxWidthContainer>
                 <MaxWidthContainer>
                     <img src={images.image3.src} alt={images.image3.alt} className="img-center" />

@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import useDocumentMetadata from "@hooks/useDocumentMetadata";
 import EBookPage from "@/components/features/eBook/EBook";
-import { SectionTitle, Text } from "@/components/features/eBook/content";
 import images from "@assets/images/pages/page7";
 import ImageSwitcher from "@/components/features/eBook/images/ImageAndTextSwitcher";
 // import data from './data.json';
@@ -9,6 +8,7 @@ import { Section } from "@/components/features/eBook/layout/layout";
 import { useTranslation } from "react-i18next";
 import RenderHTML from "@/components/common/RenderHTML";
 import { useFooterStore } from "@/context/useFooterStore";
+import { ParagraphText, SectionTitle } from "@/components/features/eBook/typography";
 
 const Page7 = () => {
     useDocumentMetadata('Translation of High Level Language', "This is the seventh page");
@@ -40,9 +40,9 @@ const Page7 = () => {
                 <SectionTitle>
                     {t("translationOfHighLevelConstructsSection.title")}
                 </SectionTitle>
-                <Text>
+                <ParagraphText>
                     <RenderHTML htmlString={t("translationOfHighLevelConstructsSection.text")} />
-                </Text>
+                </ParagraphText>
             </Section>
 
             <Section>
@@ -52,7 +52,7 @@ const Page7 = () => {
                 <ImageSwitcher images={images.sum} instructionsList={sumListText} />
             </Section>
 
-                        
+
             <Section>
                 <SectionTitle>
                     {t("example2Title")}

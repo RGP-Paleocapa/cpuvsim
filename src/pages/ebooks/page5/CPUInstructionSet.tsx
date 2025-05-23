@@ -1,5 +1,5 @@
 import EBookPage from "@/components/features/eBook/EBook";
-import { Description, SectionTitle, Text, Ul, Table, Li } from "@/components/features/eBook/content";
+import { Table } from "@/components/features/eBook/content";
 import images from "@assets/images/pages/page5";
 import { YourImageComponent } from "@/components/features/eBook/images";
 import useDocumentMetadata from "@hooks/useDocumentMetadata";
@@ -10,6 +10,7 @@ import { Section } from "@/components/features/eBook/layout/layout";
 import { useTranslation } from "react-i18next";
 import RenderHTML from "@/components/common/RenderHTML";
 import { useFooterStore } from "@/context/useFooterStore";
+import { SectionTitle, Description, ListItem, UnorderedList, ParagraphText } from "@/components/features/eBook/typography";
 
 const Page5 = () => {
   useDocumentMetadata('CPU Instructions Set', "This is the fifth page");
@@ -21,7 +22,7 @@ const Page5 = () => {
   const bodyRows = data.bodyRows;
   const dataFlowRows = data.dataFlowRows;
   const controlFlowRows = data.controlFlowRows;
-  const arithmeticLogicRows = data.arithmeticLogicRows;    
+  const arithmeticLogicRows = data.arithmeticLogicRows;
   const { t } = useTranslation("page5");
 
   return (
@@ -30,53 +31,53 @@ const Page5 = () => {
           <SectionTitle>
               <RenderHTML htmlString={t("instructionSetSection.title")} />
           </SectionTitle>
-          <Text>
+          <ParagraphText>
               <RenderHTML htmlString={t("instructionSetSection.description")} />
-          </Text>
+          </ParagraphText>
           <div className="mt-6 xl:mx-40">
               <Table headerTitles={["Binary code", "Mnemonic code", "Description"]} bodyRows={bodyRows} />
           </div>
       </Section>
 
         <Section>
-          <Text>
+          <ParagraphText>
             <RenderHTML htmlString={t("instructionSection.text1")} />
             <br /><br />
             <RenderHTML htmlString={t("instructionSection.text2")} />
-          </Text>
-          <Ul className="dark:text-gray-200">
-            <Li>
+          </ParagraphText>
+          <UnorderedList className="dark:text-gray-200">
+            <ListItem>
               <RenderHTML htmlString={t("instructionSection.addressingModes.immediate")} />
-            </Li>
-            <Li>
+            </ListItem>
+            <ListItem>
               <RenderHTML htmlString={t("instructionSection.addressingModes.direct")} />
-            </Li>
-          </Ul>
+            </ListItem>
+          </UnorderedList>
           <YourImageComponent image={images}/>
           <Description>
             <RenderHTML htmlString={t("instructionSection.description")} />
           </Description>
-          <Text>
+          <ParagraphText>
             <RenderHTML htmlString={t("instructionSection.text3")} />
-          </Text>
-              <Ul className="dark:text-gray-200">
-                <Li>
+          </ParagraphText>
+              <UnorderedList className="dark:text-gray-200">
+                <ListItem>
                   <RenderHTML htmlString={t("instructionSection.operationsSection.dataFlow.title")} />
                   <SmoothScrollButton targetId={"footer"} buttonText={"[1]"} />
-                </Li>
-                <Li>
+                </ListItem>
+                <ListItem>
                   <RenderHTML htmlString={t("instructionSection.operationsSection.controlFlow.title")} /><SmoothScrollButton targetId={"footer"} buttonText={"[2]"} />
-                </Li>
-                <Li>
+                </ListItem>
+                <ListItem>
                   <RenderHTML htmlString={t("instructionSection.operationsSection.arithmeticLogic.title")} /><SmoothScrollButton targetId={"footer"} buttonText={"[3]"} />
-                </Li>
-              </Ul>
+                </ListItem>
+              </UnorderedList>
         </Section>
 
         <Section>
-          <Text>
+          <ParagraphText>
             <RenderHTML htmlString={t("tableSection.text")} />
-          </Text>
+          </ParagraphText>
           <div className="mt-6 xl:mx-40">
             <Table headerTitles={["Data Flow"]} bodyRows={dataFlowRows} />
             <Table headerTitles={["Control Flow"]} bodyRows={controlFlowRows} />
