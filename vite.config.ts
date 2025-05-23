@@ -16,10 +16,10 @@ export default defineConfig({
       '@pages': path.resolve(__dirname, './src/pages/'),
       '@assets': path.resolve(__dirname, './src/assets/'),
       '@public': path.resolve(__dirname, './public/'),
-    },  
+    },
   },
-  plugins: [react()], 
-  base: "/cpuvsim/",
+  plugins: [react()],
+  base: "./",
   server: {
     open: true,
     headers: {
