@@ -6,7 +6,7 @@ import useDocumentMetadata from "@hooks/useDocumentMetadata";
 import { useEffect } from "react";
 import data from './data.json';
 import SmoothScrollButton from "@/components/common/SmoothScrollButton";
-import { Section } from "@/components/features/eBook/layout/layout";
+import { Section } from "@/components/features/eBook/layout";
 import { useTranslation } from "react-i18next";
 import RenderHTML from "@/components/common/RenderHTML";
 import { useFooterStore } from "@/context/useFooterStore";

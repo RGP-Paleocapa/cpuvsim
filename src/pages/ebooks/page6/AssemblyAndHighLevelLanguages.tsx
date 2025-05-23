@@ -1,6 +1,6 @@
 import EBookPage from '@/components/features/eBook/EBook';
 import images from '@assets/images/pages/page6';
-import { Section, Figure } from '@/components/features/eBook/layout/layout';
+import { Section, Figure } from '@/components/features/eBook/layout';
 import { YourImageComponent } from '@/components/features/eBook/images';
 import useDocumentMetadata from '@hooks/useDocumentMetadata';
 import { useEffect } from 'react';

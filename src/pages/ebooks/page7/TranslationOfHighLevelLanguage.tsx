@@ -4,7 +4,7 @@ import EBookPage from "@/components/features/eBook/EBook";
 import images from "@assets/images/pages/page7";
 import ImageSwitcher from "@/components/features/eBook/images/ImageAndTextSwitcher";
 // import data from './data.json';
-import { Section } from "@/components/features/eBook/layout/layout";
+import { Section } from "@/components/features/eBook/layout";
 import { useTranslation } from "react-i18next";
 import RenderHTML from "@/components/common/RenderHTML";
 import { useFooterStore } from "@/context/useFooterStore";

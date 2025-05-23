@@ -2,7 +2,7 @@ import useDocumentMetadata from "@hooks/useDocumentMetadata";
 import EBookPage from "@/components/features/eBook/EBook";
 import { ImageSlider } from "@/components/features/eBook/images";
 import images from "@assets/images/pages/page1";
-import { Figure, Section } from "@/components/features/eBook/layout/layout";
+import { Figure, Section } from "@/components/features/eBook/layout";
 import { useEffect } from "react";
 import data from './data.json';
 import SmoothScrollButton from "@/components/common/SmoothScrollButton";

@@ -1,7 +1,7 @@
 import { images } from "@assets/images/pages/page2";
 import Table from "@/components/features/eBook/content/Table";
 import EBookPage from "@/components/features/eBook/EBook";
-import { Section, InlineDivs, MaxWidthContainer } from "@/components/features/eBook/layout/layout";
+import { Section, InlineDivs, MaxWidthContainer } from "@/components/features/eBook/layout";
 // import { B, Description, Heading3, Li, SectionTitle, ParagraphText, Ul } from "@/components/features/eBook/content";
 import useDocumentMetadata from "@hooks/useDocumentMetadata";
 import { useEffect } from "react";

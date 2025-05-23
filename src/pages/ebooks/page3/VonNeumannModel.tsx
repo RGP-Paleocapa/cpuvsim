@@ -1,6 +1,6 @@
 import EBookPage from "@/components/features/eBook/EBook";
 // import { SectionTitle, Ul, Text, Description, H2, Li } from "@/components/features/eBook/content";
-import { Section, InlineDivs, MaxWidthContainer } from "@/components/features/eBook/layout/layout";
+import { Section, InlineDivs, MaxWidthContainer } from "@/components/features/eBook/layout";
 import images from "@assets/images/pages/page3";
 import { InteractiveImage } from "@/components/features/eBook/images/";
 import useDocumentMetadata from "@hooks/useDocumentMetadata";

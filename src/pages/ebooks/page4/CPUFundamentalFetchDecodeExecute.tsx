@@ -1,6 +1,6 @@
 import images from "@assets/images/pages/page4";
 import EBookPage from "@/components/features/eBook/EBook";
-import { Section, InlineDivs, MaxWidthContainer } from "@/components/features/eBook/layout/layout";
+import { Section, InlineDivs, MaxWidthContainer } from "@/components/features/eBook/layout";
 import { YourImageComponent } from "@/components/features/eBook/images";
 import useDocumentMetadata from "@hooks/useDocumentMetadata";
 import { useEffect } from "react";
