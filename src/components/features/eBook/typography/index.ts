@@ -1,0 +1,11 @@
+export { default as SectionTitle} from "./SectionTitle";
+export { default as Text} from "./ParagraphText";
+export { default as Description} from "./Description";
+export { default as Heading2} from "./Heading2";
+export { default as Heading3} from "./Heading3";
+export { default as Heading4} from "./Heading4";
+export { default as Bold} from "./Bold";
+export { default as UnorderedList} from "./UnorderedList";
+export { default as OrderedList} from "./OrderedList";
+export { default as ListItem} from "./ListItem";
+export { default as Pre} from "./Pre";
