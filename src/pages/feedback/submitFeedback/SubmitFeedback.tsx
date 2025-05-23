@@ -7,7 +7,7 @@ import { FeedbackTextareaWithLabel } from '../../../components/features/feedback
 import { RadioGroupWithLabel } from '../../../components/features/feedback/RadioGroupWithLabel';
 import { FeedbackData, submitFeedback } from '@/firebase/FormUtils';
 
-const SubmitFeedback: React.FC = () => {
+const SubmitFeedback = () => {
   const [rating, setRating] = useState<number | undefined>(undefined);
   const [resetKey, setResetKey] = useState(0);
   const [feedback0, setFeedback0] = useState<string>('');
@@ -85,7 +85,7 @@ const SubmitFeedback: React.FC = () => {
               value={rating}
             />
           </div>
-          
+
           <RadioGroupWithLabel
             options={roleOptions}
             name="role"
