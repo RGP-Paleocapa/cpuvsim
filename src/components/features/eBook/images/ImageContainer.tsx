@@ -1,5 +1,6 @@
 import { FC } from "react";
 import Description from "@/components/features/eBook/typography/Description";
+import LazyImage from "./LazyImage";
 
 type ImageContainerProps = {
   src: string;
@@ -17,7 +18,7 @@ const ImageContainer: FC<ImageContainerProps> = ({
   return (
     <div className={`flex flex-col items-center w-full max-w-sm ${classname}`}>
       <div className="relative w-full aspect-[3/2] bg-gray-200 rounded-lg overflow-hidden">
-        <img
+        <LazyImage
           src={src}
           alt={alt}
           className="absolute inset-0 w-full h-full object-contain"
