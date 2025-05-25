@@ -7,7 +7,7 @@ import { ErrorBoundary } from 'react-error-boundary';
 import './index.css';
 import './trusted-security-policies';
 import ErrorFallback from './components/utils/ErrorFallback';
-import { FullPageLoader, PageLoader } from './components/utils/loading';
+import { FullPageLoader } from './components/utils/loading';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
