@@ -1,0 +1,1 @@
+import{j as x}from"./index-DT5kVYzA.js";const m=({children:t,alignCenter:e=!1,className:a,isDark:s=!1})=>x.jsx("p",{className:`my-4 text-sm leading-5 text-gray-600 ${s?"dark:text-black":"dark:text-gray-300"} mx-auto max-w-xl ${e?"text-center":"text-justify"} ${a}`,children:t});export{m as D};
