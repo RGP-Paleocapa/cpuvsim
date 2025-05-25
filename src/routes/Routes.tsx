@@ -24,6 +24,7 @@ const SubmitFeedback = React.lazy(() => import('@/pages/feedback/submitFeedback/
 const ReadFeedback = React.lazy(() => import('@/pages/feedback/readFeedback/ReadFeedback'));
 const Maintenance = React.lazy(() => import('@/pages/errors/maintenance'));
 const NotFound = React.lazy(() => import('@/pages/errors/notFound'));
+const PrivacyPolicy = React.lazy(() => import('@/pages/privacyPolicy/PrivacyPolicy'));
 
 const wrap = (
   lazyComponent: React.LazyExoticComponent<(React.ComponentType)>,
@@ -62,6 +63,9 @@ const AppRoutes = () => {
       {/* Error Routes */}
       <Route path="/maintenance" element={wrap(Maintenance)} />
       <Route path="/*" element={wrap(NotFound)} />
+
+      {/* Privacy */}
+      <Route path="/privacy" element={wrap(PrivacyPolicy)} />
     </Routes>
   );
 };

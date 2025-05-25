@@ -17,3 +17,4 @@ export { default as About } from './about/About';
 export { default as Login } from './auth/login';
 export { default as Signup } from './auth/signUp';
 export { default as ForgotPassword } from './auth/forgot-password';
+export { default as PrivacyPolicy } from './privacyPolicy/PrivacyPolicy';

@@ -1,0 +1,32 @@
+{
+  "title": "Informativa sulla Privacy",
+  "metaDescription": "Le nostre pratiche di privacy e raccolta dati.",
+  "footerCitation": {
+    "text": "Cortinovis , R. e Rajan, R. (2022). Valutazione e miglioramento del simulatore visivo CPU educativo: un approccio sostenibile di Open Pedagogy. Atti del 33º Workshop annuale del Psychology of Programming Interest Group, 189-196"
+  },
+  "dataCollected": {
+    "title": "Dati che raccogliamo",
+    "content": "Raccogliamo solo dati anonimi di localizzazione geografica basati sul tuo indirizzo IP per migliorare l’esperienza utente. Non raccogliamo dati personali né ti identifichiamo individualmente."
+  },
+  "cookies": {
+    "title": "Cookie",
+    "content": "Il nostro sito utilizza cookie locali esclusivamente per funzionalità e memorizzazione delle preferenze. Non condividiamo né archiviamo questi cookie da remoto, rispettando la tua privacy e sicurezza."
+  },
+  "dataUsage": {
+    "title": "Come usiamo i tuoi dati",
+    "content": "I dati geografici raccolti ci aiutano a comprendere i modelli generali di utilizzo e migliorare il servizio. Questi dati sono elaborati in modo anonimo e non collegati a nessun individuo."
+  },
+  "dataSharing": {
+    "title": "Condivisione dei dati",
+    "content": "Non condividiamo, vendiamo né divulghiamo dati raccolti a terze parti."
+  },
+  "userRights": {
+    "title": "I tuoi diritti",
+    "content": "Hai il diritto di chiedere quali dati raccogliamo e come li utilizziamo. Per domande o dubbi sulla privacy, contattaci tramite il modulo di feedback o via email."
+  },
+  "contact": {
+    "title": "Contattaci",
+    "contentBeforeLink": "Se hai domande su questa Informativa sulla Privacy, puoi contattarci tramite il",
+    "feedbackLink": "modulo di feedback"
+  }
+}
