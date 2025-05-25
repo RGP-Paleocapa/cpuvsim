@@ -1,1 +1,0 @@
-import{j as r}from"./index-DT5kVYzA.js";const a=()=>r.jsxs("div",{className:"flex items-center justify-center my-4",children:[r.jsx("hr",{className:"flex-grow border-gray-300 dark:border-gray-700"}),r.jsx("p",{className:"mx-4 text-sm text-gray-700 dark:text-gray-200",children:"or"}),r.jsx("hr",{className:"flex-grow border-gray-300 dark:border-gray-700"})]});export{a as O};

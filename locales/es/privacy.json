@@ -1,0 +1,32 @@
+{
+  "title": "Política de Privacidad",
+  "metaDescription": "Nuestras prácticas de privacidad y recopilación de datos.",
+  "footerCitation": {
+    "text": "Cortinovis , R. y Rajan, R. (2022). Evaluación y mejora del Simulador Visual Educativo CPU: un enfoque sostenible de Pedagogía Abierta. Actas del 33º Taller Anual del Psychology of Programming Interest Group, 189-196"
+  },
+  "dataCollected": {
+    "title": "Datos que Recopilamos",
+    "content": "Solo recopilamos datos geográficos anónimos basados en tu dirección IP para mejorar la experiencia del usuario. No recopilamos datos personales ni te identificamos individualmente."
+  },
+  "cookies": {
+    "title": "Cookies",
+    "content": "Nuestro sitio web utiliza cookies locales únicamente para funcionalidades y almacenamiento de preferencias. No compartimos ni almacenamos estas cookies de forma remota, respetando tu privacidad y seguridad."
+  },
+  "dataUsage": {
+    "title": "Cómo Usamos Tus Datos",
+    "content": "Los datos geográficos recopilados nos ayudan a entender patrones generales de uso y mejorar el servicio. Estos datos se procesan de forma anónima y no están vinculados a ningún individuo."
+  },
+  "dataSharing": {
+    "title": "Compartir Datos",
+    "content": "No compartimos, vendemos ni divulgamos ningún dato recopilado a terceros."
+  },
+  "userRights": {
+    "title": "Tus Derechos",
+    "content": "Tienes derecho a preguntar sobre los datos que recopilamos y cómo se utilizan. Para cualquier pregunta o inquietud de privacidad, contáctanos a través del formulario de comentarios o correo electrónico."
+  },
+  "contact": {
+    "title": "Contáctanos",
+    "contentBeforeLink": "Si tienes alguna pregunta sobre esta Política de Privacidad, puedes comunicarte con nosotros a través del",
+    "feedbackLink": "formulario de comentarios"
+  }
+}

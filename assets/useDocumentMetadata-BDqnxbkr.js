@@ -1,1 +1,0 @@
-import{r as u}from"./index-DT5kVYzA.js";const r=(e,t,n)=>{u.useEffect(()=>{var o;typeof document<"u"&&(document.title=e,(o=document.querySelector('meta[name="description"]'))==null||o.setAttribute("content",t))},[e,t,n])};export{r as u};

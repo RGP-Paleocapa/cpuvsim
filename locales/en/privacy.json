@@ -1,0 +1,32 @@
+{
+  "title": "Privacy Policy",
+  "metaDescription": "Our privacy practices and data collection.",
+  "footerCitation": {
+    "text": "Cortinovis , R. and Rajan, R. (2022). Evaluating and improving the Educational CPU Visual Simulator: a sustainable Open Pedagogy approach. Proceedings of the 33rd Annual Workshop of the Psychology of Programming Interest Group, 189-196"
+  },
+  "dataCollected": {
+    "title": "Data We Collect",
+    "content": "We only collect anonymous geographical location data based on your IP address to improve user experience. We do not collect any personal data or identify you individually."
+  },
+  "cookies": {
+    "title": "Cookies",
+    "content": "Our website uses local cookies solely for functionality and preference storage. We do not share or store these cookies remotely, respecting your privacy and security."
+  },
+  "dataUsage": {
+    "title": "How We Use Your Data",
+    "content": "The collected geographical data helps us understand general usage patterns and improve the service. This data is processed anonymously and not linked to any individual."
+  },
+  "dataSharing": {
+    "title": "Data Sharing",
+    "content": "We do not share, sell, or disclose any data collected to third parties."
+  },
+  "userRights": {
+    "title": "Your Rights",
+    "content": "You have the right to inquire about the data we collect and how it is used. For any questions or privacy concerns, please contact us via the feedback form or email."
+  },
+  "contact": {
+    "title": "Contact Us",
+    "contentBeforeLink": "If you have any questions about this Privacy Policy, you can reach us through our",
+    "feedbackLink": "feedback form"
+  }
+}
