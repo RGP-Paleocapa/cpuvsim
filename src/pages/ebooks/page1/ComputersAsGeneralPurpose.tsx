@@ -109,24 +109,24 @@ const Page1 = () => {
       </ParagraphText>
         <Figure>
         {gridData.map((item, index) => (
-          <div key={index} className="flex flex-col items-center justify-start h-full px-4">
+          <div key={index} className="flex flex-col items-center justify-start h-full">
             <div
               className={`${
                 colors[item.colorKey as keyof typeof colors]
-              } flex flex-col items-center justify-center w-48 h-48 p-4 ${
+              } flex flex-col items-center w-full max-w-sm p-4 ${
                 index === 1 ? 'text-black' : 'text-gray-200'
               }`}
             >
               {item.texts.map((text, textIndex) => (
                 <p
                   key={textIndex}
-                  className="text-center text-lg shadow-slate-700 shadow-sm py-1 px-2 rounded"
+                  className="text-center text-lg shadow-slate-700 shadow-sm rounded p-2"
                 >
                   {text}
                 </p>
               ))}
             </div>
-            <div>
+            <div className="flex flex-col items-center w-full max-w-sm">
               <Description>{item.description}</Description>
             </div>
           </div>
