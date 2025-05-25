@@ -7,6 +7,7 @@ export function useGeoLocation() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    if (process.env.NODE_ENV === "development") return;
     fetchLocation()
       .then(setLocation)
       .catch((err) => setError(err.message));
