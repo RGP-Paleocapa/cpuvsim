@@ -2,7 +2,7 @@ import EBookPage from "@/components/features/eBook/EBook";
 // import { SectionTitle, Ul, Text, Description, H2, Li } from "@/components/features/eBook/content";
 import { Section, InlineDivs, MaxWidthContainer } from "@/components/features/eBook/layout";
 import images from "@assets/images/pages/page3";
-import { InteractiveImage } from "@/components/features/eBook/images/";
+import { ImageContainer, InteractiveImage } from "@/components/features/eBook/images/";
 import useDocumentMetadata from "@hooks/useDocumentMetadata";
 import { useEffect } from "react";
 import data from './data.json';
@@ -32,7 +32,7 @@ const Page3 = () => {
                   </ParagraphText>
               </MaxWidthContainer>
               <MaxWidthContainer>
-                  <LazyImage src={images.image1.src} alt={images.image1.alt} className="img-center" />
+                  <ImageContainer src={images.image1.src} alt={images.image1.alt} classname="img-center" />
               </MaxWidthContainer>
           </InlineDivs>
 
@@ -57,7 +57,7 @@ const Page3 = () => {
                   </UnorderedList>
               </MaxWidthContainer>
               <MaxWidthContainer>
-                  <LazyImage src={images.image2.src} alt={images.image2.alt} className="img-center" />
+                  <ImageContainer src={images.image2.src} alt={images.image2.alt} classname="img-center" />
               </MaxWidthContainer>
           </InlineDivs>
       </Section>
