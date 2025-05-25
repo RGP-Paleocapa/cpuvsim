@@ -1,4 +1,4 @@
-import { Ol, Ul } from "@/components/features/eBook/content";
+import { OrderedList, UnorderedList } from "@/components/features/eBook/typography";
 import { useFooterStore, FooterItem } from "@/context/useFooterStore";
 import { useTranslation } from "react-i18next";
 
@@ -7,7 +7,7 @@ const References = () => {
   const { t } = useTranslation();
 
   const renderSubReferences = (subReferences: FooterItem[], parentIndex: number) => (
-      <Ul>
+      <UnorderedList>
           {subReferences.map((subItem, subIndex) => (
               <li key={`${parentIndex}-${subIndex}`}>
                   <a href={subItem.link} target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:text-inherit dark:hover:text-inherit transition duration-300">
@@ -15,7 +15,7 @@ const References = () => {
                   </a>
               </li>
           ))}
-      </Ul>
+      </UnorderedList>
   );
 
   if (footerData.length === 0) return null;
@@ -23,7 +23,7 @@ const References = () => {
   return (
       <div className="flex flex-col items-center md:items-start">
           <h2 className="font-bold text-lg mb-2">{t("footer.links.refrences")}:</h2>
-          <Ol className="mx-20">
+          <OrderedList className="mx-20">
               {footerData.map((item, index) => (
                   <li key={`${item.text}-${index}`}>
                       {item.link ? (
@@ -36,7 +36,7 @@ const References = () => {
                       {item.subReferences && renderSubReferences(item.subReferences, index)}
                   </li>
               ))}
-          </Ol>
+          </OrderedList>
       </div>
   );
 }

@@ -1,6 +1,6 @@
 import EBookPage from "@/components/features/eBook/EBook";
-import { SectionTitle, Ul, Text, Description, H2, Li } from "@/components/features/eBook/content";
-import { Section, InlineDivs, MaxWidthContainer } from "@/components/features/eBook/layout/layout";
+// import { SectionTitle, Ul, Text, Description, H2, Li } from "@/components/features/eBook/content";
+import { Section, InlineDivs, MaxWidthContainer } from "@/components/features/eBook/layout";
 import images from "@assets/images/pages/page3";
 import { InteractiveImage } from "@/components/features/eBook/images/";
 import useDocumentMetadata from "@hooks/useDocumentMetadata";
@@ -9,6 +9,7 @@ import data from './data.json';
 import RenderHTML from "@/components/common/RenderHTML";
 import { useTranslation } from "react-i18next";
 import { useFooterStore } from "@/context/useFooterStore";
+import { SectionTitle, Description, Heading2, UnorderedList, ListItem, ParagraphText } from "@/components/features/eBook/typography";
 
 const Page3 = () => {
   useDocumentMetadata('Von Neumann Model', "This is the third page");
@@ -25,9 +26,9 @@ const Page3 = () => {
           <SectionTitle>{t("vonNeumannArchitecture.title")}</SectionTitle>
           <InlineDivs>
               <MaxWidthContainer>
-                  <Text isDark>
+                  <ParagraphText isDark>
                       <RenderHTML htmlString={t("vonNeumannArchitecture.description1")} />
-                  </Text>
+                  </ParagraphText>
               </MaxWidthContainer>
               <MaxWidthContainer>
                   <img src={images.image1.src} alt={images.image1.alt} className="img-center" />
@@ -36,23 +37,23 @@ const Page3 = () => {
 
           <InlineDivs>
               <MaxWidthContainer>
-                  <Text isDark>
+                  <ParagraphText isDark>
                       <RenderHTML htmlString={t("vonNeumannArchitecture.description2")} />
-                  </Text>
-                  <Ul>
-                      <Li isDark>
+                  </ParagraphText>
+                  <UnorderedList>
+                      <ListItem isDark>
                           <RenderHTML htmlString={t("vonNeumannArchitecture.component1")} />
-                      </Li>
-                      <Li isDark>
+                      </ListItem>
+                      <ListItem isDark>
                           <RenderHTML htmlString={t("vonNeumannArchitecture.component2")} />
-                      </Li>
-                      <Li isDark>
+                      </ListItem>
+                      <ListItem isDark>
                           <RenderHTML htmlString={t("vonNeumannArchitecture.component3")} />
-                      </Li>
-                      <Li isDark>
+                      </ListItem>
+                      <ListItem isDark>
                           <RenderHTML htmlString={t("vonNeumannArchitecture.component4")} />
-                      </Li>
-                  </Ul>
+                      </ListItem>
+                  </UnorderedList>
               </MaxWidthContainer>
               <MaxWidthContainer>
                   <img src={images.image2.src} alt={images.image2.alt} className="img-center" />
@@ -61,61 +62,61 @@ const Page3 = () => {
       </Section>
 
     <Section>
-      <H2>{t("cpuSection.title")}</H2>
-      <Text className="mb-4">
+      <Heading2>{t("cpuSection.title")}</Heading2>
+      <ParagraphText className="mb-4">
           {t("cpuSection.description")}
-      </Text>
+      </ParagraphText>
       <InlineDivs isEven>
           <MaxWidthContainer>
-              <Ul className="list-none pl-0 ml-0">
-                  <Ul className="pl-0 ml-0">
+              <UnorderedList className="list-none pl-0 ml-0">
+                  <UnorderedList className="pl-0 ml-0">
                       <strong className='text-gray-900'>Arithmetic Logic Unit (ALU):</strong>
-                      <Ul className="text-gray-300"> 
-                          <Li isDark>
+                      <UnorderedList className="text-gray-300">
+                          <ListItem isDark>
                               {t("cpuSection.aluDescription")}
-                          </Li>
-                          <Li isDark>
+                          </ListItem>
+                          <ListItem isDark>
                               {t("cpuSection.logicOperations")}
-                          </Li>
-                      </Ul>
-                  </Ul>
-                  <Ul>
+                          </ListItem>
+                      </UnorderedList>
+                  </UnorderedList>
+                  <UnorderedList>
                       <strong className='text-gray-900'>Control Unit and Decoder:</strong>
-                      <Ul className="text-gray-300"> 
-                          <Li isDark>
+                      <UnorderedList className="text-gray-300">
+                          <ListItem isDark>
                               {t("cpuSection.controlUnitDescription")}
-                          </Li>
-                          <Li isDark>
+                          </ListItem>
+                          <ListItem isDark>
                               {t("cpuSection.timingControlSignals")}
-                          </Li>
-                      </Ul>
-                  </Ul>
-                  <Ul>
+                          </ListItem>
+                      </UnorderedList>
+                  </UnorderedList>
+                  <UnorderedList>
                       <strong className='text-gray-900'>Specialized Registers:</strong>
-                      <Ul className="text-gray-300"> 
-                          <Li isDark>
+                      <UnorderedList className="text-gray-300">
+                          <ListItem isDark>
                               <strong className='text-gray-900'>Accumulator (Acc): </strong>
                               {t("cpuSection.accumulatorDescription")}
-                          </Li>
-                          <Li isDark>
+                          </ListItem>
+                          <ListItem isDark>
                               <strong className='text-gray-900'>Program Counter (PC): </strong>
                               {t("cpuSection.programCounterDescription")}
-                          </Li>
-                          <Li isDark>
+                          </ListItem>
+                          <ListItem isDark>
                               <strong className='text-gray-900'>Instruction Register (IR):</strong>
                               {t("cpuSection.instructionRegisterDescription")}
-                          </Li>
-                          <Li isDark>
+                          </ListItem>
+                          <ListItem isDark>
                               <strong className='text-gray-900'>Status Word (SW): </strong>
                               {t("cpuSection.statusWordDescription")}
-                          </Li>
-                          <Li isDark>
+                          </ListItem>
+                          <ListItem isDark>
                               <strong className='text-gray-900'>Multiplexer (MUX): </strong>
                               {t("cpuSection.multiplexerDescription")}
-                          </Li>
-                      </Ul>
-                  </Ul>
-              </Ul>
+                          </ListItem>
+                      </UnorderedList>
+                  </UnorderedList>
+              </UnorderedList>
           </MaxWidthContainer>
           <MaxWidthContainer>
               <img src={images.image3.src} alt={images.image3.alt} className="img-center" />
@@ -124,42 +125,42 @@ const Page3 = () => {
   </Section>
 
         <Section>
-          <H2>{t("ioDevicesSection.title")}</H2>
-          <Text>
+          <Heading2>{t("ioDevicesSection.title")}</Heading2>
+          <ParagraphText>
               <RenderHTML htmlString={t("ioDevicesSection.description1")} />
-          </Text>
-          <Ul>
-              <Li>
+          </ParagraphText>
+          <UnorderedList>
+              <ListItem>
                   <RenderHTML htmlString={t("ioDevicesSection.inputDevices")} />
-              </Li>
-              <Li>
+              </ListItem>
+              <ListItem>
                   <RenderHTML htmlString={t("ioDevicesSection.outputDevices")} />
-              </Li>
-          </Ul>
-          <Text>
+              </ListItem>
+          </UnorderedList>
+          <ParagraphText>
               <RenderHTML htmlString={t("ioDevicesSection.additionalInfo")} />
-          </Text>
+          </ParagraphText>
       </Section>
 
       <Section>
-        <H2>{t("busSystemSection.title")}</H2>
-        <Text>
+        <Heading2>{t("busSystemSection.title")}</Heading2>
+        <ParagraphText>
             <RenderHTML htmlString={t("busSystemSection.description")} />
-        </Text>
+        </ParagraphText>
         <br />
         <InlineDivs>
             <MaxWidthContainer>
-                <Ul>
-                    <Li isDark>
+                <UnorderedList>
+                    <ListItem isDark>
                         <RenderHTML htmlString={t("busSystemSection.dataBus")} />
-                    </Li>      
-                    <Li isDark>
+                    </ListItem>
+                    <ListItem isDark>
                         <RenderHTML htmlString={t("busSystemSection.addressBus")} />
-                    </Li>
-                    <Li isDark>
+                    </ListItem>
+                    <ListItem isDark>
                         <RenderHTML htmlString={t("busSystemSection.controlBus")} />
-                    </Li>
-                </Ul>
+                    </ListItem>
+                </UnorderedList>
             </MaxWidthContainer>
             <MaxWidthContainer>
                 <InteractiveImage src={images.image4.src} alt={images.image4.alt} className="img-center min" />
@@ -169,24 +170,24 @@ const Page3 = () => {
     </Section>
 
         <Section>
-          <H2>{t("memorySection.title")}</H2>
-          <Text>
+          <Heading2>{t("memorySection.title")}</Heading2>
+          <ParagraphText>
               <RenderHTML htmlString={t("memorySection.intro")} />
-          </Text>  
+          </ParagraphText>
           <InlineDivs>
               <MaxWidthContainer>
-                  <Text isDark>
+                  <ParagraphText isDark>
                       <RenderHTML htmlString={t("memorySection.mainMemoryDescription")} />
-                  </Text>
+                  </ParagraphText>
               </MaxWidthContainer>
               <MaxWidthContainer>
                   <img src={images.image5.src} alt={images.image5.alt} className="img-center" />
               </MaxWidthContainer>
           </InlineDivs>
           <br /><br />
-          <Text>
+          <ParagraphText>
               <RenderHTML htmlString={t("memorySection.secondaryMemoryDescription")} />
-          </Text>
+          </ParagraphText>
       </Section>
     </EBookPage>
   );

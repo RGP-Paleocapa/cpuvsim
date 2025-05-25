@@ -24,5 +24,6 @@
     "page7Title": "7 - From High-level to Assembly Languages",
     "page8Title": "8 - Exercises"
   },
-  "loading": "Loading..."
+  "loading": "Loading...",
+  "loadingPage": "Loading page..."
 }

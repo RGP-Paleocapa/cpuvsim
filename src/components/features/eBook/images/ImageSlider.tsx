@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import LazyImage from './LazyImage';
 
 interface ImageObject {
   src: string;
@@ -26,7 +27,7 @@ const CarouselSlider = ({ images }: { images: ImageObject[] }) => {
               className={`duration-700 ease-in-out ${index === current ? 'block' : 'hidden'}`}
               data-carousel-item
             >
-              <img
+              <LazyImage
                 src={img.src}
                 alt={img.alt}
                 className={`absolute top-1/2 left-1/2 w-full transform -translate-x-1/2 -translate-y-1/2 ${

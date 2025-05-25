@@ -1,7 +1,6 @@
 import images from "@assets/images/pages/page4";
 import EBookPage from "@/components/features/eBook/EBook";
-import { Li, Ol, SectionTitle, Text } from "@/components/features/eBook/content";
-import { Section, InlineDivs, MaxWidthContainer } from "@/components/features/eBook/layout/layout";
+import { Section, InlineDivs, MaxWidthContainer } from "@/components/features/eBook/layout";
 import { YourImageComponent } from "@/components/features/eBook/images";
 import useDocumentMetadata from "@hooks/useDocumentMetadata";
 import { useEffect } from "react";
@@ -9,6 +8,7 @@ import data from './data.json';
 import { useTranslation } from "react-i18next";
 import RenderHTML from "@/components/common/RenderHTML";
 import { useFooterStore } from "@/context/useFooterStore";
+import { ListItem, OrderedList, ParagraphText, SectionTitle } from "@/components/features/eBook/typography";
 
 const Page4 = () => {
     useDocumentMetadata('CPU Fundamentals Fetch Decode Execute', "This is the fourth page");
@@ -27,19 +27,19 @@ const Page4 = () => {
                 </SectionTitle>
                 <InlineDivs>
                     <MaxWidthContainer>
-                        <Text isDark><RenderHTML htmlString={t("cpuCycleSection.description")} /></Text>
+                        <ParagraphText isDark><RenderHTML htmlString={t("cpuCycleSection.description")} /></ParagraphText>
                         <br /><br />
-                        <Ol className="dark:text-black">
-                            <Li isDark margin0>
+                        <OrderedList className="dark:text-black">
+                            <ListItem isDark margin0>
                                 <RenderHTML htmlString={`${t("cpuCycleSection.fetch")}`} />
-                            </Li>
-                            <Li isDark margin0>
+                            </ListItem>
+                            <ListItem isDark margin0>
                                 <RenderHTML htmlString={`${t("cpuCycleSection.decode")}`} />
-                            </Li>
-                            <Li isDark margin0>
+                            </ListItem>
+                            <ListItem isDark margin0>
                                 <RenderHTML htmlString={`${t("cpuCycleSection.execute")}`} />
-                            </Li>
-                        </Ol>
+                            </ListItem>
+                        </OrderedList>
                     </MaxWidthContainer>
                     <MaxWidthContainer>
                         <img src={images.fetchCodeExecute.src} alt={images.fetchCodeExecute.alt} className="img-center" />
@@ -48,30 +48,30 @@ const Page4 = () => {
             </Section>
 
             <Section>
-                <Text>
+                <ParagraphText>
                     <RenderHTML htmlString={`${t("fetchSection.description")}`} />
-                </Text>
+                </ParagraphText>
                 <YourImageComponent image={images.fetch} />
             </Section>
 
             <Section>
-                <Text>
+                <ParagraphText>
                 <RenderHTML htmlString={`${t("executeSection.description")}`} />
-                </Text>
+                </ParagraphText>
                 <YourImageComponent image={images.execute} />
             </Section>
 
             <Section>
-                <Text>
+                <ParagraphText>
                 <RenderHTML htmlString={`${t("decodeSection.description")}`} />
-                </Text>
+                </ParagraphText>
                 <YourImageComponent image={images.decode} />
             </Section>
 
             <Section>
-                <Text>
+                <ParagraphText>
                     <RenderHTML htmlString={`${t("otherSection.description")}`} /> <br /><br />
-                </Text>
+                </ParagraphText>
                     <YourImageComponent image={images.altro} />
             </Section>
         </EBookPage>
@@ -79,4 +79,4 @@ const Page4 = () => {
 
 }
 
-export default Page4;   
+export default Page4;

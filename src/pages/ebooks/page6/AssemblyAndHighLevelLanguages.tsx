@@ -1,7 +1,6 @@
 import EBookPage from '@/components/features/eBook/EBook';
-import { Description, H3, SectionTitle, Text } from '@/components/features/eBook/content';
 import images from '@assets/images/pages/page6';
-import { Section, Figure } from '@/components/features/eBook/layout/layout';
+import { Section, Figure } from '@/components/features/eBook/layout';
 import { YourImageComponent } from '@/components/features/eBook/images';
 import useDocumentMetadata from '@hooks/useDocumentMetadata';
 import { useEffect } from 'react';
@@ -9,6 +8,7 @@ import data from './data.json';
 import RenderHTML from '@/components/common/RenderHTML';
 import { useTranslation } from 'react-i18next';
 import { useFooterStore } from '@/context/useFooterStore';
+import { SectionTitle, Description, Heading3, ParagraphText } from '@/components/features/eBook/typography';
 
 const Page6 = () => {
   useDocumentMetadata('Assembly and High Level Languages', "This is the sixth page");
@@ -18,16 +18,16 @@ const Page6 = () => {
   }, [setFooterData]);
   const references = data.references;
   const { t } = useTranslation("page6");
-  
+
     return (
         <EBookPage currentPage={6}>
           <Section>
             <SectionTitle>
                 {t("languagesSection.title")}
             </SectionTitle>
-            <Text>
+            <ParagraphText>
                 <RenderHTML htmlString={t("languagesSection.description")} />
-            </Text>
+            </ParagraphText>
             <img src={images.languagesFlowchart.src} alt={t("languagesSection.imageAlt")} className='img-center bg-white' />
           </Section>
 
@@ -35,36 +35,36 @@ const Page6 = () => {
             <SectionTitle>
                 {t("highLevelLanguagesSection.title")}
             </SectionTitle>
-            <Text>
+            <ParagraphText>
                 <RenderHTML htmlString={t("highLevelLanguagesSection.description")} />
-            </Text>
+            </ParagraphText>
         </Section>
 
         <Section>
           <SectionTitle>
               {t("lowLevelLanguagesSection.title")}
           </SectionTitle>
-          <Text>
+          <ParagraphText>
               {t("lowLevelLanguagesSection.text1")}
-          </Text>
+          </ParagraphText>
 
           <br /><br />
 
-          <H3>
+          <Heading3>
               {t("lowLevelLanguagesSection.machineLanguageTitle")}
-          </H3>
-          <Text>
+          </Heading3>
+          <ParagraphText>
               <RenderHTML htmlString={t("lowLevelLanguagesSection.machineLanguageText")} />
-          </Text>
+          </ParagraphText>
 
           <br /><br />
 
-          <H3>
+          <Heading3>
               {t("lowLevelLanguagesSection.assemblyLanguageTitle")}
-          </H3>
-          <Text>
+          </Heading3>
+          <ParagraphText>
               <RenderHTML htmlString={t("lowLevelLanguagesSection.assemblyLanguageText")} />
-          </Text>
+          </ParagraphText>
       </Section>
 
       <Section>
@@ -74,7 +74,7 @@ const Page6 = () => {
 
         <Figure>
             <div>
-                <img src={images.image2.src} alt="default" className="img-center w-96 h-28 rounded" />  
+                <img src={images.image2.src} alt="default" className="img-center w-96 h-28 rounded" />
                 <Description alignCenter>
                     <strong>{t("programmingLanguagesSection.highLevelLanguageDescription")}</strong>
                 </Description>
@@ -93,9 +93,9 @@ const Page6 = () => {
             </div>
         </Figure>
 
-        <Text>
+        <ParagraphText>
             <RenderHTML htmlString={t("programmingLanguagesSection.text")} />
-        </Text>
+        </ParagraphText>
     </Section>
       </EBookPage>
     );

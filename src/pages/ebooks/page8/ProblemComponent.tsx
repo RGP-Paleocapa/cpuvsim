@@ -1,4 +1,4 @@
-import { Ol, Pre } from '@/components/features/eBook/content';
+import { ListItem, OrderedList, Pre } from '@/components/features/eBook/typography';
 import React from 'react';
 
 interface ProblemData {
@@ -42,19 +42,19 @@ const ProblemComponent: React.FC<ProblemComponentProps> = ({ problem, index }) =
       <div className="flex flex-col items-center lg:flex-row lg:items-start ">
         <div className="w-3/4">
           {(problem.text || problem.code) && (
-            <Ol start={index + 1} className="dark:text-white max-w-full">
+            <OrderedList start={index + 1} className="dark:text-white max-w-full">
               {problem.text && (
-                <li>
+                <ListItem>
                   {renderTextWithLinks(problem.text, problem.link)}
-                </li>
+                </ListItem>
               )}
               {Array.isArray(problem.code) && (
-                <li>
+                <ListItem>
                   <strong>{problem.title}</strong>
                   <Pre content={problem.code.join('\n')} />
-                </li>
+                </ListItem>
               )}
-            </Ol>
+            </OrderedList>
           )}
         </div>
         <div className="w-1/4 mt-2 md:mt-0 flex justify-center mb-5">
@@ -67,7 +67,7 @@ const ProblemComponent: React.FC<ProblemComponentProps> = ({ problem, index }) =
           >
             Solution
           </a>
-          
+
           ) : null}
         </div>
       </div>
