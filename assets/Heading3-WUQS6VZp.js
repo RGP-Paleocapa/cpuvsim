@@ -1,1 +1,0 @@
-import{j as s}from"./index-CmUcTxtm.js";const x=({children:t,className:a,isDark:e=!1})=>s.jsx("h3",{className:`mb-4 text-lg font-bold leading-7 text-gray-900 ${e?"dark:text-black":"dark:text-gray-100"} ${a}`,children:t});export{x as H};

@@ -1,1 +1,0 @@
-import{j as r}from"./index-CmUcTxtm.js";const t=({children:s})=>r.jsx("figure",{className:"grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 pt-10 justify-items-center",children:s});export{t as F};

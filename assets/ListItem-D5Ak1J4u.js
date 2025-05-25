@@ -1,0 +1,1 @@
+import{j as m}from"./index-BYLV5N22.js";import{P as x}from"./Section-C-ujvZM-.js";const p=({children:s,className:t,margin0:a,noParagraph:r,...o})=>m.jsx("li",{className:`${a?"mb-0":"mb-4"} ${t}`,children:r?s:m.jsx(x,{...o,children:s})});export{p as L};
