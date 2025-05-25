@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import LazyImage from './LazyImage';
 
 const FullscreenToggleImage = ({ src, alt, className }: { src: string, alt: string, className?: string }) => {
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -36,7 +37,7 @@ const FullscreenToggleImage = ({ src, alt, className }: { src: string, alt: stri
           </button>
         </div>
       )}
-      <img
+      <LazyImage
         src={src}
         alt={alt}
         className={`${className} ${isFullscreen ? 'fullscreen-image' : ''} lg:cursor-pointer`}

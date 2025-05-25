@@ -9,6 +9,7 @@ import { useTranslation } from "react-i18next";
 import RenderHTML from "@/components/common/RenderHTML";
 import { useFooterStore } from "@/context/useFooterStore";
 import { ListItem, OrderedList, ParagraphText, SectionTitle } from "@/components/features/eBook/typography";
+import LazyImage from "@/components/features/eBook/images/LazyImage";
 
 const Page4 = () => {
     useDocumentMetadata('CPU Fundamentals Fetch Decode Execute', "This is the fourth page");
@@ -42,7 +43,7 @@ const Page4 = () => {
                         </OrderedList>
                     </MaxWidthContainer>
                     <MaxWidthContainer>
-                        <img src={images.fetchCodeExecute.src} alt={images.fetchCodeExecute.alt} className="img-center" />
+                        <LazyImage src={images.fetchCodeExecute.src} alt={images.fetchCodeExecute.alt} className="img-center" />
                     </MaxWidthContainer>
                 </InlineDivs>
             </Section>

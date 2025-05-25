@@ -10,6 +10,7 @@ import RenderHTML from "@/components/common/RenderHTML";
 import { useTranslation } from "react-i18next";
 import { useFooterStore } from "@/context/useFooterStore";
 import { SectionTitle, Description, Heading2, UnorderedList, ListItem, ParagraphText } from "@/components/features/eBook/typography";
+import LazyImage from "@/components/features/eBook/images/LazyImage";
 
 const Page3 = () => {
   useDocumentMetadata('Von Neumann Model', "This is the third page");
@@ -31,7 +32,7 @@ const Page3 = () => {
                   </ParagraphText>
               </MaxWidthContainer>
               <MaxWidthContainer>
-                  <img src={images.image1.src} alt={images.image1.alt} className="img-center" />
+                  <LazyImage src={images.image1.src} alt={images.image1.alt} className="img-center" />
               </MaxWidthContainer>
           </InlineDivs>
 
@@ -56,7 +57,7 @@ const Page3 = () => {
                   </UnorderedList>
               </MaxWidthContainer>
               <MaxWidthContainer>
-                  <img src={images.image2.src} alt={images.image2.alt} className="img-center" />
+                  <LazyImage src={images.image2.src} alt={images.image2.alt} className="img-center" />
               </MaxWidthContainer>
           </InlineDivs>
       </Section>
@@ -119,7 +120,7 @@ const Page3 = () => {
               </UnorderedList>
           </MaxWidthContainer>
           <MaxWidthContainer>
-              <img src={images.image3.src} alt={images.image3.alt} className="img-center" />
+              <LazyImage src={images.image3.src} alt={images.image3.alt} className="img-center" />
           </MaxWidthContainer>
       </InlineDivs>
   </Section>
@@ -181,7 +182,7 @@ const Page3 = () => {
                   </ParagraphText>
               </MaxWidthContainer>
               <MaxWidthContainer>
-                  <img src={images.image5.src} alt={images.image5.alt} className="img-center" />
+                  <LazyImage src={images.image5.src} alt={images.image5.alt} className="img-center" />
               </MaxWidthContainer>
           </InlineDivs>
           <br /><br />

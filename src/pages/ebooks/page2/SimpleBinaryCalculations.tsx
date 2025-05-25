@@ -11,6 +11,7 @@ import RenderHTML from "@/components/common/RenderHTML";
 import { useTranslation } from "react-i18next";
 import { useFooterStore } from "@/context/useFooterStore";
 import { Bold, Description, Heading3, ListItem, ParagraphText, SectionTitle, UnorderedList } from "@/components/features/eBook/typography";
+import LazyImage from "@/components/features/eBook/images/LazyImage";
 
 const Page2 = () => {
     useDocumentMetadata('Simple Binary Calculations', "This is the second page");
@@ -73,7 +74,7 @@ const Page2 = () => {
             <InlineDivs centerStart isEven>
                 <MaxWidthContainer>
                     {/* First Image */}
-                    <img src={images.image1.src} alt={images.image1.alt} className="img-center" />
+                    <LazyImage src={images.image1.src} alt={images.image1.alt} className="img-center" />
                     {/* Second Image (Square) and Description */}
                     <div className="flex flex-col sm:flex-row items-center sm:items-start">
                         <div className="w-16 h-16 bg-gray-400 mr-4 flex-shrink-0" /> {/* 32x32 pixels square */}
@@ -103,7 +104,7 @@ const Page2 = () => {
                     </ParagraphText>
                 </MaxWidthContainer>
                 <MaxWidthContainer>
-                    <img src={images.image2.src} alt={images.image2.alt} className="img-center bg-white" />
+                    <LazyImage src={images.image2.src} alt={images.image2.alt} className="img-center bg-white" />
                     <Description isDark>
                         {t("audioSection.quantizationDescription")}
                     </Description>
@@ -140,7 +141,7 @@ const Page2 = () => {
                     </UnorderedList>
                 </MaxWidthContainer>
                 <MaxWidthContainer>
-                    <img src={images.image3.src} alt={images.image3.alt} className="img-center" />
+                    <LazyImage src={images.image3.src} alt={images.image3.alt} className="img-center" />
                     <Description alignCenter isDark>
                         {t("multimediaInformation.soundVolumeDescription")}
                     </Description>

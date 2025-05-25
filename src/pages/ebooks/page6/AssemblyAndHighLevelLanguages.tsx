@@ -9,6 +9,7 @@ import RenderHTML from '@/components/common/RenderHTML';
 import { useTranslation } from 'react-i18next';
 import { useFooterStore } from '@/context/useFooterStore';
 import { SectionTitle, Description, Heading3, ParagraphText } from '@/components/features/eBook/typography';
+import LazyImage from '@/components/features/eBook/images/LazyImage';
 
 const Page6 = () => {
   useDocumentMetadata('Assembly and High Level Languages', "This is the sixth page");
@@ -28,7 +29,7 @@ const Page6 = () => {
             <ParagraphText>
                 <RenderHTML htmlString={t("languagesSection.description")} />
             </ParagraphText>
-            <img src={images.languagesFlowchart.src} alt={t("languagesSection.imageAlt")} className='img-center bg-white' />
+            <LazyImage src={images.languagesFlowchart.src} alt={t("languagesSection.imageAlt")} className='img-center bg-white' />
           </Section>
 
           <Section>
@@ -74,7 +75,7 @@ const Page6 = () => {
 
         <Figure>
             <div>
-                <img src={images.image2.src} alt="default" className="img-center w-96 h-28 rounded" />
+                <LazyImage src={images.image2.src} alt="default" className="img-center w-96 h-28 rounded" />
                 <Description alignCenter>
                     <strong>{t("programmingLanguagesSection.highLevelLanguageDescription")}</strong>
                 </Description>

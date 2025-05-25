@@ -1,5 +1,6 @@
 import { ImageObject } from '@/types/images';
 import React, { useState } from 'react';
+import LazyImage from './LazyImage';
 
 type ImageLinkProps = {
   image: ImageObject;
@@ -29,7 +30,7 @@ const ImageLink: React.FC<ImageLinkProps> = ({ image, className, isNotCentered }
       onMouseLeave={() => setIsHovered(false)}
       onClick={image.url ? handleClick : undefined}
     >
-      <img
+      <LazyImage
         src={image.src}
         alt={image.alt || 'Image description'}
         className={combinedClassName}
