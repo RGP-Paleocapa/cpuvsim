@@ -37,7 +37,7 @@ const EBookPage: React.FC<EBookProps> = ({ children, currentPage }) => {
 
           {/* Main Content Area */}
           <section className={`w-full flex-1 ${isNavOpen ? 'overflow-hidden' : ''}`}>
-            <div className={`mx-auto ${isNavOpen ? 'max-w-screen-xl px-4' : 'px-4 md:max-w-fit lg:max-w-full'}`}>
+            <div className={`mx-auto ${isNavOpen ? 'max-w-screen-xl lg:px-4' : 'px-4 md:max-w-fit lg:max-w-full'}`}>
 
               {/* Toggle Navigation */}
               <button
